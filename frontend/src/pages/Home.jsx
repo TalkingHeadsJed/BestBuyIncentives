@@ -18,16 +18,16 @@ export default function Home() {
   return (
     <div data-testid="page-home">
       <Hero />
-      <StatsTicker />
       <TrustBar />
+      <StatsTicker />
       <ProblemSection />
       <SolutionSection />
-      <HowItWorks />
       <BusinessTestimonials />
       <ProgramsShowcase />
-      <ROICalculator />
-      <IndustriesGrid />
+      <HowItWorks />
       <CaseStudiesPreview />
+      <IndustriesGrid />
+      <ROICalculator />
       <ConsumerTestimonials />
       <VideoSeries />
       <FAQ />

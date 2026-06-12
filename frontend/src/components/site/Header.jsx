@@ -7,10 +7,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
-  const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -18,36 +17,29 @@ export default function Header() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
-  // Transparent over hero on home, white elsewhere; switch to white on scroll
-  const transparent = isHome && !scrolled;
-
   return (
     <header
       data-testid="site-header"
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        transparent ? "bg-transparent" : "bg-white border-b border-[#E5E2D9]"
+        scrolled ? "bg-white border-b border-[#E5E2D9] shadow-sm" : "bg-white/90 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 group">
-          <span className={`inline-block h-9 w-9 ${transparent ? "bg-[#FFD300]" : "bg-[#0A0A0A]"} flex items-center justify-center font-display font-bold text-base ${transparent ? "text-black" : "text-white"}`}>BB</span>
-          <span className={`font-display font-bold text-lg tracking-tight ${transparent ? "text-white" : "text-black"}`}>
-            BestBuy<span className={transparent ? "text-[#FFD300]" : "text-[#0A0A0A]"}>Incentives</span>
+          <span className="inline-flex h-10 w-10 bg-black items-center justify-center font-display font-bold text-base text-[#FFD300]">BB</span>
+          <span className="font-display font-bold text-lg lg:text-xl tracking-tight text-black">
+            BestBuy<span className="bg-[#FFD300] px-1.5 ml-1">Incentives</span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {NAV_LINKS.map((l) => (
             <NavLink
               key={l.to}
               to={l.to}
               data-testid={`nav-link-${l.to.replace("/", "")}`}
               className={({ isActive }) =>
-                `text-sm font-semibold transition-colors ${
-                  transparent
-                    ? isActive ? "text-[#FFD300]" : "text-white/90 hover:text-white"
-                    : isActive ? "text-black" : "text-[#595959] hover:text-black"
-                }`
+                `text-sm font-bold transition-colors ${isActive ? "text-black" : "text-[#595959] hover:text-black"}`
               }
             >
               {l.label}
@@ -59,14 +51,14 @@ export default function Header() {
           <Link
             to="/contact"
             data-testid="nav-cta-demo"
-            className="hidden sm:inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#E5BE00] text-black font-bold text-sm px-5 py-3 transition-colors uppercase tracking-wide"
+            className="hidden sm:inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-5 py-3 uppercase tracking-wide"
           >
-            Book a Strategy Call <span className="font-mono">→</span>
+            Book a Call <span className="font-mono">→</span>
           </Link>
           <button
             data-testid="nav-mobile-toggle"
             onClick={() => setOpen((s) => !s)}
-            className={`lg:hidden inline-flex h-10 w-10 items-center justify-center border ${transparent ? "border-white/40 text-white" : "border-black/20 text-black"}`}
+            className="lg:hidden inline-flex h-10 w-10 items-center justify-center border border-black/20 text-black"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -83,7 +75,7 @@ export default function Header() {
                 to={l.to}
                 data-testid={`nav-mobile-link-${l.to.replace("/", "")}`}
                 className={({ isActive }) =>
-                  `py-3 text-base font-semibold border-b border-[#E5E2D9] ${isActive ? "text-black" : "text-[#595959]"}`
+                  `py-3 text-base font-bold border-b border-[#E5E2D9] ${isActive ? "text-black" : "text-[#595959]"}`
                 }
               >
                 {l.label}
@@ -94,7 +86,7 @@ export default function Header() {
               data-testid="nav-mobile-cta"
               className="mt-3 inline-flex items-center justify-center bg-[#FFD300] text-black font-bold text-sm px-4 py-4 uppercase tracking-wide"
             >
-              Book a Strategy Call →
+              Book a Call →
             </Link>
           </div>
         </div>

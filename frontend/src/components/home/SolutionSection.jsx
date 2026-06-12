@@ -8,41 +8,43 @@ export default function SolutionSection() {
     "Higher close rates without cutting your price",
     "Reps get a stall-breaker they can use in any close",
     "Buyer's remorse cancellations drop by 60%+",
-    "Average ticket goes UP, not down",
-    "Showroom traffic peaks within 7 days of campaign launch",
-    "Your competitors can't copy this — it's not on the price ladder",
+    "Average ticket goes UP — not down",
+    "Showroom traffic peaks within 7 days",
+    "Your competitors can't copy it on a price ladder",
   ];
 
   return (
-    <section data-testid="solution-section" className="bg-white py-24 lg:py-32 relative">
+    <section data-testid="solution-section" className="bg-white py-20 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* HUGE photo dominates */}
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="relative">
+              <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-full h-full bg-[#FFD300] -z-0" />
               <img
                 src={IMG.closing}
                 alt="Closing the deal"
-                className="w-full aspect-[4/5] object-cover"
+                className="relative w-full aspect-[5/4] object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 lg:-right-12 max-w-xs bg-[#FFD300] p-7 shadow-2xl">
-                <div className="font-mono text-[10px] uppercase tracking-widest text-black/70 font-bold">In the close</div>
-                <p className="mt-2 font-display text-lg leading-snug text-black font-semibold">
+              <div className="absolute -bottom-8 left-6 lg:-bottom-12 lg:left-12 max-w-sm bg-black text-white p-7 lg:p-8 shadow-2xl border-t-4 border-[#FFD300]">
+                <div className="font-mono text-[10px] uppercase tracking-widest text-[#FFD300] font-bold">In the close</div>
+                <p className="mt-2 font-display text-xl lg:text-2xl leading-snug font-bold">
                   "We can include the getaway if we sign by close of business."
                 </p>
-                <div className="mt-4 pt-4 border-t border-black/20 text-xs font-mono uppercase tracking-widest text-black/70">
+                <div className="mt-4 pt-4 border-t border-white/20 text-xs font-mono uppercase tracking-widest text-white/70">
                   → 22% of stalls close same-day
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6 order-1 lg:order-2">
+          <div className="lg:col-span-5 order-1 lg:order-2">
             <SectionLabel>The Weapon</SectionLabel>
-            <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95] text-black">
-              Hand your reps a closing tool <span className="under-yellow">competitors</span> can't match.
+            <h2 className="font-display mt-6 text-5xl lg:text-6xl xl:text-7xl font-bold leading-[0.92] text-black">
+              A closing tool <span className="under-yellow">competitors</span> can't match.
             </h2>
-            <p className="mt-7 text-lg lg:text-xl text-[#404040] leading-relaxed">
-              Premium travel incentive certificates deployed across your sales floor. Used as a stall-breaker. Used as a remorse killer. Used as a closing weapon nobody else on your block carries.
+            <p className="mt-7 text-lg text-[#404040] leading-relaxed">
+              Premium travel incentive certificates deployed across your sales floor. Used as a stall-breaker. Used as a remorse killer. Used as the closing weapon nobody else on your block carries.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -59,7 +61,7 @@ export default function SolutionSection() {
             <Link
               to="/programs"
               data-testid="solution-cta"
-              className="mt-10 inline-flex items-center gap-3 bg-[#0A0A0A] hover:bg-black text-white font-bold text-base px-7 py-5 uppercase tracking-wide"
+              className="mt-10 inline-flex items-center gap-3 bg-black hover:bg-[#171717] text-white font-bold text-base px-7 py-5 uppercase tracking-wide"
             >
               See the Programs <ArrowRight className="h-4 w-4" />
             </Link>
