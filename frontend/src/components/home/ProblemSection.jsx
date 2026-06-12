@@ -1,40 +1,49 @@
-import { AlertTriangle, TrendingDown, Repeat, Hourglass } from "lucide-react";
+import { IMG } from "@/data/images";
 import { PROBLEM_POINTS } from "@/data/content";
 import SectionLabel from "@/components/site/SectionLabel";
 
-const ICONS = [TrendingDown, Repeat, AlertTriangle, Hourglass];
-
 export default function ProblemSection() {
   return (
-    <section data-testid="problem-section" className="py-24 lg:py-32 border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section data-testid="problem-section" className="relative bg-[#0A0A0A] text-white overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0 opacity-25">
+        <img src={IMG.heroAudience} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/85 to-[#0A0A0A]/40" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 lg:px-10 py-24 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <SectionLabel>The Problem</SectionLabel>
-            <h2 className="font-display mt-6 text-4xl lg:text-5xl font-bold leading-[1.05]">
-              Your team is trapped in the <span className="text-emerald-400">discount cycle.</span>
+            <SectionLabel dark>The Brutal Truth</SectionLabel>
+            <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95]">
+              Your sales team is <br />
+              <span className="hl-yellow-full text-black">losing on price.</span>
             </h2>
-            <p className="mt-6 text-zinc-300 text-lg leading-relaxed">
-              Discounting is the lazy lever. Every 1% you slice off price costs roughly 3% of your gross profit. Your team knows it. Your competitors know it. Your customers expect it.
+            <p className="mt-7 text-lg text-white/80 leading-relaxed max-w-xl">
+              Every discount you authorize trains the market to wait for the next discount. Every "limited-time" promo gets ignored. Every rep on your floor needs a reason to push for the close <span className="font-bold text-[#FFD300]">today</span> — and most of them don't have one.
             </p>
-            <p className="mt-4 text-zinc-400 text-base leading-relaxed">
-              There is a more sophisticated weapon — one that excites buyers, defends margin, and gives your reps a reason to push for the close today.
-            </p>
+            <div className="mt-8 inline-flex items-center gap-3 border border-white/20 bg-white/5 px-5 py-3 text-sm">
+              <span className="h-2 w-2 bg-[#FFD300]"></span>
+              <span className="text-white/80">There is a better weapon. Keep reading.</span>
+            </div>
           </div>
 
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
-              {PROBLEM_POINTS.map((p, i) => {
-                const Icon = ICONS[i % ICONS.length];
-                return (
-                  <div key={p.title} className="bg-[#0A0F17] p-8 hover:bg-[#111827] transition-colors">
-                    <Icon className="h-6 w-6 text-emerald-400" />
-                    <h3 className="mt-5 font-display font-semibold text-xl">{p.title}</h3>
-                    <p className="mt-2 text-sm text-zinc-400 leading-relaxed">{p.body}</p>
+            <ul className="space-y-px bg-white/10">
+              {PROBLEM_POINTS.map((p, i) => (
+                <li key={p.title} className="bg-[#0A0A0A] p-7 lg:p-9 group hover:bg-[#171717] transition-colors">
+                  <div className="flex items-start gap-6">
+                    <div className="font-display font-bold text-5xl lg:text-6xl text-[#FFD300] tabular-num leading-none w-20 shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-2xl lg:text-3xl">{p.title}</h3>
+                      <p className="mt-3 text-base text-white/70 leading-relaxed">{p.body}</p>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

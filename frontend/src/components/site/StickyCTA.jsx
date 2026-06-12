@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { X } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 export default function StickyCTA() {
   const { pathname } = useLocation();
@@ -8,7 +8,7 @@ export default function StickyCTA() {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 800);
+    const onScroll = () => setShow(window.scrollY > 1000);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -19,33 +19,33 @@ export default function StickyCTA() {
   return (
     <div
       data-testid="sticky-cta"
-      className="fixed bottom-4 inset-x-4 md:bottom-6 md:left-auto md:right-6 md:inset-x-auto z-40 max-w-md md:max-w-sm bg-[#111827] border border-emerald-500/40 shadow-[0_20px_60px_-20px_rgba(16,185,129,0.4)]"
+      className="fixed bottom-0 inset-x-0 z-40 bg-[#0A0A0A] text-white border-t-4 border-[#FFD300]"
     >
-      <button
-        data-testid="sticky-cta-dismiss"
-        onClick={() => setDismissed(true)}
-        className="absolute right-2 top-2 text-zinc-400 hover:text-white"
-        aria-label="Dismiss"
-      >
-        <X className="h-3.5 w-3.5" />
-      </button>
-      <div className="p-5">
-        <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400">
-          For sales leaders
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-3 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4 min-w-0">
+          <span className="hidden md:inline-block stamp shrink-0">Act now</span>
+          <p className="text-sm md:text-base truncate">
+            <span className="font-display font-bold">Stop discounting.</span>{" "}
+            <span className="hidden sm:inline text-white/80">Put a closing tool on your floor in 10 business days.</span>
+          </p>
         </div>
-        <h3 className="mt-1 font-display font-semibold text-lg leading-tight">
-          Increase sales without sacrificing margin.
-        </h3>
-        <p className="mt-1 text-sm text-zinc-400">
-          See your team's projected close-rate lift in 12 minutes.
-        </p>
-        <Link
-          to="/contact"
-          data-testid="sticky-cta-button"
-          className="mt-3 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-[#0A0F17] font-semibold text-sm px-4 py-2 btn-pulse"
-        >
-          Book Strategy Call →
-        </Link>
+        <div className="flex items-center gap-2 shrink-0">
+          <Link
+            to="/contact"
+            data-testid="sticky-cta-button"
+            className="inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-5 py-2.5 uppercase tracking-wide"
+          >
+            Book Call <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+          <button
+            data-testid="sticky-cta-dismiss"
+            onClick={() => setDismissed(true)}
+            className="h-9 w-9 inline-flex items-center justify-center text-white/60 hover:text-white"
+            aria-label="Dismiss"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

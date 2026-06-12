@@ -4,33 +4,34 @@ import SectionLabel from "@/components/site/SectionLabel";
 
 export default function BusinessTestimonials() {
   return (
-    <section data-testid="business-testimonials" className="py-24 lg:py-32 border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section data-testid="business-testimonials" className="bg-white py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="max-w-3xl">
           <SectionLabel>Business Owners Love the Results</SectionLabel>
-          <h2 className="font-display mt-6 text-4xl lg:text-5xl font-bold leading-[1.05]">
-            What sales leaders say after <span className="text-emerald-400">they deployed it.</span>
+          <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95] text-black">
+            What sales leaders said <br/>
+            <span className="under-yellow">after they deployed it.</span>
           </h2>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
           {BUSINESS_TESTIMONIALS.map((t, i) => (
-            <div key={i} className="bg-[#0A0F17] p-10 hover:bg-[#111827] transition-colors">
-              <Quote className="h-7 w-7 text-emerald-400" />
-              <p className="mt-6 text-lg lg:text-xl font-display font-medium leading-snug text-white">
+            <article key={i} className={`p-10 ${i % 2 === 0 ? "bg-[#F5F2EA]" : "bg-[#0A0A0A] text-white"}`}>
+              <Quote className={`h-8 w-8 ${i % 2 === 0 ? "text-black" : "text-[#FFD300]"}`} />
+              <p className={`mt-6 font-display text-2xl lg:text-3xl font-bold leading-[1.15] ${i % 2 === 0 ? "text-black" : "text-white"}`}>
                 "{t.quote}"
               </p>
-              <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+              <div className={`mt-8 pt-6 border-t ${i % 2 === 0 ? "border-black/15" : "border-white/15"} flex items-center justify-between`}>
                 <div>
-                  <div className="font-semibold text-sm text-white">{t.author}</div>
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 mt-1">{t.role}</div>
+                  <div className={`font-bold text-sm ${i % 2 === 0 ? "text-black" : "text-white"}`}>{t.author}</div>
+                  <div className={`text-[10px] font-mono uppercase tracking-widest mt-1 ${i % 2 === 0 ? "text-black/50" : "text-white/50"}`}>{t.role}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400">Result</div>
-                  <div className="font-display font-semibold text-emerald-400 text-base mt-1">{t.metric}</div>
+                  <div className={`text-[10px] font-mono uppercase tracking-widest ${i % 2 === 0 ? "text-black/50" : "text-[#FFD300]"}`}>Result</div>
+                  <div className={`font-display font-bold text-base mt-1 ${i % 2 === 0 ? "text-black" : "text-[#FFD300]"}`}>{t.metric}</div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

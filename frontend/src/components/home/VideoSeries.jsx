@@ -1,37 +1,42 @@
 import { Play } from "lucide-react";
 import { VIDEO_PLACEHOLDERS } from "@/data/content";
+import { IMG } from "@/data/images";
 import SectionLabel from "@/components/site/SectionLabel";
+
+const POSTERS = [IMG.manSpeaking, IMG.whiteboard, IMG.closing];
 
 export default function VideoSeries() {
   return (
-    <section data-testid="video-series" className="py-24 lg:py-32 border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section data-testid="video-series" className="bg-[#0A0A0A] text-white py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="max-w-3xl">
-          <SectionLabel>The Closer's Playbook · Video Series</SectionLabel>
-          <h2 className="font-display mt-6 text-4xl lg:text-5xl font-bold leading-[1.05]">
-            How to use vacation incentives in your <span className="text-emerald-400">actual close.</span>
+          <SectionLabel dark>The Closer's Playbook · Video Series</SectionLabel>
+          <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95]">
+            How to use this <span className="hl-yellow-full text-black">in your actual close.</span>
           </h2>
-          <p className="mt-6 text-zinc-400 text-lg leading-relaxed">
-            Tactical training drops for sales managers and individual reps. Word-for-word scripts, real field deployments, and the exact moments to introduce the incentive.
+          <p className="mt-6 text-lg text-white/70 leading-relaxed">
+            Tactical training drops for sales managers and reps. Word-for-word scripts, real field deployments, the exact moment to introduce the incentive.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
           {VIDEO_PLACEHOLDERS.map((v, i) => (
-            <div key={i} data-testid={`video-placeholder-${i}`} className="bg-[#0A0F17] p-8 group">
-              <div className="relative aspect-video bg-[#111827] border border-white/10 overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent" />
-                <div className="absolute inset-0 bg-grid opacity-30" />
-                <button className="relative h-14 w-14 bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-[#0A0F17] transition-all">
-                  <Play className="h-5 w-5 fill-current text-emerald-400 group-hover:text-[#0A0F17]" />
-                </button>
-                <div className="absolute bottom-3 right-3 bg-[#0A0F17]/85 border border-white/15 text-[10px] font-mono tracking-widest text-zinc-300 px-2 py-0.5">
+            <div key={i} data-testid={`video-placeholder-${i}`} className="bg-black border border-white/15 group">
+              <div className="relative aspect-video overflow-hidden">
+                <img src={POSTERS[i % POSTERS.length]} alt={v.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="h-16 w-16 rounded-full bg-[#FFD300] flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="h-6 w-6 fill-black text-black ml-1" />
+                  </button>
+                </div>
+                <div className="absolute bottom-3 right-3 bg-black/80 border border-white/20 text-[10px] font-mono tracking-widest text-white px-2 py-0.5">
                   {v.duration}
                 </div>
+                <span className="absolute top-3 left-3 stamp text-[10px]">Coming soon</span>
               </div>
-              <div className="mt-5">
-                <div className="text-[10px] font-mono uppercase tracking-widest text-emerald-400">{v.label}</div>
-                <h3 className="mt-2 font-display font-semibold text-lg leading-tight">{v.title}</h3>
+              <div className="p-6">
+                <div className="text-[10px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">{v.label}</div>
+                <h3 className="mt-2 font-display font-bold text-xl leading-tight">{v.title}</h3>
               </div>
             </div>
           ))}
