@@ -1,0 +1,200 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4: Swiss & High-Contrast (Dark variant for Sales Authority)",
+  "emotional_tone": "Authority, performance, momentum, confidence, money-on-the-table",
+  "typography": {
+    "headings": {
+      "fontFamily": "Clash Display, sans-serif",
+      "weights": ["600", "700"],
+      "tracking": "tracking-tight",
+      "usage": "H1 text-4xl sm:text-5xl lg:text-6xl. Never center by default, left-aligned for data/action focus."
+    },
+    "body": {
+      "fontFamily": "Manrope, sans-serif",
+      "weights": ["400", "500"],
+      "tracking": "tracking-normal",
+      "usage": "text-base for main body, text-lg for lead paragraphs."
+    },
+    "labels_and_metrics": {
+      "fontFamily": "JetBrains Mono, monospace",
+      "weights": ["500", "700"],
+      "tracking": "tracking-[0.2em] for labels, tracking-tighter for huge numbers",
+      "usage": "Overlines, stat blocks, data points. MUST be uppercase for labels."
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#0A0F17",
+      "secondary": "#111827",
+      "surface": "#1F2937"
+    },
+    "text": {
+      "primary": "#F9FAFB",
+      "secondary": "#9CA3AF",
+      "muted": "#6B7280"
+    },
+    "accent": {
+      "primary": "#10B981", 
+      "secondary": "#059669", 
+      "highlight": "#34D399"
+    },
+    "border": "#374151",
+    "rules": [
+      "No generic full-screen gradients.",
+      "Use 'Grid Borders' style for data-heavy sections.",
+      "No purple or teal for CTAs.",
+      "Primary accent is Emerald (Money/Growth) to signify increased sales/revenue."
+    ]
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing Philosophy with intense contrast.",
+    "bento_grid": "MODE B: THE CONTROL ROOM GRID for dashboards/calculators, MODE A for case studies.",
+    "section_padding": "py-24 sm:py-32",
+    "container_padding": "px-6 lg:px-8",
+    "internal_card_padding": "p-8",
+    "rules": [
+      "Mobile-first: grid-cols-1 by default.",
+      "Use generous padding p-8 inside cards with borders.",
+      "Optical alignment: left-align dense content and buttons.",
+      "Max image height on mobile: 80vh."
+    ]
+  },
+  "surfaces_and_borders": {
+    "cards": "Grid Borders (The 'Technical' Look): border-r border-b border-white/10.",
+    "header": "Glassmorphism (Crystal): backdrop-blur-xl bg-[#0A0F17]/80 border-b border-white/10. Sticky z-50.",
+    "buttons": "Sharp edges, solid emerald bg, sharp 1px border. Focus state ring-2 ring-emerald-300."
+  },
+  "motion_and_interactions": {
+    "hover": "-translate-y-1, shadow-lg, text color explicitly set (e.g. hover:text-white).",
+    "entrance": "Staggered reveals for lists, ticker tape of stats, scroll-triggered counters.",
+    "accessibility": "Respect prefers-reduced-motion."
+  },
+  "components": {
+    "strategy": "Hybrid: Custom HTML/Tailwind for layouts, heavily customized Shadcn for forms/interactive elements.",
+    "specifics": {
+      "Hero": "Outcome-focused headline + dual CTA. Use Grid layout. 'Stop Discounting. Start Creating Excitement.'",
+      "Testimonials": "Mix of consumer (vacation photos) and business (sales stats). Place strategically.",
+      "ROI_Calculator": "Sliders for # reps, avg deal size, close rate -> projected uplift. 'Control Room' grid style.",
+      "Stats_Bar": "React-fast-marquee or Grid for '37% avg. close-rate lift', 'Used by 1,200+ teams'.",
+      "Sticky_CTA": "Fixed bottom bar for lead-gen. 'Increase Sales Without Sacrificing Margin'.",
+      "Forms": "Multi-field Lead capture form using Shadcn Input/Select."
+    }
+  },
+  "media": {
+    "rules": [
+      "Max overlay opacity bg-black/50 for hero images. Use gradient overlays if needed for text contrast.",
+      "Blend business imagery with travel aspiration.",
+      "Include subjects in scenes."
+    ],
+    "image_urls": [
+      {
+        "category": "hero_background",
+        "url": "https://images.pexels.com/photos/7108454/pexels-photo-7108454.jpeg",
+        "description": "Diverse group of professionals in a modern office meeting."
+      },
+      {
+        "category": "business_handshake",
+        "url": "https://images.pexels.com/photos/8112186/pexels-photo-8112186.jpeg",
+        "description": "Two people shaking hands in an office, symbolizing agreement."
+      },
+      {
+        "category": "certificate_be_our_guest_inside",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AC2uu_pAvoqqxB7LG5ecLlQ/Be%20Our%20Guest%20Inside%20%281%29%20%283%29.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Be Our Guest Inside"
+      },
+      {
+        "category": "certificate_be_our_guest_outside",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/ANZMLr_o7wX74gPIfUvD5zg/Be%20Our%20Guest%20Outside%20%281%29%20%281%29%20%281%29%20%282%29.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Be Our Guest Outside"
+      },
+      {
+        "category": "certificate_enjoy_escape_v1",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AKQa8n1q1KS-pQM9kIJCkoM/Enjoy%20a%20Great%20Escape%20%281%29.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Enjoy a Great Escape (v1)"
+      },
+      {
+        "category": "certificate_enjoy_escape_v2",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AGCW9jbJPm1L-0OP9NIzQtw/Enjoy%20a%20Great%20Escape%20%282%29.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Enjoy a Great Escape (v2)"
+      },
+      {
+        "category": "certificate_ultimate_cruise_outside",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AN9aY4ptGQn15G6S9wK-Cto/Outside%20Ultimate%20Cruise-1.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Outside Ultimate Cruise"
+      },
+      {
+        "category": "certificate_alaska_cruise_inside_back",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AJL2IbjiSwNU7zQPz_WHd00/Ultimate%207%20Night%20Alaska%20Cruise%20-%20inside%20back.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Alaska Cruise inside back"
+      },
+      {
+        "category": "certificate_alaska_cruise_inside_front",
+        "url": "https://www.dropbox.com/scl/fo/v0e266l4qsvnkx7eh311e/AG3ITLngPWOuTRya3T1lqyk/Ultimate%207%20Night%20Alaska%20Cruise%20-%20inside%20front.jpg?rlkey=2ezqwpleyod36bi0s11ple39m&dl=1",
+        "description": "Alaska Cruise inside front"
+      },
+      {
+        "category": "vacation_beach",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AGiQPGUMUCiJURQXqnxuQoU/Vacation%20Beach.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Beach"
+      },
+      {
+        "category": "vacation_beautiful",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AFQBJJcZ0j9PPq3J3yjcb08/Vacation%20beautiful.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Beautiful"
+      },
+      {
+        "category": "vacation_golden_gate",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/ANsqgF-vrPTvoGXsoTTsnO0/Vacation%20Golden%20gate%20Bridge.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Golden Gate Bridge"
+      },
+      {
+        "category": "vacation_island",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/ABpdJEONTaXV08KhPEZS1M4/Vacation%20Island.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Island"
+      },
+      {
+        "category": "vacation_night_club",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AMB0PE1gmiDM9NY7WOQetWA/Vacation%20Night%20club.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Night club"
+      },
+      {
+        "category": "vacation_palm_trees",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AH3Bjz9wJC4tY20J_4RDXCM/Vacation%20Palm%20Trees.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Palm Trees"
+      },
+      {
+        "category": "vacation_plane",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AJw-wdNOLwUxubvwhnQLZMA/Vacation%20plane.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Plane"
+      },
+      {
+        "category": "vacation_relaxing",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/ACp2L0ulGGcH8eZ1CHvk5Es/Vacation%20relaxing.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation Relaxing"
+      },
+      {
+        "category": "vacation_san_fran",
+        "url": "https://www.dropbox.com/scl/fo/tvz14xv9esoa6crvwwsbg/AHklr1dJqkvBFkRryB4W-yY/Vacation%20San%20Fran.jpg?rlkey=mt6z2krrlpoiasfdvbturfhf9&dl=1",
+        "description": "Vacation San Fran"
+      },
+      {
+        "category": "company_logo",
+        "url": "https://images.pexels.com/photos/26576975/pexels-photo-26576975.jpeg",
+        "description": "Placeholder for logo/trust badges if needed"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a Sales-Enablement Authority site, NOT a travel booking site.",
+    "Add 'data-testid' to ALL interactive elements (e.g. data-testid='hero-cta-demo', data-testid='roi-calc-slider').",
+    "Follow the Archetype 4 Swiss & High-Contrast (Dark) color palette.",
+    "Install 'lucide-react' for icons.",
+    "Install 'react-fast-marquee' for the stats ticker.",
+    "Implement the ROI calculator using Shadcn Slider components.",
+    "Use pure HTML+Tailwind for complex marketing layouts, Shadcn only for form/interactive logic.",
+    "Incorporate the Dropbox images into the 'Programs' and 'Consumer Testimonials' sections.",
+    "Use the business Pexels images for the hero or 'Business Testimonials' / 'How it works' sections.",
+    "Provide empty container placeholders for the 'How to use in a closing' video series.",
+    "Create pages/sections for: Home, About, Services/Programs, Industries Served, Case Studies, Contact, Blog/Resources, Form."
+  ]
+}
