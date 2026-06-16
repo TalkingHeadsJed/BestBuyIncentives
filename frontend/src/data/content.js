@@ -96,35 +96,35 @@ export const CONSUMER_TESTIMONIALS = [
       "We took the kids to Punta Cana. Five days at an all-inclusive — I cannot believe this came as a thank-you from buying a couch.",
     author: "Jenna & Mark",
     location: "Punta Cana, Dominican Republic",
-    image: "/images/vac-beach.jpg",
+    image: "/images/testimonial-punta-cana.png",
   },
   {
     quote:
       "New Orleans for our anniversary. We told every couple at dinner where this came from. Best buying decision we ever made.",
     author: "Tom & Lisa",
     location: "New Orleans, LA",
-    image: "/images/vac-beautiful.jpg",
+    image: "/images/testimonial-new-orleans.png",
   },
   {
     quote:
       "A private villa in Greece. I keep telling people I bought a car and got a vacation. They don't believe me.",
     author: "Aaron K.",
     location: "Santorini, Greece",
-    image: "/images/vac-island.jpg",
+    image: "/images/testimonial-greece.png",
   },
   {
     quote:
       "Times Square at night with my wife, the kid in our arms — we'll remember this trip for the rest of our lives.",
     author: "The Patel Family",
     location: "New York, NY",
-    image: "/images/vac-nightclub.jpg",
+    image: "/images/testimonial-times-square.png",
   },
   {
     quote:
-      "The Golden Gate at sunset. I haven't felt this taken-care-of by a brand in years. I'm a customer for life.",
+      "Unpacking in a hotel suite we didn't pay for. Honestly the best surprise after buying a new sofa.",
     author: "Megan R.",
-    location: "San Francisco, CA",
-    image: "/images/vac-golden-gate.jpg",
+    location: "Resort getaway",
+    image: "/images/testimonial-unpacking.png",
   },
 ];
 
