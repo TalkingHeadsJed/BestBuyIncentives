@@ -9,7 +9,7 @@ export default function Header() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -17,18 +17,23 @@ export default function Header() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  // Pages with a dark hero want a transparent header at top of scroll
+  const darkHeroPages = ["/", "/about", "/programs", "/industries", "/case-studies", "/resources", "/contact"];
+  const onDarkHero = darkHeroPages.includes(pathname);
+  const transparent = onDarkHero && !scrolled;
+
   return (
     <header
       data-testid="site-header"
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
-        scrolled ? "bg-white border-b border-[#E5E2D9] shadow-sm" : "bg-white/90 backdrop-blur-sm"
+        transparent ? "bg-transparent" : "bg-white border-b border-[#E5E2D9] shadow-sm"
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-20 flex items-center justify-between">
         <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 group">
-          <span className="inline-flex h-10 w-10 bg-black items-center justify-center font-display font-bold text-base text-[#FFD300]">BB</span>
-          <span className="font-display font-bold text-lg lg:text-xl tracking-tight text-black">
-            BestBuy<span className="bg-[#FFD300] px-1.5 ml-1">Incentives</span>
+          <span className={`inline-flex h-10 w-10 items-center justify-center font-display font-bold text-base ${transparent ? "bg-[#FFD300] text-black" : "bg-black text-[#FFD300]"}`}>BB</span>
+          <span className={`font-display font-bold text-lg lg:text-xl tracking-tight ${transparent ? "text-white" : "text-black"}`}>
+            BestBuy<span className="bg-[#FFD300] text-black px-1.5 ml-1">Incentives</span>
           </span>
         </Link>
 
@@ -39,7 +44,11 @@ export default function Header() {
               to={l.to}
               data-testid={`nav-link-${l.to.replace("/", "")}`}
               className={({ isActive }) =>
-                `text-sm font-bold transition-colors ${isActive ? "text-black" : "text-[#595959] hover:text-black"}`
+                `text-sm font-bold transition-colors ${
+                  transparent
+                    ? isActive ? "text-[#FFD300]" : "text-white/90 hover:text-[#FFD300]"
+                    : isActive ? "text-black" : "text-[#595959] hover:text-black"
+                }`
               }
             >
               {l.label}
@@ -58,7 +67,7 @@ export default function Header() {
           <button
             data-testid="nav-mobile-toggle"
             onClick={() => setOpen((s) => !s)}
-            className="lg:hidden inline-flex h-10 w-10 items-center justify-center border border-black/20 text-black"
+            className={`lg:hidden inline-flex h-10 w-10 items-center justify-center border ${transparent ? "border-white/40 text-white" : "border-black/20 text-black"}`}
             aria-label="Toggle menu"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
