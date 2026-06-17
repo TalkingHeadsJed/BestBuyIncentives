@@ -297,8 +297,8 @@ export const FAQS = [
     a: "Customers redeem directly with us. Our team handles every reservation, every change, every issue. You never touch travel logistics.",
   },
   {
-    q: "Is this legal in our state / industry?",
-    a: "Yes. Our certificates are structured for full compliance across all U.S. states and Canada. We provide compliance documentation with every program.",
+    q: "How are these offers possible?",
+    a: "Resorts want to fill empty rooms because they want guests to spend money at their resort. They also love the free advertising from guests posting about their vacation on social media. It's a Win/Win.",
   },
   {
     q: "How quickly can we launch?",
