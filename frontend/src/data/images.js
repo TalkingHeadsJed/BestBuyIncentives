@@ -18,13 +18,13 @@ export const IMG = {
   brainstorm:       U("photo-1542744173-8e7e53415bb0", 2000),
   applause:         U("photo-1517245386807-bb43f82c33c4", 2000),
   whiteboard:       U("photo-1551836022-d5d88e9218df", 2000),
-  closing:          U("photo-1664474619075-644dd191935f", 2000),
+  closing:          U("photo-1573497019940-1c28c88b4f3e", 2000),
   manSpeaking:      U("photo-1560439514-4e9645039924", 2000),
-  bigRoom:          U("photo-1591115766087-c8c0d4bbe1ac", 2000),
+  bigRoom:          U("photo-1559223607-a43c990c692c", 2000),
   salesfloor:       U("photo-1556761175-4b46a572b786", 2000),
   highFive:         U("photo-1556761175-b413da4baf72", 2000),
   laptopMeeting:    U("photo-1573497019940-1c28c88b4f3e", 2000),
-  conferenceBack:   U("photo-1591115766100-2da66fc4ed8c", 2000),
+  conferenceBack:   U("photo-1531058020387-3be344556be6", 2000),
 
   // Industry-specific
   autoShowroom:     U("photo-1492144534655-ae79c964c9d7", 2000),
