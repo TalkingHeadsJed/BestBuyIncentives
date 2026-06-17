@@ -4,6 +4,7 @@ import { ArrowRight, Play, Star, Volume2, VolumeX } from "lucide-react";
 import { IMG } from "@/data/images";
 
 const VIDEO_SRC = "/hero-bg.mp4";
+const VSL_SRC = "/vsl.mp4";
 const HERO_BG = "/images/hero-seminar.png";
 
 export default function Hero() {
@@ -131,7 +132,7 @@ export default function Hero() {
             <video
               ref={modalVideoRef}
               data-testid="vsl-modal-video"
-              src={VIDEO_SRC}
+              src={VSL_SRC}
               className="absolute inset-0 w-full h-full object-cover"
               controls
               playsInline
@@ -164,7 +165,7 @@ function VSLPreview({ onPlay }) {
           aria-label="Play the sales pitch with sound"
         >
           <video
-            src={VIDEO_SRC}
+            src={VSL_SRC}
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
