@@ -7,7 +7,7 @@ export default function ProblemSection() {
       {/* Massive full-bleed photo with overlay text */}
       <div className="relative w-full">
         <div className="relative h-[55vh] min-h-[450px] lg:h-[600px] overflow-hidden">
-          <img src={IMG.heroAudience} alt="Sales team" className="absolute inset-0 w-full h-full object-cover kenburn" />
+          <img src="/images/hero-seminar.png" alt="Sales team" className="absolute inset-0 w-full h-full object-cover kenburn" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />
 
           <div className="relative z-10 h-full mx-auto max-w-[1400px] px-6 lg:px-10 flex items-center">

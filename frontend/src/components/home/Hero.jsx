@@ -28,12 +28,17 @@ export default function Hero() {
 
   return (
     <section data-testid="hero-section" className="relative min-h-[100vh] flex items-center overflow-hidden bg-black">
-      {/* On-brand sales-training seminar background */}
-      <img
-        data-testid="hero-bg-image"
-        className="absolute inset-0 z-0 w-full h-full object-cover kenburn"
-        src={HERO_BG}
-        alt=""
+      {/* Looping muted video background */}
+      <video
+        data-testid="hero-bg-video"
+        className="absolute inset-0 z-0 w-full h-full object-cover"
+        src={VIDEO_SRC}
+        poster={IMG.heroSeminarStage}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
       />
       {/* Dark gradient overlay for legibility */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/85 via-black/60 to-black/40" />
