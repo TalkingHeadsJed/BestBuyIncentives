@@ -52,7 +52,7 @@ export default function Hero() {
           <div className="lg:col-span-7 text-white">
             <div className="inline-flex items-center gap-2 stamp mb-6">
               <span className="h-1.5 w-1.5 bg-black rounded-full"></span>
-              For sales leaders only
+              Since 1992 · For sales leaders
             </div>
             <h1
               data-testid="hero-headline"

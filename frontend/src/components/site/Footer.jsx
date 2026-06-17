@@ -115,7 +115,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-[11px] font-mono uppercase tracking-widest text-white/40">
-            © {new Date().getFullYear()} BestBuyIncentives.com — A Sales Growth Company
+            © {new Date().getFullYear()} BestBuyIncentives.com — Trusted Since 1992 · A Sales Growth Company
           </p>
           <div className="flex items-center gap-6 text-[11px] font-mono uppercase tracking-widest text-white/40">
             <a href="#" className="hover:text-[#FFD300]">Privacy</a>

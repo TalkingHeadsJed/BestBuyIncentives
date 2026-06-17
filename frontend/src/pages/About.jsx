@@ -34,7 +34,7 @@ export default function About() {
             <div className="mt-7 space-y-5 text-lg text-[#404040] leading-relaxed">
               <p>"What if a sales team had a closing tool every other team in their zip code didn't?"</p>
               <p>
-                We've spent over two decades building vacation incentives that aren't designed for travelers. They're designed for the moment a rep needs to break a stall, neutralize a price objection, or kill buyer's remorse before it kills a referral.
+                We've spent over three decades — since 1992 — building vacation incentives that aren't designed for travelers. They're designed for the moment a rep needs to break a stall, neutralize a price objection, or kill buyer's remorse before it kills a referral.
               </p>
               <p>
                 We work with auto dealers, jewelers, furniture chains, home improvement firms, and B2B sales orgs nationwide. Programs deploy in days. ROI shows up inside the first quarter.
@@ -46,7 +46,7 @@ export default function About() {
           </div>
           <div className="lg:col-span-5">
             <div className="grid grid-cols-1 gap-4">
-              <Stat icon={Target} value="20+" label="Years building incentive programs" />
+              <Stat icon={Target} value="30+" label="Years in business — since 1992" />
               <Stat icon={Users} value="1,200+" label="Sales teams deployed" />
               <Stat icon={Award} value="$184M" label="Added pipeline closed" />
             </div>

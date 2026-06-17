@@ -9,6 +9,7 @@ export const NAV_LINKS = [
 ];
 
 export const STATS = [
+  { value: "Since 1992", label: "Trusted by sales teams" },
   { value: "37%", label: "Avg. close-rate lift" },
   { value: "1,200+", label: "Sales teams deployed" },
   { value: "$184M", label: "Added pipeline closed" },
