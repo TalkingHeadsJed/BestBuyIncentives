@@ -1,3 +1,4 @@
+import Seo from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { RESOURCES } from "@/data/content";
 import { IMG } from "@/data/images";
@@ -7,6 +8,11 @@ import { ArrowUpRight, Clock } from "lucide-react";
 export default function Resources() {
   return (
     <div data-testid="page-resources">
+      <Seo
+        title="The Closer's Library — Sales Tactics, Scripts & Campaign Playbooks"
+        description="Tactical reading for sales leaders who refuse to compete on price. Closing tactics, incentive playbooks, campaign scripts, and comp-plan advice."
+        path="/resources"
+      />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-30">
           <img src={IMG.whiteboard} alt="" className="w-full h-full object-cover kenburn" />

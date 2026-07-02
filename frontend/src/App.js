@@ -1,5 +1,6 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route, ScrollRestoration } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "sonner";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
@@ -18,28 +19,30 @@ import NotFound from "@/pages/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        <main data-testid="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/industries" element={<Industries />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/resources/:slug" element={<ResourceDetail />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <StickyCTA />
-        <Footer />
-        <Toaster theme="dark" position="bottom-right" richColors />
-      </BrowserRouter>
-    </div>
+    <HelmetProvider>
+      <div className="App">
+        <BrowserRouter>
+          <ScrollToTop />
+          <Header />
+          <main data-testid="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/:slug" element={<ResourceDetail />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <StickyCTA />
+          <Footer />
+          <Toaster theme="dark" position="bottom-right" richColors />
+        </BrowserRouter>
+      </div>
+    </HelmetProvider>
   );
 }
 

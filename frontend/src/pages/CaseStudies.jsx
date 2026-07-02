@@ -1,3 +1,4 @@
+import Seo from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { CASE_STUDIES } from "@/data/content";
 import { IMG } from "@/data/images";
@@ -7,6 +8,11 @@ import { ArrowRight } from "lucide-react";
 export default function CaseStudies() {
   return (
     <div data-testid="page-case-studies">
+      <Seo
+        title="Case Studies — Documented Sales Lift From Real Teams"
+        description="Real sales teams. Real numbers. See how furniture, auto, and jewelry retailers used vacation incentives to lift close rates, ticket size, and referrals."
+        path="/case-studies"
+      />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-35">
           <img src={IMG.closing} alt="" className="w-full h-full object-cover kenburn" />

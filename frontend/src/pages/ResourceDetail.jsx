@@ -1,3 +1,4 @@
+import Seo, { articleSchema } from "@/components/site/Seo";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Clock, ArrowRight } from "lucide-react";
 import { RESOURCES } from "@/data/content";
@@ -10,6 +11,7 @@ export default function ResourceDetail() {
   if (!r) {
     return (
       <div data-testid="page-resource-not-found" className="pt-32 pb-24 bg-white">
+        <Seo title="Article not found" path={`/resources/${slug}`} noIndex />
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h1 className="font-display text-5xl font-bold text-black">Article not found.</h1>
           <button
@@ -26,6 +28,20 @@ export default function ResourceDetail() {
 
   return (
     <div data-testid="page-resource-detail" className="bg-white">
+      <Seo
+        title={r.title}
+        description={r.excerpt}
+        path={`/resources/${r.slug}`}
+        image={r.image?.startsWith("http") ? r.image : `https://bestbuyincentives.com${r.image}`}
+        type="article"
+        schema={articleSchema({
+          title: r.title,
+          description: r.excerpt,
+          image: r.image,
+          slug: r.slug,
+          minutes: r.minutes,
+        })}
+      />
       <section className="bg-[#0A0A0A] text-white pt-32 pb-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <Link to="/resources" data-testid="resource-back-link" className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold hover:text-white">

@@ -1,3 +1,4 @@
+import Seo from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { INDUSTRIES } from "@/data/content";
 import { IMG } from "@/data/images";
@@ -7,6 +8,11 @@ import { ArrowRight } from "lucide-react";
 export default function Industries() {
   return (
     <div data-testid="page-industries">
+      <Seo
+        title="Industries We Serve — Auto, Jewelry, Furniture, Home Improvement & More"
+        description="Sales incentive programs for auto dealerships, jewelry stores, furniture retailers, home improvement, flooring, mattress, luxury retail, and B2B sales organizations."
+        path="/industries"
+      />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
           <img src={IMG.teamHuddle} alt="" className="w-full h-full object-cover kenburn" />

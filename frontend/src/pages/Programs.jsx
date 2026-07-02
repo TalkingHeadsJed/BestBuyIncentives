@@ -1,3 +1,4 @@
+import Seo, { productSchema } from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { PROGRAMS } from "@/data/content";
 import { IMG } from "@/data/images";
@@ -7,6 +8,14 @@ import { ArrowRight, Check } from "lucide-react";
 export default function Programs() {
   return (
     <div data-testid="page-programs">
+      <Seo
+        title="Sales Incentive Certificate Programs"
+        description="Premium travel-incentive certificates for high-ticket sales teams. Be Our Guest, Enjoy a Great Escape, Ultimate Cruise, Alaska Cruise — plus fully custom programs."
+        path="/programs"
+        schema={PROGRAMS.map((p) =>
+          productSchema({ name: p.name, description: p.description, image: p.image, slug: p.slug })
+        )}
+      />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-35">
           <img src={IMG.trainingRoom} alt="" className="w-full h-full object-cover kenburn" />

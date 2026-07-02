@@ -1,3 +1,4 @@
+import Seo from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Award, Users } from "lucide-react";
@@ -6,6 +7,11 @@ import { IMG } from "@/data/images";
 export default function About() {
   return (
     <div data-testid="page-about">
+      <Seo
+        title="About Us — A Sales-Growth Company"
+        description="BestBuyIncentives has engineered closing tools for high-ticket sales teams since 1992. 30+ years, 1,200+ sales teams, $184M in added pipeline closed."
+        path="/about"
+      />
       {/* Hero */}
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

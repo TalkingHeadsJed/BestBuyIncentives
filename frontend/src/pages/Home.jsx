@@ -1,3 +1,5 @@
+import Seo, { faqSchema } from "@/components/site/Seo";
+import { FAQS } from "@/data/content";
 import Hero from "@/components/home/Hero";
 import StatsTicker from "@/components/home/StatsTicker";
 import TrustBar from "@/components/home/TrustBar";
@@ -17,6 +19,12 @@ import FinalCTA from "@/components/home/FinalCTA";
 export default function Home() {
   return (
     <div data-testid="page-home">
+      <Seo
+        title="Stop Discounting. Start Closing."
+        description="Premium travel-incentive certificates that lift close rates 37% on average — without cutting price. Trusted by 1,200+ high-ticket sales teams since 1992."
+        path="/"
+        schema={faqSchema(FAQS)}
+      />
       <Hero />
       <TrustBar />
       <StatsTicker />

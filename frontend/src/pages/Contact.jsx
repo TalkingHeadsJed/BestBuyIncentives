@@ -1,3 +1,4 @@
+import Seo from "@/components/site/Seo";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, Calendar, Check, Loader2 } from "lucide-react";
@@ -74,6 +75,11 @@ export default function Contact() {
 
   return (
     <div data-testid="page-contact">
+      <Seo
+        title="Book a Strategy Call — Contact BestBuyIncentives"
+        description="Book a 30-minute strategy call. We'll map your sales floor, model your projected close-rate lift, and share program pricing. No pitch, no pressure."
+        path="/contact"
+      />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-30">
           <img src={IMG.heroPanel} alt="" className="w-full h-full object-cover kenburn" />
