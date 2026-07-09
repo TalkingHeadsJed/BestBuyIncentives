@@ -1,9 +1,6 @@
 import { Quote } from "lucide-react";
 import { BUSINESS_TESTIMONIALS } from "@/data/content";
-import { IMG } from "@/data/images";
 import SectionLabel from "@/components/site/SectionLabel";
-
-const AVATARS = [IMG.ownerMan1, IMG.ownerMan2, IMG.ownerWoman1, IMG.ownerMan3];
 
 export default function BusinessTestimonials() {
   return (
@@ -18,26 +15,26 @@ export default function BusinessTestimonials() {
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
           {BUSINESS_TESTIMONIALS.map((t, i) => (
-            <article key={i} className="grid grid-cols-12 gap-0 border border-[#E5E2D9] overflow-hidden bg-white">
-              {/* Photo column */}
-              <div className="col-span-5 relative min-h-[280px]">
-                <img src={AVATARS[i % AVATARS.length]} alt={t.author} className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent p-4">
-                  <div className="text-white font-bold text-sm">{t.author}</div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-[#FFD300] mt-1">{t.role}</div>
-                </div>
+            <article
+              key={i}
+              data-testid={`business-testimonial-${i}`}
+              className="relative flex flex-col justify-between border border-[#E5E2D9] bg-[#F5F2EA] p-8 lg:p-10 transition-colors duration-300 hover:bg-white"
+            >
+              <div>
+                <Quote className="h-9 w-9 text-[#FFD300] fill-[#FFD300]" />
+                <p className="mt-6 font-display text-2xl lg:text-3xl font-bold leading-[1.12] text-black">
+                  "{t.quote}"
+                </p>
               </div>
-              {/* Quote column */}
-              <div className="col-span-7 p-7 lg:p-8 flex flex-col justify-between">
+
+              <div className="mt-8 pt-6 border-t border-[#D8D4C7] flex items-end justify-between gap-4">
                 <div>
-                  <Quote className="h-7 w-7 text-[#FFD300] fill-[#FFD300]" />
-                  <p className="mt-4 font-display text-xl lg:text-2xl font-bold leading-[1.15] text-black">
-                    "{t.quote}"
-                  </p>
+                  <div className="font-display font-bold text-lg text-black">{t.author}</div>
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-black/50 mt-1">{t.role}</div>
                 </div>
-                <div className="mt-6 pt-5 border-t border-[#E5E2D9]">
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-black/50 font-bold">Result</div>
-                  <div className="font-display font-bold text-2xl text-black mt-1">{t.metric}</div>
+                <div className="text-right">
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-black/40 font-bold">Result</div>
+                  <div className="font-display font-bold text-xl text-black mt-1">{t.metric}</div>
                 </div>
               </div>
             </article>

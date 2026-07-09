@@ -70,7 +70,7 @@ export const BUSINESS_TESTIMONIALS = [
   },
   {
     quote:
-      "We handed out hundreds of certificates. The phones rang off the hook and our showroom hadn't been that busy in five years.",
+      "Once we started including the vacation certificate with every purchase, the phones rang off the hook — our showroom hadn't been that busy in five years.",
     author: "Regional Furniture Retailer",
     role: "General Manager",
     metric: "5-year traffic high",
