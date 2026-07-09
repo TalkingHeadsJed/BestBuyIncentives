@@ -22,8 +22,8 @@ export default function SolutionSection() {
             <div className="relative">
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-full h-full bg-[#FFD300] -z-0" />
               <img
-                src={IMG.closing}
-                alt="Closing the deal"
+                src="/images/closing-saleswoman.png"
+                alt="Sales professional closing a deal"
                 className="relative w-full aspect-[5/4] object-cover"
               />
               <div className="absolute -bottom-8 left-6 lg:-bottom-12 lg:left-12 max-w-sm bg-black text-white p-7 lg:p-8 shadow-2xl border-t-4 border-[#FFD300]">

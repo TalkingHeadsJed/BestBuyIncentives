@@ -2,7 +2,7 @@ import { HOW_IT_WORKS } from "@/data/content";
 import { IMG } from "@/data/images";
 import SectionLabel from "@/components/site/SectionLabel";
 
-const STEP_IMAGES = [IMG.whiteboard, IMG.salesfloor, IMG.closing, IMG.applause];
+const STEP_IMAGES = [IMG.whiteboard, IMG.salesfloor, "/images/closing-saleswoman.png", IMG.applause];
 
 export default function HowItWorks() {
   return (
