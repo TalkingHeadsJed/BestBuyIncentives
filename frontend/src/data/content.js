@@ -113,82 +113,24 @@ export const CONSUMER_TESTIMONIALS = [
     location: "Santorini, Greece",
     image: "/images/testimonial-greece.png",
   },
-  {
-    quote:
-      "Times Square at night with my wife, the kid in our arms — we'll remember this trip for the rest of our lives.",
-    author: "The Patel Family",
-    location: "New York, NY",
-    image: "/images/testimonial-times-square.png",
-  },
-  {
-    quote:
-      "Unpacking in a hotel suite we didn't pay for. Honestly the best surprise after buying a new sofa.",
-    author: "Megan R.",
-    location: "Resort getaway",
-    image: "/images/testimonial-unpacking.png",
-  },
 ];
 
 export const PROGRAMS = [
   {
-    slug: "be-our-guest",
-    name: "Be Our Guest",
-    tagline: "The closer's classic",
-    description:
-      "Premium 3-night, 4-day hotel certificate at top destinations. Designed for sales managers who need a high-perceived-value asset reps can hand a buyer in seconds.",
-    bullets: [
-      "Hotels in 100+ destinations",
-      "Issued on demand — no inventory",
-      "Bulk pricing from 50 units",
-    ],
-    image: "/images/cert-be-our-guest-outside.jpg",
-    altImage: "/images/cert-be-our-guest-inside.jpg",
-    badge: "Best for: $1K–$10K ticket",
-  },
-  {
     slug: "enjoy-a-great-escape",
     name: "Enjoy a Great Escape",
-    tagline: "The traffic driver",
+    tagline: "The closing weapon",
     description:
-      "Multi-night domestic & international getaway. Pairs perfectly with limited-time campaigns to drive net-new showroom traffic and reanimate stalled pipeline.",
+      "Our flagship travel-incentive certificate — a multi-night domestic & international getaway included with the sale. High perceived value, issued on demand, and proven to break stalls and drive net-new showroom traffic.",
     bullets: [
-      "Multi-night package",
-      "Co-branded marketing collateral",
-      "Used by furniture, flooring, and home improvement",
+      "Multi-night getaway package",
+      "Issued on demand — no inventory to stock",
+      "Co-branded marketing collateral included",
+      "Bulk pricing sized to your ticket",
     ],
     image: "/images/cert-escape-v1.jpg",
     altImage: "/images/cert-escape-v2.jpg",
-    badge: "Best for: $5K–$25K ticket",
-  },
-  {
-    slug: "ultimate-cruise",
-    name: "Ultimate 7-Night Cruise",
-    tagline: "The high-ticket weapon",
-    description:
-      "A full cruise certificate that rewards your largest buyers and gives your reps a closing tool with no comparable equivalent in the market.",
-    bullets: [
-      "7 nights, premium itineraries",
-      "Used to close $25K+ deals",
-      "Reduces buyer's remorse on big purchases",
-    ],
-    image: "/images/cert-cruise-outside.jpg",
-    altImage: "/images/cert-alaska-front.jpg",
-    badge: "Best for: $25K+ ticket",
-  },
-  {
-    slug: "alaska-cruise",
-    name: "Ultimate 7-Night Alaska Cruise",
-    tagline: "The signature program",
-    description:
-      "Our flagship Alaska cruise certificate. Reserved for premium clients running once-a-year flagship campaigns or rewarding their highest-value accounts.",
-    bullets: [
-      "Alaska premium itinerary",
-      "Limited annual allocation",
-      "Co-marketing support included",
-    ],
-    image: "/images/cert-alaska-front.jpg",
-    altImage: "/images/cert-alaska-back.jpg",
-    badge: "Signature program",
+    badge: "Best for: high-ticket sales floors",
   },
 ];
 
@@ -287,7 +229,7 @@ export const FAQS = [
   },
   {
     q: "Do my reps need training to use this?",
-    a: "We give every team a 30-minute playbook on exactly how to position the certificate in a close. Reps integrate it within their first week.",
+    a: "Experienced sales teams may already know how to leverage a discount vacation certificate. Either way, you'll receive a power-packed training guide to help your team get the most out of every certificate.",
   },
   {
     q: "What does it cost us per certificate?",
@@ -295,7 +237,7 @@ export const FAQS = [
   },
   {
     q: "What's the customer's experience like?",
-    a: "Customers redeem directly with us. Our team handles every reservation, every change, every issue. You never touch travel logistics.",
+    a: "Customers book their vacation directly — you never handle anything. The travel support teams are highly trained, courteous, and go overboard to make sure every guest has an excellent experience.",
   },
   {
     q: "How are these offers possible?",
@@ -303,7 +245,7 @@ export const FAQS = [
   },
   {
     q: "How quickly can we launch?",
-    a: "Most clients are live in 5–10 business days. Certificates are issued on demand — there's no inventory to stock.",
+    a: "Most clients are live in 5–10 business days. Certificates are issued on demand — and you can lock in even deeper discounts with a monthly subscription.",
   },
 ];
 

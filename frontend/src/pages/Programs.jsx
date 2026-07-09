@@ -10,7 +10,7 @@ export default function Programs() {
     <div data-testid="page-programs">
       <Seo
         title="Sales Incentive Certificate Programs"
-        description="Premium travel-incentive certificates for high-ticket sales teams. Be Our Guest, Enjoy a Great Escape, Ultimate Cruise, Alaska Cruise — plus fully custom programs."
+        description="Enjoy a Great Escape — our flagship travel-incentive certificate for high-ticket sales teams. Book a call to explore our full catalog of travel and entertainment incentives."
         path="/programs"
         schema={PROGRAMS.map((p) =>
           productSchema({ name: p.name, description: p.description, image: p.image, slug: p.slug })
@@ -27,7 +27,7 @@ export default function Programs() {
             Pick the <span className="hl-yellow-full text-black">closing weapon.</span>
           </h1>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
-            Three flagship programs and a fully custom build. Sized to your ticket. Priced for bulk deployment to a real sales floor.
+            One proven certificate to put on your sales floor — sized to your ticket and priced for bulk deployment. Want more? Book a call for our full catalog of travel and entertainment incentives.
           </p>
         </div>
       </section>

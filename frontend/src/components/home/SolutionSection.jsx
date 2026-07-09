@@ -29,7 +29,7 @@ export default function SolutionSection() {
               <div className="absolute -bottom-8 left-6 lg:-bottom-12 lg:left-12 max-w-sm bg-black text-white p-7 lg:p-8 shadow-2xl border-t-4 border-[#FFD300]">
                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#FFD300] font-bold">In the close</div>
                 <p className="mt-2 font-display text-xl lg:text-2xl leading-snug font-bold">
-                  "We can include the getaway if we sign by close of business."
+                  "I love to give my clients a reason to say yes."
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/20 text-xs font-mono uppercase tracking-widest text-white/70">
                   → 22% of stalls close same-day

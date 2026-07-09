@@ -14,10 +14,10 @@ export default function ProblemSection() {
             <div className="max-w-2xl">
               <SectionLabel dark>The Brutal Truth</SectionLabel>
               <h2 className="font-display mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] text-white">
-                Your team is <span className="hl-yellow-full text-black">losing on price.</span>
+                Your team is <span className="hl-yellow-full text-black">stuck in the void.</span>
               </h2>
               <p className="mt-6 text-lg lg:text-2xl text-white/90 max-w-xl leading-[1.4]">
-                Every discount trains the market to wait. Every "limited-time" promo gets ignored. Your reps need a reason to push for the close <span className="font-bold text-[#FFD300]">today</span>. Most of them don't have one.
+                The prospect is trained to say no — to tell you they need to "think about it." This drops them out of the void and gets them excited about making a decision <span className="font-bold text-[#FFD300]">today</span>. It's a surprise that changes their mental state and puts them back on the path moving forward.
               </p>
             </div>
           </div>

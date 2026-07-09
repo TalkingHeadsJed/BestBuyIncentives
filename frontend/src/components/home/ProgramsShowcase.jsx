@@ -53,6 +53,29 @@ export default function ProgramsShowcase() {
               </div>
             </article>
           ))}
+
+          {/* Book-a-call: full catalog of travel & entertainment options */}
+          <article
+            data-testid="programs-showcase-more"
+            className="flex flex-col justify-center bg-black text-white p-9 lg:p-12 border-t-4 border-[#FFD300]"
+          >
+            <div className="text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">
+              More than one way to close
+            </div>
+            <h3 className="mt-4 font-display font-bold text-3xl lg:text-5xl leading-[0.95]">
+              Want the full <span className="hl-yellow-full text-black">catalog?</span>
+            </h3>
+            <p className="mt-5 text-base lg:text-lg text-white/80 leading-relaxed">
+              We keep one proven program front and center so your team stays focused. Book a call and we'll walk you through our complete range of travel and entertainment incentives — matched to your ticket, your season, and your objections.
+            </p>
+            <Link
+              to="/contact"
+              data-testid="programs-showcase-book-call"
+              className="mt-8 inline-flex items-center gap-3 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-base px-7 py-5 uppercase tracking-wide w-fit"
+            >
+              Book a Call <ArrowRight className="h-4 w-4" />
+            </Link>
+          </article>
         </div>
       </div>
     </section>
