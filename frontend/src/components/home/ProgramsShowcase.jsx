@@ -60,13 +60,16 @@ export default function ProgramsShowcase() {
             className="flex flex-col justify-center bg-black text-white p-9 lg:p-12 border-t-4 border-[#FFD300]"
           >
             <div className="text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">
-              More than one way to close
+              Your unfair advantage
             </div>
             <h3 className="mt-4 font-display font-bold text-3xl lg:text-5xl leading-[0.95]">
-              Want the full <span className="hl-yellow-full text-black">catalog?</span>
+              Finally, a reason they <span className="hl-yellow-full text-black">can't say no to.</span>
             </h3>
             <p className="mt-5 text-base lg:text-lg text-white/80 leading-relaxed">
-              We keep one proven program front and center so your team stays focused. Book a call and we'll walk you through our complete range of travel and entertainment incentives — matched to your ticket, your season, and your objections.
+              Put a dream getaway in your customer's hands and watch "let me think about it" turn into "where do I sign." It breaks the stall. It kills the remorse. It makes your offer impossible to shop around on price.
+            </p>
+            <p className="mt-4 text-base lg:text-lg text-white/80 leading-relaxed">
+              And Enjoy a Great Escape is only the beginning. Book a call and we'll open up the full vault of travel and entertainment incentives built to close your toughest deals.
             </p>
             <Link
               to="/contact"
