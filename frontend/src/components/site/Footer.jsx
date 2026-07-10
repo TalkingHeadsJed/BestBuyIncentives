@@ -85,10 +85,10 @@ export default function Footer() {
         <div className="md:col-span-2">
           <div className="text-[11px] font-mono uppercase tracking-widest text-white/40 mb-4">Programs</div>
           <ul className="space-y-2.5 text-sm">
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Be Our Guest</Link></li>
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Great Escape</Link></li>
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Ultimate Cruise</Link></li>
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Custom Programs</Link></li>
+            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Enjoy a Great Escape</Link></li>
+            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Travel &amp; Entertainment</Link></li>
+            <li><Link to="/case-studies" className="text-white/80 hover:text-[#FFD300]">Case Studies</Link></li>
+            <li><Link to="/contact" className="text-white/80 hover:text-[#FFD300]">Book a Call</Link></li>
           </ul>
         </div>
 
@@ -106,7 +106,7 @@ export default function Footer() {
           <div className="text-[11px] font-mono uppercase tracking-widest text-white/40 mb-4">Contact</div>
           <ul className="space-y-3 text-sm text-white/80">
             <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-[#FFD300]" /> sales@bestbuyincentives.com</li>
-            <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-[#FFD300]" /> 1-800-555-0102</li>
+            <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-[#FFD300]" /> 866-843-8003</li>
             <li className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-[#FFD300]" /> United States</li>
           </ul>
         </div>

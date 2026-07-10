@@ -187,7 +187,7 @@ export default function Contact() {
 
             <div className="mt-10 pt-10 border-t border-[#E5E2D9] space-y-4">
               <Contact2 icon={Mail} label="Email" value="sales@bestbuyincentives.com" />
-              <Contact2 icon={Phone} label="Phone" value="1-800-555-0102" />
+              <Contact2 icon={Phone} label="Phone" value="866-843-8003" />
             </div>
           </div>
         </div>

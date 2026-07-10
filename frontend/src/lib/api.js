@@ -1,24 +1,33 @@
-import axios from "axios";
+// Static form handling via Web3Forms — no backend server required.
+// Get a FREE access key in ~30s at https://web3forms.com (just enter the inbox
+// email that should receive submissions). Paste it below, then rebuild.
+export const WEB3FORMS_ACCESS_KEY =
+  process.env.REACT_APP_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const API = `${BACKEND_URL}/api`;
-
-export const api = axios.create({
-  baseURL: API,
-  headers: { "Content-Type": "application/json" },
-});
+async function sendWeb3Form(payload) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: WEB3FORMS_ACCESS_KEY, ...payload }),
+  });
+  const data = await res.json();
+  if (!data.success) throw new Error(data.message || "Submission failed");
+  return data;
+}
 
 export async function submitLead(data) {
-  const res = await api.post("/leads", data);
-  return res.data;
+  return sendWeb3Form({
+    subject: `New Lead: ${data.full_name} - ${data.company}`,
+    from_name: "BestBuyIncentives Website",
+    ...data,
+  });
 }
 
 export async function subscribeNewsletter(email) {
-  const res = await api.post("/newsletter", { email });
-  return res.data;
-}
-
-export async function calculateROI(payload) {
-  const res = await api.post("/roi/calculate", payload);
-  return res.data;
+  return sendWeb3Form({
+    subject: "New Newsletter Signup - BestBuyIncentives",
+    from_name: "BestBuyIncentives Website",
+    email,
+    signup_type: "newsletter",
+  });
 }

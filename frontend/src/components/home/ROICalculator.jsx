@@ -1,13 +1,27 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Link } from "react-router-dom";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SectionLabel from "@/components/site/SectionLabel";
-import { calculateROI } from "@/lib/api";
 
 function fmtMoney(n) {
   if (n == null || isNaN(n)) return "$0";
   return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function computeROI({ reps, avgDeal, dealsPerRep, closeRate, uplift }) {
+  const monthly_deals = reps * dealsPerRep;
+  const current_closed = monthly_deals * (closeRate / 100);
+  const new_close_rate = Math.min(closeRate * (1 + uplift / 100), 100);
+  const new_closed = monthly_deals * (new_close_rate / 100);
+  const added_deals = new_closed - current_closed;
+  const monthly_added_revenue = added_deals * avgDeal;
+  return {
+    new_close_rate: Math.round(new_close_rate * 10) / 10,
+    added_deals_per_month: Math.round(added_deals * 10) / 10,
+    monthly_added_revenue,
+    annual_added_revenue: monthly_added_revenue * 12,
+  };
 }
 
 export default function ROICalculator() {
@@ -15,32 +29,12 @@ export default function ROICalculator() {
   const [avgDeal, setAvgDeal] = useState(8500);
   const [dealsPerRep, setDealsPerRep] = useState(8);
   const [closeRate, setCloseRate] = useState(28);
-  const [uplift] = useState(22);
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const uplift = 22;
 
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      try {
-        setLoading(true);
-        const r = await calculateROI({
-          reps,
-          avg_deal_size: avgDeal,
-          monthly_deals_per_rep: dealsPerRep,
-          current_close_rate: closeRate,
-          uplift_pct: uplift,
-        });
-        if (!cancelled) setResult(r);
-      } catch {
-        if (!cancelled) setResult(null);
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
-    };
-    const t = setTimeout(run, 200);
-    return () => { cancelled = true; clearTimeout(t); };
-  }, [reps, avgDeal, dealsPerRep, closeRate, uplift]);
+  const result = useMemo(
+    () => computeROI({ reps, avgDeal, dealsPerRep, closeRate, uplift }),
+    [reps, avgDeal, dealsPerRep, closeRate]
+  );
 
   return (
     <section data-testid="roi-calculator" className="bg-[#F5F2EA] py-24 lg:py-32">
@@ -65,23 +59,20 @@ export default function ROICalculator() {
 
           <div className="lg:col-span-5 bg-[#0A0A0A] text-white p-8 lg:p-12 flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between">
-                <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#FFD300] font-bold">
-                  Projected annual lift
-                </div>
-                {loading && <Loader2 className="h-3.5 w-3.5 text-white/40 animate-spin" />}
+              <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#FFD300] font-bold">
+                Projected annual lift
               </div>
               <div data-testid="roi-annual" className="mt-4 font-display font-bold text-[#FFD300] text-5xl lg:text-7xl tabular-num leading-[0.95]">
-                {fmtMoney(result?.annual_added_revenue)}
+                {fmtMoney(result.annual_added_revenue)}
               </div>
               <div className="mt-3 text-sm text-white/70">
                 Conservative against typical field results (22% close-rate lift).
               </div>
 
               <div className="mt-10 grid grid-cols-2 gap-px bg-white/10">
-                <Tile label="Added deals / mo" value={result?.added_deals_per_month?.toFixed(1) ?? "0"} />
-                <Tile label="New close rate" value={`${result?.new_close_rate ?? closeRate}%`} />
-                <Tile label="Added rev / mo" value={fmtMoney(result?.monthly_added_revenue)} />
+                <Tile label="Added deals / mo" value={result.added_deals_per_month.toFixed(1)} />
+                <Tile label="New close rate" value={`${result.new_close_rate}%`} />
+                <Tile label="Added rev / mo" value={fmtMoney(result.monthly_added_revenue)} />
                 <Tile label="Reps deployed" value={`${reps}`} />
               </div>
             </div>
