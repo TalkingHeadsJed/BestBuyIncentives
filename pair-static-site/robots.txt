@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Disallow API endpoints
+Disallow: /api/
+
+Sitemap: https://bestbuyincentives.com/sitemap.xml
