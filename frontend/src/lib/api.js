@@ -2,7 +2,7 @@
 // Get a FREE access key in ~30s at https://web3forms.com (just enter the inbox
 // email that should receive submissions). Paste it below, then rebuild.
 export const WEB3FORMS_ACCESS_KEY =
-  process.env.REACT_APP_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+  process.env.REACT_APP_WEB3FORMS_KEY || "43646412-eb6a-4348-bc8d-6c587d26701d";
 
 async function sendWeb3Form(payload) {
   const res = await fetch("https://api.web3forms.com/submit", {

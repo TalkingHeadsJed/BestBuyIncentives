@@ -1,0 +1,43 @@
+{
+  "summary": "Verified static Web3Forms integration end-to-end from the preview URL. Negative validation PASSES (empty submit -> 'Name, email, and company are required.' toast, zero network call to Web3Forms). Real submissions for BOTH contact and newsletter FAIL from the preview origin due to a CORS block by api.web3forms.com — the API deliberately omits Access-Control-Allow-Origin for this origin, which strongly indicates the access key '43646412-eb6a-4348-bc8d-6c587d26701d' has a domain allowlist that does NOT include 'bestbuy-incentives.preview.emergentagent.com'. Server-side curl to the same endpoint returns HTTP 403 with 'This method is not allowed. Use our API in client side or contact support with server IP address (Pro plan is required)' — confirming the key is active and valid, and the rejection is CORS-origin-based, not key-based.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Contact form submission (/contact -> contact-submit)",
+        "issue": "POST https://api.web3forms.com/submit is blocked by browser CORS: 'No Access-Control-Allow-Origin header is present on the requested resource.' Preflight (Content-Type: application/json) fails; simple requests (FormData, application/x-www-form-urlencoded) ALSO fail with the same missing header, which means Web3Forms is intentionally not returning CORS headers for origin 'https://bestbuy-incentives.preview.emergentagent.com'. Result: contact-success is NEVER rendered, no success toast fires, only the error toast 'Could not submit. Please try again or email sales@bestbuyincentives.com.' appears (via catch branch).",
+        "affected_selectors": ["[data-testid=contact-submit]", "[data-testid=contact-success]"]
+      },
+      {
+        "flow": "Newsletter subscribe (footer -> newsletter-submit)",
+        "issue": "Same CORS block on POST https://api.web3forms.com/submit. Error toast 'Could not subscribe. Try again.' fires. No 'You're on the list...' success toast possible until Web3Forms allowlist is fixed.",
+        "affected_selectors": ["[data-testid=newsletter-submit]", "[data-testid=newsletter-email-input]"]
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/test_reports/iteration_3.json"],
+  "action_items": [
+    "PRIMARY FIX (Web3Forms dashboard, no code change): Log in to https://web3forms.com dashboard, open the access key '43646412-eb6a-4348-bc8d-6c587d26701d', and either (a) REMOVE the domain restriction entirely, or (b) ADD 'bestbuy-incentives.preview.emergentagent.com' AND the eventual production domain 'bestbuyincentives.com' (and 'www.bestbuyincentives.com') to the 'Allowed Domains / Restrict Domain' allowlist. After saving, retest — the same code path will succeed because the API will then return the Access-Control-Allow-Origin header.",
+    "Diagnostic evidence: from-browser fetch with FormData (a simple request that does NOT trigger a CORS preflight) still returned 'No Access-Control-Allow-Origin header is present' — this response shape is Web3Forms's domain-allowlist rejection, not a key-invalid or plan issue.",
+    "Server-side curl (for reference only) returns HTTP 403 + '...Use our API in client side or contact support with server IP address (Pro plan is required)' — proves the key IS active; server-side calls are intentionally blocked by Web3Forms's free plan, which is expected and NOT the current bug.",
+    "OPTIONAL code cleanup once the key works: in /app/frontend/src/lib/api.js the fetch uses Content-Type: application/json which triggers a CORS preflight. Web3Forms officially recommends this, and it will work once the domain is allowlisted, so no code change is strictly required. If you want to eliminate the preflight (marginally faster), switch to FormData or URLSearchParams — but again this is optional and only relevant AFTER the allowlist is fixed.",
+    "Re-run this iteration's tests after fixing the Web3Forms allowlist to confirm success:true responses and contact-success rendering."
+  ],
+  "critical_code_review_comments": [
+    "lib/api.js: implementation is correct — POST to https://api.web3forms.com/submit with access_key + payload, throws on !data.success. The current failure is 100% external (Web3Forms domain restriction), not a code defect.",
+    "Contact.jsx submit(): validation is correct (returns before submitLead when full_name/email/company empty). Error handling correctly surfaces a Sonner error toast on network/CORS failure. done=true is only set on success — safe.",
+    "Footer.jsx subscribe(): validates email presence + '@' before hitting the API — correct. Error/success toasts wired to Sonner.",
+    "Key is hardcoded as the fallback default in lib/api.js line 5. This is acceptable for a fully static site but means the key is publicly visible in the client bundle — that is by design for Web3Forms and expected. Just make sure the Web3Forms dashboard has strict domain allowlisting (once fixed) so the key cannot be abused from other origins.",
+    "Cookie consent (OneTrust) shows some 'Failed to fetch' console errors from cdn.cookielaw.org — cosmetic, unrelated to Web3Forms."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "33% (1 of 3 scenarios passing — negative validation only)"},
+  "test_credentials": "None required (public site).",
+  "seed_data_creation": "None — real submissions blocked at CORS layer, so no emails were sent to the Web3Forms inbox this run.",
+  "retest_needed": true,
+  "main_agent_can_self_test": false,
+  "context_for_next_testing_agent": "After Web3Forms dashboard allowlist is updated to include bestbuy-incentives.preview.emergentagent.com (and prod domains), re-run: (1) empty contact submit -> expect 'required' toast + zero network call (already verified this iteration); (2) fill contact-name/-email/-company (+ optional role) -> click contact-submit -> expect data-testid=contact-success visible with 'Got it. We're on the way.' AND success toast 'Request received...' AND api.web3forms.com/submit returning success:true (HTTP 200); (3) scroll to footer, fill newsletter-email-input with a valid email -> click newsletter-submit -> expect success toast 'You're on the list...' AND success:true response. Existing data-testids remain valid. Browser test snippet used this iteration (kept for reuse): fetch('https://api.web3forms.com/submit', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({access_key:'...', ...})}) — after the allowlist fix this call must succeed from the preview origin.",
+  "rca_of_the_issue": "ROOT CAUSE: The Web3Forms access key configured in /app/frontend/src/lib/api.js has an 'Allowed Domains' restriction on the Web3Forms dashboard that does NOT include the preview URL host (bestbuy-incentives.preview.emergentagent.com). When Web3Forms receives a request whose browser Origin header is not on the allowlist, it responds without any Access-Control-Allow-Origin header, causing the browser to block the response for BOTH preflight and simple-request patterns. REPRODUCTION: open https://bestbuy-incentives.preview.emergentagent.com/contact -> fill contact-name/email/company -> click contact-submit -> observe DevTools console error 'Access to fetch at https://api.web3forms.com/submit ... has been blocked by CORS policy: No Access-Control-Allow-Origin header is present'. Same on newsletter-submit in footer. DIAGNOSTIC PROOF: (a) Server-side curl returns 403 with 'client side only' message -> key is active. (b) In-browser fetch with FormData (a simple request, no preflight) is ALSO blocked with 'No Access-Control-Allow-Origin' -> the API is deliberately omitting the CORS header for this origin, which is the signature of Web3Forms's domain-allowlist feature. MITIGATION: Update the Web3Forms dashboard for this access key — either remove the domain restriction or add the preview + production domains to the allowlist; no code change required."
+}
