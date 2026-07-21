@@ -183,7 +183,7 @@ function VSLPreview({ onPlay }) {
               Watch With Sound
             </p>
             <p className="mt-3 text-sm lg:text-base font-mono uppercase tracking-widest text-[#FFD300] font-bold">
-              Why this works · 04:12
+              Why this works · 03:51
             </p>
           </div>
 

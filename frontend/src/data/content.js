@@ -240,8 +240,8 @@ export const FAQS = [
     a: "Customers book their vacation directly — you never handle anything. The travel support teams are highly trained, courteous, and go overboard to make sure every guest has an excellent experience.",
   },
   {
-    q: "How are these offers possible?",
-    a: "Resorts want to fill empty rooms because they want guests to spend money at their resort. They also love the free advertising from guests posting about their vacation on social media. It's a Win/Win.",
+    q: "Can I use one of the certificates for myself?",
+    a: "Absolutely, YES. Why not reward yourself with a vacation and enjoy all the same benefits that your customers are enjoying.",
   },
   {
     q: "How quickly can we launch?",
