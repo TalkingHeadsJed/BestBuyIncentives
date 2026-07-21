@@ -32,7 +32,7 @@ export default function VideoSeries() {
                 <div className="absolute bottom-3 right-3 bg-black/80 border border-white/20 text-[10px] font-mono tracking-widest text-white px-2 py-0.5">
                   {v.duration}
                 </div>
-                <span className="absolute top-3 left-3 stamp text-[10px]">Coming soon</span>
+                <span className="absolute top-3 left-3 stamp text-[10px]">Member access</span>
               </div>
               <div className="p-6">
                 <div className="text-[10px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">{v.label}</div>
