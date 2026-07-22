@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS } from "@/data/content";
+import { COMPARE_LINKS } from "@/data/comparisons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -19,8 +20,9 @@ export default function Header() {
 
   // Pages with a dark hero want a transparent header at top of scroll
   const darkHeroPages = ["/", "/about", "/programs", "/industries", "/case-studies", "/resources", "/faq", "/travel-incentives-vs-discounting", "/contact"];
-  const onDarkHero = darkHeroPages.includes(pathname);
+  const onDarkHero = darkHeroPages.includes(pathname) || pathname.startsWith("/travel-incentives-vs-");
   const transparent = onDarkHero && !scrolled;
+  const compareActive = pathname.startsWith("/travel-incentives-vs-");
 
   return (
     <header
@@ -54,6 +56,35 @@ export default function Header() {
               {l.label}
             </NavLink>
           ))}
+
+          {/* Compare dropdown */}
+          <div className="relative group" data-testid="nav-compare">
+            <button
+              type="button"
+              data-testid="nav-compare-trigger"
+              className={`text-sm font-bold transition-colors inline-flex items-center gap-1 ${
+                transparent
+                  ? compareActive ? "text-[#FFD300]" : "text-white/90 hover:text-[#FFD300]"
+                  : compareActive ? "text-black" : "text-[#595959] hover:text-black"
+              }`}
+            >
+              Compare <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover:block">
+              <div className="bg-white border border-[#E5E2D9] shadow-xl min-w-[240px] py-2">
+                {COMPARE_LINKS.map((c) => (
+                  <NavLink
+                    key={c.to}
+                    to={c.to}
+                    data-testid={`nav-compare-${c.to.split("-vs-")[1]}`}
+                    className="block px-4 py-2.5 text-sm font-bold text-[#595959] hover:text-black hover:bg-[#F7F5EF]"
+                  >
+                    {`Travel incentives ${c.label}`}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          </div>
         </nav>
 
         <div className="flex items-center gap-3">
@@ -90,6 +121,21 @@ export default function Header() {
                 {l.label}
               </NavLink>
             ))}
+
+            <div className="py-2 border-b border-[#E5E2D9]" data-testid="nav-mobile-compare">
+              <div className="py-3 text-base font-bold text-[#595959]">Compare</div>
+              {COMPARE_LINKS.map((c) => (
+                <NavLink
+                  key={c.to}
+                  to={c.to}
+                  data-testid={`nav-mobile-compare-${c.to.split("-vs-")[1]}`}
+                  className={({ isActive }) => `block py-2 pl-4 text-sm font-bold ${isActive ? "text-black" : "text-[#595959]"}`}
+                >
+                  {`Travel incentives ${c.label}`}
+                </NavLink>
+              ))}
+            </div>
+
             <Link
               to="/contact"
               data-testid="nav-mobile-cta"

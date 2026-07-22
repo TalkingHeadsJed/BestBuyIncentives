@@ -42,7 +42,9 @@ function App() {
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
-              <Route path="/travel-incentives-vs-discounting" element={<Comparison />} />
+              <Route path="/travel-incentives-vs-discounting" element={<Comparison slug="discounting" />} />
+              <Route path="/travel-incentives-vs-gift-cards" element={<Comparison slug="gift-cards" />} />
+              <Route path="/travel-incentives-vs-cash-rebates" element={<Comparison slug="cash-rebates" />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

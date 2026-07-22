@@ -1,4 +1,5 @@
 import { IMG } from "@/data/images";
+import { Link } from "react-router-dom";
 import SectionLabel from "@/components/site/SectionLabel";
 
 export default function ProblemSection() {
@@ -19,6 +20,13 @@ export default function ProblemSection() {
               <p className="mt-6 text-lg lg:text-2xl text-white/90 max-w-xl leading-[1.4]">
                 The prospect is trained to say no — to tell you they need to "think about it." This drops them out of the void and gets them excited about making a decision <span className="font-bold text-[#FFD300]">today</span>. It's a surprise that changes their mental state and puts them back on the path moving forward.
               </p>
+              <Link
+                to="/travel-incentives-vs-discounting"
+                data-testid="problem-comparison-link"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#FFD300] hover:text-white transition-colors border-b-2 border-[#FFD300] pb-1"
+              >
+                Travel incentives vs. discounting <span className="font-mono">→</span>
+              </Link>
             </div>
           </div>
 

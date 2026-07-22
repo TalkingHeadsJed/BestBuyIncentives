@@ -19,6 +19,8 @@ const STATIC_ROUTES = [
   "/resources",
   "/faq",
   "/travel-incentives-vs-discounting",
+  "/travel-incentives-vs-gift-cards",
+  "/travel-incentives-vs-cash-rebates",
   "/contact",
 ];
 
