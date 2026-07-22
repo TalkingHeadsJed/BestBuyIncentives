@@ -1,35 +1,46 @@
 # BestBuyIncentives.com — PRD
 
 ## Problem Statement
-Replace the old, poorly-designed BestBuyIncentives.com site with a modern, bold, sales-focused authority site (Hormozi/Acquisition.com/Grant Cardone style). Goals: lead-gen, showcasing offerings, booking demos. Audience: B2B business owners & sales leaders.
+Replace the old BestBuyIncentives.com site with a modern, bold, sales-focused authority site (Hormozi/Acquisition.com style). Goals: lead-gen, showcasing offerings, booking demos. Audience: B2B business owners & sales leaders. **SEO is the primary traffic channel** — must be indexable by search engines AND AI assistants (ChatGPT, Claude, Perplexity, etc.).
 
 ## Hard Requirements
-- **100% static site** hostable on standard BlueHost / Pair.com shared hosting.
-- **ZERO Emergent dependencies** — no tracking, no PostHog, no "Made with Emergent" badge, no preview URLs baked into the bundle.
-- Theme: Yellow (#FFD300) / Black / White. NO GREEN. Light, photo-dominant, minimal dense text.
+- **100% static site** hostable on standard Apache shared hosting (BlueHost). No Node/npm on server.
+- **ZERO Emergent dependencies** — no tracking, PostHog, badges, preview URLs, localhost, or emergentagent CDNs in output.
+- Theme: Yellow (#FFD300) / Black / White. NO GREEN. Photo-dominant.
 - Client-side ROI calculator, Calendly embed, contact/newsletter forms via Web3Forms.
+- Canonical domain: `https://bestbuyincentives.com` (non-www, HTTPS, no trailing slash except root).
 
 ## Tech Stack
-- React (CRA + craco), Tailwind CSS. Static export only. No backend, no MongoDB.
-- Forms: Web3Forms (`https://api.web3forms.com/submit`). Key hardcoded in `src/lib/api.js`: `43646412-eb6a-4348-bc8d-6c587d26701d`.
-- All images self-hosted under `/public/images` (no Unsplash hotlinks).
-- VSL video self-hosted at `/public/vsl.mp4`.
+- React 19 (CRA + craco), Tailwind, framer-motion, react-fast-marquee, sonner, react-helmet-async.
+- **Build-time prerendering** (puppeteer-core + system Chrome) → every route ships as real static HTML with hydration.
+- Forms: Web3Forms (key hardcoded in `src/lib/api.js`). Video: self-hosted `/public/vsl.mp4`. Images: self-hosted `/public/images`.
 
-## Deployment
-- Final upload-ready build: `/app/pair-static-site/` (mirror of `/app/frontend/build/`).
-- Delivery: user uses "Save to GitHub", downloads, uploads contents of `pair-static-site/` to host root.
-- `.htaccess` included for React Router on Apache.
-- NOTE: Web3Forms key is domain-restricted; forms fail on preview URL, work once the live domain is added to Web3Forms "Allowed Domains".
+## SEO / AI Architecture (added this session)
+- `scripts/routes.js` — single source of truth for all 14 routes (shared by prerender + sitemap).
+- `scripts/prerender.js` — serves the CRA build, sets `window.__PRERENDER__`, renders each route in headless Chrome, writes `<route>/index.html` with fully-rendered content + per-route Helmet head (title/description/canonical/OG/JSON-LD).
+- `scripts/gen-sitemap.js` — regenerates `sitemap.xml` from the route list.
+- `src/hooks/useHydrated.js` — returns false during prerender + first client render, true after; used to make client-only/measurement widgets (Marquee, Toaster, Radix Select, Radix Slider, Calendly) render a static version first so hydration is mismatch-free.
+- `public/robots.txt` — explicitly allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, anthropic-ai, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, Bingbot, Amazonbot, Applebot(-Extended), CCBot, Meta-ExternalAgent, cohere-ai + sitemap ref.
+- `public/llms.txt` — curated Markdown index of the site for LLMs.
+- `public/index.html` — global JSON-LD: Organization (legalName, address, contactPoint 866-843-8003, sameAs socials), Service, WebSite. Per-page meta injected by Helmet (deduped — no static per-page tags).
+- New `/faq` page (`src/pages/FAQ.jsx`) — answers rendered as always-visible text + FAQPage schema (high value for AI citation). Linked in footer.
+- `public/.htaccess` — canonical HTTPS+non-www 301, extensionless→`/index.html` serving (DirectorySlash Off), SPA fallback, HTML no-cache, host-neutral (no Pair.com/BlueHost names).
+
+## Build & Deploy
+Build pipeline (container only): `yarn build && node scripts/gen-sitemap.js && node scripts/prerender.js` → output synced to `/app/static-site/`.
+Deploy: "Save to GitHub" → upload **contents of `/app/static-site/`** (incl. hidden `.htaccess`) to `public_html`.
+Web3Forms: add live domain to "Allowed Domains" so forms send.
+
+## Verification (this session)
+- All 14 routes: unique title/description/canonical, real `<h1>`+body+footer in raw HTML (no JS needed) — acceptance test passes via curl-equivalent.
+- All 14 routes hydrate with **0 React errors** (verified in headless Chrome).
+- No emergentagent/posthog/localhost strings. ROI calc, sliders, marquee, animations unchanged (no visual change).
 
 ## Changelog
-- **2026-06-16 (prior session):** Static conversion, client-side ROI calc, Web3Forms integration, phone `866-843-8003`, localized 32 images, scrubbed Emergent scripts/badges/PostHog.
-- **2026-06 (this session):**
-  - Replaced VSL placeholder with final video from Vimeo (`vimeo.com/1208569860`). Downloaded, compressed to 720p H.264 (~33MB, faststart), self-hosted at `/public/vsl.mp4`. Runtime label updated to 03:51.
-  - Replaced Santorini/Greece testimonial photo with new couple image (`/images/testimonial-greece.png`).
-  - Updated FAQ: "How are these offers possible?" → "Can I use one of the certificates for myself?" with new answer.
-  - Removed `process.env.REACT_APP_BACKEND_URL` inlining from bundle (hardcoded Web3Forms key) — production bundle now fully free of `emergentagent.com`/`posthog` strings.
-  - Rebuilt and synced `/app/pair-static-site/`.
+- 2026-06 (earlier): Static conversion, Web3Forms, phone 866-843-8003, localized images, scrubbed Emergent.
+- 2026-06 (this session): Final Vimeo VSL (user's compressed 16.6MB 720p), new Greece testimonial image, FAQ copy change, video-badge "Member Access", full SEO prerendering + AI optimization (above), renamed output folder to `static-site`.
 
 ## Backlog
-- P1: Address visual/functional feedback once tested on live BlueHost/Pair.com domain.
-- P1: Confirm Calendly booking URL is the client's real one.
+- P1: Post-launch — verify live SEO audit passes on bestbuyincentives.com; submit sitemap to Google/Bing Search Console.
+- P1: Confirm real Calendly booking URL.
+- P2: Consider self-hosting Google Fonts to remove the one remaining external font request (not Emergent; kept to avoid visual change).

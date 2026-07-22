@@ -2,6 +2,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "sonner";
+import useHydrated from "@/hooks/useHydrated";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import StickyCTA from "@/components/site/StickyCTA";
@@ -15,9 +16,14 @@ import CaseStudies from "@/pages/CaseStudies";
 import Resources from "@/pages/Resources";
 import ResourceDetail from "@/pages/ResourceDetail";
 import Contact from "@/pages/Contact";
+import FAQ from "@/pages/FAQ";
 import NotFound from "@/pages/NotFound";
 
 function App() {
+  // Toaster is client-only; mount it after hydration so the prerendered markup
+  // matches React's first client render exactly.
+  const hydrated = useHydrated();
+
   return (
     <HelmetProvider>
       <div className="App">
@@ -34,12 +40,13 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <StickyCTA />
           <Footer />
-          <Toaster theme="dark" position="bottom-right" richColors />
+          {hydrated && <Toaster theme="dark" position="bottom-right" richColors />}
         </BrowserRouter>
       </div>
     </HelmetProvider>

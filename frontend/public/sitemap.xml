@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://bestbuyincentives.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bestbuyincentives.com/programs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -23,7 +28,17 @@
   <url>
     <loc>https://bestbuyincentives.com/resources</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bestbuyincentives.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bestbuyincentives.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bestbuyincentives.com/resources/stop-discounting-start-closing</loc>
@@ -54,15 +69,5 @@
     <loc>https://bestbuyincentives.com/resources/differentiating-on-experience-not-price</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://bestbuyincentives.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bestbuyincentives.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 </urlset>

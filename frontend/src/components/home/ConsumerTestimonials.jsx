@@ -28,8 +28,8 @@ export default function ConsumerTestimonials() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <div className="text-[10px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">{t.location}</div>
-                  <p className="mt-2 font-display text-lg lg:text-xl font-bold leading-snug">"{t.quote}"</p>
-                  <div className="mt-3 text-[11px] font-mono uppercase tracking-widest text-white/80">— {t.author}</div>
+                  <p className="mt-2 font-display text-lg lg:text-xl font-bold leading-snug">{`\u201C${t.quote}\u201D`}</p>
+                  <div className="mt-3 text-[11px] font-mono uppercase tracking-widest text-white/80">{`\u2014 ${t.author}`}</div>
                 </div>
               </div>
             </article>
@@ -44,8 +44,8 @@ export default function ConsumerTestimonials() {
               </div>
               <div className="col-span-7 p-7 bg-[#F5F2EA] flex flex-col justify-center">
                 <div className="text-[10px] font-mono uppercase tracking-widest text-black/60 font-bold">{t.location}</div>
-                <p className="mt-3 font-display text-xl font-bold leading-snug text-black">"{t.quote}"</p>
-                <div className="mt-4 text-[11px] font-mono uppercase tracking-widest text-black/50">— {t.author}</div>
+                <p className="mt-3 font-display text-xl font-bold leading-snug text-black">{`\u201C${t.quote}\u201D`}</p>
+                <div className="mt-4 text-[11px] font-mono uppercase tracking-widest text-black/50">{`\u2014 ${t.author}`}</div>
               </div>
             </article>
           ))}

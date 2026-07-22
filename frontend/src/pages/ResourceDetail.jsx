@@ -50,7 +50,7 @@ export default function ResourceDetail() {
           <div className="mt-6 inline-block stamp text-[10px]">{r.category}</div>
           <h1 className="font-display mt-6 text-4xl lg:text-7xl font-bold leading-[0.95]">{r.title}</h1>
           <div className="mt-6 text-[11px] font-mono uppercase tracking-widest text-white/60 flex items-center gap-2 font-bold">
-            <Clock className="h-3 w-3" /> {r.minutes} min read
+            <Clock className="h-3 w-3" />{` ${r.minutes} min read`}
           </div>
         </div>
       </section>

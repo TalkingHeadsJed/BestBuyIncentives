@@ -21,7 +21,7 @@ export default function HowItWorks() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img src={STEP_IMAGES[i]} alt={step.title} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute top-3 left-3 stamp">Step {step.n}</div>
+                <div className="absolute top-3 left-3 stamp">{`Step ${step.n}`}</div>
                 <div className="absolute bottom-3 left-3 font-display font-bold text-7xl text-white tabular-num leading-none">
                   {i + 1}
                 </div>

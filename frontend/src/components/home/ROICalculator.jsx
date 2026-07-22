@@ -3,6 +3,7 @@ import { Slider } from "@/components/ui/slider";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import SectionLabel from "@/components/site/SectionLabel";
+import useHydrated from "@/hooks/useHydrated";
 
 function fmtMoney(n) {
   if (n == null || isNaN(n)) return "$0";
@@ -92,21 +93,37 @@ export default function ROICalculator() {
 }
 
 function SliderRow({ label, value, min, max, step = 1, onChange, displayValue, testId }) {
+  const hydrated = useHydrated();
+  const pct = Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100));
   return (
     <div data-testid={`${testId}-row`}>
       <div className="flex items-baseline justify-between gap-4">
         <span className="text-[11px] font-mono uppercase tracking-widest text-black/60 font-bold">{label}</span>
         <span className="font-display font-bold text-2xl lg:text-3xl text-black tabular-num">{displayValue}</span>
       </div>
-      <Slider
-        data-testid={testId}
-        value={[value]}
-        min={min}
-        max={max}
-        step={step}
-        onValueChange={(v) => onChange(v[0])}
-        className="mt-3"
-      />
+      {hydrated ? (
+        <Slider
+          data-testid={testId}
+          value={[value]}
+          min={min}
+          max={max}
+          step={step}
+          onValueChange={(v) => onChange(v[0])}
+          className="mt-3"
+        />
+      ) : (
+        // Static track before hydration (Radix Slider mounts a client-only hidden
+        // input); matches server + first client render, then upgrades to the real slider.
+        <div className="relative mt-3 flex w-full items-center h-4" data-testid={testId}>
+          <div className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-black/15">
+            <div className="absolute h-full bg-[#0A0A0A]" style={{ width: `${pct}%` }} />
+          </div>
+          <div
+            className="absolute h-4 w-4 rounded-full border border-black/50 bg-white shadow"
+            style={{ left: `calc(${pct}% - 8px)` }}
+          />
+        </div>
+      )}
     </div>
   );
 }

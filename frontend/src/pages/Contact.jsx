@@ -1,8 +1,9 @@
 import Seo from "@/components/site/Seo";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Mail, Phone, Calendar, Check, Loader2 } from "lucide-react";
+import { Mail, Phone, Calendar, Check, Loader2, ChevronDown } from "lucide-react";
 import SectionLabel from "@/components/site/SectionLabel";
+import useHydrated from "@/hooks/useHydrated";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -45,6 +46,7 @@ export default function Contact() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.__PRERENDER__) return;
     const s = document.createElement("script");
     s.src = "https://assets.calendly.com/assets/external/widget.js";
     s.async = true;
@@ -201,13 +203,30 @@ function Field({ label, required, children }) {
   return (
     <label className="block">
       <span className="text-[11px] font-mono uppercase tracking-widest text-black/60 font-bold">
-        {label} {required && <span className="text-black">*</span>}
+        {label}{required && <span className="text-black"> *</span>}
       </span>
       <div className="mt-2">{children}</div>
     </label>
   );
 }
 function SelectField({ value, onChange, options, placeholder, testId }) {
+  const hydrated = useHydrated();
+
+  // Before hydration, render a static trigger that matches on server + first client
+  // render (Radix Select mounts a client-only hidden native <select> that otherwise
+  // breaks hydration). Swaps to the real interactive Select after hydration.
+  if (!hydrated) {
+    return (
+      <div
+        data-testid={testId}
+        className="bg-white border border-black/15 text-black/50 h-12 px-3 rounded-md flex items-center justify-between text-sm"
+      >
+        <span>{value || placeholder}</span>
+        <ChevronDown className="h-4 w-4 opacity-50" />
+      </div>
+    );
+  }
+
   return (
     <Select value={value} onValueChange={onChange}>
       <SelectTrigger data-testid={testId} className="bg-white border-black/15 text-black h-12">

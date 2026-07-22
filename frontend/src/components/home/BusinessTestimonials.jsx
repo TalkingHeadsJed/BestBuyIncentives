@@ -23,7 +23,7 @@ export default function BusinessTestimonials() {
               <div>
                 <Quote className="h-9 w-9 text-[#FFD300] fill-[#FFD300]" />
                 <p className="mt-6 font-display text-2xl lg:text-3xl font-bold leading-[1.12] text-black">
-                  "{t.quote}"
+                  {`\u201C${t.quote}\u201D`}
                 </p>
               </div>
 

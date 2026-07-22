@@ -99,6 +99,7 @@ export default function Footer() {
             <li><Link to="/case-studies" className="text-white/80 hover:text-[#FFD300]">Case Studies</Link></li>
             <li><Link to="/resources" className="text-white/80 hover:text-[#FFD300]">Resources</Link></li>
             <li><Link to="/industries" className="text-white/80 hover:text-[#FFD300]">Industries</Link></li>
+            <li><Link to="/faq" className="text-white/80 hover:text-[#FFD300]">FAQ</Link></li>
           </ul>
         </div>
 
@@ -115,7 +116,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-[11px] font-mono uppercase tracking-widest text-white/40">
-            © {new Date().getFullYear()} BestBuyIncentives.com — Trusted Since 1992 · A Sales Growth Company
+            {`\u00A9 ${new Date().getFullYear()} BestBuyIncentives.com \u2014 Trusted Since 1992 \u00B7 A Sales Growth Company`}
           </p>
           <div className="flex items-center gap-6 text-[11px] font-mono uppercase tracking-widest text-white/40">
             <a href="#" className="hover:text-[#FFD300]">Privacy</a>
