@@ -22,8 +22,10 @@ const INDUSTRIES_OPTS = [
   "Jewelry",
   "Furniture",
   "Home Improvement",
-  "Flooring",
-  "Mattress",
+  "E-Commerce Retailer",
+  "Travel Club",
+  "Health Club",
+  "Employee Rewards",
   "Luxury Retail",
   "B2B Sales Org",
   "Other",
@@ -144,8 +146,8 @@ export default function Contact() {
                   </Field>
                 </Row>
                 <Row>
-                  <Field label="Industry">
-                    <SelectField testId="contact-industry" value={form.industry} onChange={update("industry")} options={INDUSTRIES_OPTS} placeholder="Pick your vertical" />
+                  <Field label="Pick your vertical">
+                    <SelectField testId="contact-industry" value={form.industry} onChange={update("industry")} options={INDUSTRIES_OPTS} placeholder="Select one" />
                   </Field>
                   <Field label="Average Deal Size">
                     <SelectField testId="contact-deal-size" value={form.avg_deal_size} onChange={update("avg_deal_size")} options={DEAL_SIZES} placeholder="Average ticket" />

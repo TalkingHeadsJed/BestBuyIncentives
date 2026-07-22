@@ -40,7 +40,7 @@ export default function Programs() {
               data-testid={`program-${p.slug}`}
               className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[#E5E2D9]"
             >
-              <div className={`lg:col-span-6 relative aspect-[5/4] lg:aspect-auto bg-[#F5F2EA] overflow-hidden ${i % 2 ? "lg:order-2" : ""}`}>
+              <div className={`lg:col-span-6 relative aspect-[16/10] bg-[#0a2b5e] overflow-hidden ${i % 2 ? "lg:order-2" : ""}`}>
                 <img src={p.image} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className={`lg:col-span-6 p-8 lg:p-12 bg-white ${i % 2 ? "lg:order-1" : ""} flex flex-col justify-center`}>

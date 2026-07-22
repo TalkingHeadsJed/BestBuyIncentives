@@ -30,7 +30,7 @@ export default function ProgramsShowcase() {
               {/* HUGE product photo (the brochure) */}
               <div className="relative bg-white shadow-xl">
                 <div className="absolute -top-3 left-6 stamp z-10">{p.badge}</div>
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#F5F2EA]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#0a2b5e]">
                   <img
                     src={p.image}
                     alt={p.name}

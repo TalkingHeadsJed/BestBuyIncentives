@@ -7,8 +7,10 @@ const INDUSTRY_IMAGES = [
   IMG.jewelryShow,
   IMG.furnitureShow,
   IMG.homeImprov,
-  IMG.flooring,
-  IMG.mattress,
+  IMG.ecommerce,
+  IMG.travelClub,
+  IMG.healthClub,
+  IMG.employeeRewards,
   IMG.luxuryRetail,
   IMG.b2bSales,
 ];

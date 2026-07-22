@@ -10,7 +10,7 @@ export default function Industries() {
     <div data-testid="page-industries">
       <Seo
         title="Industries We Serve — Auto, Jewelry, Furniture, Home Improvement & More"
-        description="Sales incentive programs for auto dealerships, jewelry stores, furniture retailers, home improvement, flooring, mattress, luxury retail, and B2B sales organizations."
+        description="Sales incentive programs for auto dealerships, jewelry stores, furniture retailers, home improvement, e-commerce retailers, travel clubs, health clubs, employee rewards, luxury retail, and B2B sales organizations."
         path="/industries"
       />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">

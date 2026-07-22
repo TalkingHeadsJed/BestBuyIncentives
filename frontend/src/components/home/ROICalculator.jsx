@@ -43,7 +43,7 @@ export default function ROICalculator() {
         <div className="max-w-3xl">
           <SectionLabel>The Math</SectionLabel>
           <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95] text-black">
-            What a <span className="under-yellow">22% lift</span> does to your top line.
+            What can <span className="under-yellow">incentives</span> do to your top line?
           </h2>
           <p className="mt-6 text-lg text-[#595959] leading-relaxed">
             Drag the sliders. We'll run the math against your sales floor in real time.

@@ -31,8 +31,10 @@ export const IMG = {
   jewelryShow:      L("jewelryShow"),
   furnitureShow:    L("furnitureShow"),
   homeImprov:       L("homeImprov"),
-  flooring:         L("flooring"),
-  mattress:         L("mattress"),
+  ecommerce:        L("ecommerce"),
+  travelClub:       L("travelClub"),
+  healthClub:       L("healthClub"),
+  employeeRewards:  L("employeeRewards"),
   luxuryRetail:     L("luxuryRetail"),
   b2bSales:         L("b2bSales"),
 
