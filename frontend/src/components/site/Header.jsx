@@ -18,7 +18,7 @@ export default function Header() {
   useEffect(() => { setOpen(false); }, [pathname]);
 
   // Pages with a dark hero want a transparent header at top of scroll
-  const darkHeroPages = ["/", "/about", "/programs", "/industries", "/case-studies", "/resources", "/contact"];
+  const darkHeroPages = ["/", "/about", "/programs", "/industries", "/case-studies", "/resources", "/faq", "/travel-incentives-vs-discounting", "/contact"];
   const onDarkHero = darkHeroPages.includes(pathname);
   const transparent = onDarkHero && !scrolled;
 

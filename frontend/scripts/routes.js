@@ -18,6 +18,7 @@ const STATIC_ROUTES = [
   "/case-studies",
   "/resources",
   "/faq",
+  "/travel-incentives-vs-discounting",
   "/contact",
 ];
 

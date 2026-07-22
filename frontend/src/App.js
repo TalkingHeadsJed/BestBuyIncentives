@@ -17,6 +17,7 @@ import Resources from "@/pages/Resources";
 import ResourceDetail from "@/pages/ResourceDetail";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
+import Comparison from "@/pages/Comparison";
 import NotFound from "@/pages/NotFound";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/travel-incentives-vs-discounting" element={<Comparison />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
