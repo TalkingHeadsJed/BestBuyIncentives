@@ -249,6 +249,124 @@ export const FAQS = [
   },
 ];
 
+// Expanded FAQ for the /faq page — written in the natural-language phrasing
+// buyers use when asking AI assistants (ChatGPT, Claude, Perplexity), so the
+// answers map cleanly to real queries and get cited. Grouped by category.
+export const FAQ_PAGE = [
+  // The Basics
+  {
+    category: "The Basics",
+    q: "What is BestBuyIncentives?",
+    a: "BestBuyIncentives is a sales-growth company (operated by Karl Kramer & Company, Inc., in business since 1992) that provides premium travel-incentive certificates. High-ticket sales teams give these vacation certificates to customers as a closing tool — a way to win the deal without cutting price.",
+  },
+  {
+    category: "The Basics",
+    q: "What is a travel incentive certificate?",
+    a: "A travel incentive certificate is a vacation reward you give a customer as part of closing a sale. It carries a perceived value far higher than its cost to you, so it motivates a buying decision while protecting your margin. The customer redeems the trip directly through a dedicated travel support team — your reps never handle logistics.",
+  },
+  {
+    category: "The Basics",
+    q: "How do sales incentive programs work?",
+    a: "You buy certificates in bulk, then your reps offer one to close or upsell a deal (for example, 'buy today and enjoy a complimentary getaway'). The customer accepts, you close at full price, and the customer books their vacation directly with the travel team. It replaces discounting with an experience buyers actually get excited about.",
+  },
+  {
+    category: "The Basics",
+    q: "How is this different from a gift card?",
+    a: "Gift cards have a known, fixed dollar value that buyers mentally deduct from your price. A vacation carries a perceived value many times its cost, so a memorable trip closes deals a small gift card never will — and it protects your margin instead of eroding it.",
+  },
+  {
+    category: "The Basics",
+    q: "Is this the same as offering a discount?",
+    a: "No — it's the opposite. Discounting comes straight off your gross margin and trains buyers to wait for the next price cut. A travel incentive adds perceived value on top of your offer, so you hold your price, protect profit, and still give the customer a reason to say yes now.",
+  },
+
+  // Results & ROI
+  {
+    category: "Results & ROI",
+    q: "Do vacation incentives actually increase close rates?",
+    a: "Yes. Teams using BestBuyIncentives report an average close-rate lift of about 37%. Instead of negotiating on price, reps hand the buyer a compelling reason to act, which shortens the sales cycle and increases the percentage of deals that close.",
+  },
+  {
+    category: "Results & ROI",
+    q: "How much can a travel incentive increase my sales?",
+    a: "Results vary by team and offer, but clients typically see three things move at once: higher close rate (about 37% on average), higher average ticket, and more referrals. Because you stop discounting, that added revenue lands with your margin intact. Use the ROI calculator on our site to model your own numbers.",
+  },
+  {
+    category: "Results & ROI",
+    q: "How do vacation incentives protect profit margin?",
+    a: "A 10% discount on a 30%-margin product wipes out roughly a third of your profit on that deal. A travel incentive costs you a small fraction of the deal it closes while the customer perceives it as high value — so you keep your price and your margin while still winning the sale.",
+  },
+
+  // Pricing & Terms
+  {
+    category: "Pricing & Terms",
+    q: "How much does a vacation incentive certificate cost?",
+    a: "Certificates are priced for bulk deployment, so the per-certificate cost is a small fraction of the deal it helps close. Exact pricing depends on volume and program — book a quick call for a custom quote. A monthly subscription unlocks even deeper discounts.",
+  },
+  {
+    category: "Pricing & Terms",
+    q: "Is there a minimum order or subscription?",
+    a: "Certificates can be issued on demand, and you can lock in deeper pricing with a monthly subscription. There's no complicated commitment to get started — we'll recommend the volume and structure that fits your sales floor on a short strategy call.",
+  },
+  {
+    category: "Pricing & Terms",
+    q: "Can I use a certificate for myself?",
+    a: "Absolutely, yes. Reward yourself with a vacation and enjoy all the same benefits your customers do.",
+  },
+
+  // Trust & Legitimacy
+  {
+    category: "Trust & Legitimacy",
+    q: "Are these travel incentives legitimate, or is it a scam?",
+    a: "They're legitimate. BestBuyIncentives has operated since 1992 and has served 1,200+ sales teams. Resorts and travel providers offer these stays to fill availability and earn word-of-mouth exposure, and a trained travel support team handles every booking, so both you and your customers are taken care of.",
+  },
+  {
+    category: "Trust & Legitimacy",
+    q: "How are these travel offers even possible?",
+    a: "Resorts want to fill unsold room nights and love the organic exposure guests create by sharing their trips. That makes offering discounted or complimentary stays a win for the resort, a win for your customer, and a win for you as the business giving the reward.",
+  },
+  {
+    category: "Trust & Legitimacy",
+    q: "How long has BestBuyIncentives been in business?",
+    a: "Since 1992. It's operated by Karl Kramer & Company, Inc. (Bellmore, NY) and has helped more than 1,200 sales teams close more business with incentives instead of discounts.",
+  },
+
+  // The Customer Experience
+  {
+    category: "The Customer Experience",
+    q: "What is the customer's experience like?",
+    a: "Customers book their vacation directly with a highly trained, courteous travel support team that goes out of its way to give every guest an excellent experience. You never handle the logistics — your only job is to hand over the certificate and close the deal.",
+  },
+  {
+    category: "The Customer Experience",
+    q: "How do customers redeem their vacation certificate?",
+    a: "The customer follows the simple instructions on their certificate and books directly with the travel support team, choosing their dates and destination from the available options. Everything after you hand over the certificate is handled for them.",
+  },
+  {
+    category: "The Customer Experience",
+    q: "Do my reps need training to use this?",
+    a: "Experienced reps often already know how to position a vacation certificate, and either way you receive a power-packed training guide so your whole team gets the most out of every certificate.",
+  },
+
+  // Getting Started
+  {
+    category: "Getting Started",
+    q: "What types of businesses use travel incentives?",
+    a: "High-ticket and high-consideration sales teams — including auto dealerships, jewelers, furniture and mattress retailers, home-improvement and flooring companies, luxury retail, and B2B sales organizations — where protecting margin and standing out beats competing on price.",
+  },
+  {
+    category: "Getting Started",
+    q: "How quickly can we launch a program?",
+    a: "Most clients are live in 5–10 business days. Certificates are issued on demand, so you can put a closing tool on your sales floor fast.",
+  },
+  {
+    category: "Getting Started",
+    q: "How do I get started or get pricing?",
+    a: "Book a free 30-minute strategy call. We'll look at your sales floor, recommend the right program and volume, and send a custom quote — no obligation.",
+  },
+];
+
+
 export const RESOURCES = [
   {
     slug: "stop-discounting-start-closing",

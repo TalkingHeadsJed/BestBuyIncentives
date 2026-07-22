@@ -1,18 +1,20 @@
 import Seo, { faqSchema, breadcrumbSchema } from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
-import { FAQS } from "@/data/content";
+import { FAQ_PAGE } from "@/data/content";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export default function FAQ() {
+  const categories = [...new Set(FAQ_PAGE.map((f) => f.category))];
+
   return (
     <div data-testid="faq-page">
       <Seo
-        title="FAQ — Sales Incentive Program Questions Answered"
-        description="Answers to the most common questions about BestBuyIncentives travel-incentive certificate programs — how they work, what they cost, how fast you launch, and the customer experience."
+        title="FAQ — Travel Incentive & Sales Program Questions Answered"
+        description="Straight answers on how BestBuyIncentives travel-incentive certificate programs work — what they cost, whether they're legitimate, how customers redeem, how much they lift close rates, and how fast you launch."
         path="/faq"
         schema={[
-          faqSchema(FAQS),
+          faqSchema(FAQ_PAGE),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "FAQ", path: "/faq" },
@@ -28,24 +30,32 @@ export default function FAQ() {
             Everything sales leaders <span className="hl-yellow-full text-black">ask us.</span>
           </h1>
           <p className="mt-6 text-lg text-white/70 max-w-2xl leading-relaxed">
-            Straight answers on how the programs work, what they cost, and how fast you can put a closing tool on your sales floor.
+            Straight answers on how the programs work, what they cost, whether they're legit, and how fast you can put a closing tool on your sales floor.
           </p>
         </div>
       </section>
 
-      {/* Q&A — answers rendered fully visible so readers, search engines and AI can read them */}
-      <section className="bg-white py-20 lg:py-28">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-10">
-          <dl className="divide-y divide-[#E5E2D9] border-y border-[#E5E2D9]">
-            {FAQS.map((f, i) => (
-              <div key={i} data-testid={`faq-qa-${i}`} className="py-8 lg:py-10">
-                <dt className="font-display text-2xl lg:text-3xl font-bold text-black leading-tight">
-                  {f.q}
-                </dt>
-                <dd className="mt-4 text-lg text-[#595959] leading-relaxed">{f.a}</dd>
-              </div>
-            ))}
-          </dl>
+      {/* Q&A — grouped by category, answers fully visible so readers, search engines and AI can read them */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="mx-auto max-w-[900px] px-6 lg:px-10 space-y-16">
+          {categories.map((cat) => (
+            <div key={cat} data-testid={`faq-category-${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-black">
+                {cat}
+              </h2>
+              <div className="mt-2 h-1 w-16 bg-[#FFD300]" />
+              <dl className="mt-8 divide-y divide-[#E5E2D9] border-y border-[#E5E2D9]">
+                {FAQ_PAGE.filter((f) => f.category === cat).map((f, i) => (
+                  <div key={i} data-testid={`faq-qa-${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${i}`} className="py-7 lg:py-8">
+                    <dt className="font-display text-xl lg:text-2xl font-bold text-black leading-tight">
+                      {f.q}
+                    </dt>
+                    <dd className="mt-3 text-base lg:text-lg text-[#595959] leading-relaxed">{f.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
         </div>
       </section>
 
