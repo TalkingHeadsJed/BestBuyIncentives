@@ -40,6 +40,7 @@ Web3Forms: add live domain to "Allowed Domains" so forms send.
 - 2026-06 (earlier): Static conversion, Web3Forms, phone 866-843-8003, localized images, scrubbed Emergent.
 - 2026-06 (this session): Final Vimeo VSL (user's compressed 16.6MB 720p), new Greece testimonial image, FAQ copy change, video-badge "Member Access", full SEO prerendering + AI optimization (above), renamed output folder to `static-site`.
 - 2026-06 (this session, cont.): Expanded `/faq` to 20 buyer/AI-style questions in 6 categories (`FAQ_PAGE` in content.js) — answers visible + full FAQPage JSON-LD (20 questions) for answer-engine citation. Calendly embed URL left untouched (`calendly.com/bestbuyincentives5/30min`).
+- 2026-06 (this session, cont.): Added visible "FAQ" link to top nav (NAV_LINKS). Built new comparison page `/travel-incentives-vs-discounting` (`src/pages/Comparison.jsx`) — head-to-head table + FAQPage schema + breadcrumb, linked in footer, prerendered, added to sitemap (now 15 routes). Verified by testing agent (frontend, 100% pass, iteration_4.json) with 0 issues; hydration clean across all routes.
 
 ## Backlog
 - P1: Post-launch — verify live SEO audit passes on bestbuyincentives.com; submit sitemap to Google/Bing Search Console.

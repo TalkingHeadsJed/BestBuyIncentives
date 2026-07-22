@@ -99,8 +99,8 @@ export default function Footer() {
             <li><Link to="/case-studies" className="text-white/80 hover:text-[#FFD300]">Case Studies</Link></li>
             <li><Link to="/resources" className="text-white/80 hover:text-[#FFD300]">Resources</Link></li>
             <li><Link to="/industries" className="text-white/80 hover:text-[#FFD300]">Industries</Link></li>
-            <li><Link to="/faq" className="text-white/80 hover:text-[#FFD300]">FAQ</Link></li>
-            <li><Link to="/travel-incentives-vs-discounting" className="text-white/80 hover:text-[#FFD300]">Incentives vs. Discounting</Link></li>
+            <li><Link to="/faq" data-testid="footer-link-faq" className="text-white/80 hover:text-[#FFD300]">FAQ</Link></li>
+            <li><Link to="/travel-incentives-vs-discounting" data-testid="footer-link-comparison" className="text-white/80 hover:text-[#FFD300]">Incentives vs. Discounting</Link></li>
           </ul>
         </div>
 
