@@ -2,12 +2,12 @@
 
 > Best Buy Incentives helps salespeople close more contracts with powerful travel-incentive certificates — lifting close rates without cutting price. Operated by Karl Kramer & Company, Inc. (Bellmore, NY), a sales-growth company trusted since 1992.
 
-BestBuyIncentives provides premium travel-incentive certificate programs that high-ticket sales teams use as a closing tool. Instead of discounting to win a deal, a rep offers the buyer a vacation experience — protecting margin while lifting close rates (reported at +37% on average across 1,200+ sales teams). Programs are used across auto dealerships, jewelers, furniture retailers, home-improvement, flooring, mattress, luxury retail, and B2B sales organizations. The company handles all travel redemption and support; the client's team never touches logistics.
+BestBuyIncentives provides premium travel-incentive certificate programs that high-ticket sales teams use as a closing tool. Instead of discounting to win a deal, a rep offers the buyer a vacation experience — protecting margin while lifting close rates (reported at +37% on average across 1,200+ sales teams). Programs are used across auto dealerships, jewelers, furniture retailers, home-improvement, e-commerce retailers, travel clubs, health clubs, employee rewards, luxury retail, and B2B sales organizations. The company handles all travel redemption and support; the client's team never touches logistics.
 
 ## Core pages
 - [Home](https://bestbuyincentives.com/): What the closing tool is and why it beats discounting.
 - [Programs](https://bestbuyincentives.com/programs): The travel-incentive certificate programs and how they are deployed.
-- [Industries](https://bestbuyincentives.com/industries): Industries served — auto, jewelry, furniture, home improvement, flooring, mattress, luxury retail, B2B.
+- [Industries](https://bestbuyincentives.com/industries): Industries served — auto, jewelry, furniture, home improvement, e-commerce, travel clubs, health clubs, employee rewards, luxury retail, B2B.
 - [Case Studies](https://bestbuyincentives.com/case-studies): Documented sales lift from real teams.
 - [FAQ](https://bestbuyincentives.com/faq): Straight answers on how programs work, pricing, launch time, and the customer experience.
 - [About](https://bestbuyincentives.com/about): The company philosophy — selling sales growth, with the vacation as the mechanism.

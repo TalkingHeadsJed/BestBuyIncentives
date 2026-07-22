@@ -363,7 +363,7 @@ export const FAQ_PAGE = [
   {
     category: "Getting Started",
     q: "What types of businesses use travel incentives?",
-    a: "High-ticket and high-consideration sales teams — including auto dealerships, jewelers, furniture and mattress retailers, home-improvement and flooring companies, luxury retail, and B2B sales organizations — where protecting margin and standing out beats competing on price.",
+    a: "High-ticket and high-consideration sales teams — including auto dealerships, jewelers, furniture retailers, home-improvement companies, e-commerce retailers, travel clubs, health clubs, employee-rewards programs, luxury retail, and B2B sales organizations — where protecting margin and standing out beats competing on price.",
   },
   {
     category: "Getting Started",
@@ -480,8 +480,8 @@ export const TRUST_LOGOS = [
   "GRANT & SONS JEWELERS",
   "NORTHWAY FURNITURE",
   "APEX HOME EXTERIORS",
-  "REGENCY MATTRESS",
-  "CRESTLINE FLOORING",
+  "SUMMIT HEALTH CLUBS",
+  "HARBOR TRAVEL CLUB",
   "WEST COAST LUXURY",
   "PINNACLE B2B",
 ];
