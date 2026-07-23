@@ -54,6 +54,9 @@ const CHROME = process.env.CHROME_PATH || "/usr/bin/google-chrome";
     await page.setRequestInterception(true);
     page.on("request", (req) => {
       if (req.resourceType() === "media") return req.abort();
+      // Don't fire the analytics pixel from the build container; the <script>
+      // tag still serializes into the prerendered HTML for real visitors.
+      if (/idpixel\.app/.test(req.url())) return req.abort();
       return req.continue();
     });
 
