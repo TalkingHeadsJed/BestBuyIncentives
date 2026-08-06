@@ -1,0 +1,11 @@
+legacy_path,destination_path,action,rationale,verification_status
+/travel-incentives-vs-discounting,/discounted-travel-vouchers-vs-cash-discounts/,301,Preserve comparison relevance while moving to approved terminology,Pending deployment
+/travel-incentives-vs-gift-cards,/discounted-travel-vouchers-vs-gift-cards/,301,Preserve comparison relevance while moving to approved terminology,Pending deployment
+/travel-incentives-vs-cash-rebates,/customer-incentive-comparisons/,301,Consolidate rebate comparison into the comparison hub,Pending deployment
+/resources/stop-discounting-start-closing,/increase-sales-without-discounting/,301,Consolidate legacy article into the stronger commercial pillar,Pending deployment
+/resources/the-buyers-remorse-killer,/why-qualified-prospects-stall/,301,Replace aggressive wording with the closest approved decision-friction resource,Pending deployment
+/resources/how-to-position-a-vacation-incentive-in-a-close,/explain-discounted-travel-voucher-to-customer/,301,Move to approved product wording and canonical presentation guide,Pending deployment
+/resources/compensation-plans-that-actually-motivate,/customer-closing-incentives-vs-sales-spiffs/,301,Redirect employee-compensation intent to the explicit customer-versus-SPIFF distinction,Pending deployment
+/resources/running-a-21-day-blitz-campaign,/launch-customer-travel-voucher-promotion/,301,Consolidate campaign-launch intent into the approved implementation guide,Pending deployment
+/resources/differentiating-on-experience-not-price,/close-more-sales-without-lowering-price/,301,Consolidate value-over-price intent into the approved sales guide,Pending deployment
+/sitemap_index.xml,/sitemap.xml,301,Prevent a soft-404 HTML response at a conventional sitemap endpoint,Pending deployment

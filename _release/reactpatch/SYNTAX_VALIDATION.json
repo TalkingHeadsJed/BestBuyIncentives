@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-08-06T13:54:00.000Z",
+  "compiler": "esbuild cached local binary",
+  "scope": "47 JavaScript and JSX files under production-source-reconstructed/src",
+  "source_sha256": "6dd5ca9f8c7fd6fc877b525946e50a53b87600c92eb9ebd89aa5c98b4d1ef0b6",
+  "loader_js": "jsx",
+  "loader_jsx": "jsx",
+  "format": "esm",
+  "compiled_files": 47,
+  "pass": true,
+  "limitations": "This proves syntax transformation for the reconstructed first-party source. The authoritative Emergent project must still complete its full dependency-aware production build before deployment."
+}

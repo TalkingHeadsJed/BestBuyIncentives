@@ -1,0 +1,138 @@
+import { useMemo, useState } from "react";
+import { Slider } from "@/components/ui/slider";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import SectionLabel from "@/components/site/SectionLabel";
+import useHydrated from "@/hooks/useHydrated";
+
+function fmtMoney(n) {
+  if (n == null || isNaN(n)) return "$0";
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function computeROI({ reps, avgDeal, dealsPerRep, closeRate, uplift }) {
+  const monthly_deals = reps * dealsPerRep;
+  const current_closed = monthly_deals * (closeRate / 100);
+  const new_close_rate = Math.min(closeRate * (1 + uplift / 100), 100);
+  const new_closed = monthly_deals * (new_close_rate / 100);
+  const added_deals = new_closed - current_closed;
+  const monthly_added_revenue = added_deals * avgDeal;
+  return {
+    new_close_rate: Math.round(new_close_rate * 10) / 10,
+    added_deals_per_month: Math.round(added_deals * 10) / 10,
+    monthly_added_revenue,
+    annual_added_revenue: monthly_added_revenue * 12,
+  };
+}
+
+export default function ROICalculator() {
+  const [reps, setReps] = useState(12);
+  const [avgDeal, setAvgDeal] = useState(8500);
+  const [dealsPerRep, setDealsPerRep] = useState(8);
+  const [closeRate, setCloseRate] = useState(28);
+  const uplift = 22;
+
+  const result = useMemo(
+    () => computeROI({ reps, avgDeal, dealsPerRep, closeRate, uplift }),
+    [reps, avgDeal, dealsPerRep, closeRate]
+  );
+
+  return (
+    <section data-testid="roi-calculator" className="bg-[#F5F2EA] py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="max-w-3xl">
+          <SectionLabel>The Math</SectionLabel>
+          <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.95] text-black">
+            What can <span className="under-yellow">incentives</span> do to your top line?
+          </h2>
+          <p className="mt-6 text-lg text-[#595959] leading-relaxed">
+            Drag the sliders. We'll run the math against your sales floor in real time.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[#E5E2D9] bg-white">
+          <div className="lg:col-span-7 p-8 lg:p-12 space-y-8 border-r border-[#E5E2D9]">
+            <SliderRow label="Sales reps on the floor" value={reps} min={1} max={200} onChange={setReps} displayValue={`${reps}`} testId="roi-reps" />
+            <SliderRow label="Average deal size (USD)" value={avgDeal} min={500} max={150000} step={500} onChange={setAvgDeal} displayValue={fmtMoney(avgDeal)} testId="roi-avg-deal" />
+            <SliderRow label="Deals per rep / month" value={dealsPerRep} min={1} max={50} onChange={setDealsPerRep} displayValue={`${dealsPerRep}`} testId="roi-deals-per-rep" />
+            <SliderRow label="Current close rate" value={closeRate} min={5} max={80} onChange={setCloseRate} displayValue={`${closeRate}%`} testId="roi-close-rate" />
+          </div>
+
+          <div className="lg:col-span-5 bg-[#0A0A0A] text-white p-8 lg:p-12 flex flex-col justify-between">
+            <div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#FFD300] font-bold">
+                Projected annual lift
+              </div>
+              <div data-testid="roi-annual" className="mt-4 font-display font-bold text-[#FFD300] text-5xl lg:text-7xl tabular-num leading-[0.95]">
+                {fmtMoney(result.annual_added_revenue)}
+              </div>
+              <div className="mt-3 text-sm text-white/70">
+                Conservative against typical field results (22% close-rate lift).
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-px bg-white/10">
+                <Tile label="Added deals / mo" value={result.added_deals_per_month.toFixed(1)} />
+                <Tile label="New close rate" value={`${result.new_close_rate}%`} />
+                <Tile label="Added rev / mo" value={fmtMoney(result.monthly_added_revenue)} />
+                <Tile label="Reps deployed" value={`${reps}`} />
+              </div>
+            </div>
+
+            <Link
+              to="/contact"
+              data-testid="roi-cta"
+              className="mt-10 inline-flex items-center justify-center gap-3 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-base px-7 py-5 uppercase tracking-wide"
+            >
+              See My Custom Quote <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SliderRow({ label, value, min, max, step = 1, onChange, displayValue, testId }) {
+  const hydrated = useHydrated();
+  const pct = Math.max(0, Math.min(100, ((value - min) / (max - min)) * 100));
+  return (
+    <div data-testid={`${testId}-row`}>
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="text-[11px] font-mono uppercase tracking-widest text-black/60 font-bold">{label}</span>
+        <span className="font-display font-bold text-2xl lg:text-3xl text-black tabular-num">{displayValue}</span>
+      </div>
+      {hydrated ? (
+        <Slider
+          data-testid={testId}
+          value={[value]}
+          min={min}
+          max={max}
+          step={step}
+          onValueChange={(v) => onChange(v[0])}
+          className="mt-3"
+        />
+      ) : (
+        // Static track before hydration (Radix Slider mounts a client-only hidden
+        // input); matches server + first client render, then upgrades to the real slider.
+        <div className="relative mt-3 flex w-full items-center h-4" data-testid={testId}>
+          <div className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-black/15">
+            <div className="absolute h-full bg-[#0A0A0A]" style={{ width: `${pct}%` }} />
+          </div>
+          <div
+            className="absolute h-4 w-4 rounded-full border border-black/50 bg-white shadow"
+            style={{ left: `calc(${pct}% - 8px)` }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Tile({ label, value }) {
+  return (
+    <div className="bg-[#0A0A0A] p-5">
+      <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 font-bold">{label}</div>
+      <div className="mt-1 font-display font-bold text-2xl text-white tabular-num">{value}</div>
+    </div>
+  );
+}

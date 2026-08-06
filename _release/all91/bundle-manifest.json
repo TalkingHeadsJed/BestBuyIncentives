@@ -1,0 +1,743 @@
+{
+  "generated_at": "2026-08-06T09:29:31.031Z",
+  "scope": "all-91",
+  "architecture": "Apache physical pre-rendered route directories",
+  "pages": [
+    {
+      "publish_order": 1,
+      "destination_url": "/",
+      "output_file": "index.html",
+      "bytes": 10201,
+      "sha256": "a207aaba61cd9bd259b5ac177f64366acb28cd902be492c86d2d801f08806f81",
+      "content_id": "page-01"
+    },
+    {
+      "publish_order": 2,
+      "destination_url": "/sales-closing-incentives/",
+      "output_file": "sales-closing-incentives/index.html",
+      "bytes": 8931,
+      "sha256": "8824359436c0e7ff05c699a1bed0d346be58914f079420d19863a24d6142e20c",
+      "content_id": "page-02"
+    },
+    {
+      "publish_order": 3,
+      "destination_url": "/discounted-travel-vouchers-for-sales/",
+      "output_file": "discounted-travel-vouchers-for-sales/index.html",
+      "bytes": 8529,
+      "sha256": "540c7b4b2cad9b67dd079e74d66d48f6f84ca3d76177f969ca95e9bc568e9384",
+      "content_id": "page-03"
+    },
+    {
+      "publish_order": 4,
+      "destination_url": "/how-it-works/",
+      "output_file": "how-it-works/index.html",
+      "bytes": 8637,
+      "sha256": "3a546a771fdeb35d2c34beddfe77c95d3a205c4f35a9d20d3244f4720dedfe96",
+      "content_id": "page-04"
+    },
+    {
+      "publish_order": 5,
+      "destination_url": "/high-ticket-sales-incentives/",
+      "output_file": "high-ticket-sales-incentives/index.html",
+      "bytes": 8204,
+      "sha256": "a2c5b271dd2bfd3ee07ed003039297ab5a0c5c2de298f31bc02127f5ff83c425",
+      "content_id": "page-05"
+    },
+    {
+      "publish_order": 6,
+      "destination_url": "/customer-incentive-programs/",
+      "output_file": "customer-incentive-programs/index.html",
+      "bytes": 7847,
+      "sha256": "cce20c09d5614b6053514cb4f843b0b4cd2f22352048d7d11d6fabdd3c9e334f",
+      "content_id": "page-06"
+    },
+    {
+      "publish_order": 7,
+      "destination_url": "/increase-sales-without-discounting/",
+      "output_file": "increase-sales-without-discounting/index.html",
+      "bytes": 8188,
+      "sha256": "0a0ee72e06e210716fbe86c988e555a4009dc8b74ba60ca365b6cdad589d6b84",
+      "content_id": "page-07"
+    },
+    {
+      "publish_order": 8,
+      "destination_url": "/customer-incentive-comparisons/",
+      "output_file": "customer-incentive-comparisons/index.html",
+      "bytes": 9121,
+      "sha256": "a698b032a6ff7a13f26c61b2c709033bfc4435e3fb53dfe671be723d9ffa270a",
+      "content_id": "page-08"
+    },
+    {
+      "publish_order": 9,
+      "destination_url": "/high-ticket-closing-playbook/",
+      "output_file": "high-ticket-closing-playbook/index.html",
+      "bytes": 7237,
+      "sha256": "7253ec0549023cd6f9868780a21124e80a24d3377f1c9c5f77cbcf11af2d8757",
+      "content_id": "page-09"
+    },
+    {
+      "publish_order": 10,
+      "destination_url": "/case-studies/place-furniture-galleries/",
+      "output_file": "case-studies/place-furniture-galleries/index.html",
+      "bytes": 8856,
+      "sha256": "c56764125559825e4e1b82af6a38f3e3039d0d59491df82925c23bbc44b245ec",
+      "content_id": "page-10"
+    },
+    {
+      "publish_order": 11,
+      "destination_url": "/case-studies/automotive-closing-incentives/",
+      "output_file": "case-studies/automotive-closing-incentives/index.html",
+      "bytes": 8878,
+      "sha256": "40b39817c904d8d008c50a906d561bc834129edd3ee01cea757ed2e28ea9ee62",
+      "content_id": "page-11"
+    },
+    {
+      "publish_order": 12,
+      "destination_url": "/industries/automotive-dealerships/",
+      "output_file": "industries/automotive-dealerships/index.html",
+      "bytes": 13972,
+      "sha256": "66241dc1fb81ff814e3f747d9c806552b41d90d02bdf96943c7f74241dab5657",
+      "content_id": "page-12"
+    },
+    {
+      "publish_order": 13,
+      "destination_url": "/industries/furniture-retailers/",
+      "output_file": "industries/furniture-retailers/index.html",
+      "bytes": 11743,
+      "sha256": "be8dbbe84afaec17757ac69cf948a4b6d0a5b5c0cddc14822212d17e4df9d93e",
+      "content_id": "page-13"
+    },
+    {
+      "publish_order": 14,
+      "destination_url": "/industries/jewelry-stores/",
+      "output_file": "industries/jewelry-stores/index.html",
+      "bytes": 10187,
+      "sha256": "41ab4789693c3514ae6e143bbdc243d8160f923722bb0bfe491f4ea283035868",
+      "content_id": "page-14"
+    },
+    {
+      "publish_order": 15,
+      "destination_url": "/industries/home-improvement-hvac/",
+      "output_file": "industries/home-improvement-hvac/index.html",
+      "bytes": 10489,
+      "sha256": "87c7d166645b2ef1378f32fe1434b16fabf4ec90cdf5aecc59a305f75370d8f3",
+      "content_id": "page-15"
+    },
+    {
+      "publish_order": 16,
+      "destination_url": "/industries/roofing-contractors/",
+      "output_file": "industries/roofing-contractors/index.html",
+      "bytes": 10160,
+      "sha256": "e2f180b9afc1dec5dde8755104fcd4d53c60887f35a2d07b0568a91a1e046538",
+      "content_id": "page-16"
+    },
+    {
+      "publish_order": 17,
+      "destination_url": "/industries/boat-rv-dealers/",
+      "output_file": "industries/boat-rv-dealers/index.html",
+      "bytes": 9427,
+      "sha256": "1e5a0addc707a8e8b469c8c882707c44f6c3c42a13124918cdf9aa582b1fd11f",
+      "content_id": "page-17"
+    },
+    {
+      "publish_order": 18,
+      "destination_url": "/industries/wedding-event-businesses/",
+      "output_file": "industries/wedding-event-businesses/index.html",
+      "bytes": 9763,
+      "sha256": "8de768b315900d17f602c4ec1387de641c9dc31556b366e53a1b8dceb283a958",
+      "content_id": "page-18"
+    },
+    {
+      "publish_order": 19,
+      "destination_url": "/partners/marketing-agencies/",
+      "output_file": "partners/marketing-agencies/index.html",
+      "bytes": 10427,
+      "sha256": "d043d814307dae467bd4e9655e772e2e9e21e59063ce6017bce9fc137b482b26",
+      "content_id": "page-19"
+    },
+    {
+      "publish_order": 20,
+      "destination_url": "/sales-closing-techniques-high-ticket-purchases/",
+      "output_file": "sales-closing-techniques-high-ticket-purchases/index.html",
+      "bytes": 12621,
+      "sha256": "ac64e3a54c58e436ed1232d1f876373077825211ab1a2327a67b738b7a89f195",
+      "content_id": "page-20"
+    },
+    {
+      "publish_order": 21,
+      "destination_url": "/sales-closing-questions-examples/",
+      "output_file": "sales-closing-questions-examples/index.html",
+      "bytes": 12044,
+      "sha256": "92a03506d7b31765c64fe552eb427c34b14d31f0ed73a1f8b3de9014a1e96f9b",
+      "content_id": "page-21"
+    },
+    {
+      "publish_order": 22,
+      "destination_url": "/close-more-sales-without-lowering-price/",
+      "output_file": "close-more-sales-without-lowering-price/index.html",
+      "bytes": 11658,
+      "sha256": "470a0aeefc3562d010816aaa889317de84e0610bdb929e6b46c4583283989c6c",
+      "content_id": "page-22"
+    },
+    {
+      "publish_order": 23,
+      "destination_url": "/how-to-ask-for-the-sale-without-being-pushy/",
+      "output_file": "how-to-ask-for-the-sale-without-being-pushy/index.html",
+      "bytes": 11044,
+      "sha256": "bedbbf29aa95907221d7d1a03eae84c21bfbbbcca30c5a8c8ff06ab8320fa887",
+      "content_id": "page-23"
+    },
+    {
+      "publish_order": 24,
+      "destination_url": "/trial-close-questions-examples/",
+      "output_file": "trial-close-questions-examples/index.html",
+      "bytes": 9699,
+      "sha256": "f1ecd5f56a5ca4dc077ab37feb15a863d441218f56dd90d30d799c11e1b6039a",
+      "content_id": "page-24"
+    },
+    {
+      "publish_order": 25,
+      "destination_url": "/why-qualified-prospects-stall/",
+      "output_file": "why-qualified-prospects-stall/index.html",
+      "bytes": 9732,
+      "sha256": "1c17e152da16d2fffb479bcfa39ceaa13f91192631ac42a8aa9a54ab7b4ff3dd",
+      "content_id": "page-25"
+    },
+    {
+      "publish_order": 26,
+      "destination_url": "/sales-manager-stalled-deals-playbook/",
+      "output_file": "sales-manager-stalled-deals-playbook/index.html",
+      "bytes": 9965,
+      "sha256": "d401233bfd0b37389b76c96d35ea4f943236ae3e900a8fb405ba316db7be03b1",
+      "content_id": "page-26"
+    },
+    {
+      "publish_order": 27,
+      "destination_url": "/high-ticket-closing-process/",
+      "output_file": "high-ticket-closing-process/index.html",
+      "bytes": 9873,
+      "sha256": "48dfabd224562a90a4f72af6af2ddc62ceaa44def891cffd649333c7e0ab8d00",
+      "content_id": "page-27"
+    },
+    {
+      "publish_order": 28,
+      "destination_url": "/create-urgency-in-sales-without-being-pushy/",
+      "output_file": "create-urgency-in-sales-without-being-pushy/index.html",
+      "bytes": 10261,
+      "sha256": "52d34a6877c8f7a4c56df3ee270faa015af07360943a3f5fe65000f95d5e2d9d",
+      "content_id": "page-28"
+    },
+    {
+      "publish_order": 29,
+      "destination_url": "/authentic-urgency-vs-false-scarcity/",
+      "output_file": "authentic-urgency-vs-false-scarcity/index.html",
+      "bytes": 9083,
+      "sha256": "68a7da9f5bdac837849064d6b7b217ed59d0bc604f61d7213716f861373a03c6",
+      "content_id": "page-29"
+    },
+    {
+      "publish_order": 30,
+      "destination_url": "/shorten-high-ticket-sales-cycle/",
+      "output_file": "shorten-high-ticket-sales-cycle/index.html",
+      "bytes": 9207,
+      "sha256": "60d4a7e6ebdfc9cde46a9da955f58129be74c639431de810815575ba84e59eeb",
+      "content_id": "page-30"
+    },
+    {
+      "publish_order": 31,
+      "destination_url": "/revive-a-deal-that-lost-momentum/",
+      "output_file": "revive-a-deal-that-lost-momentum/index.html",
+      "bytes": 8825,
+      "sha256": "3e9f3fdf47fded7ddbc398dd585d894a5eff079c1a9bc316d70849ca669fdf36",
+      "content_id": "page-31"
+    },
+    {
+      "publish_order": 32,
+      "destination_url": "/establish-a-reason-to-buy-now/",
+      "output_file": "establish-a-reason-to-buy-now/index.html",
+      "bytes": 8700,
+      "sha256": "43a2bd52ef33da645fe75207965e8d3011c5a94e7d1414b1a28f691d92201892",
+      "content_id": "page-32"
+    },
+    {
+      "publish_order": 33,
+      "destination_url": "/cost-of-delay-in-sales/",
+      "output_file": "cost-of-delay-in-sales/index.html",
+      "bytes": 8778,
+      "sha256": "d4dae4a1b74a9b9e85194e6bc513c02ea01a3b7db1aef43f64bd3437253d8c76",
+      "content_id": "page-33"
+    },
+    {
+      "publish_order": 34,
+      "destination_url": "/limited-time-sales-offers-without-manipulation/",
+      "output_file": "limited-time-sales-offers-without-manipulation/index.html",
+      "bytes": 8881,
+      "sha256": "7a8f5f52870b8c30b2d8ac889a8e9928926257f79c86f1ffb8c72e9f857d9937",
+      "content_id": "page-34"
+    },
+    {
+      "publish_order": 35,
+      "destination_url": "/improve-sales-velocity/",
+      "output_file": "improve-sales-velocity/index.html",
+      "bytes": 9203,
+      "sha256": "4d1e90485f5fdcd4b5808c82e7a7bdcaa0ac8bda2fb6f897c21acc8487f69ef0",
+      "content_id": "page-35"
+    },
+    {
+      "publish_order": 36,
+      "destination_url": "/handle-price-objections-without-discounting/",
+      "output_file": "handle-price-objections-without-discounting/index.html",
+      "bytes": 9145,
+      "sha256": "55c5d38788fe2626c1cff0c846172d638ab3e0d6398f6e218cdd7f881726fbc7",
+      "content_id": "page-36"
+    },
+    {
+      "publish_order": 37,
+      "destination_url": "/price-objection-scripts-high-ticket-sales/",
+      "output_file": "price-objection-scripts-high-ticket-sales/index.html",
+      "bytes": 9203,
+      "sha256": "aff0e3429365213fa1706b7b48309168bdb228d71ccdfad8917a787c3ac07942",
+      "content_id": "page-37"
+    },
+    {
+      "publish_order": 38,
+      "destination_url": "/i-need-to-think-about-it-sales-objection/",
+      "output_file": "i-need-to-think-about-it-sales-objection/index.html",
+      "bytes": 9001,
+      "sha256": "8c914be9dfa9313613d924a0204236d918b1435d97ef360eef556de7793bcfae",
+      "content_id": "page-38"
+    },
+    {
+      "publish_order": 39,
+      "destination_url": "/your-price-is-too-high-response/",
+      "output_file": "your-price-is-too-high-response/index.html",
+      "bytes": 8946,
+      "sha256": "960481734e122e0f582f0ae7ef92845a1ff9493970d8380b6d176035953556e1",
+      "content_id": "page-39"
+    },
+    {
+      "publish_order": 40,
+      "destination_url": "/handle-i-want-to-shop-around/",
+      "output_file": "handle-i-want-to-shop-around/index.html",
+      "bytes": 8388,
+      "sha256": "7a5169fedbb89dcfe9ee3fd2136b8884b0190c047f50a5a9711bf40ce262efc8",
+      "content_id": "page-40"
+    },
+    {
+      "publish_order": 41,
+      "destination_url": "/respond-when-a-prospect-asks-for-a-discount/",
+      "output_file": "respond-when-a-prospect-asks-for-a-discount/index.html",
+      "bytes": 8856,
+      "sha256": "9d8afa695a6f8024fd4bdb0dcb1d6bcfe68a1bea1950e31e8ce0355fa02a9575",
+      "content_id": "page-41"
+    },
+    {
+      "publish_order": 42,
+      "destination_url": "/objection-handling-frameworks-for-sales-managers/",
+      "output_file": "objection-handling-frameworks-for-sales-managers/index.html",
+      "bytes": 8945,
+      "sha256": "24dd6182c8a712a47b3b901dbcb1266492e4f67a92b8738d5ed6fb1e1f45c213",
+      "content_id": "page-42"
+    },
+    {
+      "publish_order": 43,
+      "destination_url": "/when-a-purchase-incentive-can-resolve-an-objection/",
+      "output_file": "when-a-purchase-incentive-can-resolve-an-objection/index.html",
+      "bytes": 9801,
+      "sha256": "723b76a1099d0c64ebfb3c22794bfbdc4e836443ce4c1c52ea6bfc74a6380b71",
+      "content_id": "page-43"
+    },
+    {
+      "publish_order": 44,
+      "destination_url": "/customer-incentive-ideas-to-close-sales/",
+      "output_file": "customer-incentive-ideas-to-close-sales/index.html",
+      "bytes": 9263,
+      "sha256": "9ab28c960c81c922bb9d69e695f0c7974ab31e0eb4a4954e2d18664fa9e57338",
+      "content_id": "page-44"
+    },
+    {
+      "publish_order": 45,
+      "destination_url": "/what-is-a-customer-purchase-incentive/",
+      "output_file": "what-is-a-customer-purchase-incentive/index.html",
+      "bytes": 9048,
+      "sha256": "24621292575b85e2d4870611e47769937cefa3c696b70883c7e3ecf148112fed",
+      "content_id": "page-45"
+    },
+    {
+      "publish_order": 46,
+      "destination_url": "/customer-closing-incentives-vs-sales-spiffs/",
+      "output_file": "customer-closing-incentives-vs-sales-spiffs/index.html",
+      "bytes": 8975,
+      "sha256": "abf274f4e191d2d3b1bc11f90fafd44f06e6c4661678139d8301ab5bb15afe51",
+      "content_id": "page-46"
+    },
+    {
+      "publish_order": 47,
+      "destination_url": "/discounted-travel-vouchers-vs-gift-cards/",
+      "output_file": "discounted-travel-vouchers-vs-gift-cards/index.html",
+      "bytes": 8789,
+      "sha256": "bb363b34749a3cf245c97ef005849634a6525aa56fde5ddcdbace0b95b7ea1d5",
+      "content_id": "page-47"
+    },
+    {
+      "publish_order": 48,
+      "destination_url": "/discounted-travel-vouchers-vs-cash-discounts/",
+      "output_file": "discounted-travel-vouchers-vs-cash-discounts/index.html",
+      "bytes": 8654,
+      "sha256": "0226e1bd81a84da307dcdcdb16ed55e3c6a52936daf122e27bfdd9fab52deafd",
+      "content_id": "page-48"
+    },
+    {
+      "publish_order": 49,
+      "destination_url": "/purchase-incentives-vs-loyalty-programs/",
+      "output_file": "purchase-incentives-vs-loyalty-programs/index.html",
+      "bytes": 8646,
+      "sha256": "456a466677d5e596c999320d00ea20f858e8fad08b8340dcc73497b97a176404",
+      "content_id": "page-49"
+    },
+    {
+      "publish_order": 50,
+      "destination_url": "/customer-incentives-vs-rebates/",
+      "output_file": "customer-incentives-vs-rebates/index.html",
+      "bytes": 8327,
+      "sha256": "462fa9d2d731022895c8f7e56d6f98839cbb1b7eb3b0c42ab3d744716f6a05c0",
+      "content_id": "page-50"
+    },
+    {
+      "publish_order": 51,
+      "destination_url": "/choose-incentive-for-high-ticket-purchase/",
+      "output_file": "choose-incentive-for-high-ticket-purchase/index.html",
+      "bytes": 8986,
+      "sha256": "892adbcecb3c1fe0a9ed66643846520aef6c9c09fa4e186c86319bf71684dba9",
+      "content_id": "page-51"
+    },
+    {
+      "publish_order": 52,
+      "destination_url": "/how-discounted-travel-vouchers-work/",
+      "output_file": "how-discounted-travel-vouchers-work/index.html",
+      "bytes": 8750,
+      "sha256": "dec6bcdc623fa085e9b49e0caf3f5b14852bcecefb5a6bfe23cfaa5f62f58a55",
+      "content_id": "page-52"
+    },
+    {
+      "publish_order": 53,
+      "destination_url": "/evaluate-discounted-travel-voucher/",
+      "output_file": "evaluate-discounted-travel-voucher/index.html",
+      "bytes": 8776,
+      "sha256": "7caa7b1aece68b68569ac724ed9bde2e89c11fa3d84cd23bcf6006f8e09e2f97",
+      "content_id": "page-53"
+    },
+    {
+      "publish_order": 54,
+      "destination_url": "/travel-voucher-recipient-costs/",
+      "output_file": "travel-voucher-recipient-costs/index.html",
+      "bytes": 8832,
+      "sha256": "6dcc518330d0d359797253a4c46eb871225c1220ca42e4105fa63a7c175042e6",
+      "content_id": "page-54"
+    },
+    {
+      "publish_order": 55,
+      "destination_url": "/travel-voucher-terms-businesses-should-review/",
+      "output_file": "travel-voucher-terms-businesses-should-review/index.html",
+      "bytes": 8804,
+      "sha256": "e22a3eb6e3906bb84ed1ff3e1ed90760c0814c2622f51878171bd7fbe15090ab",
+      "content_id": "page-55"
+    },
+    {
+      "publish_order": 56,
+      "destination_url": "/explain-discounted-travel-voucher-to-customer/",
+      "output_file": "explain-discounted-travel-voucher-to-customer/index.html",
+      "bytes": 8861,
+      "sha256": "b8727b8fb079158ec184db2e7d74c164d9f00ca02d95f91bf3245712f7fbca1d",
+      "content_id": "page-56"
+    },
+    {
+      "publish_order": 57,
+      "destination_url": "/train-sales-team-to-present-travel-vouchers/",
+      "output_file": "train-sales-team-to-present-travel-vouchers/index.html",
+      "bytes": 9016,
+      "sha256": "7016d2b6c5d23964fcb93e082f2da97cf3d06d3099a662b276468dd6daf6ad5a",
+      "content_id": "page-57"
+    },
+    {
+      "publish_order": 58,
+      "destination_url": "/launch-customer-travel-voucher-promotion/",
+      "output_file": "launch-customer-travel-voucher-promotion/index.html",
+      "bytes": 8830,
+      "sha256": "3e4276ff33ea18d4e30a8e8f2435ea26e5decd133eadce6f91ac84913349747c",
+      "content_id": "page-58"
+    },
+    {
+      "publish_order": 59,
+      "destination_url": "/measure-travel-voucher-campaign/",
+      "output_file": "measure-travel-voucher-campaign/index.html",
+      "bytes": 9000,
+      "sha256": "32ee03710fac56b486ccac00435a026c1648782e58737261c03e3e947c266eae",
+      "content_id": "page-59"
+    },
+    {
+      "publish_order": 60,
+      "destination_url": "/true-cost-of-discounting-high-ticket-sale/",
+      "output_file": "true-cost-of-discounting-high-ticket-sale/index.html",
+      "bytes": 8801,
+      "sha256": "d13f95d886fea85e722da64ec2933c44859438b9124a4412c9ad0210a2cbc83d",
+      "content_id": "page-60"
+    },
+    {
+      "publish_order": 61,
+      "destination_url": "/how-to-calculate-sales-close-rate/",
+      "output_file": "how-to-calculate-sales-close-rate/index.html",
+      "bytes": 8423,
+      "sha256": "acbaaa7a76209e71dc8ca624dd1662be73ef2bbfe7f9cef6acea4ed45f8dfb70",
+      "content_id": "page-61"
+    },
+    {
+      "publish_order": 62,
+      "destination_url": "/how-to-measure-incentive-roi/",
+      "output_file": "how-to-measure-incentive-roi/index.html",
+      "bytes": 8741,
+      "sha256": "b642b5234a62ae0618cf002870d4fe71cc8d856683793a16227f99444be93bfb",
+      "content_id": "page-62"
+    },
+    {
+      "publish_order": 63,
+      "destination_url": "/close-rate-vs-conversion-rate/",
+      "output_file": "close-rate-vs-conversion-rate/index.html",
+      "bytes": 8309,
+      "sha256": "9ca589197b422bda446a4f10105c4e9f4a2b95cc897dacb67912f5953f7744c1",
+      "content_id": "page-63"
+    },
+    {
+      "publish_order": 64,
+      "destination_url": "/measure-discount-frequency-margin-leakage/",
+      "output_file": "measure-discount-frequency-margin-leakage/index.html",
+      "bytes": 8568,
+      "sha256": "4ebdc32656aeb7b832e0480e161b9c6e57e294ac2e9cb8100c23b3c4915585a8",
+      "content_id": "page-64"
+    },
+    {
+      "publish_order": 65,
+      "destination_url": "/controlled-sales-incentive-test/",
+      "output_file": "controlled-sales-incentive-test/index.html",
+      "bytes": 8618,
+      "sha256": "0149ffc0852a312fe5d2591dc19a5ae56d937fbbf5aed1f34a3796ee9691caf4",
+      "content_id": "page-65"
+    },
+    {
+      "publish_order": 66,
+      "destination_url": "/sales-promotion-metrics-that-matter/",
+      "output_file": "sales-promotion-metrics-that-matter/index.html",
+      "bytes": 8558,
+      "sha256": "46230c010fae9e73b3f6f75c6a66bf228d02c02e597eff7fef0b6f8bb65cad5e",
+      "content_id": "page-66"
+    },
+    {
+      "publish_order": 67,
+      "destination_url": "/build-incentive-business-case-for-leadership/",
+      "output_file": "build-incentive-business-case-for-leadership/index.html",
+      "bytes": 8864,
+      "sha256": "d24a32566860fe98df9c30c5d8f71fce58792541dc6f06251b4ebb88418a3ff2",
+      "content_id": "page-67"
+    },
+    {
+      "publish_order": 68,
+      "destination_url": "/car-dealership-promotion-ideas/",
+      "output_file": "car-dealership-promotion-ideas/index.html",
+      "bytes": 8834,
+      "sha256": "54ca2437b7c9e2fb9a6fe71297c77cf77cd3828a9ad0fd9df6b4705129820583",
+      "content_id": "page-68"
+    },
+    {
+      "publish_order": 69,
+      "destination_url": "/customer-closing-incentives-for-car-dealerships/",
+      "output_file": "customer-closing-incentives-for-car-dealerships/index.html",
+      "bytes": 9106,
+      "sha256": "f3a66b81fce77360f7a277e2aa57d34709da8cbb56098f9a68e992749bc55eac",
+      "content_id": "page-69"
+    },
+    {
+      "publish_order": 70,
+      "destination_url": "/car-sales-closing-questions-that-preserve-margin/",
+      "output_file": "car-sales-closing-questions-that-preserve-margin/index.html",
+      "bytes": 8941,
+      "sha256": "b9bf93703951a2621da54c7ab16caf63e72a5825de3c0c023db6e29412b7cd60",
+      "content_id": "page-70"
+    },
+    {
+      "publish_order": 71,
+      "destination_url": "/create-urgency-in-car-sales-without-pressure/",
+      "output_file": "create-urgency-in-car-sales-without-pressure/index.html",
+      "bytes": 8730,
+      "sha256": "05f2282138947144255d24acd6df8a61e4df208ebfa6605eb941008c2ea5916c",
+      "content_id": "page-71"
+    },
+    {
+      "publish_order": 72,
+      "destination_url": "/dealerships-use-discounted-travel-vouchers/",
+      "output_file": "dealerships-use-discounted-travel-vouchers/index.html",
+      "bytes": 8917,
+      "sha256": "7ecfe0fa085b5b5a582d068e3d11c1cfeec34767b15bcd9fe2ec55eb23b0a6c9",
+      "content_id": "page-72"
+    },
+    {
+      "publish_order": 73,
+      "destination_url": "/dealership-promotions-for-aged-inventory/",
+      "output_file": "dealership-promotions-for-aged-inventory/index.html",
+      "bytes": 8590,
+      "sha256": "3b8c749db2a361c2b971b5a0ba0b35858cdf5e99be7ecb49d1fad2eacfa3eb07",
+      "content_id": "page-73"
+    },
+    {
+      "publish_order": 74,
+      "destination_url": "/sales-incentives-for-dealership-service-lane-customers/",
+      "output_file": "sales-incentives-for-dealership-service-lane-customers/index.html",
+      "bytes": 8866,
+      "sha256": "714219e6bf08065ccd57eac0aced56fa308850b647c0f4cf4f63c63081594f36",
+      "content_id": "page-74"
+    },
+    {
+      "publish_order": 75,
+      "destination_url": "/dealer-groups-measure-customer-incentive-campaign/",
+      "output_file": "dealer-groups-measure-customer-incentive-campaign/index.html",
+      "bytes": 9310,
+      "sha256": "0a9f62b8b30d8f8b41d50d57845abbf37f4a7d1b0356bb54c7a6dc8c70155610",
+      "content_id": "page-75"
+    },
+    {
+      "publish_order": 76,
+      "destination_url": "/home-improvement-sales-incentives-that-preserve-margin/",
+      "output_file": "home-improvement-sales-incentives-that-preserve-margin/index.html",
+      "bytes": 8945,
+      "sha256": "d66aab5f6aad059651f43090fd6bdabc6906d04f06ec4271d398eed718f4db63",
+      "content_id": "page-76"
+    },
+    {
+      "publish_order": 77,
+      "destination_url": "/in-home-sales-closing-techniques-without-pressure/",
+      "output_file": "in-home-sales-closing-techniques-without-pressure/index.html",
+      "bytes": 8731,
+      "sha256": "af1ae7f20e6d9ed6fbbb39bee345919a34d74e73a7a9a064c6a20e80c009572a",
+      "content_id": "page-77"
+    },
+    {
+      "publish_order": 78,
+      "destination_url": "/roofing-promotion-ideas-beyond-discounts/",
+      "output_file": "roofing-promotion-ideas-beyond-discounts/index.html",
+      "bytes": 8784,
+      "sha256": "fe78b3de2690e90e005ce76cb38c222273f41db531957bf6cc2601ea7376637c",
+      "content_id": "page-78"
+    },
+    {
+      "publish_order": 79,
+      "destination_url": "/handle-price-objections-in-roofing-sales/",
+      "output_file": "handle-price-objections-in-roofing-sales/index.html",
+      "bytes": 8580,
+      "sha256": "56faf8ef53fa897c14bcc9094ec7d295f82be89ed783b62e95440b1a44c7ad08",
+      "content_id": "page-79"
+    },
+    {
+      "publish_order": 80,
+      "destination_url": "/hvac-sales-incentives-for-replacement-decisions/",
+      "output_file": "hvac-sales-incentives-for-replacement-decisions/index.html",
+      "bytes": 8671,
+      "sha256": "9b6de80d564aa93d5f8d226752caefe83b6af7afda10f59088c467f8d16e6fe7",
+      "content_id": "page-80"
+    },
+    {
+      "publish_order": 81,
+      "destination_url": "/window-remodeling-sales-promotion-ideas/",
+      "output_file": "window-remodeling-sales-promotion-ideas/index.html",
+      "bytes": 8526,
+      "sha256": "a3c16cf36fdf1e3318a1048b4cbee7ea078bbbda1e0ef3dd4e58ceee9a2425e9",
+      "content_id": "page-81"
+    },
+    {
+      "publish_order": 82,
+      "destination_url": "/shorten-in-home-sales-cycle/",
+      "output_file": "shorten-in-home-sales-cycle/index.html",
+      "bytes": 8564,
+      "sha256": "e26a724af876d9fd010caddfb81c4614be6c967988ae358c12bc9675b6691f62",
+      "content_id": "page-82"
+    },
+    {
+      "publish_order": 83,
+      "destination_url": "/present-discounted-travel-voucher-in-home-sale/",
+      "output_file": "present-discounted-travel-voucher-in-home-sale/index.html",
+      "bytes": 8810,
+      "sha256": "fab0c2220a4b997da35792d5d152ea740716284117b54a679201f7847cd6f0d3",
+      "content_id": "page-83"
+    },
+    {
+      "publish_order": 84,
+      "destination_url": "/furniture-store-promotion-ideas-beyond-discounts/",
+      "output_file": "furniture-store-promotion-ideas-beyond-discounts/index.html",
+      "bytes": 8967,
+      "sha256": "0ff3fa3199ba36d52e9aece032db0b963ba541240a250423fc8ea086c2ed9063",
+      "content_id": "page-84"
+    },
+    {
+      "publish_order": 85,
+      "destination_url": "/furniture-sales-closing-techniques-that-protect-margin/",
+      "output_file": "furniture-sales-closing-techniques-that-protect-margin/index.html",
+      "bytes": 8759,
+      "sha256": "d37f26096ddac46cf8cb0628032456e16b4a4331314f647155bf065ac75951a4",
+      "content_id": "page-85"
+    },
+    {
+      "publish_order": 86,
+      "destination_url": "/jewelry-store-promotion-ideas-high-value-purchases/",
+      "output_file": "jewelry-store-promotion-ideas-high-value-purchases/index.html",
+      "bytes": 8791,
+      "sha256": "27dcefc48696b11584f00eaf0977d6ea949d14b4cf6574c3f2c2a1e1c93276ba",
+      "content_id": "page-86"
+    },
+    {
+      "publish_order": 87,
+      "destination_url": "/jewelers-add-value-without-discounting/",
+      "output_file": "jewelers-add-value-without-discounting/index.html",
+      "bytes": 8654,
+      "sha256": "d590b6fd24730a1be4b52e88f88997c6cc44a78a1d22010de3bc23a9318e6808",
+      "content_id": "page-87"
+    },
+    {
+      "publish_order": 88,
+      "destination_url": "/boat-rv-sales-promotion-ideas/",
+      "output_file": "boat-rv-sales-promotion-ideas/index.html",
+      "bytes": 8409,
+      "sha256": "a02f424da7d048432f5824e19df9a5c701c23bffd72b6ba5ba6927598aac5f3a",
+      "content_id": "page-88"
+    },
+    {
+      "publish_order": 89,
+      "destination_url": "/customer-incentives-wedding-event-businesses/",
+      "output_file": "customer-incentives-wedding-event-businesses/index.html",
+      "bytes": 8690,
+      "sha256": "be6c935a363ba0410a0c40b6a618c1eb95377884fb91144d31b17545e72f1269",
+      "content_id": "page-89"
+    },
+    {
+      "publish_order": 90,
+      "destination_url": "/marketing-agencies-add-incentives-to-client-campaigns/",
+      "output_file": "marketing-agencies-add-incentives-to-client-campaigns/index.html",
+      "bytes": 9141,
+      "sha256": "aa1481289a822d5f5e0a4e3f62e053d1a6139a9f164a503d2bb205e754514e9f",
+      "content_id": "page-90"
+    },
+    {
+      "publish_order": 91,
+      "destination_url": "/choose-vertical-for-customer-incentive-campaign/",
+      "output_file": "choose-vertical-for-customer-incentive-campaign/index.html",
+      "bytes": 9327,
+      "sha256": "3deb25aea59bee5d5466b03a4ebc71ffd65ea957003f231c00687a8ba8f2ac87",
+      "content_id": "page-91"
+    }
+  ],
+  "shared_assets": [
+    "assets/bbi-seo.css",
+    "assets/bbi-conversion.js",
+    "404.html",
+    "sitemap.xml",
+    "redirects-all-91.csv"
+  ],
+  "release_note": "Upload into a staged document root; configure genuine 404 behavior; validate before switching production."
+}

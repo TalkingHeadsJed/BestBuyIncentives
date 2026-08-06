@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-08-06T09:25:56.821Z",
+  "architecture": "Apache physical pre-rendered route directories",
+  "pages": [
+    {
+      "publish_order": 1,
+      "destination_url": "/",
+      "output_file": "index.html",
+      "bytes": 10151,
+      "sha256": "9ecdb4b7c57cf45da44a2c6734b65306522a454dc6ee0a1818faa9285a3b5d68",
+      "content_id": "priority13-01"
+    },
+    {
+      "publish_order": 2,
+      "destination_url": "/sales-closing-incentives/",
+      "output_file": "sales-closing-incentives/index.html",
+      "bytes": 8967,
+      "sha256": "c5345cf9505082898b2430e90c135994af591ff42b4c0a7b54972b3aa43b49ec",
+      "content_id": "priority13-02"
+    },
+    {
+      "publish_order": 3,
+      "destination_url": "/discounted-travel-vouchers-for-sales/",
+      "output_file": "discounted-travel-vouchers-for-sales/index.html",
+      "bytes": 8565,
+      "sha256": "da351ec5a623262e8b0f7f9c9820fc0b3c22af9ef72e623b183949054c093c8c",
+      "content_id": "priority13-03"
+    },
+    {
+      "publish_order": 4,
+      "destination_url": "/how-it-works/",
+      "output_file": "how-it-works/index.html",
+      "bytes": 8673,
+      "sha256": "7ecd1f2acb1bfadc3b12827d3032ec1139eb8be7ced388d5e6d497ed4a86e294",
+      "content_id": "priority13-04"
+    },
+    {
+      "publish_order": 5,
+      "destination_url": "/high-ticket-sales-incentives/",
+      "output_file": "high-ticket-sales-incentives/index.html",
+      "bytes": 8240,
+      "sha256": "8b57b2913704ceca0ad2f02b26e329e8c4fb8d60ad3519f4addd3f9aaad56682",
+      "content_id": "priority13-05"
+    },
+    {
+      "publish_order": 6,
+      "destination_url": "/customer-incentive-programs/",
+      "output_file": "customer-incentive-programs/index.html",
+      "bytes": 7883,
+      "sha256": "d7cf89f4436689f82ccd1084f8f9fad037694e0ffbe3244f822bd86ba8974244",
+      "content_id": "priority13-06"
+    },
+    {
+      "publish_order": 7,
+      "destination_url": "/increase-sales-without-discounting/",
+      "output_file": "increase-sales-without-discounting/index.html",
+      "bytes": 8224,
+      "sha256": "ee6637bd03db505fc920808cc2778bb7443bd79db5b0c3b29af527cb424f3215",
+      "content_id": "priority13-07"
+    },
+    {
+      "publish_order": 8,
+      "destination_url": "/customer-incentive-comparisons/",
+      "output_file": "customer-incentive-comparisons/index.html",
+      "bytes": 9157,
+      "sha256": "72ab73ec4f0be166a9df6cb0ad0fda5a3f24cc28f7b9294c6fd5001133d18738",
+      "content_id": "priority13-08"
+    },
+    {
+      "publish_order": 9,
+      "destination_url": "/high-ticket-closing-playbook/",
+      "output_file": "high-ticket-closing-playbook/index.html",
+      "bytes": 7261,
+      "sha256": "ed2cde513c90e4c7888e9b94000de9d9f6ffab772d786efca63b7c72e9c00b48",
+      "content_id": "priority13-09"
+    },
+    {
+      "publish_order": 10,
+      "destination_url": "/case-studies/place-furniture-galleries/",
+      "output_file": "case-studies/place-furniture-galleries/index.html",
+      "bytes": 8886,
+      "sha256": "5da3a7d1c61ea66d8ec2ff7f5fda2091dfc04cfde682c401d966c27eb3564b78",
+      "content_id": "priority13-10"
+    },
+    {
+      "publish_order": 11,
+      "destination_url": "/case-studies/automotive-closing-incentives/",
+      "output_file": "case-studies/automotive-closing-incentives/index.html",
+      "bytes": 8908,
+      "sha256": "e460848901e46fdd898ec8677a7266244b434fba4b19e5257819d1513ab9308c",
+      "content_id": "priority13-11"
+    },
+    {
+      "publish_order": 12,
+      "destination_url": "/industries/automotive-dealerships/",
+      "output_file": "industries/automotive-dealerships/index.html",
+      "bytes": 13909,
+      "sha256": "3e6c1b5cdd348a4d17f58647a827700e7da1ed2f3af2ea9e9c497155477af372",
+      "content_id": "priority13-12"
+    },
+    {
+      "publish_order": 13,
+      "destination_url": "/industries/furniture-retailers/",
+      "output_file": "industries/furniture-retailers/index.html",
+      "bytes": 11701,
+      "sha256": "8a37c1a87a081bde28087bc9d94d8b66bf38953f3c6aa0ea013ab1fbe92fd634",
+      "content_id": "priority13-13"
+    }
+  ],
+  "shared_assets": [
+    "assets/bbi-seo.css",
+    "assets/bbi-conversion.js",
+    "404.html",
+    "sitemap.xml",
+    "redirects-priority-13.csv"
+  ],
+  "release_note": "Upload into a staged document root; configure genuine 404 behavior; validate before switching production."
+}

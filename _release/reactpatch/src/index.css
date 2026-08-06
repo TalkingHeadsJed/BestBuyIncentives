@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand palette */
+    --bbi-white: #FFFFFF;
+    --bbi-cream: #F5F2EA;
+    --bbi-black: #0A0A0A;
+    --bbi-ink: #171717;
+    --bbi-text: #0A0A0A;
+    --bbi-text-2: #595959;
+    --bbi-text-3: #8A8A8A;
+    --bbi-yellow: #FFD300;
+    --bbi-yellow-dark: #E5BE00;
+    --bbi-yellow-soft: #FFF1A8;
+    --bbi-line: #E5E2D9;
+    --bbi-line-strong: #C9C5BA;
+    --bbi-red: #E63946;
+
+    /* Shadcn HSL tokens (mapped to brand — light theme) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 60% 95%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 48 30% 96%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 354 79% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 14% 88%;
+    --input: 45 14% 88%;
+    --ring: 50 100% 50%;
+    --radius: 0px;
+  }
+}
+
+html, body, #root {
+  background: var(--bbi-white);
+  color: var(--bbi-text);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.font-display {
+  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+  letter-spacing: -0.035em;
+  font-feature-settings: "ss01", "ss02";
+}
+.font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+::selection { background: var(--bbi-yellow); color: var(--bbi-black); }
+
+/* Yellow highlight that sits behind text */
+.hl-yellow {
+  background-image: linear-gradient(transparent 55%, var(--bbi-yellow) 55%, var(--bbi-yellow) 92%, transparent 92%);
+  padding: 0 4px;
+}
+.hl-yellow-full { background: var(--bbi-yellow); padding: 0 6px; }
+
+.tabular-num { font-variant-numeric: tabular-nums; }
+
+/* Hero zoom animation (placeholder for video background) */
+@keyframes slowZoom {
+  0%   { transform: scale(1.08); }
+  100% { transform: scale(1.18); }
+}
+.kenburn { animation: slowZoom 22s ease-in-out infinite alternate; }
+
+/* Marquee paused */
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Big play button pulse */
+.play-pulse { box-shadow: 0 0 0 0 rgba(255,211,0,0.7); animation: playPulse 2.4s ease-out infinite; }
+@keyframes playPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,211,0,0.6); }
+  70%  { box-shadow: 0 0 0 24px rgba(255,211,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,211,0,0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F5F2EA; }
+::-webkit-scrollbar-thumb { background: #0A0A0A; }
+
+/* Section section dark variant */
+.section-dark {
+  background: var(--bbi-black);
+  color: var(--bbi-white);
+}
+.section-dark a { color: var(--bbi-yellow); }
+
+/* Hero bg overlay */
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.85) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+/* Stamp / sticker */
+.stamp {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--bbi-yellow);
+  color: var(--bbi-black);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+  [data-debug-wrapper="true"] { display: contents !important; }
+}
+
+/* Underline marker style for headlines */
+.under-yellow {
+  display: inline-block;
+  position: relative;
+}
+.under-yellow::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0.08em;
+  height: 0.32em;
+  background: var(--bbi-yellow);
+  z-index: -1;
+}
+
+/* Marquee child reset */
+.rfm-marquee-container { overflow: hidden; }

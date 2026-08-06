@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-08-06T09:55:59.597Z",
+  "parser": "glayzzle/php-parser",
+  "results": [
+    {
+      "file": "deployment/bluehost-api/api/consultation/index.php",
+      "pass": true,
+      "top_level_nodes": 75,
+      "error": ""
+    },
+    {
+      "file": "deployment/bluehost-api/cron/process-consultation-queue.php",
+      "pass": true,
+      "top_level_nodes": 13,
+      "error": ""
+    }
+  ],
+  "pass": true
+}

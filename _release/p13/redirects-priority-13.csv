@@ -1,0 +1,4 @@
+legacy_path,destination_path,action,rationale
+"/travel-incentives-vs-cash-rebates","/customer-incentive-comparisons/","301","Consolidate rebate comparison into the comparison hub"
+"/resources/stop-discounting-start-closing","/increase-sales-without-discounting/","301","Consolidate legacy article into the stronger commercial pillar"
+"/sitemap_index.xml","/sitemap.xml","301","Prevent a soft-404 HTML response at a conventional sitemap endpoint"

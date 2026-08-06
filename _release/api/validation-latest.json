@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-08-06T09:57:31.289Z",
+  "checks": {
+    "php_syntax": true,
+    "post_only": true,
+    "same_origin": true,
+    "body_limit": true,
+    "idempotency": true,
+    "visible_fields": true,
+    "hidden_fields": true,
+    "server_validation": true,
+    "honeypot": true,
+    "rate_limit": true,
+    "private_storage": true,
+    "restrictive_permissions": true,
+    "durable_before_success": true,
+    "pii_safe_operations_log": true,
+    "priority_sla": true,
+    "crm_server_side": true,
+    "email_notification": true,
+    "retry_worker_cli_only": true,
+    "bounded_backoff": true,
+    "directory_listing_disabled": true,
+    "sensitive_extensions_denied": true,
+    "no_committed_secret": true,
+    "prohibited_terms_absent": true
+  },
+  "failures": [],
+  "pass": true,
+  "runtime_boundary": "Static and parser validation only. Bluehost PHP/curl/mail/filesystem/CRM runtime acceptance remains required."
+}

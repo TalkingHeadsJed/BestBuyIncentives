@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-08-06T13:53:59.716Z",
+  "source_files": 47,
+  "source_sha256": "6dd5ca9f8c7fd6fc877b525946e50a53b87600c92eb9ebd89aa5c98b4d1ef0b6",
+  "checks": {
+    "current_source_syntax_verified": true,
+    "form_id": true,
+    "visible_field_names": true,
+    "required_visible_fields": true,
+    "all_hidden_attribution_fields": true,
+    "first_party_endpoint": true,
+    "idempotency_header": true,
+    "durable_202_boundary": true,
+    "no_web3forms": true,
+    "no_embedded_access_key": true,
+    "contracted_events": true,
+    "calendly_completion": true,
+    "pii_analytics_filter": true,
+    "phone_link": true,
+    "email_link": true,
+    "legal_routes": true,
+    "footer_dead_links_absent": true,
+    "newsletter_form_removed": true,
+    "approved_term_present": true,
+    "prohibited_terms_absent": true
+  },
+  "failures": [],
+  "pass": true,
+  "contract_checks_pass": true,
+  "syntax_validation": "Current source digest has matching compiler evidence."
+}

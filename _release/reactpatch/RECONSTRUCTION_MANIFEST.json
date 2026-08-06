@@ -1,0 +1,355 @@
+{
+  "reconstructed_at": "2026-08-06T09:35:29.087Z",
+  "production_origin": "https://bestbuyincentives.com",
+  "provenance": "First-party source content reconstructed from publicly deployed production source maps.",
+  "limitations": [
+    "This is not the authoritative Git repository.",
+    "Package metadata, public assets, prerender scripts, and hosting configuration are not present unless embedded in a source map.",
+    "Use for patch preparation and diffing; merge into the authoritative Emergent/GitHub source before deployment."
+  ],
+  "files": [
+    {
+      "type": "javascript",
+      "source": "hooks/useHydrated.js",
+      "output": "src/hooks/useHydrated.js",
+      "bytes": 620,
+      "sha256": "9189b641067db53dee80602732ec72dcf74d436f64c3a523d1389d1614a9bdd2"
+    },
+    {
+      "type": "javascript",
+      "source": "data/content.js",
+      "output": "src/data/content.js",
+      "bytes": 22963,
+      "sha256": "c068d760bbaa400bed736a4df624e15fc69c3926af266bc7f26e75eeee45f608"
+    },
+    {
+      "type": "javascript",
+      "source": "data/comparisons.js",
+      "output": "src/data/comparisons.js",
+      "bytes": 10305,
+      "sha256": "1be7dd294da6092d3a4e4728bf58f149e63eb825599c7484cf8d9d490231d56d"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/Header.jsx",
+      "output": "src/components/site/Header.jsx",
+      "bytes": 6428,
+      "sha256": "ba26c7d7aab8d75b9d113eb39c807a6978dad7c04bca6593c3537de27eea7c0b"
+    },
+    {
+      "type": "javascript",
+      "source": "lib/api.js",
+      "output": "src/lib/api.js",
+      "bytes": 1132,
+      "sha256": "910630d134e9186d63097c3ce033edf7d654ed084cc2cc3f0973d8640db6219d"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/Footer.jsx",
+      "output": "src/components/site/Footer.jsx",
+      "bytes": 6784,
+      "sha256": "21716ca7117256e7387a0fd7ee3e3e89b83faf6840688c7c8cee5a432a780a1b"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/StickyCTA.jsx",
+      "output": "src/components/site/StickyCTA.jsx",
+      "bytes": 2049,
+      "sha256": "c73d65ed1d1794f46e549482bd7f21fb2d0bd05124d164d52323163a34c49829"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/ScrollToTop.jsx",
+      "output": "src/components/site/ScrollToTop.jsx",
+      "bytes": 280,
+      "sha256": "3105d2fce281483927df960bd7095c8c3211746c4bf85734ce237fd6cf26bac9"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/Seo.jsx",
+      "output": "src/components/site/Seo.jsx",
+      "bytes": 4057,
+      "sha256": "1389637d41c076c20c90d76b74229b424e82a19a0ada4fde474021ed960c2046"
+    },
+    {
+      "type": "javascript",
+      "source": "data/images.js",
+      "output": "src/data/images.js",
+      "bytes": 1675,
+      "sha256": "bed16cc5a866ca93125f9f201c3ae202f8a41c2f828f321782db5d8d90afc180"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/Hero.jsx",
+      "output": "src/components/home/Hero.jsx",
+      "bytes": 8794,
+      "sha256": "9dfca973516bd09eb8dc7526519ad2c25c55a3db5de71922d263dae9b491d867"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/StatsTicker.jsx",
+      "output": "src/components/home/StatsTicker.jsx",
+      "bytes": 975,
+      "sha256": "bc613b3ea51ae253be961598e6d2430c72a96e2e0acfdc460c2deb68a6977ea6"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/TrustBar.jsx",
+      "output": "src/components/home/TrustBar.jsx",
+      "bytes": 787,
+      "sha256": "cc87d6830cd706367dbc650aa3a2c5ccdb3aa4c438bb5992482d912d3ed98ff9"
+    },
+    {
+      "type": "javascript",
+      "source": "components/site/SectionLabel.jsx",
+      "output": "src/components/site/SectionLabel.jsx",
+      "bytes": 425,
+      "sha256": "f7915a398f2606de24afba2d9e710ef1e8c6202ec052daa78a7b57c94c6cad76"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/ProblemSection.jsx",
+      "output": "src/components/home/ProblemSection.jsx",
+      "bytes": 2293,
+      "sha256": "838f6ee0a1a701957030b386bf2f49c5a9031e99e24e3470d5929ded2745e015"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/SolutionSection.jsx",
+      "output": "src/components/home/SolutionSection.jsx",
+      "bytes": 3534,
+      "sha256": "67128c0421ec1bd955d58acd1f2f07a432badaa23d11cc145cc02edc90e9d1a5"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/HowItWorks.jsx",
+      "output": "src/components/home/HowItWorks.jsx",
+      "bytes": 1921,
+      "sha256": "081e3b5c38de1dc0c78bcf851b20853bbb06cab8bcac2c5d9806ec4a74964645"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/BusinessTestimonials.jsx",
+      "output": "src/components/home/BusinessTestimonials.jsx",
+      "bytes": 2140,
+      "sha256": "b38631603fb0854316c6ea94c82fcb88fff82ef0a45af8e51e8b022c469114d2"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/ProgramsShowcase.jsx",
+      "output": "src/components/home/ProgramsShowcase.jsx",
+      "bytes": 4506,
+      "sha256": "dedcd8a6ab9b0fcf08abed2fc7545e6d126fcc10de4248df550f062d85b4c8f7"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/IndustriesGrid.jsx",
+      "output": "src/components/home/IndustriesGrid.jsx",
+      "bytes": 2577,
+      "sha256": "b495676511d1ba8b6ce5fb41605160e8f76dfd6324df57f2c73310af8f4007d3"
+    },
+    {
+      "type": "javascript",
+      "source": "lib/utils.js",
+      "output": "src/lib/utils.js",
+      "bytes": 137,
+      "sha256": "5ba0ae526d768600bbfb4a4d345c47f6208cb941adbf456de80804a4cf938350"
+    },
+    {
+      "type": "javascript",
+      "source": "components/ui/slider.jsx",
+      "output": "src/components/ui/slider.jsx",
+      "bytes": 914,
+      "sha256": "1761bfaa0a06480b76b31511e4a5c24903b407732e027fc11ad615dd3d93a562"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/ROICalculator.jsx",
+      "output": "src/components/home/ROICalculator.jsx",
+      "bytes": 6346,
+      "sha256": "e0092e131129109082525ba25be939aca57f67e5f8b0204cf18eecece95392af"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/CaseStudiesPreview.jsx",
+      "output": "src/components/home/CaseStudiesPreview.jsx",
+      "bytes": 3097,
+      "sha256": "59ff5e64cd7ba2f6a7304345060422b96e5aa92ba5f3045b766803cb0854c199"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/ConsumerTestimonials.jsx",
+      "output": "src/components/home/ConsumerTestimonials.jsx",
+      "bytes": 3054,
+      "sha256": "104a3ccb2b0b4dc287e1ae96db59b614035d11317d10af1bdc6928773ff85429"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/VideoSeries.jsx",
+      "output": "src/components/home/VideoSeries.jsx",
+      "bytes": 2551,
+      "sha256": "788ffbf6aaed09eb6a3f9dad9d194f7353379fffabcccd001c54e2d48fe23697"
+    },
+    {
+      "type": "javascript",
+      "source": "components/ui/accordion.jsx",
+      "output": "src/components/ui/accordion.jsx",
+      "bytes": 1615,
+      "sha256": "b47533b3783b8149550b8481e4ae93d54bdcbc51d434793c176b0aec5558ee1c"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/FAQ.jsx",
+      "output": "src/components/home/FAQ.jsx",
+      "bytes": 1853,
+      "sha256": "775ad401b0cd553079bf1ceb6dc8e010d3edf3a548ad244b1b3aed2240a50326"
+    },
+    {
+      "type": "javascript",
+      "source": "components/home/FinalCTA.jsx",
+      "output": "src/components/home/FinalCTA.jsx",
+      "bytes": 2323,
+      "sha256": "d72157f9f3c3c983ec22393547e5c378c9f3dac0c15f4a3aabe10fc0063beb8a"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Home.jsx",
+      "output": "src/pages/Home.jsx",
+      "bytes": 1734,
+      "sha256": "547f8bf8e8e988b01bf3b007f0a1ed4c57fc197a792bc72eb1649909dedc0fc0"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/About.jsx",
+      "output": "src/pages/About.jsx",
+      "bytes": 5945,
+      "sha256": "27f8be286ed20610504956be8925e157a85406e132675de4dd287e453587cfa8"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Programs.jsx",
+      "output": "src/pages/Programs.jsx",
+      "bytes": 5175,
+      "sha256": "8339b4ed4ed2744488c6947598083e3aad8cc78aaa69e9131bc5cf3fca1d5f4f"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Industries.jsx",
+      "output": "src/pages/Industries.jsx",
+      "bytes": 4202,
+      "sha256": "0b1ce049e70b03bac24ade26f410593ff31ac54de28d8a43a80f30ac11bc21db"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/CaseStudies.jsx",
+      "output": "src/pages/CaseStudies.jsx",
+      "bytes": 4341,
+      "sha256": "0685dbedea3d28cd64609447337e2fb8b8e0cee52ee29fd0c2b2bae5992b345e"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Resources.jsx",
+      "output": "src/pages/Resources.jsx",
+      "bytes": 3496,
+      "sha256": "c0f2f27b386cac81e48c7edc6293862d59d18b280df425ad453811eb8de5e77f"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/ResourceDetail.jsx",
+      "output": "src/pages/ResourceDetail.jsx",
+      "bytes": 3656,
+      "sha256": "3b1f383fae60b389e164a7c5c6ae3b8da2c640f85f1f2b61a85508d831e22581"
+    },
+    {
+      "type": "javascript",
+      "source": "components/ui/input.jsx",
+      "output": "src/components/ui/input.jsx",
+      "bytes": 688,
+      "sha256": "7c9f0c756530ae1dbe3b1424f09e32e3f54323826b2f2d817b13c865f96309ad"
+    },
+    {
+      "type": "javascript",
+      "source": "components/ui/textarea.jsx",
+      "output": "src/components/ui/textarea.jsx",
+      "bytes": 585,
+      "sha256": "6b2c6dd8023a32be3b52af960d7615018488c5601fb05cec97ed76d1141ae2f4"
+    },
+    {
+      "type": "javascript",
+      "source": "components/ui/select.jsx",
+      "output": "src/components/ui/select.jsx",
+      "bytes": 4769,
+      "sha256": "ce8fc0afd10942d8c9466538035d4e4885af55320e465ede930fcdfb0672eaa2"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Contact.jsx",
+      "output": "src/pages/Contact.jsx",
+      "bytes": 11935,
+      "sha256": "73644fd2272a50e0cc776035f6bc56525dc509ea5cd4920b5bebb2bfcbbb1eac"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/FAQ.jsx",
+      "output": "src/pages/FAQ.jsx",
+      "bytes": 3732,
+      "sha256": "2b9c84c53e253b37214874fe348ae4ac5ba451d7ee32053f245976d52f601df3"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/NotFound.jsx",
+      "output": "src/pages/NotFound.jsx",
+      "bytes": 998,
+      "sha256": "e51d26fe1f75dadc73b50d0ec3f9cba32021e2d5e48d1da6068031e63bce1a06"
+    },
+    {
+      "type": "javascript",
+      "source": "pages/Comparison.jsx",
+      "output": "src/pages/Comparison.jsx",
+      "bytes": 5655,
+      "sha256": "7874a457d926f133bbac94d390422abd89a5ec58e7d9f0f06d8cbbde044669b2"
+    },
+    {
+      "type": "javascript",
+      "source": "App.js",
+      "output": "src/App.js",
+      "bytes": 2468,
+      "sha256": "beca41b52f65c5e70bc9d3dbb074207793e2208f9b4c3561f0c27bcbc2305c85"
+    },
+    {
+      "type": "javascript",
+      "source": "index.js",
+      "output": "src/index.js",
+      "bytes": 757,
+      "sha256": "d3c41a833d420c58da0032bfa0d1bf8fcd4f968ae3ae51cbbc6cbab91ba6e8f8"
+    },
+    {
+      "type": "javascript-source-map",
+      "source": "https://bestbuyincentives.com/static/js/main.0048f4f5.js.map",
+      "output": "not retained",
+      "bytes": 2573357,
+      "sha256": "d0bab2e5c5bc073c66745bf12d2e4beb276d7575be2c69e64537a438c9ab83bf"
+    },
+    {
+      "type": "css",
+      "source": "index.css",
+      "output": "src/index.css",
+      "bytes": 4346,
+      "sha256": "f4686a39ad939132083ace5d64032553cbceee6ebb13da83762a263236076bb2"
+    },
+    {
+      "type": "css",
+      "source": "App.css",
+      "output": "src/App.css",
+      "bytes": 28,
+      "sha256": "b0bc6e02a17d50afbf009b4e73518a757debce4f9dc3f040366b901e03b51e23"
+    },
+    {
+      "type": "css-source-map",
+      "source": "https://bestbuyincentives.com/static/css/main.b53d63eb.css.map",
+      "output": "not retained",
+      "bytes": 24768,
+      "sha256": "972b76a30d942a7e5fd5f2ef0aadc858a0554fe55289800b79a544a06a9fa257"
+    }
+  ]
+}
