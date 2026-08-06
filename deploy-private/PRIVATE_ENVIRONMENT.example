@@ -1,0 +1,7 @@
+# Configure these in Bluehost server environment or a private configuration outside public_html.
+# Never commit real values or place this file under public_html.
+BBI_PRIVATE_STORAGE_DIR=/home/ACCOUNT_PRIVATE/bbi-private
+BBI_RATE_LIMIT_SECRET=replace-with-a-long-random-secret
+BBI_SALES_NOTIFICATION_EMAIL=sales@bestbuyincentives.com
+BBI_CRM_WEBHOOK_URL=
+BBI_CRM_WEBHOOK_TOKEN=

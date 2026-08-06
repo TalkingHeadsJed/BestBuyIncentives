@@ -72,4 +72,23 @@ pathlib.Path(SITE, "robots.txt").write_text(
     "User-agent: *\nAllow: /\n\n"
     "Sitemap: https://bestbuyincentives.com/sitemap.xml\n"
 )
+
+# 9. Corrected Apache config (genuine 404, dir-serve, legacy 301s, no SPA fallback).
+shutil.copy2(f"{ROOT}/frontend/public/.htaccess", f"{SITE}/.htaccess")
+
+# 10. Convert leaked editorial CTA notes into real buttons.
+cta_pat = re.compile(
+    r'<p>\s*<strong>\s*(?:Primary|Secondary)\s+CTA:\s*(?P<label>.*?)\s*</strong>\s*(?:&rarr;|\u2192|-&gt;|->)\s*<code>\s*(?P<url>[^<]*?)\s*</code>\s*</p>',
+    re.S)
+cta_fixed = 0
+for p in pathlib.Path(SITE).rglob("*.html"):
+    h = p.read_text(encoding="utf-8", errors="ignore")
+    if "Primary CTA" not in h and "Secondary CTA" not in h:
+        continue
+    h, n = cta_pat.subn(
+        lambda m: f'<p><a class="button" data-position="body" href="{m.group("url")}">{m.group("label")}</a></p>', h)
+    if n:
+        p.write_text(h, encoding="utf-8"); cta_fixed += n
+print(f"editorial CTA notes converted to buttons: {cta_fixed}")
+
 print("assembly complete")
