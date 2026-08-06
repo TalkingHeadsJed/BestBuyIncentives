@@ -10,7 +10,7 @@ export default function CaseStudies() {
     <div data-testid="page-case-studies">
       <Seo
         title="Case Studies — Documented Sales Lift From Real Teams"
-        description="Real sales teams. Real numbers. See how furniture, auto, and jewelry retailers used vacation incentives to lift close rates, ticket size, and referrals."
+        description="See how furniture, automotive, and jewelry retailers reported using discounted travel vouchers to support sales, protect price, and differentiate their offers."
         path="/case-studies"
       />
       <section className="relative bg-[#0A0A0A] text-white overflow-hidden">

@@ -1,8 +1,13 @@
-# SPA + prerendered static hosting on Apache shared hosting.
-Options -MultiViews
+# BestBuyIncentives — Apache static hosting (Priority-13 / All-91 release).
+# Primary site = physical pre-rendered route directories. React powers only
+# /contact, /privacy, /terms, /compliance. First-party PHP API at /api/consultation.
+# NO catch-all rewrite to the homepage: unknown routes return a genuine 404.
+
+Options -MultiViews -Indexes
+DirectoryIndex index.html index.php
 
 <IfModule mod_dir.c>
-  # Do not auto-append trailing slashes (keeps URLs matching canonical tags).
+  # Keep no-trailing-slash canonical URLs (do not auto-append a slash).
   DirectorySlash Off
 </IfModule>
 
@@ -10,41 +15,54 @@ Options -MultiViews
   RewriteEngine On
   RewriteBase /
 
-  # Canonical: force HTTPS + non-www (matches sitemap/canonical tags)
+  # 1) Canonical: force HTTPS + non-www (matches sitemap/canonical tags).
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^(.*)$ https://bestbuyincentives.com/$1 [R=301,L]
 
-  # Serve prerendered index.html for a real directory hit WITHOUT redirecting,
-  # so the no-trailing-slash canonical URL (e.g. /about) stays in the address bar.
-  # (Prerender creates real dirs; with DirectorySlash Off these would otherwise 403.)
+  # 2) Legacy 301 redirects (destinations exist in this release).
+  RewriteRule ^travel-incentives-vs-discounting/?$ /discounted-travel-vouchers-vs-cash-discounts/ [R=301,L]
+  RewriteRule ^travel-incentives-vs-gift-cards/?$ /discounted-travel-vouchers-vs-gift-cards/ [R=301,L]
+  RewriteRule ^travel-incentives-vs-cash-rebates/?$ /customer-incentive-comparisons/ [R=301,L]
+  RewriteRule ^resources/stop-discounting-start-closing/?$ /increase-sales-without-discounting/ [R=301,L]
+  RewriteRule ^resources/the-buyers-remorse-killer/?$ /why-qualified-prospects-stall/ [R=301,L]
+  RewriteRule ^resources/how-to-position-a-vacation-incentive-in-a-close/?$ /explain-discounted-travel-voucher-to-customer/ [R=301,L]
+  RewriteRule ^resources/compensation-plans-that-actually-motivate/?$ /customer-closing-incentives-vs-sales-spiffs/ [R=301,L]
+  RewriteRule ^resources/running-a-21-day-blitz-campaign/?$ /launch-customer-travel-voucher-promotion/ [R=301,L]
+  RewriteRule ^resources/differentiating-on-experience-not-price/?$ /close-more-sales-without-lowering-price/ [R=301,L]
+  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+
+  # 3) Serve a real directory's index.html WITHOUT redirecting, so the
+  #    no-trailing-slash canonical URL (e.g. /about) stays in the address bar.
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.*[^/])$ /$1/index.html [L]
 
-  # Serve prerendered <route>/index.html for extensionless URLs (no redirect).
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
-  RewriteRule ^ %{REQUEST_URI}/index.html [L]
+  # 4) Serve a real directory's index.php WITHOUT redirecting (first-party API).
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.php -f
+  RewriteRule ^(.*[^/])$ /$1/index.php [L]
 
-  # SPA fallback: anything still unresolved -> app shell (client-side routing).
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  # No fallback rule: any path that is not a real file or directory falls through
+  # to Apache's natural 404 (never rewritten to the homepage).
 </IfModule>
 
-# Long cache for hashed static assets
+# Genuine 404 with a branded, noindex page.
+ErrorDocument 404 /404.html
+
+# Long cache for hashed static assets.
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/pdf "access plus 30 days"
   ExpiresByType video/mp4 "access plus 1 year"
 </IfModule>
 
-# Do not cache the HTML shells so route/meta updates propagate on redeploy.
+# Do not cache HTML shells so route/meta updates propagate on redeploy.
 <IfModule mod_headers.c>
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, must-revalidate"

@@ -24,7 +24,7 @@ export const COMPARISONS = {
     faqs: [
       { q: "Is it better to offer a discount or a travel incentive?", a: "A travel incentive almost always wins. Discounting comes directly off your margin and trains buyers to wait for the next price cut, while a travel incentive adds high perceived value on top of your offer, so you hold your price and still give the customer a reason to say yes now." },
       { q: "Why do travel incentives close more deals than discounts?", a: "Because a vacation carries a perceived value many times its cost and creates an emotional reason to buy today, whereas a discount is simply expected and negotiated. Teams using travel incentives report an average close-rate lift of about 37%." },
-      { q: "Does giving a vacation incentive hurt my margin?", a: "No. The certificate costs a small fraction of the deal it helps close, so your price and margin stay intact — unlike a discount, which removes profit dollar for dollar." },
+      { q: "Does offering a discounted travel voucher hurt my margin?", a: "The voucher may cost less than a comparable cash discount, allowing the business to preserve more of the core price. Compare the exact voucher cost, discount pattern, close rate, cancellations, and gross profit before deciding." },
     ],
   },
 
@@ -76,7 +76,7 @@ export const COMPARISONS = {
     faqs: [
       { q: "Is a travel incentive better than a cash rebate?", a: "Yes. A cash rebate is effectively a discount — its full value comes off your margin and buyers treat it as money owed. A travel incentive costs a fraction of the deal, carries far higher perceived value, and creates excitement that closes sales." },
       { q: "Why do cash rebates hurt margin more than travel incentives?", a: "A rebate pays out its full dollar amount straight from your profit, while a travel certificate costs only a small fraction of the deal it helps close — so the incentive protects margin the rebate erodes." },
-      { q: "Do customers prefer cash back or a free vacation?", a: "Cash back is quickly absorbed and forgotten, but a vacation is memorable and aspirational. That emotional pull is why a travel incentive more reliably motivates a buying decision and earns referrals." },
+      { q: "How does cash back compare with a discounted travel voucher?", a: "Cash back has a fixed dollar value and directly reduces economics. A discounted travel voucher can be more memorable, but only when the customer values it and understands all recipient costs, deadlines, availability, and restrictions." },
     ],
   },
 };

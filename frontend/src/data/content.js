@@ -64,14 +64,14 @@ export const HOW_IT_WORKS = [
 export const BUSINESS_TESTIMONIALS = [
   {
     quote:
-      "We've run promotions for decades. The vacation incentive outperformed every other promotion we tried — and it kept working year after year.",
+      "We've run promotions for decades. The discounted travel voucher promotion outperformed every other promotion we tried — and it kept working year after year.",
     author: "Bricker-Tunis",
     role: "Owner, Bricker-Tunis",
     metric: "Decades of repeat purchase",
   },
   {
     quote:
-      "Once we started including the vacation certificate with every purchase, the phones rang off the hook — our showroom hadn't been that busy in five years.",
+      "Once we started including the discounted travel voucher with every qualifying purchase, the phones rang off the hook — our showroom hadn't been that busy in five years.",
     author: "Regional Furniture Retailer",
     role: "General Manager",
     metric: "5-year traffic high",
@@ -183,7 +183,7 @@ export const INDUSTRIES = [
   },
   {
     name: "B2B Sales Orgs",
-    desc: "SDRs need a meeting opener. AEs need a closing tool. Vacation incentives sit perfectly in the sales playbook.",
+    desc: "Sales teams need credible ways to create urgency and add value. Discounted travel vouchers can support the close when the buyer, offer, and program fit.",
     metric: "+44% meeting acceptance",
   },
 ];
@@ -240,7 +240,7 @@ export const FAQS = [
   },
   {
     q: "Do my reps need training to use this?",
-    a: "Experienced sales teams may already know how to leverage a discount vacation certificate. Either way, you'll receive a power-packed training guide to help your team get the most out of every certificate.",
+    a: "Experienced sales teams may already know how to present a customer incentive. Either way, you'll receive guidance for explaining the discounted travel voucher accurately and using it at the appropriate point in the close.",
   },
   {
     q: "What does it cost us per certificate?",
@@ -268,7 +268,7 @@ export const FAQ_PAGE = [
   {
     category: "The Basics",
     q: "What is BestBuyIncentives?",
-    a: "BestBuyIncentives is a sales-growth company (operated by Karl Kramer & Company, Inc., in business since 1992) that provides premium travel-incentive certificates. High-ticket sales teams give these vacation certificates to customers as a closing tool — a way to win the deal without cutting price.",
+    a: "BestBuyIncentives is a sales-growth company operated by Karl Kramer & Company, Inc., in business since 1992. It helps high-ticket sales teams use discounted travel vouchers as customer-facing closing tools that can add value without automatically cutting price.",
   },
   {
     category: "The Basics",
@@ -294,7 +294,7 @@ export const FAQ_PAGE = [
   // Results & ROI
   {
     category: "Results & ROI",
-    q: "Do vacation incentives actually increase close rates?",
+    q: "Can discounted travel vouchers help increase close rates?",
     a: "Yes. Teams using BestBuyIncentives report an average close-rate lift of about 37%. Instead of negotiating on price, reps hand the buyer a compelling reason to act, which shortens the sales cycle and increases the percentage of deals that close.",
   },
   {
@@ -304,14 +304,14 @@ export const FAQ_PAGE = [
   },
   {
     category: "Results & ROI",
-    q: "How do vacation incentives protect profit margin?",
+    q: "How can discounted travel vouchers help protect profit margin?",
     a: "A 10% discount on a 30%-margin product wipes out roughly a third of your profit on that deal. A travel incentive costs you a small fraction of the deal it closes while the customer perceives it as high value — so you keep your price and your margin while still winning the sale.",
   },
 
   // Pricing & Terms
   {
     category: "Pricing & Terms",
-    q: "How much does a vacation incentive certificate cost?",
+    q: "How much does a discounted travel voucher cost?",
     a: "Certificates are priced for bulk deployment, so the per-certificate cost is a small fraction of the deal it helps close. Exact pricing depends on volume and program — book a quick call for a custom quote. A monthly subscription unlocks even deeper discounts.",
   },
   {
@@ -350,13 +350,13 @@ export const FAQ_PAGE = [
   },
   {
     category: "The Customer Experience",
-    q: "How do customers redeem their vacation certificate?",
+    q: "How do customers use their discounted travel voucher?",
     a: "The customer follows the simple instructions on their certificate and books directly with the travel support team, choosing their dates and destination from the available options. Everything after you hand over the certificate is handled for them.",
   },
   {
     category: "The Customer Experience",
     q: "Do my reps need training to use this?",
-    a: "Experienced reps often already know how to position a vacation certificate, and either way you receive a power-packed training guide so your whole team gets the most out of every certificate.",
+    a: "Experienced representatives may already know how to present a customer incentive, and the program includes guidance so the team can explain the discounted travel voucher accurately.",
   },
 
   // Getting Started
@@ -388,7 +388,7 @@ export const RESOURCES = [
     image: "/images/vac-relaxing.jpg",
     body: [
       "Discounting trains your market to wait for the next discount. Worse, every dollar you give up in price comes straight off your gross margin — which means a 10% discount on a 30% margin product wipes out a third of your profit on that deal.",
-      "Vacation incentives invert the math. The perceived value is 10x the cost to you. Customers feel like they 'won' something memorable instead of feeling like they got a deal. They tell their friends. They come back.",
+      "Discounted travel vouchers change the comparison from reducing price to adding customer value. Measure close rate, gross profit, cancellations, and referrals to determine the actual effect.",
       "When you stop discounting and start exciting, three things happen: average ticket goes up, close rate goes up, and referral rate goes up. Margin stays intact.",
     ],
   },
@@ -401,13 +401,13 @@ export const RESOURCES = [
     image: "/images/vac-island.jpg",
     body: [
       "Buyer's remorse peaks 24–72 hours after a high-ticket purchase. The amygdala panics. The buyer second-guesses. Calls come in to cancel.",
-      "A vacation certificate handed at the moment of close shifts the post-purchase emotion from 'did I spend too much?' to 'I'm going somewhere.' The emotional state changes. Cancellations drop. Referrals climb.",
+      "A discounted travel voucher presented accurately at the moment of close can replace some post-purchase anxiety with anticipation. Measure cancellations and referrals rather than assuming the outcome.",
       "Top auto dealers have cut buyer's remorse cancellations by more than 60% using this single move.",
     ],
   },
   {
     slug: "how-to-position-a-vacation-incentive-in-a-close",
-    title: "How to Position a Vacation Incentive in a Close",
+    title: "How to Position a Discounted Travel Voucher in a Close",
     category: "Sales Tactics",
     minutes: 8,
     excerpt: "The four-line script your reps need. When to introduce it. How to use it for stall-breaking and same-day close.",
@@ -426,7 +426,7 @@ export const RESOURCES = [
     excerpt: "Money motivates to a point. Memorable experiences create rep behavior changes money cannot.",
     image: "/images/vac-sanfran.jpg",
     body: [
-      "Cash bonuses get spent on bills. Vacation incentives become stories told for years. When you put a trip on the table for the top quartile, behavior changes overnight.",
+      "Customer closing incentives and salesperson compensation solve different problems. Use discounted travel vouchers for eligible customers, not as a substitute for a sales compensation plan.",
       "Top sales orgs blend cash + experience-based incentives at a 70/30 ratio. The 30% delivers an outsized lift in rep effort and pipeline coverage.",
     ],
   },
@@ -459,7 +459,7 @@ export const RESOURCES = [
 
 export const VIDEO_PLACEHOLDERS = [
   {
-    title: "How to Use a Vacation Incentive in Your Close",
+    title: "How to Use a Discounted Travel Voucher in Your Close",
     duration: "08:24",
     label: "Sales Tactic — Coming Soon",
   },

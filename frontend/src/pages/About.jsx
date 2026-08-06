@@ -25,7 +25,7 @@ export default function About() {
             <span className="hl-yellow-full text-black">A sales-growth company.</span>
           </h1>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
-            We engineer closing tools for high-ticket sales teams. The mechanism happens to look like a vacation. The product is increased sales.
+            We help high-ticket sales teams use discounted travel vouchers as customer-facing closing tools designed to add value and support profitable sales.
           </p>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function About() {
             <div className="mt-7 space-y-5 text-lg text-[#404040] leading-relaxed">
               <p>"What if a sales team had a closing tool every other team in their zip code didn't?"</p>
               <p>
-                We've spent over three decades — since 1992 — building vacation incentives that aren't designed for travelers. They're designed for the moment a rep needs to break a stall, neutralize a price objection, or kill buyer's remorse before it kills a referral.
+                Since 1992, we have helped businesses build customer incentive programs for the moment a qualified sale stalls, price pressure appears, or a manager needs a credible value-added offer.
               </p>
               <p>
                 We work with auto dealers, jewelers, furniture chains, home improvement firms, and B2B sales orgs nationwide. Programs deploy in days. ROI shows up inside the first quarter.

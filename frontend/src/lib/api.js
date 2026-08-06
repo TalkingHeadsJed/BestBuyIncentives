@@ -1,32 +1,36 @@
-// Static form handling via Web3Forms — no backend server required.
-// Get a FREE access key in ~30s at https://web3forms.com (just enter the inbox
-// email that should receive submissions). Paste it below, then rebuild.
-export const WEB3FORMS_ACCESS_KEY = "43646412-eb6a-4348-bc8d-6c587d26701d";
-
-async function sendWeb3Form(payload) {
-  const res = await fetch("https://api.web3forms.com/submit", {
+async function postJson(url, payload, headers = {}) {
+  const response = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({ access_key: WEB3FORMS_ACCESS_KEY, ...payload }),
+    headers: { "Content-Type": "application/json", Accept: "application/json", ...headers },
+    body: JSON.stringify(payload),
   });
-  const data = await res.json();
-  if (!data.success) throw new Error(data.message || "Submission failed");
-  return data;
+  const body = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const error = new Error(body.message || "Request could not be accepted.");
+    error.errorCode = body.error_code || "delivery_unavailable";
+    error.retryable = body.retryable ?? response.status >= 500;
+    throw error;
+  }
+  return { response, body };
 }
 
-export async function submitLead(data) {
-  return sendWeb3Form({
-    subject: `New Lead: ${data.full_name} - ${data.company}`,
-    from_name: "BestBuyIncentives Website",
-    ...data,
+export async function submitLead(payload) {
+  const { response, body } = await postJson("/api/consultation", payload, {
+    "Idempotency-Key": payload.submission_id,
   });
+  if (response.status !== 202 || body.accepted !== true || body.submission_id !== payload.submission_id) {
+    throw new Error("Request was not durably accepted.");
+  }
+  return body;
 }
 
-export async function subscribeNewsletter(email) {
-  return sendWeb3Form({
-    subject: "New Newsletter Signup - BestBuyIncentives",
-    from_name: "BestBuyIncentives Website",
+export async function subscribeNewsletter(email, attribution = {}) {
+  const submissionId = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const { body } = await postJson("/api/newsletter", {
+    submission_id: submissionId,
     email,
-    signup_type: "newsletter",
-  });
+    ...attribution,
+  }, { "Idempotency-Key": submissionId });
+  if (body.accepted !== true) throw new Error("Newsletter request was not accepted.");
+  return body;
 }

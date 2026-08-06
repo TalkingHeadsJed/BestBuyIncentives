@@ -25,7 +25,7 @@ export default function Industries() {
             <span className="hl-yellow-full text-black">Numbers we move them by.</span>
           </h1>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
-            If your team sells anything north of $2,000 a ticket, vacation incentives belong in your playbook. Here's how each vertical typically uses the program.
+            If your team sells high-ticket products or services, discounted travel vouchers can become a customer-facing closing tool. Here's how each vertical can use the program.
           </p>
         </div>
       </section>

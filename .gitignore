@@ -86,3 +86,4 @@ android-sdk/
 credentials.json
 *.key
 .credentials
+_release/backup/static-site-pre-p13.tgz

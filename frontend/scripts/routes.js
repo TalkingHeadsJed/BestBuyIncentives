@@ -1,32 +1,10 @@
-// Single source of truth for prerendered routes + sitemap generation.
-// BlueHost cannot run Node, so this only runs in the build container.
+// Under the Priority-13/All-91 release, the 91 prebuilt static overlay pages are
+// the primary site. React is retained ONLY for the interactive /contact form and
+// the legal routes. Those are the only routes we prerender + copy into static-site.
+const STATIC_ROUTES = ["/contact", "/privacy", "/terms", "/compliance"];
 
-const RESOURCE_SLUGS = [
-  "stop-discounting-start-closing",
-  "the-buyers-remorse-killer",
-  "how-to-position-a-vacation-incentive-in-a-close",
-  "compensation-plans-that-actually-motivate",
-  "running-a-21-day-blitz-campaign",
-  "differentiating-on-experience-not-price",
-];
+const RESOURCE_SLUGS = [];
 
-const STATIC_ROUTES = [
-  "/",
-  "/about",
-  "/programs",
-  "/industries",
-  "/case-studies",
-  "/resources",
-  "/faq",
-  "/travel-incentives-vs-discounting",
-  "/travel-incentives-vs-gift-cards",
-  "/travel-incentives-vs-cash-rebates",
-  "/contact",
-];
-
-const ROUTES = [
-  ...STATIC_ROUTES,
-  ...RESOURCE_SLUGS.map((s) => `/resources/${s}`),
-];
+const ROUTES = [...STATIC_ROUTES];
 
 module.exports = { ROUTES, STATIC_ROUTES, RESOURCE_SLUGS };

@@ -19,6 +19,7 @@ import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import Comparison from "@/pages/Comparison";
 import NotFound from "@/pages/NotFound";
+import Legal from "@/pages/Legal";
 
 function App() {
   // Toaster is client-only; mount it after hydration so the prerendered markup
@@ -41,6 +42,9 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Legal type="privacy" />} />
+              <Route path="/terms" element={<Legal type="terms" />} />
+              <Route path="/compliance" element={<Legal type="compliance" />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/travel-incentives-vs-discounting" element={<Comparison slug="discounting" />} />
               <Route path="/travel-incentives-vs-gift-cards" element={<Comparison slug="gift-cards" />} />
