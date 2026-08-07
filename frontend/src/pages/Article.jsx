@@ -41,22 +41,6 @@ export default function Article({ slug }) {
         ]}
       />
 
-      <style>{`
-        .article-body{color:#404040;font-size:1.075rem;line-height:1.75}
-        .article-body h2{font-family:var(--font-display,inherit);color:#0A0A0A;font-weight:800;font-size:1.6rem;line-height:1.15;margin:2.25rem 0 .75rem}
-        .article-body h3{color:#0A0A0A;font-weight:700;font-size:1.2rem;margin:1.75rem 0 .5rem}
-        .article-body p{margin:0 0 1.1rem}
-        .article-body ul,.article-body ol{margin:0 0 1.1rem 1.25rem;list-style:disc}
-        .article-body ol{list-style:decimal}
-        .article-body li{margin:.35rem 0}
-        .article-body a{color:#0A0A0A;font-weight:700;text-decoration:underline;text-decoration-color:#FFD300;text-underline-offset:3px}
-        .article-body a:hover{background:#FFD300}
-        .article-body strong{color:#0A0A0A}
-        .article-body table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.95rem}
-        .article-body th,.article-body td{border:1px solid #E5E2D9;padding:.6rem .75rem;text-align:left}
-        .article-body th{background:#F5F2EA;font-weight:700;color:#0A0A0A}
-      `}</style>
-
       <section className="bg-[#0A0A0A] text-white pt-32 pb-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <Link to="/resources" data-testid="article-back" className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold hover:text-white">
@@ -82,7 +66,8 @@ export default function Article({ slug }) {
                 {a.related.map((r) => (
                   <li key={r.to}>
                     <Link to={r.to} className="inline-flex items-center gap-2 text-black font-bold hover:text-[#595959]">
-                      <ArrowRight className="h-3.5 w-3.5 text-[#FFD300]" /> {r.label}
+                      <ArrowRight className="h-3.5 w-3.5 text-[#FFD300]" />
+                      <span>{r.label}</span>
                     </Link>
                   </li>
                 ))}

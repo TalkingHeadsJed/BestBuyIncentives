@@ -46,12 +46,19 @@ articles = []
 issues = []
 for slug in slugs:
     h = (V2/slug/"index.html").read_text(encoding="utf-8", errors="ignore")
-    title = re.search(r"<title>(.*?)</title>", h, re.S).group(1).strip()
-    desc = (re.search(r'<meta name="description" content="([^"]*)"', h) or [None, ""])[1].strip()
+    def unesc(s):
+        # Fully decode HTML entities (handles double-encoding like &amp;#39;).
+        prev = None
+        while s != prev:
+            prev = s
+            s = html.unescape(s)
+        return s
+    title = unesc(re.search(r"<title>(.*?)</title>", h, re.S).group(1).strip())
+    desc = unesc((re.search(r'<meta name="description" content="([^"]*)"', h) or [None, ""])[1].strip())
     canon = (re.search(r'<link rel="canonical" href="([^"]*)"', h) or [None, ""])[1]
-    h1 = re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S).group(1)).strip()
+    h1 = unesc(re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S).group(1)).strip())
     eyebrow_m = re.search(r'<div class="eyebrow">(.*?)</div>', h, re.S)
-    eyebrow = re.sub(r"<[^>]+>", "", eyebrow_m.group(1)).strip() if eyebrow_m else "High-ticket sales closing tools"
+    eyebrow = unesc(re.sub(r"<[^>]+>", "", eyebrow_m.group(1)).strip()) if eyebrow_m else "High-ticket sales closing tools"
 
     body = re.search(r'<article[^>]*>(.*?)</article>', h, re.S).group(1)
     # strip Video transcript section (from that h2 to end)

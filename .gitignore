@@ -88,3 +88,4 @@ credentials.json
 .credentials
 _release/backup/static-site-pre-p13.tgz
 _release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
+frontend/node_modules/.cache/default-development/0.pack
