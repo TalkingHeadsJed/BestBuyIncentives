@@ -1,9 +1,0 @@
-Options -Indexes
-<IfModule mod_headers.c>
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-
-<FilesMatch "^(?:\.env|.*\.(?:log|json|bak|sql))$">
-  Require all denied
-</FilesMatch>

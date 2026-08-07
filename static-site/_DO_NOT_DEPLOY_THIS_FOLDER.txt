@@ -1,6 +1,0 @@
-NOT THE DEPLOYMENT SOURCE.
-This folder is the superseded all-91 static OVERLAY (pre-V2), kept for reference only.
-The AUTHORITATIVE primary deployment source is:  /app/original-site/
-Archive: /app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
-SHA-256: fe725b1f69185e10da9603b53db5f3019eb8d79379422404231a4f75d049188d
-See /app/DEPLOY_THIS_ORIGINAL_SITE.txt

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://bestbuyincentives.com/sitemap.xml
