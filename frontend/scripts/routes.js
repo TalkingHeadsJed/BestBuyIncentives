@@ -1,5 +1,9 @@
 // Single source of truth for prerendered routes + sitemap generation.
-// Original React SPA + 72 approved sales-first article routes (root slugs).
+// Article routes are DERIVED from the authoritative registry (src/data/articles.json),
+// so adding/removing an article there automatically updates prerender + sitemap.
+const path = require("path");
+const ARTICLES = require(path.join(__dirname, "..", "src", "data", "articles.json"));
+const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);
 
 const RESOURCE_SLUGS = [
   "stop-discounting-start-closing",
@@ -12,84 +16,9 @@ const RESOURCE_SLUGS = [
 
 const STATIC_ROUTES = [
   "/", "/about", "/programs", "/industries", "/case-studies",
-  "/resources", "/faq",
+  "/resources", "/articles", "/faq",
   "/travel-incentives-vs-discounting", "/travel-incentives-vs-gift-cards", "/travel-incentives-vs-cash-rebates",
   "/contact", "/privacy", "/terms", "/compliance",
-];
-
-const ARTICLE_SLUGS = [
-  "authentic-urgency-vs-false-scarcity",
-  "boat-rv-sales-promotion-ideas",
-  "build-incentive-business-case-for-leadership",
-  "car-dealership-promotion-ideas",
-  "car-sales-closing-questions-that-preserve-margin",
-  "choose-incentive-for-high-ticket-purchase",
-  "choose-vertical-for-customer-incentive-campaign",
-  "close-more-sales-without-lowering-price",
-  "close-rate-vs-conversion-rate",
-  "controlled-sales-incentive-test",
-  "cost-of-delay-in-sales",
-  "create-urgency-in-car-sales-without-pressure",
-  "create-urgency-in-sales-without-being-pushy",
-  "customer-closing-incentives-for-car-dealerships",
-  "customer-closing-incentives-vs-sales-spiffs",
-  "customer-incentive-ideas-to-close-sales",
-  "customer-incentives-vs-rebates",
-  "customer-incentives-wedding-event-businesses",
-  "dealer-groups-measure-customer-incentive-campaign",
-  "dealership-promotions-for-aged-inventory",
-  "dealerships-use-discounted-travel-vouchers",
-  "discounted-travel-vouchers-vs-cash-discounts",
-  "discounted-travel-vouchers-vs-gift-cards",
-  "establish-a-reason-to-buy-now",
-  "evaluate-discounted-travel-voucher",
-  "explain-discounted-travel-voucher-to-customer",
-  "furniture-sales-closing-techniques-that-protect-margin",
-  "furniture-store-promotion-ideas-beyond-discounts",
-  "handle-i-want-to-shop-around",
-  "handle-price-objections-in-roofing-sales",
-  "handle-price-objections-without-discounting",
-  "high-ticket-closing-process",
-  "home-improvement-sales-incentives-that-preserve-margin",
-  "how-discounted-travel-vouchers-work",
-  "how-to-ask-for-the-sale-without-being-pushy",
-  "how-to-calculate-sales-close-rate",
-  "how-to-measure-incentive-roi",
-  "hvac-sales-incentives-for-replacement-decisions",
-  "i-need-to-think-about-it-sales-objection",
-  "improve-sales-velocity",
-  "in-home-sales-closing-techniques-without-pressure",
-  "jewelers-add-value-without-discounting",
-  "jewelry-store-promotion-ideas-high-value-purchases",
-  "launch-customer-travel-voucher-promotion",
-  "limited-time-sales-offers-without-manipulation",
-  "marketing-agencies-add-incentives-to-client-campaigns",
-  "measure-discount-frequency-margin-leakage",
-  "measure-travel-voucher-campaign",
-  "objection-handling-frameworks-for-sales-managers",
-  "present-discounted-travel-voucher-in-home-sale",
-  "price-objection-scripts-high-ticket-sales",
-  "purchase-incentives-vs-loyalty-programs",
-  "respond-when-a-prospect-asks-for-a-discount",
-  "revive-a-deal-that-lost-momentum",
-  "roofing-promotion-ideas-beyond-discounts",
-  "sales-closing-questions-examples",
-  "sales-closing-techniques-high-ticket-purchases",
-  "sales-incentives-for-dealership-service-lane-customers",
-  "sales-manager-stalled-deals-playbook",
-  "sales-promotion-metrics-that-matter",
-  "shorten-high-ticket-sales-cycle",
-  "shorten-in-home-sales-cycle",
-  "train-sales-team-to-present-travel-vouchers",
-  "travel-voucher-recipient-costs",
-  "travel-voucher-terms-businesses-should-review",
-  "trial-close-questions-examples",
-  "true-cost-of-discounting-high-ticket-sale",
-  "what-is-a-customer-purchase-incentive",
-  "when-a-purchase-incentive-can-resolve-an-objection",
-  "why-qualified-prospects-stall",
-  "window-remodeling-sales-promotion-ideas",
-  "your-price-is-too-high-response"
 ];
 
 const ROUTES = [

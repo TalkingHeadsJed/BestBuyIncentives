@@ -5,11 +5,11 @@
 ================================================================================
 
 PRIMARY DEPLOYMENT SOURCE (use THIS):
-  Folder : /app/original-site/          (92 HTML pages, ~99 MB)
+  Folder : /app/original-site/          (93 HTML pages, ~99 MB)
   Archive: /app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
 
   SHA-256 (archive):
-  d35d276a02745760a5168c8c1f4473d27388b2d3a08ffb9a7aee214e97c89268
+  065dc99e5ffd3e38d0b761d1d3cb1e999b968c63637a59f804cd951b78b268b8
 
   Verify before deploying:
     sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
@@ -23,14 +23,17 @@ DO NOT DEPLOY (superseded / non-authoritative):
 WHAT'S INSIDE (all pre-rendered, crawlable, hydrate over markup):
   /  /about  /programs  /industries  /case-studies  /faq
   /resources  + 6 article pages under /resources/<slug>
+  /articles  (Sales Resources index — CollectionPage, 6 topic filters, links all 72)
   /travel-incentives-vs-discounting  -vs-gift-cards  -vs-cash-rebates
   /contact  /privacy  /terms  /compliance
   + 72 sales-first article pages at root slugs (e.g. /cost-of-delay-in-sales)
   404.html (branded, noindex,follow)
-  .htaccess  robots.txt  llms.txt  sitemap.xml (92 URLs)
+  .htaccess  robots.txt  llms.txt  sitemap.xml (93 URLs)
   static/ (hashed JS+CSS)  images/  api/ (first-party PHP consultation endpoint)
   Audience Lab pixel present on every page (suppressed during prerender only).
-  All 92 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
+  All 93 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
+  Articles driven by ONE registry (frontend/src/data/articles.json) — see
+  /app/ARTICLE_CONTENT_MANAGEMENT.md for the add/remove + validate workflow.
 --------------------------------------------------------------------------------
 
 BLUEHOST EXTRACTION INSTRUCTIONS (exact):
@@ -47,7 +50,7 @@ BLUEHOST EXTRACTION INSTRUCTIONS (exact):
 3) VERIFY the checksum on the server (cPanel Terminal / SSH):
      sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
      # must equal:
-     # d35d276a02745760a5168c8c1f4473d27388b2d3a08ffb9a7aee214e97c89268
+     # 065dc99e5ffd3e38d0b761d1d3cb1e999b968c63637a59f804cd951b78b268b8
 
 4) EXTRACT. The archive contains a top-level "original-site/" folder, so its
    CONTENTS must land directly in public_html (not in a nested folder):

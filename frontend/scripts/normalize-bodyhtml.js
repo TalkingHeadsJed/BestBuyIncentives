@@ -6,13 +6,10 @@ const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer-core");
 const CHROME = process.env.CHROME_PATH || "/usr/bin/google-chrome";
-const DATA = path.join(__dirname, "..", "src", "data", "articles.js");
+const DATA = path.join(__dirname, "..", "src", "data", "articles.json");
 
 (async () => {
-  const src = fs.readFileSync(DATA, "utf-8");
-  const start = src.indexOf("[");
-  const end = src.lastIndexOf("]") + 1;
-  const data = JSON.parse(src.slice(start, end));
+  const data = JSON.parse(fs.readFileSync(DATA, "utf-8"));
 
   const browser = await puppeteer.launch({
     executablePath: CHROME,
@@ -35,9 +32,6 @@ const DATA = path.join(__dirname, "..", "src", "data", "articles.js");
   }
   await browser.close();
 
-  let out = "// AUTO-GENERATED from the 72 approved V2 sales-first articles (content only).\n";
-  out += "export const ARTICLES = " + JSON.stringify(data, null, 0) + ";\n";
-  out += "export const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);\n";
-  fs.writeFileSync(DATA, out, "utf-8");
+  fs.writeFileSync(DATA, JSON.stringify(data, null, 0) + "\n", "utf-8");
   console.log("bodyHtml normalized. changed:", changed, "of", data.length);
 })();

@@ -44,6 +44,32 @@ def rewrite_links(fragment):
 
 articles = []
 issues = []
+
+# Category taxonomy (keyword precedence). Keep in sync with _release/build_registry.py.
+CAT_RULES = [
+    ("Industry Playbooks", ["car-dealership", "car-sales", "dealership", "dealer-groups",
+        "dealerships", "boat-rv", "furniture", "jewelry", "jewelers", "roofing", "hvac",
+        "home-improvement", "window-remodeling", "wedding-event", "marketing-agencies",
+        "in-home", "service-lane"]),
+    ("Travel Vouchers", ["travel-voucher", "travel-vouchers", "discounted-travel-voucher",
+        "discounted-travel-vouchers", "how-discounted-travel", "evaluate-discounted-travel",
+        "explain-discounted-travel", "present-discounted-travel", "launch-customer-travel",
+        "train-sales-team-to-present-travel"]),
+    ("Objection Handling", ["objection", "handle-", "shop-around", "think-about-it",
+        "your-price-is-too-high", "asks-for-a-discount", "price-objection", "resolve-an-objection"]),
+    ("Metrics & ROI", ["close-rate", "conversion-rate", "measure", "-roi", "metrics",
+        "sales-velocity", "cost-of-delay", "margin-leakage", "discount-frequency",
+        "calculate-sales-close", "recipient-costs", "true-cost-of-discounting"]),
+    ("Closing Techniques", ["closing", "close-more", "trial-close", "ask-for-the-sale",
+        "urgency", "reason-to-buy", "revive-a-deal", "stall", "shorten", "limited-time",
+        "scarcity", "sales-cycle", "buy-now"]),
+]
+def categorize(slug):
+    for cat, kws in CAT_RULES:
+        if any(kw in slug for kw in kws):
+            return cat
+    return "Incentive Strategy"
+
 for slug in slugs:
     h = (V2/slug/"index.html").read_text(encoding="utf-8", errors="ignore")
     def unesc(s):
@@ -87,14 +113,17 @@ for slug in slugs:
         issues.append(f"{slug}: body contains an H1")
 
     articles.append({"slug": slug, "title": title, "description": desc, "h1": h1,
-                     "eyebrow": eyebrow, "bodyHtml": body, "related": related})
+                     "eyebrow": eyebrow, "category": categorize(slug),
+                     "excerpt": desc, "bodyHtml": body})
 
-data = "// AUTO-GENERATED from the 72 approved V2 sales-first articles (content only).\n"
-data += "export const ARTICLES = " + json.dumps(articles, ensure_ascii=False, indent=0) + ";\n"
-data += "export const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);\n"
-pathlib.Path("/app/frontend/src/data/articles.js").write_text(data, encoding="utf-8")
+# Write the authoritative registry as JSON. NOTE: after (re)generating, run
+#   node scripts/normalize-bodyhtml.js
+# to entity-normalize bodyHtml so prerender hydrates cleanly (see docs).
+pathlib.Path("/app/frontend/src/data/articles.json").write_text(
+    json.dumps(articles, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
 
-print("articles generated:", len(articles))
+print("registry written: src/data/articles.json — articles:", len(articles))
 print("issues:", issues if issues else "none")
-print("sample related (first article w/ related):",
-      next((a["related"] for a in articles if a["related"]), []))
+from collections import Counter
+for c, n in Counter(a["category"] for a in articles).most_common():
+    print(f"  {n:3}  {c}")

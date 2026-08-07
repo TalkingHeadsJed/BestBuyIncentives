@@ -6,8 +6,13 @@ const { ROUTES } = require("./routes");
 const SITE = "https://bestbuyincentives.com";
 
 const priority = (r) =>
-  r === "/" ? "1.0" : r.startsWith("/resources/") ? "0.6" : r === "/programs" ? "0.9" : "0.8";
-const changefreq = (r) => (r === "/" || r === "/resources" ? "weekly" : "monthly");
+  r === "/" ? "1.0"
+  : r === "/articles" ? "0.9"
+  : r.startsWith("/resources/") ? "0.6"
+  : r === "/programs" ? "0.9"
+  : /^\/[a-z0-9-]+$/.test(r) && !["/about","/programs","/industries","/case-studies","/resources","/faq","/contact","/privacy","/terms","/compliance","/articles"].includes(r) ? "0.7"
+  : "0.8";
+const changefreq = (r) => (r === "/" || r === "/resources" || r === "/articles" ? "weekly" : "monthly");
 
 const urls = ROUTES.map(
   (r) =>

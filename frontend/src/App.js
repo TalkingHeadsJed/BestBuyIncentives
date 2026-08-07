@@ -21,6 +21,7 @@ import Comparison from "@/pages/Comparison";
 import NotFound from "@/pages/NotFound";
 import Legal from "@/pages/Legal";
 import Article from "@/pages/Article";
+import Articles from "@/pages/Articles";
 import { ARTICLE_SLUGS } from "@/data/articles";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/resources/:slug" element={<ResourceDetail />} />
+              <Route path="/articles" element={<Articles />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Legal type="privacy" />} />
               <Route path="/terms" element={<Legal type="terms" />} />
