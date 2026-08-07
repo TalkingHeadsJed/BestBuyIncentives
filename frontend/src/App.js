@@ -20,6 +20,8 @@ import FAQ from "@/pages/FAQ";
 import Comparison from "@/pages/Comparison";
 import NotFound from "@/pages/NotFound";
 import Legal from "@/pages/Legal";
+import Article from "@/pages/Article";
+import { ARTICLE_SLUGS } from "@/data/articles";
 
 function App() {
   // Toaster is client-only; mount it after hydration so the prerendered markup
@@ -49,6 +51,9 @@ function App() {
               <Route path="/travel-incentives-vs-discounting" element={<Comparison slug="discounting" />} />
               <Route path="/travel-incentives-vs-gift-cards" element={<Comparison slug="gift-cards" />} />
               <Route path="/travel-incentives-vs-cash-rebates" element={<Comparison slug="cash-rebates" />} />
+              {ARTICLE_SLUGS.map((s) => (
+                <Route key={s} path={`/${s}`} element={<Article slug={s} />} />
+              ))}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
