@@ -1,0 +1,52 @@
+# BestBuyIncentives — original React SPA (prerendered) on Apache static hosting.
+# Every route is a real prerendered directory. Retains: HTTPS/non-www canonical,
+# directory-serve without redirect, first-party PHP API at /api/consultation,
+# and a genuine 404 (no catch-all rewrite to the homepage).
+
+Options -MultiViews -Indexes
+DirectoryIndex index.html index.php
+
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Canonical: force HTTPS + non-www.
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ https://bestbuyincentives.com/$1 [R=301,L]
+
+  # Serve a real directory's index.html WITHOUT redirecting (keeps no-slash canonical).
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*[^/])$ /$1/index.html [L]
+
+  # Serve a real directory's index.php WITHOUT redirecting (first-party API).
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.php -f
+  RewriteRule ^(.*[^/])$ /$1/index.php [L]
+
+  # No catch-all rewrite: unknown paths fall through to a genuine Apache 404.
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/pdf "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
