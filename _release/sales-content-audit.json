@@ -1,0 +1,741 @@
+{
+  "summary": {
+    "pages_audited": 91,
+    "product_present": 91,
+    "benefit_bridge_present": 91,
+    "consultation_path_present": 91,
+    "prohibited_terms_pages": 0,
+    "passed": 91,
+    "failed": 0
+  },
+  "rows": [
+    {
+      "url": "/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-closing-incentives/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/discounted-travel-vouchers-for-sales/",
+      "product": true,
+      "benefit_hits": 4,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/how-it-works/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/high-ticket-sales-incentives/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-incentive-programs/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/increase-sales-without-discounting/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-incentive-comparisons/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/high-ticket-closing-playbook/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/case-studies/place-furniture-galleries/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/case-studies/automotive-closing-incentives/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/automotive-dealerships/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/furniture-retailers/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/jewelry-stores/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/home-improvement-hvac/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/roofing-contractors/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/boat-rv-dealers/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/industries/wedding-event-businesses/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/partners/marketing-agencies/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-closing-techniques-high-ticket-purchases/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-closing-questions-examples/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/close-more-sales-without-lowering-price/",
+      "product": true,
+      "benefit_hits": 12,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/how-to-ask-for-the-sale-without-being-pushy/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/trial-close-questions-examples/",
+      "product": true,
+      "benefit_hits": 4,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/why-qualified-prospects-stall/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-manager-stalled-deals-playbook/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/high-ticket-closing-process/",
+      "product": true,
+      "benefit_hits": 4,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/create-urgency-in-sales-without-being-pushy/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/authentic-urgency-vs-false-scarcity/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/shorten-high-ticket-sales-cycle/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/revive-a-deal-that-lost-momentum/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/establish-a-reason-to-buy-now/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/cost-of-delay-in-sales/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/limited-time-sales-offers-without-manipulation/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/improve-sales-velocity/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/handle-price-objections-without-discounting/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/price-objection-scripts-high-ticket-sales/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/i-need-to-think-about-it-sales-objection/",
+      "product": true,
+      "benefit_hits": 3,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/your-price-is-too-high-response/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/handle-i-want-to-shop-around/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/respond-when-a-prospect-asks-for-a-discount/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/objection-handling-frameworks-for-sales-managers/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/when-a-purchase-incentive-can-resolve-an-objection/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-incentive-ideas-to-close-sales/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/what-is-a-customer-purchase-incentive/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-closing-incentives-vs-sales-spiffs/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/discounted-travel-vouchers-vs-gift-cards/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/discounted-travel-vouchers-vs-cash-discounts/",
+      "product": true,
+      "benefit_hits": 13,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/purchase-incentives-vs-loyalty-programs/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-incentives-vs-rebates/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/choose-incentive-for-high-ticket-purchase/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/how-discounted-travel-vouchers-work/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/evaluate-discounted-travel-voucher/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/travel-voucher-recipient-costs/",
+      "product": true,
+      "benefit_hits": 2,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/travel-voucher-terms-businesses-should-review/",
+      "product": true,
+      "benefit_hits": 4,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/explain-discounted-travel-voucher-to-customer/",
+      "product": true,
+      "benefit_hits": 3,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/train-sales-team-to-present-travel-vouchers/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/launch-customer-travel-voucher-promotion/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/measure-travel-voucher-campaign/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/true-cost-of-discounting-high-ticket-sale/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/how-to-calculate-sales-close-rate/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/how-to-measure-incentive-roi/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/close-rate-vs-conversion-rate/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/measure-discount-frequency-margin-leakage/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/controlled-sales-incentive-test/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-promotion-metrics-that-matter/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/build-incentive-business-case-for-leadership/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/car-dealership-promotion-ideas/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-closing-incentives-for-car-dealerships/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/car-sales-closing-questions-that-preserve-margin/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/create-urgency-in-car-sales-without-pressure/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/dealerships-use-discounted-travel-vouchers/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/dealership-promotions-for-aged-inventory/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/sales-incentives-for-dealership-service-lane-customers/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/dealer-groups-measure-customer-incentive-campaign/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/home-improvement-sales-incentives-that-preserve-margin/",
+      "product": true,
+      "benefit_hits": 12,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/in-home-sales-closing-techniques-without-pressure/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/roofing-promotion-ideas-beyond-discounts/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/handle-price-objections-in-roofing-sales/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/hvac-sales-incentives-for-replacement-decisions/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/window-remodeling-sales-promotion-ideas/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/shorten-in-home-sales-cycle/",
+      "product": true,
+      "benefit_hits": 8,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/present-discounted-travel-voucher-in-home-sale/",
+      "product": true,
+      "benefit_hits": 5,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/furniture-store-promotion-ideas-beyond-discounts/",
+      "product": true,
+      "benefit_hits": 10,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/furniture-sales-closing-techniques-that-protect-margin/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/jewelry-store-promotion-ideas-high-value-purchases/",
+      "product": true,
+      "benefit_hits": 11,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/jewelers-add-value-without-discounting/",
+      "product": true,
+      "benefit_hits": 12,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/boat-rv-sales-promotion-ideas/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/customer-incentives-wedding-event-businesses/",
+      "product": true,
+      "benefit_hits": 9,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/marketing-agencies-add-incentives-to-client-campaigns/",
+      "product": true,
+      "benefit_hits": 6,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    },
+    {
+      "url": "/choose-vertical-for-customer-incentive-campaign/",
+      "product": true,
+      "benefit_hits": 7,
+      "consultation_path": true,
+      "prohibited": [],
+      "pass": true
+    }
+  ]
+}

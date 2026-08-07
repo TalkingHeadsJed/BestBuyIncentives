@@ -3,7 +3,7 @@ import re, json, pathlib, collections
 
 SITE = pathlib.Path("/app/static-site")
 REL = pathlib.Path("/app/_release")
-manifest = json.loads((REL/"all91/bundle-manifest.json").read_text())
+manifest = json.loads((REL/"v2/bundle-manifest.json").read_text())
 overlay_routes = [p["destination_url"] for p in manifest["pages"]]
 react_routes = ["/contact", "/privacy", "/terms", "/compliance"]
 
@@ -62,7 +62,7 @@ missing_sm = [l for l in locs if not rel_to_file(l).exists()]
 if missing_sm: report["issues"].append(f"sitemap URLs with no file: {missing_sm}")
 
 # redirect destinations exist
-csv = (REL/"all91/redirects-all-91.csv").read_text().splitlines()[1:]
+csv = (REL/"v2/redirects-all-91.csv").read_text().splitlines()[1:]
 redir_missing = []
 for line in csv:
     parts = line.split(",")

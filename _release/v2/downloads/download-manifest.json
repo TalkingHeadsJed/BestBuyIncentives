@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-08-06",
+  "deployment_root": "/downloads/",
+  "assets": [
+    {
+      "filename": "BestBuyIncentives_High-Ticket_Closing_Playbook.pdf",
+      "public_url": "/downloads/BestBuyIncentives_High-Ticket_Closing_Playbook.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 12772,
+      "sha256": "F70BA02D37A48EE0A51BC89EFD4ECFE3B59EAD617B8CF9CB7B0510F42FE5A586",
+      "event": "resource_download",
+      "resource_id": "high-ticket-closing-playbook"
+    },
+    {
+      "filename": "BestBuyIncentives_Discounted-Travel-Voucher_One-Page-Guide.pdf",
+      "public_url": "/downloads/BestBuyIncentives_Discounted-Travel-Voucher_One-Page-Guide.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 3499,
+      "sha256": "42FEEDC75BA93F4A94D1513A1E8AF2CF1689781688C73757BF1BEAD42FE304E5",
+      "event": "resource_download",
+      "resource_id": "discounted-travel-voucher-one-page-guide"
+    },
+    {
+      "filename": "BestBuyIncentives_Revenue_Dashboard.xlsx",
+      "public_url": "/downloads/BestBuyIncentives_Revenue_Dashboard.xlsx",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size_bytes": 28738,
+      "sha256": "C5BDFCCFCA59F63DA4F0408CBBFE889226DC9FF22F2CF3E467361716F744A5C9",
+      "event": "resource_download",
+      "resource_id": "revenue-dashboard"
+    },
+    {
+      "filename": "BestBuyIncentives_Sales-Team_Training-Script.txt",
+      "public_url": "/downloads/BestBuyIncentives_Sales-Team_Training-Script.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 5417,
+      "sha256": "F54097AE9199B6381FCE140434318FF484C14906E43181214CB067684C902DA2",
+      "event": "resource_download",
+      "resource_id": "sales-team-training-script"
+    }
+  ],
+  "acceptance_tests": [
+    "Public URL returns HTTP 200 with the declared content type.",
+    "Downloaded byte size and SHA-256 checksum match this manifest.",
+    "The response is not an HTML soft 404.",
+    "The download click emits resource_download with resource_id, page_path, and attribution parameters.",
+    "A gated download is released only after a successful form/CRM handoff using the same submission_id."
+  ]
+}
