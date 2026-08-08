@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="BestBuyIncentives logo">
+  <rect width="512" height="512" fill="#0A0A0A"/>
+  <rect x="96" y="128" width="320" height="176" fill="#FFD300"/>
+  <text x="256" y="252" font-family="Arial, Helvetica, sans-serif" font-size="132" font-weight="800" fill="#0A0A0A" text-anchor="middle">BB</text>
+  <text x="256" y="372" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" fill="#FFFFFF" text-anchor="middle">BestBuy</text>
+  <text x="256" y="426" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="800" fill="#FFD300" text-anchor="middle">Incentives</text>
+</svg>

@@ -5,11 +5,11 @@
 ================================================================================
 
 PRIMARY DEPLOYMENT SOURCE (use THIS):
-  Folder : /app/original-site/          (93 HTML pages, ~99 MB)
+  Folder : /app/original-site/          (116 HTML pages, ~99 MB)
   Archive: /app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
 
   SHA-256 (archive):
-  065dc99e5ffd3e38d0b761d1d3cb1e999b968c63637a59f804cd951b78b268b8
+  7ef706e864efb51cc83ff449c21a429322b4f7acb8c190d9bd1eecdf52b10516
 
   Verify before deploying:
     sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
@@ -28,10 +28,10 @@ WHAT'S INSIDE (all pre-rendered, crawlable, hydrate over markup):
   /contact  /privacy  /terms  /compliance
   + 72 sales-first article pages at root slugs (e.g. /cost-of-delay-in-sales)
   404.html (branded, noindex,follow)
-  .htaccess  robots.txt  llms.txt  sitemap.xml (93 URLs)
+  .htaccess  robots.txt  llms.txt  sitemap.xml (116 URLs)
   static/ (hashed JS+CSS)  images/  api/ (first-party PHP consultation endpoint)
   Audience Lab pixel present on every page (suppressed during prerender only).
-  All 93 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
+  All 116 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
   Articles driven by ONE registry (frontend/src/data/articles.json) — see
   /app/ARTICLE_CONTENT_MANAGEMENT.md for the add/remove + validate workflow.
 --------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ BLUEHOST EXTRACTION INSTRUCTIONS (exact):
 3) VERIFY the checksum on the server (cPanel Terminal / SSH):
      sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
      # must equal:
-     # 065dc99e5ffd3e38d0b761d1d3cb1e999b968c63637a59f804cd951b78b268b8
+     # 7ef706e864efb51cc83ff449c21a429322b4f7acb8c190d9bd1eecdf52b10516
 
 4) EXTRACT. The archive contains a top-level "original-site/" folder, so its
    CONTENTS must land directly in public_html (not in a nested folder):

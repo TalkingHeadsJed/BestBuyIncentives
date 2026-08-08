@@ -3,6 +3,26 @@ import { Helmet } from "react-helmet-async";
 const SITE_URL = "https://bestbuyincentives.com";
 const DEFAULT_IMAGE = `${SITE_URL}/images/hero-seminar.png`;
 const SITE_NAME = "BestBuyIncentives";
+const LOGO = `${SITE_URL}/images/logo.svg`;
+
+// Stable identity nodes referenced by @id across all page schema.
+export const ORG_ID = `${SITE_URL}/#organization`;
+export const WEBSITE_ID = `${SITE_URL}/#website`;
+const BASE_SCHEMA = [
+  {
+    "@context": "https://schema.org", "@type": "Organization", "@id": ORG_ID,
+    name: "Best Buy Incentives", url: SITE_URL,
+    logo: { "@type": "ImageObject", url: LOGO, width: 512, height: 512 },
+    foundingDate: "1992",
+    description: "Customer incentive programs and discounted travel vouchers that help high-ticket sales teams close more without discounting.",
+    sameAs: [],
+  },
+  {
+    "@context": "https://schema.org", "@type": "WebSite", "@id": WEBSITE_ID,
+    url: SITE_URL, name: SITE_NAME, inLanguage: "en-US",
+    publisher: { "@id": ORG_ID },
+  },
+];
 
 /**
  * Per-page SEO manager: <title>, meta, canonical, OG, Twitter, JSON-LD.
@@ -28,6 +48,7 @@ export default function Seo({
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Stop Discounting. Start Closing.`;
   const canonical = `${SITE_URL}${path}`;
   const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
+  const allSchemas = [...BASE_SCHEMA, ...schemas];
 
   return (
     <Helmet prioritizeSeoTags>
@@ -57,7 +78,7 @@ export default function Seo({
       {description && <meta name="twitter:description" content={description} />}
       <meta name="twitter:image" content={image} />
 
-      {schemas.map((s, i) => (
+      {allSchemas.map((s, i) => (
         <script key={i} type="application/ld+json">
           {JSON.stringify(s)}
         </script>

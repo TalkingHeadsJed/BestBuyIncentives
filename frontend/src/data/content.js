@@ -382,7 +382,7 @@ export const FAQ_PAGE = [
 export const RESOURCES = [
   {
     slug: "stop-discounting-start-closing",
-    title: "Stop Discounting. Start Closing.",
+    title: "Stop Discounting, Start Closing: Sales Playbook",
     category: "Sales Strategy",
     minutes: 6,
     excerpt: "Why every 1% you discount costs you 3% of profit — and the alternative that beats discounting on every measurable dimension.",

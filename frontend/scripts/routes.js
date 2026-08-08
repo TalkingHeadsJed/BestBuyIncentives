@@ -4,6 +4,10 @@
 const path = require("path");
 const ARTICLES = require(path.join(__dirname, "..", "src", "data", "articles.json"));
 const ARTICLE_SLUGS = ARTICLES.map((a) => a.slug);
+const SEO_PAGES = require(path.join(__dirname, "..", "src", "data", "seoPages.json"));
+const SEO_PATHS = [
+  ...SEO_PAGES.hubs, ...SEO_PAGES.commercial, ...SEO_PAGES.industries, ...SEO_PAGES.caseStudies,
+].map((p) => p.path);
 
 const RESOURCE_SLUGS = [
   "stop-discounting-start-closing",
@@ -24,7 +28,8 @@ const STATIC_ROUTES = [
 const ROUTES = [
   ...STATIC_ROUTES,
   ...RESOURCE_SLUGS.map((s) => '/resources/' + s),
+  ...SEO_PATHS,
   ...ARTICLE_SLUGS.map((s) => '/' + s),
 ];
 
-module.exports = { ROUTES, STATIC_ROUTES, RESOURCE_SLUGS, ARTICLE_SLUGS };
+module.exports = { ROUTES, STATIC_ROUTES, RESOURCE_SLUGS, ARTICLE_SLUGS, SEO_PATHS };

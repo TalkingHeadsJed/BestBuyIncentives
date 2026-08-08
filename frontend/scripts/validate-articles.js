@@ -4,7 +4,7 @@
 // banned wording. Exits non-zero on any failure.
 const fs = require("fs");
 const path = require("path");
-const { ROUTES, ARTICLE_SLUGS } = require("./routes");
+const { ROUTES, ARTICLE_SLUGS, SEO_PATHS } = require("./routes");
 
 const BUILD = path.join(__dirname, "..", "build");
 const routeSet = new Set(ROUTES);
@@ -89,10 +89,48 @@ for (const s of ARTICLE_SLUGS) {
   if (!html) continue;
   if (!html.includes('"@type":"Article"')) errors.push(`[/${s}] missing Article schema`);
   if (!html.includes('"@type":"BreadcrumbList"')) errors.push(`[/${s}] missing BreadcrumbList schema`);
+  if (!/"datePublished":"20\d\d-\d\d-\d\d"/.test(html)) errors.push(`[/${s}] missing datePublished`);
+  if (!html.includes('"reviewedBy"')) errors.push(`[/${s}] missing reviewedBy`);
+  if (!html.includes('"isPartOf"')) errors.push(`[/${s}] missing isPartOf`);
   if (!/data-testid="article-breadcrumb"/.test(html)) errors.push(`[/${s}] missing visible breadcrumb`);
+  if (!/data-testid="article-byline"/.test(html)) errors.push(`[/${s}] missing visible byline`);
   if (!/data-testid="article-related"/.test(html)) errors.push(`[/${s}] missing related section`);
   if (!/data-testid="article-cta"/.test(html)) errors.push(`[/${s}] missing consultation CTA`);
 }
+
+// Global identity nodes present on every page
+for (const r of ROUTES) {
+  const html = readRoute(r);
+  if (!html) continue;
+  if (!html.includes('"@id":"https://bestbuyincentives.com/#organization"')) errors.push(`[${r}] missing Organization @id node`);
+}
+
+// Task 6: NO FAQPage schema on NEW pages (articles + created SEO pages) — these
+// were authored without visible FAQs. Pre-existing pages (/faq, comparisons) that
+// legitimately render visible FAQs are permitted and are not modified.
+const newPages = new Set([...ARTICLE_SLUGS.map((s) => "/" + s), ...SEO_PATHS]);
+for (const r of newPages) {
+  const html = readRoute(r);
+  if (html && html.includes('"@type":"FAQPage"')) errors.push(`[${r}] FAQPage schema present without authorized visible FAQs`);
+}
+
+// Orphan check: every route (except "/") must have >=1 inbound internal link from another page
+const inbound = {};
+for (const r of ROUTES) inbound[r] = 0;
+for (const r of ROUTES) {
+  const html = readRoute(r);
+  if (!html) continue;
+  const hrefs = new Set([...html.matchAll(/href="(\/[^"#?]*)"/g)].map((m) => m[1].replace(/\/$/, "") || "/"));
+  for (const h of hrefs) {
+    if (h !== r && Object.prototype.hasOwnProperty.call(inbound, h)) inbound[h] += 1;
+  }
+}
+for (const r of ROUTES) {
+  if (r === "/") continue;
+  if (inbound[r] === 0) errors.push(`[${r}] ORPHAN — 0 inbound internal links`);
+}
+const artInbound = ARTICLE_SLUGS.map((s) => inbound["/" + s]).sort((a, b) => a - b);
+warn.push(`article inbound links: min=${artInbound[0]} median=${artInbound[Math.floor(artInbound.length / 2)]} max=${artInbound[artInbound.length - 1]}`);
 
 // /articles index schema
 {
