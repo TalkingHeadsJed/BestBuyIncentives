@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle2, Download } from "lucide-react";
 import Seo, { breadcrumbSchema } from "@/components/site/Seo";
 import { ARTICLES } from "@/data/articles";
 
@@ -134,6 +134,13 @@ export function CommercialPage({ cfg }) {
           </div>
         ))}
       </div>
+      {cfg.download && (
+        <div className="mt-10">
+          <a href={cfg.download.href} download data-testid="commercial-download-cta" className="inline-flex items-center gap-2 border-2 border-black text-black hover:bg-black hover:text-white font-bold text-sm px-6 py-3 uppercase tracking-wide transition-colors">
+            <Download className="h-4 w-4" /><span>{cfg.download.label}</span>
+          </a>
+        </div>
+      )}
       <ProofList items={cfg.proof} />
       <Accountability />
       <div className="mt-12 bg-[#0A0A0A] text-white p-10">
