@@ -58,6 +58,9 @@ export function Hub({ cfg }) {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to={cfg.owner.to} className="inline-flex items-center gap-2 text-black bg-[#FFD300] hover:bg-[#FFEA66] font-bold text-xs px-4 py-2 uppercase tracking-wide"><span>{cfg.owner.label}</span> <ArrowRight className="h-3 w-3" /></Link>
             <Link to={cfg.proof.to} className="inline-flex items-center gap-2 text-[#FFD300] border border-white/20 hover:border-[#FFD300] font-bold text-xs px-4 py-2 uppercase tracking-wide">{cfg.proof.label}</Link>
+            {cfg.resource && (
+              <Link to={cfg.resource.to} className="inline-flex items-center gap-2 text-[#FFD300] border border-white/20 hover:border-[#FFD300] font-bold text-xs px-4 py-2 uppercase tracking-wide">{cfg.resource.label}</Link>
+            )}
           </div>
           <Cta testid="hub-hero-cta" />
         </div>

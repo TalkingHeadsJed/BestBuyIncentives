@@ -6,7 +6,7 @@ additions. Nothing else changed. No GitHub operation performed. Not deployed.
 
 **Deliverable:** `/app/original-site/` (116 pre-rendered pages + PHP `/api`)
 **Archive:** `/app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz`
-**SHA-256:** `7ef706e864efb51cc83ff449c21a429322b4f7acb8c190d9bd1eecdf52b10516`  (~99 MB)
+**SHA-256:** `d00f6f742be558207db7044e297cac01a5a67357bf7742f985ab0cf55776abe4`  (~99 MB)
 
 ---
 
