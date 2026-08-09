@@ -23,6 +23,7 @@ import Legal from "@/pages/Legal";
 import Article from "@/pages/Article";
 import Articles from "@/pages/Articles";
 import { Hub, CommercialPage, IndustryPage, CaseStudyPage } from "@/pages/SeoPages";
+import PlaybookLanding from "@/pages/PlaybookLanding";
 import SEO_PAGES from "@/data/seoPages.json";
 import { ARTICLE_SLUGS } from "@/data/articles";
 
@@ -48,7 +49,11 @@ function App() {
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/articles" element={<Articles />} />
               {SEO_PAGES.hubs.map((c) => (<Route key={c.path} path={c.path} element={<Hub cfg={c} />} />))}
-              {SEO_PAGES.commercial.map((c) => (<Route key={c.path} path={c.path} element={<CommercialPage cfg={c} />} />))}
+              {SEO_PAGES.commercial.map((c) => (
+                c.path === "/high-ticket-closing-playbook"
+                  ? (<Route key={c.path} path={c.path} element={<PlaybookLanding cfg={c} />} />)
+                  : (<Route key={c.path} path={c.path} element={<CommercialPage cfg={c} />} />)
+              ))}
               {SEO_PAGES.industries.map((c) => (<Route key={c.path} path={c.path} element={<IndustryPage cfg={c} />} />))}
               {SEO_PAGES.caseStudies.map((c) => (<Route key={c.path} path={c.path} element={<CaseStudyPage cfg={c} />} />))}
               <Route path="/contact" element={<Contact />} />
