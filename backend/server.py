@@ -278,11 +278,23 @@ async def _deliver_to_crm(record: dict) -> str:
 
 @api_router.post("/playbook-lead")
 async def playbook_lead(request: Request):
-    # Same-origin guard: only enforce when an Origin header is present.
+    # Same-origin guard: enforce only when an Origin header is present. Recognise
+    # same-origin robustly by comparing the Origin host to the proxy-forwarded
+    # host (ingress may rewrite the preview subdomain), so this never silently
+    # blocks lead capture across preview rebrands.
     origin = request.headers.get("origin", "")
     if origin:
         host = (urllib.parse.urlparse(origin).hostname or "").lower()
-        if host not in _ALLOWED_ORIGIN_HOSTS and not host.endswith(".preview.emergentagent.com") and not host.endswith(".preview.emergentcf.cloud") and host not in ("localhost", "127.0.0.1"):
+        fwd = (request.headers.get("x-forwarded-host") or request.headers.get("host") or "")
+        fwd_host = fwd.split(",")[0].strip().split(":")[0].lower()
+        allowed = (
+            host in _ALLOWED_ORIGIN_HOSTS
+            or (fwd_host and host == fwd_host)
+            or host.endswith(".preview.emergentagent.com")
+            or host.endswith(".preview.emergentcf.cloud")
+            or host in ("localhost", "127.0.0.1")
+        )
+        if not allowed:
             return _err(403, "origin_rejected", "Origin rejected.", False)
 
     raw = await request.body()
@@ -379,7 +391,10 @@ async def playbook_lead(request: Request):
     })
 
 
-app.include_router(api_router)
+@api_router.api_route("/playbook-lead", methods=["GET", "PUT", "PATCH", "DELETE"])
+async def playbook_lead_method_not_allowed():
+    return _err(405, "method_not_allowed", "Use POST.", False)
+
 
 app.include_router(api_router)
 app.add_middleware(

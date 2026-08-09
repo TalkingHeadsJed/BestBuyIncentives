@@ -27,3 +27,25 @@ The guarded synthetic harness is `tests/runtime-acceptance.mjs`. Run it only on 
 - The CRM webhook token remains server-side.
 
 Local PHP is not installed in the Codex workspace, so production PHP lint/runtime acceptance remains required on Bluehost or in the authoritative build environment. Static contract validation is provided separately.
+
+## POST /api/playbook-lead (gated High-Ticket Closing Playbook download)
+
+Same first-party, same-origin, durable-acceptance pattern as /api/consultation, used to
+gate the playbook PDF behind a business-email lead form.
+
+- Request: JSON + header `Idempotency-Key: <submission_id>`. Required: first_name, last_name,
+  work_email (BUSINESS email — free/personal domains rejected), company. Optional: role,
+  phone, sales_team_size, sales_use_case. Plus honeypot `website_honeypot` (must be empty),
+  `playbook_asset_id`, and full attribution (original/current utm, referrer, landing pages).
+- Success: HTTP 202 `{accepted:true, submission_id, durable_state, asset_id, download_url}`.
+  The client reveals the PDF ONLY on this durable 202.
+- Errors: 400 (idempotency), 422 validation_failed(field_errors)/spam_rejected, 405
+  method_not_allowed, 403 origin_rejected, 429 rate_limited, 503 delivery_unavailable.
+- Idempotent: same submission_id ⇒ single stored record; replay returns 202 with same state.
+- Durability: atomic record written to `$BBI_PRIVATE_STORAGE_DIR/playbook-leads/` OUTSIDE
+  public_html; optional CRM webhook; retried by the cron.
+- Cron: `*/5 * * * * php deploy-private/cron/process-playbook-queue.php`
+- Env: BBI_PRIVATE_STORAGE_DIR, BBI_RATE_LIMIT_SECRET, BBI_SALES_NOTIFICATION_EMAIL,
+  optional BBI_CRM_WEBHOOK_URL / BBI_CRM_WEBHOOK_TOKEN.
+- Preview mirror: FastAPI `POST /api/playbook-lead` (Mongo `playbook_leads`) implements the
+  identical contract for browser E2E testing in the Emergent preview.

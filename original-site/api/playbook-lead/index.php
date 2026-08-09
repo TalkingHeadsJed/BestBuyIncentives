@@ -57,7 +57,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 $origin = header_value('Origin');
 if ($origin !== '') {
     $originHost = strtolower((string)parse_url($origin, PHP_URL_HOST));
-    if (!in_array($originHost, ['bestbuyincentives.com', 'www.bestbuyincentives.com'], true)) {
+    $requestHost = strtolower((string)($_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? ''));
+    $requestHost = trim(explode(',', $requestHost)[0]);
+    $requestHost = explode(':', $requestHost)[0];
+    $sameOrigin = ($requestHost !== '' && $originHost === $requestHost);
+    if (!$sameOrigin && !in_array($originHost, ['bestbuyincentives.com', 'www.bestbuyincentives.com'], true)) {
         respond(403, ['accepted' => false, 'error_code' => 'origin_rejected', 'message' => 'Origin rejected.', 'retryable' => false]);
     }
 }
