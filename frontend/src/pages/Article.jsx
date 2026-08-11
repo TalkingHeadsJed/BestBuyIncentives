@@ -37,6 +37,24 @@ const articleLdSchema = (a) => {
   };
 };
 
+const videoObjectSchema = (a) => {
+  const url = `${SITE_URL}/${a.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": `${url}#video`,
+    name: a.h1 || a.title,
+    description: a.description,
+    thumbnailUrl: [a.video.thumbnailUrl],
+    uploadDate: a.video.uploadDate,
+    duration: a.video.duration,
+    contentUrl: a.video.watchUrl,
+    embedUrl: a.video.embedUrl,
+    publisher: { "@id": ORG_ID },
+    inLanguage: "en-US",
+  };
+};
+
 const fmtDate = (iso) => {
   if (!iso) return "";
   const d = new Date(iso + "T00:00:00Z");
@@ -57,6 +75,7 @@ export default function Article({ slug }) {
         type="article"
         schema={[
           articleLdSchema(a),
+          ...(a.video ? [videoObjectSchema(a)] : []),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Sales Resources", path: "/articles" },
@@ -93,6 +112,22 @@ export default function Article({ slug }) {
 
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          {a.video && (
+            <figure data-testid="article-video" className="mb-10">
+              <div className="relative w-full overflow-hidden border border-[#E5E2D9] bg-black" style={{ aspectRatio: "16 / 9" }}>
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={`${a.video.embedUrl}?rel=0`}
+                  title={a.h1 || a.title}
+                  loading="lazy"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+              <figcaption className="mt-2 text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">{`Watch: ${a.h1 || a.title}`}</figcaption>
+            </figure>
+          )}
           <div className="article-body" data-testid="article-body" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: a.bodyHtml }} />
 
           <div data-testid="article-accountability" className="mt-10 pt-6 border-t border-[#E5E2D9] text-sm text-[#595959] leading-relaxed">
