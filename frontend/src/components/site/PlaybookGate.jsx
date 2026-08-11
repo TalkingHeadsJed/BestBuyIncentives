@@ -25,7 +25,18 @@ const EMPTY = {
   role: "", phone: "", sales_team_size: "", sales_use_case: "", website_honeypot: "",
 };
 
-export default function PlaybookGate({ assetId, downloadUrl }) {
+const DEFAULT_COPY = {
+  badge: "Free download — business email required",
+  heading: "Get the High-Ticket Closing Playbook",
+  intro: "Enter your details and we'll unlock the PDF instantly. We use this only to send the playbook and follow up about your sales floor.",
+  submitLabel: "Get the playbook",
+  acceptedHeading: "Your playbook is ready",
+  acceptedIntro: "Thanks. Your access is confirmed. Download the manager playbook below, then book a working session to map it to your sales floor.",
+  downloadLabel: "Download the playbook (PDF)",
+};
+
+export default function PlaybookGate({ assetId, downloadUrl, copy = {} }) {
+  const c = { ...DEFAULT_COPY, ...copy };
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [formError, setFormError] = useState(null);
@@ -101,15 +112,15 @@ export default function PlaybookGate({ assetId, downloadUrl }) {
       <div data-testid="playbook-accepted" className="border border-[#E5E2D9] bg-[#FAF9F5] p-8">
         <div className="flex items-center gap-3">
           <CheckCircle2 className="h-6 w-6 text-[#0A0A0A]" />
-          <h2 className="font-display text-2xl font-bold text-[#0A0A0A]">Your playbook is ready</h2>
+          <h2 className="font-display text-2xl font-bold text-[#0A0A0A]">{c.acceptedHeading}</h2>
         </div>
         <p className="mt-3 text-[#404040] leading-relaxed">
-          Thanks. Your access is confirmed. Download the manager playbook below, then book a working session to map it to your sales floor.
+          {c.acceptedIntro}
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <a href={accepted.download_url} download data-testid="playbook-download-link" onClick={onDownloadClick}
             className="inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-3 uppercase tracking-wide">
-            <Download className="h-4 w-4" /><span>Download the playbook (PDF)</span>
+            <Download className="h-4 w-4" /><span>{c.downloadLabel}</span>
           </a>
           <Link to="/contact" data-testid="playbook-consultation-cta"
             className="inline-flex items-center gap-2 border-2 border-black text-black hover:bg-black hover:text-white font-bold text-sm px-6 py-3 uppercase tracking-wide transition-colors">
@@ -123,11 +134,11 @@ export default function PlaybookGate({ assetId, downloadUrl }) {
   return (
     <div className="border border-[#E5E2D9] bg-[#FAF9F5] p-6 lg:p-8">
       <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">
-        <Lock className="h-3.5 w-3.5 text-[#FFD300]" /><span>Free download — business email required</span>
+        <Lock className="h-3.5 w-3.5 text-[#FFD300]" /><span>{c.badge}</span>
       </div>
-      <h2 className="mt-3 font-display text-2xl font-bold text-[#0A0A0A]">Get the High-Ticket Closing Playbook</h2>
+      <h2 className="mt-3 font-display text-2xl font-bold text-[#0A0A0A]">{c.heading}</h2>
       <p className="mt-2 text-[#404040] leading-relaxed">
-        Enter your details and we'll unlock the PDF instantly. We use this only to send the playbook and follow up about your sales floor.
+        {c.intro}
       </p>
 
       <form data-testid="playbook-form" onSubmit={handleSubmit} className="mt-6 space-y-5" noValidate>
@@ -189,7 +200,7 @@ export default function PlaybookGate({ assetId, downloadUrl }) {
 
         <button type="submit" data-testid="playbook-submit-button" disabled={submitting}
           className="inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] disabled:opacity-60 text-black font-bold text-sm px-6 py-3 uppercase tracking-wide">
-          <span>{submitting ? "Unlocking…" : "Get the playbook"}</span> <ArrowRight className="h-3.5 w-3.5" />
+          <span>{submitting ? "Unlocking…" : c.submitLabel}</span> <ArrowRight className="h-3.5 w-3.5" />
         </button>
 
         <p data-testid="playbook-consent" className="text-xs text-[#595959] leading-relaxed">

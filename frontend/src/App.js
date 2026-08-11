@@ -24,6 +24,7 @@ import Article from "@/pages/Article";
 import Articles from "@/pages/Articles";
 import { Hub, CommercialPage, IndustryPage, CaseStudyPage } from "@/pages/SeoPages";
 import PlaybookLanding from "@/pages/PlaybookLanding";
+import GatedResourceLanding from "@/pages/GatedResourceLanding";
 import SEO_PAGES from "@/data/seoPages.json";
 import { ARTICLE_SLUGS } from "@/data/articles";
 
@@ -52,7 +53,9 @@ function App() {
               {SEO_PAGES.commercial.map((c) => (
                 c.path === "/high-ticket-closing-playbook"
                   ? (<Route key={c.path} path={c.path} element={<PlaybookLanding cfg={c} />} />)
-                  : (<Route key={c.path} path={c.path} element={<CommercialPage cfg={c} />} />)
+                  : c.gate
+                    ? (<Route key={c.path} path={c.path} element={<GatedResourceLanding cfg={c} />} />)
+                    : (<Route key={c.path} path={c.path} element={<CommercialPage cfg={c} />} />)
               ))}
               {SEO_PAGES.industries.map((c) => (<Route key={c.path} path={c.path} element={<IndustryPage cfg={c} />} />))}
               {SEO_PAGES.caseStudies.map((c) => (<Route key={c.path} path={c.path} element={<CaseStudyPage cfg={c} />} />))}

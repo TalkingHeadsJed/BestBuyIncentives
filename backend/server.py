@@ -225,6 +225,13 @@ FREE_EMAIL_DOMAINS = {
 }
 _ALLOWED_ORIGIN_HOSTS = {"bestbuyincentives.com", "www.bestbuyincentives.com"}
 _PLAYBOOK_DOWNLOAD_URL = "/downloads/BestBuyIncentives_High-Ticket_Closing_Playbook.pdf"
+# Server-side registry so a client can only unlock a known asset (never an arbitrary path).
+_ASSET_DOWNLOADS = {
+    "high-ticket-closing-playbook": "/downloads/BestBuyIncentives_High-Ticket_Closing_Playbook.pdf",
+    "discounted-travel-voucher-one-page-guide": "/downloads/BestBuyIncentives_Discounted-Travel-Voucher_One-Page-Guide.pdf",
+    "revenue-dashboard": "/downloads/BestBuyIncentives_Revenue_Dashboard.xlsx",
+    "sales-team-training-script": "/downloads/BestBuyIncentives_Sales-Team_Training-Script.txt",
+}
 _TEAM_SIZES = {"", "1", "2–5", "6–20", "21–50", "51+"}
 _USE_CASES = {
     "", "Close qualified deals faster", "Increase close rate",
@@ -333,6 +340,8 @@ async def playbook_lead(request: Request):
             field_errors[f] = "Required."
     if contact["work_email"] and not _is_business_email(contact["work_email"]):
         field_errors["work_email"] = "Enter a valid business email (no personal inboxes)."
+    if asset_id not in _ASSET_DOWNLOADS:
+        field_errors["playbook_asset_id"] = "Unknown resource."
     if contact["sales_team_size"] and contact["sales_team_size"] not in _TEAM_SIZES:
         field_errors["sales_team_size"] = "Select a valid option."
     if contact["sales_use_case"] and contact["sales_use_case"] not in _USE_CASES:
@@ -355,7 +364,7 @@ async def playbook_lead(request: Request):
             "accepted": True, "submission_id": submission_id,
             "durable_state": existing.get("durable_state", "retry_queue_created"),
             "asset_id": existing.get("asset_id", asset_id),
-            "download_url": _PLAYBOOK_DOWNLOAD_URL,
+            "download_url": _ASSET_DOWNLOADS.get(existing.get("asset_id", asset_id), _ASSET_DOWNLOADS[asset_id]),
         })
 
     record = {
@@ -387,7 +396,7 @@ async def playbook_lead(request: Request):
     return JSONResponse(status_code=202, content={
         "accepted": True, "submission_id": submission_id,
         "durable_state": durable_state, "asset_id": asset_id,
-        "download_url": _PLAYBOOK_DOWNLOAD_URL,
+        "download_url": _ASSET_DOWNLOADS[asset_id],
     })
 
 

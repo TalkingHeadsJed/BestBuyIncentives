@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import Seo, { breadcrumbSchema } from "@/components/site/Seo";
 import { ARTICLES, CATEGORIES, articlesByCategory } from "@/data/articles";
 
@@ -33,6 +33,11 @@ function ArticleCard({ a }) {
       className="group flex flex-col border border-[#E5E2D9] bg-white p-6 hover:border-black transition-colors"
     >
       <div className="text-[10px] font-mono uppercase tracking-widest text-[#595959] font-bold">{a.category}</div>
+      {a.video && (
+        <span data-testid={`article-video-badge-${a.slug}`} className="mt-2 inline-flex items-center gap-1.5 self-start bg-[#FFD300] text-black text-[10px] font-mono font-bold uppercase tracking-widest px-2 py-1">
+          <PlayCircle className="h-3.5 w-3.5" /><span>Video</span>
+        </span>
+      )}
       <h3 className="mt-3 font-display text-xl font-bold leading-snug text-[#0A0A0A] group-hover:text-black">{a.title}</h3>
       <p className="mt-3 text-sm text-[#595959] leading-relaxed flex-1">{a.excerpt}</p>
       <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-black font-bold">

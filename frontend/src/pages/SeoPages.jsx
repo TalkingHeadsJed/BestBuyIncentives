@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight, CheckCircle2, Download } from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle2, Download, PlayCircle } from "lucide-react";
 import Seo, { breadcrumbSchema } from "@/components/site/Seo";
 import { ARTICLES } from "@/data/articles";
 
@@ -75,6 +75,7 @@ export function Hub({ cfg }) {
             {children.map((a) => (
               <Link key={a.slug} to={`/${a.slug}`} data-testid={`hub-child-${a.slug}`} className="group flex flex-col border border-[#E5E2D9] bg-white p-6 hover:border-black transition-colors">
                 <h3 className="font-display text-lg font-bold leading-snug text-[#0A0A0A]">{a.title}</h3>
+                {a.video && (<span className="mt-2 inline-flex items-center gap-1.5 self-start bg-[#FFD300] text-black text-[10px] font-mono font-bold uppercase tracking-widest px-2 py-1"><PlayCircle className="h-3.5 w-3.5" /><span>Video</span></span>)}
                 <p className="mt-2 text-sm text-[#595959] leading-relaxed flex-1">{a.excerpt}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-black font-bold">Read <ArrowRight className="h-3.5 w-3.5 text-[#FFD300]" /></span>
               </Link>

@@ -11,6 +11,13 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
 const PLAYBOOK_DOWNLOAD_URL = '/downloads/BestBuyIncentives_High-Ticket_Closing_Playbook.pdf';
+// Server-side registry: a client can only unlock a known asset (never an arbitrary path).
+const ASSET_DOWNLOADS = [
+    'high-ticket-closing-playbook' => '/downloads/BestBuyIncentives_High-Ticket_Closing_Playbook.pdf',
+    'discounted-travel-voucher-one-page-guide' => '/downloads/BestBuyIncentives_Discounted-Travel-Voucher_One-Page-Guide.pdf',
+    'revenue-dashboard' => '/downloads/BestBuyIncentives_Revenue_Dashboard.xlsx',
+    'sales-team-training-script' => '/downloads/BestBuyIncentives_Sales-Team_Training-Script.txt',
+];
 
 const FREE_EMAIL_DOMAINS = [
     'gmail.com', 'googlemail.com', 'yahoo.com', 'ymail.com', 'rocketmail.com',
@@ -123,6 +130,7 @@ $assetId = clean_string($input['playbook_asset_id'] ?? '', 80) ?: 'high-ticket-c
 $fieldErrors = [];
 foreach (['first_name', 'last_name', 'company', 'work_email'] as $field) if (($data[$field] ?? '') === '') $fieldErrors[$field] = 'Required.';
 if (($data['work_email'] ?? '') !== '' && !is_business_email($data['work_email'])) $fieldErrors['work_email'] = 'Enter a valid business email (no personal inboxes).';
+if (!isset(ASSET_DOWNLOADS[$assetId])) $fieldErrors['playbook_asset_id'] = 'Unknown resource.';
 if ($data['sales_team_size'] !== '' && !in_array($data['sales_team_size'], $teamSizes, true)) $fieldErrors['sales_team_size'] = 'Select a valid option.';
 if ($data['sales_use_case'] !== '' && !in_array($data['sales_use_case'], $useCases, true)) $fieldErrors['sales_use_case'] = 'Select a valid option.';
 if ($fieldErrors) respond(422, ['accepted' => false, 'error_code' => 'validation_failed', 'message' => 'Complete the required fields.', 'retryable' => false, 'field_errors' => $fieldErrors]);
@@ -135,7 +143,7 @@ $safeFile = hash('sha256', $submissionId) . '.json';
 $recordPath = $storageReal . DIRECTORY_SEPARATOR . 'playbook-leads' . DIRECTORY_SEPARATOR . $safeFile;
 if (is_file($recordPath)) {
     $existing = json_decode((string)@file_get_contents($recordPath), true);
-    respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => (string)($existing['durable_state'] ?? 'retry_queue_created'), 'asset_id' => (string)($existing['asset_id'] ?? $assetId), 'download_url' => PLAYBOOK_DOWNLOAD_URL]);
+    respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => (string)($existing['durable_state'] ?? 'retry_queue_created'), 'asset_id' => (string)($existing['asset_id'] ?? $assetId), 'download_url' => (ASSET_DOWNLOADS[(string)($existing['asset_id'] ?? $assetId)] ?? PLAYBOOK_DOWNLOAD_URL)]);
 }
 
 $record = [
@@ -149,7 +157,7 @@ $handle = @fopen($recordPath, 'x');
 if ($handle === false) {
     if (is_file($recordPath)) {
         $existing = json_decode((string)@file_get_contents($recordPath), true);
-        respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => (string)($existing['durable_state'] ?? 'retry_queue_created'), 'asset_id' => (string)($existing['asset_id'] ?? $assetId), 'download_url' => PLAYBOOK_DOWNLOAD_URL]);
+        respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => (string)($existing['durable_state'] ?? 'retry_queue_created'), 'asset_id' => (string)($existing['asset_id'] ?? $assetId), 'download_url' => (ASSET_DOWNLOADS[(string)($existing['asset_id'] ?? $assetId)] ?? PLAYBOOK_DOWNLOAD_URL)]);
     }
     respond(503, ['accepted' => false, 'error_code' => 'delivery_unavailable', 'message' => 'Request could not be stored.', 'retryable' => true]);
 }
@@ -179,4 +187,4 @@ if ($webhook !== '' && function_exists('curl_init')) {
     @file_put_contents($recordPath, json_encode($record, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT), LOCK_EX);
 }
 
-respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => $record['durable_state'], 'asset_id' => $assetId, 'download_url' => PLAYBOOK_DOWNLOAD_URL]);
+respond(202, ['accepted' => true, 'submission_id' => $submissionId, 'durable_state' => $record['durable_state'], 'asset_id' => $assetId, 'download_url' => (ASSET_DOWNLOADS[$assetId] ?? PLAYBOOK_DOWNLOAD_URL)]);
