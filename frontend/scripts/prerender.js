@@ -73,6 +73,16 @@ const CHROME = process.env.CHROME_PATH || "/usr/bin/google-chrome";
     let html = await page.content();
     if (!/^<!doctype html>/i.test(html)) html = "<!doctype html>\n" + html;
 
+    // React does NOT serialize the `muted` boolean attribute into prerendered HTML,
+    // which blocks autoplay of autoplay videos on the deployed static site. Re-inject
+    // `muted` into every <video> tag that has `autoplay` but is missing `muted`.
+    html = html.replace(/<video\b([^>]*)>/gi, (match, attrs) => {
+      if (/\bautoplay\b/i.test(attrs) && !/\bmuted\b/i.test(attrs)) {
+        return `<video${attrs} muted>`;
+      }
+      return match;
+    });
+
     const outDir = route === "/" ? BUILD_DIR : path.join(BUILD_DIR, route);
     fs.mkdirSync(outDir, { recursive: true });
     fs.writeFileSync(path.join(outDir, "index.html"), html);

@@ -10,7 +10,18 @@ const HERO_BG = "/images/hero-seminar.png";
 export default function Hero() {
   const [open, setOpen] = useState(false);
   const modalVideoRef = useRef(null);
+  const bgVideoRef = useRef(null);
   const [muted, setMuted] = useState(false);
+
+  // Belt-and-suspenders: force muted autoplay after hydration on the live static site,
+  // regardless of whether the prerendered attribute survived.
+  useEffect(() => {
+    const v = bgVideoRef.current;
+    if (v) {
+      v.muted = true;
+      v.play().catch(() => {});
+    }
+  }, []);
 
   useEffect(() => {
     if (open && modalVideoRef.current) {
@@ -31,6 +42,7 @@ export default function Hero() {
     <section data-testid="hero-section" className="relative min-h-[100vh] flex items-center overflow-hidden bg-black">
       {/* Looping muted video background */}
       <video
+        ref={bgVideoRef}
         data-testid="hero-bg-video"
         className="absolute inset-0 z-0 w-full h-full object-cover"
         src={VIDEO_SRC}
@@ -153,6 +165,14 @@ export default function Hero() {
 }
 
 function VSLPreview({ onPlay }) {
+  const previewRef = useRef(null);
+  useEffect(() => {
+    const v = previewRef.current;
+    if (v) {
+      v.muted = true;
+      v.play().catch(() => {});
+    }
+  }, []);
   return (
     <div data-testid="vsl-card" className="relative">
       <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 w-full h-full bg-[#FFD300] -z-0" />
@@ -165,6 +185,7 @@ function VSLPreview({ onPlay }) {
           aria-label="Play the sales pitch with sound"
         >
           <video
+            ref={previewRef}
             src={VSL_SRC}
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay

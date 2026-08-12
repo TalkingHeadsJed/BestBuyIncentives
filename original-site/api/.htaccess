@@ -4,6 +4,6 @@ Options -Indexes
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-<FilesMatch "^(?:\.env|.*\.(?:log|json|bak|sql))$">
+<FilesMatch "^(?:\.env|\.user\.ini|.*\.(?:log|json|bak|sql))$">
   Require all denied
 </FilesMatch>
