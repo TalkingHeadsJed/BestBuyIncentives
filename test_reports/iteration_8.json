@@ -1,0 +1,28 @@
+{
+  "summary": "Frontend-only verification of email fix (sales@ -> karl@) and About page principle copy update. Rendered DOM verified for /, /contact, /about, /privacy, /terms. All React component copy (Footer, Contact, Legal, About) is correctly updated. However, two leftover 'sales@bestbuyincentives.com' references remain in static public assets that are still served on every page: (1) JSON-LD Organization schema in /app/frontend/public/index.html line 34 (present in every page's HTML head as structured data), and (2) /app/frontend/public/llms.txt line 26. No 'bestvuyincentives' typo found anywhere. About page principle #02 correctly shows new title 'Redemption is fast and easy' and new body; old 'We handle redemption' title is gone. Contact page mailto href = mailto:karl@bestbuyincentives.com, form still renders. Privacy and Terms bodies reference karl@bestbuyincentives.com. No console errors on any tested route.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "public/index.html (JSON-LD Organization schema)", "issue": "Line 34 still has \"email\": \"sales@bestbuyincentives.com\" — this ships on EVERY route because it's in the static index.html <head> as structured data for SEO. Change to karl@bestbuyincentives.com to satisfy the 'fix everywhere' requirement.", "selector": "script[type='application/ld+json'] in public/index.html", "priority": "HIGH"},
+      {"component": "public/llms.txt", "issue": "Line 26 still lists 'Email: sales@bestbuyincentives.com'. Public file served at /llms.txt. Update to karl@bestbuyincentives.com.", "selector": "/llms.txt line 26", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Update /app/frontend/public/index.html line 34: \"email\": \"sales@bestbuyincentives.com\" -> \"email\": \"karl@bestbuyincentives.com\"",
+    "Update /app/frontend/public/llms.txt line 26: 'Email: sales@bestbuyincentives.com' -> 'Email: karl@bestbuyincentives.com'",
+    "(Optional) index.html line 48 has \"contactType\": \"sales\" — that's a schema.org contactType value, not an email, so it can stay unless the client wants the contact role label changed."
+  ],
+  "critical_code_review_comments": [
+    "Email/contact info is duplicated in React components AND in static index.html JSON-LD — consider centralizing in a single constants file or generating JSON-LD from the same source to avoid drift on future contact-info changes."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "80% (React components correct; 2 static-asset leftovers)"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "React components (Footer.jsx, Contact.jsx, Legal.jsx, About.jsx) are already correctly updated with karl@bestbuyincentives.com. Only static public files need fixing: public/index.html (JSON-LD email field) and public/llms.txt. After fix, re-verify by running a grep on the rendered HTML of any route for the string 'sales@' — should return zero matches. About page copy verification is already complete and passing.",
+  "rca of the issue": "Main agent updated all React source components but overlooked the static assets under /app/frontend/public/ (index.html JSON-LD block and llms.txt) which also carry the contact email. The JSON-LD block is inlined into every rendered page's HTML head, so 'sales@' still appears in every page's DOM even though no user-visible React text shows it."
+}

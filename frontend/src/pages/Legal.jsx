@@ -10,7 +10,7 @@ const CONTENT = {
       ["How we use information", "We use this information to respond to consultation requests, evaluate campaign fit, deliver requested resources, improve the website and sales process, maintain attribution, and measure consultations, opportunities, sales, and commission."],
       ["Analytics and privacy", "Contact details, company names, phone numbers, and free-text messages must not be sent to website analytics. Business contact information may be stored in our customer relationship system and service providers used to process the request."],
       ["Service providers", "We may use scheduling, analytics, hosting, email, and customer relationship providers to operate the website and respond to requests. They receive only the information needed for their function."],
-      ["Your choices", "You may request access, correction, or deletion of submitted business contact information by emailing sales@bestbuyincentives.com. We may retain records required for security, attribution, contracts, or legal obligations."],
+      ["Your choices", "You may request access, correction, or deletion of submitted business contact information by emailing karl@bestbuyincentives.com. We may retain records required for security, attribution, contracts, or legal obligations."],
     ],
   },
   terms: {
@@ -22,7 +22,7 @@ const CONTENT = {
       ["Program terms control", "Each discounted travel voucher and campaign has its own eligibility, inclusions, recipient-paid costs, deadlines, availability, booking or redemption steps, restrictions, and support process. The written terms supplied for the selected program control."],
       ["Accurate presentation", "Businesses using a program are responsible for training representatives to present the offer accurately, identify eligible recipients, avoid misleading claims, and provide the applicable written terms."],
       ["Resources", "Playbooks, calculators, articles, scripts, and examples are provided for business planning. Users remain responsible for their pricing, sales practices, campaign design, customer communications, and compliance obligations."],
-      ["Contact", "Questions about these terms may be sent to sales@bestbuyincentives.com or 866-843-8003."],
+      ["Contact", "Questions about these terms may be sent to karl@bestbuyincentives.com or 866-843-8003."],
     ],
   },
   compliance: {
@@ -34,7 +34,7 @@ const CONTENT = {
       ["Disclose the customer experience", "Before presenting an offer, the sales team should understand what the voucher includes, what the recipient pays, deadlines, availability, restrictions, activation, booking or redemption, and where the recipient obtains support."],
       ["Apply campaign rules consistently", "Management should define who qualifies, when the voucher may be offered, whether it can be combined with discounts, how delivery is recorded, and how exceptions are handled."],
       ["Measure legitimate sales outcomes", "Evaluate qualified close rate, discounting, gross profit, cancellations, customer feedback, attributable revenue, and commission. Do not treat modeled results or client experiences as guaranteed outcomes."],
-      ["Report concerns", "Send questions about program presentation, recipient terms, or campaign operation to sales@bestbuyincentives.com or call 866-843-8003 before making an uncertain representation."],
+      ["Report concerns", "Send questions about program presentation, recipient terms, or campaign operation to karl@bestbuyincentives.com or call 866-843-8003 before making an uncertain representation."],
     ],
   },
 };

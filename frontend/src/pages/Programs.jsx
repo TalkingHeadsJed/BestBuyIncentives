@@ -9,7 +9,7 @@ export default function Programs() {
   return (
     <div data-testid="page-programs">
       <Seo
-        title="Sales Incentive Certificate Programs"
+        title="Sales Incentives & Travel Reward Programs"
         description="Enjoy a Great Escape — our flagship travel-incentive certificate for high-ticket sales teams. Book a call to explore our full catalog of travel and entertainment incentives."
         path="/programs"
         schema={PROGRAMS.map((p) =>
@@ -22,7 +22,7 @@ export default function Programs() {
           <div className="absolute inset-0 bg-gradient-to-br from-black via-black/60 to-black/95" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 lg:px-10 pt-40 pb-24 lg:pb-32">
-          <SectionLabel dark>Sales-Grade Certificate Programs</SectionLabel>
+          <SectionLabel dark>Sales Incentives</SectionLabel>
           <h1 className="font-display mt-6 text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.92]">
             Pick the <span className="hl-yellow-full text-black">closing weapon.</span>
           </h1>
@@ -68,6 +68,36 @@ export default function Programs() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-[#F7F5EF] py-16 lg:py-24" data-testid="featured-incentives">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="text-[11px] font-mono uppercase tracking-widest text-black/50 font-bold">Featured Travel Rewards</div>
+          <h2 className="mt-3 font-display font-bold text-4xl lg:text-6xl leading-[0.95] text-black">The incentives your buyers <span className="hl-yellow-full text-black">actually want.</span></h2>
+          <p className="mt-5 text-base lg:text-lg text-[#404040] leading-relaxed max-w-3xl">Curated travel rewards designed to motivate buyers and close high-ticket deals. Explore a few of the escapes we deploy for sales teams.</p>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { slug: "caribbean-cruise", img: "/images/incentives/caribbean-cruise.png", name: "Caribbean Cruise for Two", tagline: "Set Sail for Paradise", body: "Enjoy a 7-night cruise for two to the Caribbean. Experience stunning beaches, vibrant culture, and delicious cuisine. This all-inclusive getaway will leave you refreshed and rejuvenated.", cta: "Explore Your Escape" },
+              { slug: "worldwide-luxury-resort", img: "/images/incentives/worldwide-luxury-resort.png", name: "Worldwide Luxury Resort Stay", tagline: "Indulge in Unforgettable Destinations", body: "Experience the pinnacle of luxury with a 5-night stay at a world-class resort of your choice. From pristine beaches to breathtaking landscapes, discover the ultimate in relaxation and bespoke service.", cta: "Discover Your Oasis" },
+              { slug: "alaska-cruise", img: "/images/incentives/alaska-cruise.png", name: "Alaska Cruise", tagline: "Witness the Majesty of the Last Frontier", body: "Embark on an unforgettable 7-night Alaskan cruise. Marvel at majestic glaciers, abundant wildlife, and rugged wilderness from the comfort of your ship. An adventure of a lifetime awaits.", cta: "Book Your Adventure" },
+              { slug: "elite-escape", img: "/images/incentives/elite-escape.png", name: "Elite Escape", tagline: "Exclusive Experiences for the Discerning Traveler", body: "Tailored for those who seek the extraordinary. This exclusive escape offers personalized itineraries, private tours, and luxurious accommodations in unique and sought-after destinations.", cta: "Unlock Your Elite Experience" },
+            ].map((o) => (
+              <article key={o.slug} data-testid={`incentive-${o.slug}`} className="flex flex-col border border-[#E5E2D9] bg-white overflow-hidden">
+                <div className="relative aspect-[16/10] bg-[#0a2b5e] overflow-hidden">
+                  <img src={o.img} alt={o.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="p-8 lg:p-10 flex flex-col flex-1">
+                  <div className="text-[11px] font-mono uppercase tracking-widest text-black/50 font-bold">{o.tagline}</div>
+                  <h3 className="mt-2 font-display font-bold text-3xl lg:text-4xl leading-[0.98] text-black">{o.name}</h3>
+                  <p className="mt-4 text-base text-[#404040] leading-relaxed flex-1">{o.body}</p>
+                  <Link to="/contact" data-testid={`incentive-cta-${o.slug}`} className="mt-7 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-4 uppercase tracking-wide w-fit">
+                    <span>{o.cta}</span> <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

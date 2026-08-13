@@ -85,7 +85,7 @@ export default function Contact() {
       toast.success("Your consultation request is in.");
       setDone(true);
     } catch (error) {
-      const message = "We couldn’t send your request. Please try again, call 866-843-8003, or email sales@bestbuyincentives.com.";
+      const message = "We couldn’t send your request. Please try again, call 866-843-8003, or email karl@bestbuyincentives.com.";
       setErrorMessage(message);
       pushAnalytics("consultation_form_error", { page_path: window.location.pathname, form_id: "bbi_consultation_form", error_type: error.errorCode || "network_or_server_error", error_stage: "server_or_transport" });
       toast.error(message);
@@ -156,7 +156,7 @@ export default function Contact() {
             <p className="mt-3 text-[#595959] text-base">Choose a time to discuss your sales process, offer economics, and campaign fit.</p>
             <div className="mt-6 border border-[#E5E2D9] bg-white" onClickCapture={openCalendar} onFocusCapture={openCalendar}><div className="calendly-inline-widget" data-url="https://calendly.com/bestbuyincentives5/30min?primary_color=000000&background_color=ffffff&text_color=0A0A0A" style={{ minWidth: "320px", height: "700px" }} data-testid="calendly-embed" /></div>
             <div className="mt-10 pt-10 border-t border-[#E5E2D9] space-y-4">
-              <Contact2 icon={Mail} label="Email" value="sales@bestbuyincentives.com" href="mailto:sales@bestbuyincentives.com" event="email_click" />
+              <Contact2 icon={Mail} label="Email" value="karl@bestbuyincentives.com" href="mailto:karl@bestbuyincentives.com" event="email_click" />
               <Contact2 icon={Phone} label="Phone" value="866-843-8003" href="tel:+18668438003" event="phone_click" />
             </div>
           </div>

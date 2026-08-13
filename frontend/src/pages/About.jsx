@@ -66,7 +66,7 @@ export default function About() {
           <SectionLabel>Operating Principles</SectionLabel>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             <Principle n="01" title="Sales growth, not vacations" body="Every recommendation we make is in service of your close rate, your traffic, your margin. The vacation is the mechanism." />
-            <Principle n="02" title="We handle redemption" body="Your team never touches travel logistics. We answer every redemption call. You stay focused on selling." />
+            <Principle n="02" title="Redemption is fast and easy" body="Your team never touches travel logistics. Includes 5 Star VIP redemption. You stay focused on selling." />
             <Principle n="03" title="Measured lift or it didn't happen" body="We design every program with measurable lift baked in. If we can't define the lift, we don't ship the program." />
           </div>
         </div>

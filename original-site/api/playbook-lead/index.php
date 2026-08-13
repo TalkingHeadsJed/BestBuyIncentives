@@ -166,7 +166,7 @@ fflush($handle); fclose($handle); @chmod($recordPath, 0600);
 if ($written === false || $written < 80) { @unlink($recordPath); respond(503, ['accepted' => false, 'error_code' => 'delivery_unavailable', 'message' => 'Request could not be stored.', 'retryable' => true]); }
 operational_log($storageReal, $submissionId, 'retry_queue_created');
 
-$recipient = (string)(getenv('BBI_SALES_NOTIFICATION_EMAIL') ?: 'sales@bestbuyincentives.com');
+$recipient = (string)(getenv('BBI_SALES_NOTIFICATION_EMAIL') ?: 'karl@bestbuyincentives.com');
 $subject = 'New BBI playbook download: ' . $data['company'];
 $message = "A new gated playbook download is durably queued.\nSubmission: {$submissionId}\nAsset: {$assetId}\nCompany: {$data['company']}\nContact: {$data['first_name']} {$data['last_name']}\nWork email: {$data['work_email']}\nRole: {$data['role']}\nPhone: {$data['phone']}\nTeam size: {$data['sales_team_size']}\nUse case: {$data['sales_use_case']}\n";
 @mail($recipient, $subject, $message, "From: website@bestbuyincentives.com\r\nReply-To: {$data['work_email']}\r\n");

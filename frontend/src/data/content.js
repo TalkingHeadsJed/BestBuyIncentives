@@ -1,7 +1,7 @@
 // Centralized content for BestBuyIncentives.com
 
 export const NAV_LINKS = [
-  { label: "Programs", to: "/programs" },
+  { label: "Incentives", to: "/programs" },
   { label: "Industries", to: "/industries" },
   { label: "Case Studies", to: "/case-studies" },
   { label: "Resources", to: "/resources" },

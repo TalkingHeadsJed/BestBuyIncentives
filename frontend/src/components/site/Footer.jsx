@@ -108,7 +108,7 @@ export default function Footer() {
         <div className="md:col-span-3">
           <div className="text-[11px] font-mono uppercase tracking-widest text-white/40 mb-4">Contact</div>
           <ul className="space-y-3 text-sm text-white/80">
-            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-[#FFD300]" /> sales@bestbuyincentives.com</li>
+            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 text-[#FFD300]" /> karl@bestbuyincentives.com</li>
             <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-[#FFD300]" /> 866-843-8003</li>
             <li className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-[#FFD300]" /> United States</li>
           </ul>

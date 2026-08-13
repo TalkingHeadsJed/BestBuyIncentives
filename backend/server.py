@@ -28,7 +28,7 @@ db = client[os.environ['DB_NAME']]
 # Resend
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
-LEAD_RECIPIENT_EMAIL = os.environ.get('LEAD_RECIPIENT_EMAIL', 'sales@bestbuyincentives.com')
+LEAD_RECIPIENT_EMAIL = os.environ.get('LEAD_RECIPIENT_EMAIL', 'karl@bestbuyincentives.com')
 if RESEND_API_KEY and not RESEND_API_KEY.startswith('PLACEHOLDER'):
     resend.api_key = RESEND_API_KEY
 

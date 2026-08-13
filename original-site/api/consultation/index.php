@@ -156,7 +156,7 @@ fflush($handle); fclose($handle); @chmod($recordPath, 0600);
 if ($written === false || $written < 100) { @unlink($recordPath); respond(503, ['accepted' => false, 'error_code' => 'delivery_unavailable', 'message' => 'Request could not be stored.', 'retryable' => true]); }
 operational_log($storageReal, $submissionId, 'retry_queue_created');
 
-$recipient = (string)(getenv('BBI_SALES_NOTIFICATION_EMAIL') ?: 'sales@bestbuyincentives.com');
+$recipient = (string)(getenv('BBI_SALES_NOTIFICATION_EMAIL') ?: 'karl@bestbuyincentives.com');
 $subject = ($priority ? '[PRIORITY] ' : '') . 'New BBI consultation: ' . $data['company'];
 $message = "A new consultation is durably queued.\nSubmission: {$submissionId}\nCompany: {$data['company']}\nContact: {$data['full_name']}\nWork email: {$data['work_email']}\nPhone: {$data['phone']}\nIndustry: {$data['industry']}\nUse case: {$data['sales_use_case']}\nNext action due: {$nextActionDue}\n";
 @mail($recipient, $subject, $message, "From: website@bestbuyincentives.com\r\nReply-To: {$data['work_email']}\r\n");
