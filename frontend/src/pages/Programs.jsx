@@ -76,23 +76,34 @@ export default function Programs() {
           <div className="text-[11px] font-mono uppercase tracking-widest text-black/50 font-bold">Featured Travel Rewards</div>
           <h2 className="mt-3 font-display font-bold text-4xl lg:text-6xl leading-[0.95] text-black">The incentives your buyers <span className="hl-yellow-full text-black">actually want.</span></h2>
           <p className="mt-5 text-base lg:text-lg text-[#404040] leading-relaxed max-w-3xl">Curated travel rewards designed to motivate buyers and close high-ticket deals. Explore a few of the escapes we deploy for sales teams.</p>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-10 space-y-5">
             {[
-              { slug: "caribbean-cruise", img: "/images/incentives/caribbean-cruise.png", name: "Caribbean Cruise for Two", tagline: "Set Sail for Paradise", body: "Enjoy a 7-night cruise for two to the Caribbean. Experience stunning beaches, vibrant culture, and delicious cuisine. This all-inclusive getaway will leave you refreshed and rejuvenated.", cta: "Explore Your Escape" },
-              { slug: "worldwide-luxury-resort", img: "/images/incentives/worldwide-luxury-resort.png", name: "Worldwide Luxury Resort Stay", tagline: "Indulge in Unforgettable Destinations", body: "Experience the pinnacle of luxury with a 5-night stay at a world-class resort of your choice. From pristine beaches to breathtaking landscapes, discover the ultimate in relaxation and bespoke service.", cta: "Discover Your Oasis" },
-              { slug: "alaska-cruise", img: "/images/incentives/alaska-cruise.png", name: "Alaska Cruise", tagline: "Witness the Majesty of the Last Frontier", body: "Embark on an unforgettable 7-night Alaskan cruise. Marvel at majestic glaciers, abundant wildlife, and rugged wilderness from the comfort of your ship. An adventure of a lifetime awaits.", cta: "Book Your Adventure" },
-              { slug: "elite-escape", img: "/images/incentives/elite-escape.png", name: "Elite Escape", tagline: "Exclusive Experiences for the Discerning Traveler", body: "Tailored for those who seek the extraordinary. This exclusive escape offers personalized itineraries, private tours, and luxurious accommodations in unique and sought-after destinations.", cta: "Unlock Your Elite Experience" },
-            ].map((o) => (
-              <article key={o.slug} data-testid={`incentive-${o.slug}`} className="flex flex-col border border-[#E5E2D9] bg-white overflow-hidden">
-                <div className="relative aspect-[16/10] bg-[#0a2b5e] overflow-hidden">
+              { slug: "caribbean-cruise", img: "/images/incentives/caribbean-cruise.png", name: "Caribbean Cruise for Two", tagline: "Set Sail for Paradise", body: "Enjoy a 7-night cruise for two to the Caribbean. Experience stunning beaches, vibrant culture, and delicious cuisine. This all-inclusive getaway will leave you refreshed and rejuvenated.", bullets: ["7-night cruise for two", "Stunning Caribbean beaches", "Vibrant culture & cuisine", "All-inclusive getaway"] },
+              { slug: "worldwide-luxury-resort", img: "/images/incentives/worldwide-luxury-resort.png", name: "Worldwide Luxury Resort Stay", tagline: "Indulge in Unforgettable Destinations", body: "Experience the pinnacle of luxury with a 5-night stay at a world-class resort of your choice. From pristine beaches to breathtaking landscapes, discover the ultimate in relaxation and bespoke service.", bullets: ["5-night world-class resort stay", "Resort of your choice", "Pristine beaches & landscapes", "Bespoke service & relaxation"] },
+              { slug: "alaska-cruise", img: "/images/incentives/alaska-cruise.png", name: "Alaska Cruise", tagline: "Witness the Majesty of the Last Frontier", body: "Embark on an unforgettable 7-night Alaskan cruise. Marvel at majestic glaciers, abundant wildlife, and rugged wilderness from the comfort of your ship. An adventure of a lifetime awaits.", bullets: ["7-night Alaskan cruise", "Majestic glaciers up close", "Abundant wildlife", "Rugged wilderness views"] },
+              { slug: "elite-escape", img: "/images/incentives/elite-escape.png", name: "Elite Escape", tagline: "Exclusive Experiences for the Discerning Traveler", body: "Tailored for those who seek the extraordinary. This exclusive escape offers personalized itineraries, private tours, and luxurious accommodations in unique and sought-after destinations.", bullets: ["Personalized itineraries", "Private guided tours", "Luxurious accommodations", "Unique, sought-after destinations"] },
+            ].map((o, i) => (
+              <article key={o.slug} data-testid={`incentive-${o.slug}`} className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[#E5E2D9] bg-white">
+                <div className={`lg:col-span-6 relative aspect-[16/10] bg-[#0a2b5e] overflow-hidden ${i % 2 ? "lg:order-2" : ""}`}>
                   <img src={o.img} alt={o.name} className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <div className="p-8 lg:p-10 flex flex-col flex-1">
-                  <div className="text-[11px] font-mono uppercase tracking-widest text-black/50 font-bold">{o.tagline}</div>
-                  <h3 className="mt-2 font-display font-bold text-3xl lg:text-4xl leading-[0.98] text-black">{o.name}</h3>
-                  <p className="mt-4 text-base text-[#404040] leading-relaxed flex-1">{o.body}</p>
-                  <Link to="/contact" data-testid={`incentive-cta-${o.slug}`} className="mt-7 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-4 uppercase tracking-wide w-fit">
-                    <span>{o.cta}</span> <ArrowRight className="h-4 w-4" />
+                <div className={`lg:col-span-6 p-8 lg:p-12 bg-white ${i % 2 ? "lg:order-1" : ""} flex flex-col justify-center`}>
+                  <div className="inline-block stamp self-start">Travel Reward</div>
+                  <div className="mt-5 text-[11px] font-mono uppercase tracking-widest text-black/50 font-bold">{o.tagline}</div>
+                  <h3 className="mt-2 font-display font-bold text-4xl lg:text-6xl leading-[0.95] text-black">{o.name}</h3>
+                  <p className="mt-5 text-base lg:text-lg text-[#404040] leading-relaxed">{o.body}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {o.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3 text-base text-black">
+                        <span className="mt-1 inline-flex h-5 w-5 items-center justify-center bg-[#FFD300] shrink-0">
+                          <Check className="h-3 w-3 text-black" strokeWidth={3} />
+                        </span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/contact" data-testid={`incentive-cta-${o.slug}`} className="mt-8 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-4 uppercase tracking-wide w-fit">
+                    Get Pricing <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </article>
