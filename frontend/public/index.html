@@ -18,52 +18,10 @@
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet" />
 
-        <!-- Structured data · Organization -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "@id": "https://bestbuyincentives.com/#organization",
-          "name": "BestBuyIncentives",
-          "alternateName": "Best Buy Incentives",
-          "url": "https://bestbuyincentives.com/",
-          "logo": "https://bestbuyincentives.com/images/hero-seminar.png",
-          "description": "Premium travel-incentive certificate programs for high-ticket sales teams. Lift close rates without cutting price.",
-          "foundingDate": "1992",
-          "slogan": "Stop Discounting. Start Closing.",
-          "email": "karl@bestbuyincentives.com",
-          "telephone": "+1-866-843-8003",
-          "legalName": "Karl Kramer & Company, Inc.",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "3089 Shore Road",
-            "addressLocality": "Bellmore",
-            "addressRegion": "NY",
-            "postalCode": "11710",
-            "addressCountry": "US"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-866-843-8003",
-            "contactType": "sales",
-            "areaServed": ["US", "CA"],
-            "availableLanguage": "English"
-          },
-          "sameAs": [
-            "https://www.youtube.com/@Bestbuyincentives",
-            "https://www.facebook.com/profile.php?id=61591196589436",
-            "https://www.instagram.com/best_buy_incentives/",
-            "https://www.linkedin.com/in/karl-kramer-34803516a/"
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "1200",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
-        }
-        </script>
+        <!-- Organization & WebSite entities are defined ONCE, canonically, by
+             src/components/site/Seo.jsx (@id #organization / #website) and are
+             injected into every prerendered page head. They are intentionally
+             NOT duplicated here to avoid conflicting entity definitions. -->
 
         <!-- Structured data · Service -->
         <script type="application/ld+json">
@@ -83,18 +41,7 @@
         }
         </script>
 
-        <!-- Structured data · WebSite -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "@id": "https://bestbuyincentives.com/#website",
-          "url": "https://bestbuyincentives.com/",
-          "name": "BestBuyIncentives",
-          "publisher": { "@id": "https://bestbuyincentives.com/#organization" },
-          "inLanguage": "en-US"
-        }
-        </script>
+        <!-- WebSite entity is defined canonically by Seo.jsx (@id #website). -->
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

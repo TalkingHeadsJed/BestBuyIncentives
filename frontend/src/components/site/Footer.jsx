@@ -57,7 +57,7 @@ export default function Footer() {
             <span className="font-display font-bold text-xl">BestBuy<span className="text-[#FFD300]">Incentives</span></span>
           </Link>
           <p className="mt-5 text-sm text-white/70 max-w-md leading-relaxed">
-            We sell sales growth. The mechanism happens to be a vacation. Used by 1,200+ high-ticket sales teams across North America.
+            Best Buy Incentives is a B2B sales-incentive provider for high-ticket sales teams. We sell sales growth — the mechanism happens to be a vacation. Used by 1,200+ sales teams across North America.
           </p>
           <form onSubmit={subscribe} className="mt-6 flex max-w-md" data-testid="newsletter-form">
             <input
