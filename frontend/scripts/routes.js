@@ -21,6 +21,7 @@ const RESOURCE_SLUGS = [
 const STATIC_ROUTES = [
   "/", "/about", "/programs", "/industries", "/case-studies",
   "/resources", "/articles", "/faq",
+  "/authors/karl-kramer",
   "/travel-incentives-vs-discounting", "/travel-incentives-vs-gift-cards", "/travel-incentives-vs-cash-rebates",
   "/contact", "/privacy", "/terms", "/compliance",
 ];

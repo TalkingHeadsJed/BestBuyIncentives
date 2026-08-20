@@ -1,11 +1,10 @@
-import Seo, { breadcrumbSchema, ORG_ID, WEBSITE_ID } from "@/components/site/Seo";
+import Seo, { breadcrumbSchema, personSchema, ORG_ID, WEBSITE_ID, PERSON_ID } from "@/components/site/Seo";
 import { Link } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { getArticle, getRelated } from "@/data/articles";
+import { AUTHOR } from "@/data/author";
 
 const SITE_URL = "https://bestbuyincentives.com";
-const AUTHOR = { "@type": "Organization", name: "Best Buy Incentives Editorial Team", url: `${SITE_URL}/about` };
-const REVIEWER = { "@type": "Person", name: "Karl Kramer", jobTitle: "CEO", url: `${SITE_URL}/about` };
 const ABOUT_MAP = {
   "sales-closing": ["Sales closing", "High-ticket sales"],
   "urgency-objections": ["Objection handling", "Sales urgency"],
@@ -27,8 +26,7 @@ const articleLdSchema = (a) => {
     inLanguage: "en-US",
     datePublished: a.datePublished,
     dateModified: a.dateModified || a.datePublished,
-    author: AUTHOR,
-    reviewedBy: REVIEWER,
+    author: { "@id": PERSON_ID },
     publisher: { "@id": ORG_ID },
     isPartOf: { "@id": WEBSITE_ID },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage`, url },
@@ -65,6 +63,9 @@ export default function Article({ slug }) {
   const a = getArticle(slug);
   if (!a) return null;
   const related = getRelated(slug, 4);
+  const dateLine =
+    `Published ${fmtDate(a.datePublished)}` +
+    (a.dateModified && a.dateModified !== a.datePublished ? ` \u00B7 Updated ${fmtDate(a.dateModified)}` : "");
 
   return (
     <div data-testid="page-article" className="bg-white">
@@ -75,6 +76,7 @@ export default function Article({ slug }) {
         type="article"
         schema={[
           articleLdSchema(a),
+          personSchema,
           ...(a.video ? [videoObjectSchema(a)] : []),
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -97,12 +99,23 @@ export default function Article({ slug }) {
           <div className="mt-6 inline-block stamp text-[10px]">{a.eyebrow}</div>
           <h1 data-testid="article-h1" className="font-display mt-6 text-4xl lg:text-6xl font-bold leading-[0.98]">{a.h1 || a.title}</h1>
           {a.description && <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-2xl">{a.description}</p>}
-          <div data-testid="article-byline" className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-mono uppercase tracking-widest text-white/50 font-bold">
-            <Link to="/about" data-testid="byline-author" className="hover:text-[#FFD300]">Best Buy Incentives Editorial Team</Link>
-            <span>·</span>
-            <span>Reviewed by <Link to="/about" data-testid="byline-reviewer" className="text-white/70 hover:text-[#FFD300]">Karl Kramer, CEO</Link></span>
-            <span>·</span>
-            <span data-testid="byline-date">{`Published ${fmtDate(a.datePublished)}`}</span>
+          <div data-testid="article-byline" className="mt-8 flex items-center gap-3">
+            <Link to="/authors/karl-kramer" data-testid="byline-author-photo" aria-label="Karl Kramer">
+              <img
+                src="/images/authors/karl-kramer.png"
+                alt="Karl Kramer, CEO of Best Buy Incentives"
+                width="44"
+                height="44"
+                loading="lazy"
+                className="h-11 w-11 rounded-full object-cover border border-white/20"
+              />
+            </Link>
+            <div className="text-[11px] font-mono uppercase tracking-widest font-bold leading-relaxed">
+              <div className="text-white/50">
+                By <Link to="/authors/karl-kramer" data-testid="byline-author" className="text-white/80 hover:text-[#FFD300]">Karl Kramer</Link>, CEO of Best Buy Incentives
+              </div>
+              <div data-testid="byline-date" className="mt-1 text-white/40">{dateLine}</div>
+            </div>
           </div>
           <Link to="/contact" data-testid="article-hero-cta" className="mt-8 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-3 uppercase tracking-wide">
             Schedule a Campaign Consultation <ArrowRight className="h-3.5 w-3.5" />
@@ -130,8 +143,25 @@ export default function Article({ slug }) {
           )}
           <div className="article-body" data-testid="article-body" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: a.bodyHtml }} />
 
-          <div data-testid="article-accountability" className="mt-10 pt-6 border-t border-[#E5E2D9] text-sm text-[#595959] leading-relaxed">
-            Written by the <Link to="/about" className="text-black font-bold hover:text-[#595959]">Best Buy Incentives Editorial Team</Link> and reviewed by <Link to="/about" className="text-black font-bold hover:text-[#595959]">Karl Kramer, CEO</Link>. Best Buy Incentives has supplied customer incentive programs since 1992.
+          <div data-testid="article-author-box" className="mt-12 pt-8 border-t border-[#E5E2D9] flex flex-col sm:flex-row gap-5 items-start">
+            <Link to="/authors/karl-kramer" className="shrink-0" aria-label="Karl Kramer">
+              <img
+                src="/images/authors/karl-kramer.png"
+                alt="Karl Kramer, CEO of Best Buy Incentives"
+                width="80"
+                height="80"
+                loading="lazy"
+                className="h-20 w-20 rounded-full object-cover border-2 border-[#FFD300]"
+              />
+            </Link>
+            <div>
+              <div className="text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">About the author</div>
+              <Link to="/authors/karl-kramer" data-testid="author-box-name" className="mt-1 inline-block font-display text-xl font-bold text-black hover:text-[#595959]">Karl Kramer, CEO of Best Buy Incentives</Link>
+              <p className="mt-2 text-sm text-[#595959] leading-relaxed">{AUTHOR.bioShort}</p>
+              <Link to="/authors/karl-kramer" data-testid="author-box-link" className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#595959]">
+                Read Karl's full profile <ArrowRight className="h-3.5 w-3.5 text-[#FFD300]" />
+              </Link>
+            </div>
           </div>
 
           {related.length > 0 && (

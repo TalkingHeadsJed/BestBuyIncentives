@@ -90,7 +90,12 @@ for (const s of ARTICLE_SLUGS) {
   if (!html.includes('"@type":"Article"')) errors.push(`[/${s}] missing Article schema`);
   if (!html.includes('"@type":"BreadcrumbList"')) errors.push(`[/${s}] missing BreadcrumbList schema`);
   if (!/"datePublished":"20\d\d-\d\d-\d\d"/.test(html)) errors.push(`[/${s}] missing datePublished`);
-  if (!html.includes('"reviewedBy"')) errors.push(`[/${s}] missing reviewedBy`);
+  // Author must be the stable Karl Kramer Person entity (not org/editorial team, no reviewer duplication).
+  if (!html.includes('"author":{"@id":"https://bestbuyincentives.com/authors/karl-kramer/#person"}')) errors.push(`[/${s}] Article author is not the Karl Kramer Person @id`);
+  if (!html.includes('"@id":"https://bestbuyincentives.com/authors/karl-kramer/#person","name":"Karl Kramer"')) errors.push(`[/${s}] missing Karl Kramer Person node`);
+  if (html.includes('"reviewedBy"')) errors.push(`[/${s}] reviewedBy present (Karl must not be both author and reviewer)`);
+  if (!/data-testid="article-author-box"/.test(html)) errors.push(`[/${s}] missing author box`);
+  if (!html.includes('/authors/karl-kramer')) errors.push(`[/${s}] byline not linked to author page`);
   if (!html.includes('"isPartOf"')) errors.push(`[/${s}] missing isPartOf`);
   if (!/data-testid="article-breadcrumb"/.test(html)) errors.push(`[/${s}] missing visible breadcrumb`);
   if (!/data-testid="article-byline"/.test(html)) errors.push(`[/${s}] missing visible byline`);

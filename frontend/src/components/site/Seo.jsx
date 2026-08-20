@@ -8,6 +8,29 @@ const LOGO = `${SITE_URL}/images/logo.svg`;
 // Stable identity nodes referenced by @id across all page schema.
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
+// One stable Person entity for author Karl Kramer, referenced by @id everywhere.
+export const PERSON_ID = `${SITE_URL}/authors/karl-kramer/#person`;
+export const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Karl Kramer",
+  url: `${SITE_URL}/authors/karl-kramer`,
+  image: `${SITE_URL}/images/authors/karl-kramer.png`,
+  jobTitle: "CEO",
+  description:
+    "Karl Kramer has spent more than three decades helping salespeople and sales organizations improve closing rates through travel incentives.",
+  worksFor: { "@id": ORG_ID },
+  sameAs: ["https://www.linkedin.com/in/karl-kramer-34803516a/"],
+  knowsAbout: [
+    "sales closing incentives",
+    "discounted travel vouchers",
+    "high-ticket sales",
+    "customer incentive programs",
+    "sales promotions",
+    "margin protection",
+  ],
+};
 const BASE_SCHEMA = [
   {
     "@context": "https://schema.org", "@type": "Organization", "@id": ORG_ID,
