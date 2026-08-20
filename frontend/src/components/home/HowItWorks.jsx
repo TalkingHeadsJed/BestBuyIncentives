@@ -11,7 +11,7 @@ export default function HowItWorks() {
         <div className="max-w-3xl">
           <SectionLabel>How It Works</SectionLabel>
           <h2 className="font-display mt-6 text-5xl lg:text-7xl font-bold leading-[0.92] text-black">
-            Live in 10 days. <span className="under-yellow">Lift</span> in 60.
+            Live in <span className="under-yellow">10 days</span>.
           </h2>
         </div>
 
