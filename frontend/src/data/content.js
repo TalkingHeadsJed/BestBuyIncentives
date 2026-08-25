@@ -202,7 +202,7 @@ export const CASE_STUDIES = [
       { k: "Avg. order value", v: "+12%" },
       { k: "ROI vs. discount promo", v: "5.2x" },
     ],
-    image: "/images/cert-escape-v1.jpg",
+    image: "/images/case-studies/furniture-store.png",
   },
   {
     slug: "luxury-auto-dealer",
@@ -216,7 +216,7 @@ export const CASE_STUDIES = [
       { k: "Repeat buyer rate (24mo)", v: "+18%" },
       { k: "CSI score", v: "98.7" },
     ],
-    image: "/images/cert-cruise-outside.jpg",
+    image: "/images/case-studies/luxury-auto-dealer.png",
   },
   {
     slug: "regional-jeweler",
@@ -230,7 +230,7 @@ export const CASE_STUDIES = [
       { k: "Walk-out rate", v: "−19%" },
       { k: "Net new social mentions", v: "3,200+" },
     ],
-    image: "/images/cert-be-our-guest-outside.jpg",
+    image: "/images/case-studies/jewelry-store.png",
   },
 ];
 

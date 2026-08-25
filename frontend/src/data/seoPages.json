@@ -155,7 +155,8 @@
       "about": [
         "Sales incentive",
         "Sales closing"
-      ]
+      ],
+      "bridge": "Managers can give representatives a repeatable conversation by coaching <a href=\"/sales-closing-questions-examples\">the best sales closing questions for every stage</a> and <a href=\"/trial-close-questions-examples\">trial-close questions that reveal buyer readiness</a>. Once the buyer confirms fit, a discounted travel voucher gives the representative an exciting value-added reason to ask for the decision."
     },
     {
       "path": "/discounted-travel-vouchers-for-sales",
@@ -194,7 +195,8 @@
       "about": [
         "Travel voucher",
         "Sales incentive"
-      ]
+      ],
+      "bridge": "Before presenting the offer, use <a href=\"/trial-close-questions-examples\">trial-close questions and examples</a> to confirm that the purchase fits and timing is the remaining obstacle. Then present the discounted travel voucher as an exciting additional benefit and ask directly for the sale."
     },
     {
       "path": "/how-it-works",
@@ -278,7 +280,8 @@
       ],
       "about": [
         "Sales incentive"
-      ]
+      ],
+      "bridge": "The incentive performs best when representatives know how to diagnose the real obstacle. Use <a href=\"/sales-closing-questions-examples\">sales closing questions for every stage of a high-ticket deal</a> to confirm fit, isolate hesitation, and introduce the discounted travel voucher at the moment it can add the most value."
     },
     {
       "path": "/customer-incentive-programs",
@@ -868,7 +871,7 @@
           "v": "5.2x"
         }
       ],
-      "image": "/images/cert-escape-v1.jpg",
+      "image": "/images/case-studies/furniture-store.png",
       "related": [
         {
           "to": "/furniture-store-promotion-ideas-beyond-discounts",
@@ -907,7 +910,7 @@
           "v": "98.7"
         }
       ],
-      "image": "/images/cert-cruise-outside.jpg",
+      "image": "/images/case-studies/luxury-auto-dealer.png",
       "related": [
         {
           "to": "/car-dealership-promotion-ideas",

@@ -19,6 +19,9 @@ DirectoryIndex index.html index.php
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^(.*)$ https://bestbuyincentives.com/$1 [R=301,L]
 
+  # 301: retired close-rate page consolidated into the canonical winner.
+  RewriteRule ^how-to-calculate-sales-close-rate/?$ https://bestbuyincentives.com/close-rate-vs-conversion-rate/ [R=301,L]
+
   # Serve a real directory's index.html WITHOUT redirecting (keeps no-slash canonical).
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html -f

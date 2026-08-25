@@ -1,8 +1,10 @@
 import "@/App.css";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "sonner";
 import useHydrated from "@/hooks/useHydrated";
+import { pushAnalytics } from "@/lib/consultationClient";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import StickyCTA from "@/components/site/StickyCTA";
@@ -33,6 +35,22 @@ function App() {
   // Toaster is client-only; mount it after hydration so the prerendered markup
   // matches React's first client render exactly.
   const hydrated = useHydrated();
+
+  // Track contextual commercial-link clicks distinctly from generic navigation.
+  // Non-PII: only records page path and link destination (dataLayer convention).
+  useEffect(() => {
+    const onClick = (e) => {
+      const a = e.target.closest && e.target.closest('a[data-analytics="contextual-commercial-link"]');
+      if (!a) return;
+      pushAnalytics("contextual_commercial_click", {
+        page_path: window.location.pathname,
+        link_destination: a.getAttribute("href") || "",
+        link_text: (a.textContent || "").trim().slice(0, 80),
+      });
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   return (
     <HelmetProvider>

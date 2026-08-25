@@ -135,6 +135,13 @@ export function CommercialPage({ cfg }) {
           </div>
         ))}
       </div>
+      {cfg.bridge && (
+        <p
+          data-testid="commercial-bridge"
+          className="mt-8 text-[#404040] leading-relaxed [&_a]:text-black [&_a]:font-bold [&_a:hover]:text-[#595959] [&_a]:underline"
+          dangerouslySetInnerHTML={{ __html: cfg.bridge }}
+        />
+      )}
       {cfg.download && (
         <div className="mt-10">
           <a href={cfg.download.href} download data-testid="commercial-download-cta" className="inline-flex items-center gap-2 border-2 border-black text-black hover:bg-black hover:text-white font-bold text-sm px-6 py-3 uppercase tracking-wide transition-colors">
