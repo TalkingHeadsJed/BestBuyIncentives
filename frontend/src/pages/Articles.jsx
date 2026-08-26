@@ -27,10 +27,9 @@ const collectionSchema = () => ({
 
 function ArticleCard({ a }) {
   return (
-    <Link
-      to={`/${a.slug}`}
+    <div
       data-testid={`article-card-${a.slug}`}
-      className="group flex flex-col border border-[#E5E2D9] bg-white p-6 hover:border-black transition-colors"
+      className="group relative flex flex-col border border-[#E5E2D9] bg-white p-6 hover:border-black transition-colors"
     >
       <div className="text-[10px] font-mono uppercase tracking-widest text-[#595959] font-bold">{a.category}</div>
       {a.video && (
@@ -38,17 +37,23 @@ function ArticleCard({ a }) {
           <PlayCircle className="h-3.5 w-3.5" /><span>Video</span>
         </span>
       )}
-      <h3 className="mt-3 font-display text-xl font-bold leading-snug text-[#0A0A0A] group-hover:text-black">{a.title}</h3>
+      <h3 className="mt-3 font-display text-xl font-bold leading-snug text-[#0A0A0A] group-hover:text-black">
+        <Link to={`/${a.slug}`} className="after:content-[''] after:absolute after:inset-0" aria-label={a.title}>{a.title}</Link>
+      </h3>
       <p className="mt-3 text-sm text-[#595959] leading-relaxed flex-1">{a.excerpt}</p>
-      <div data-testid={`article-card-byline-${a.slug}`} className="mt-4 flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#595959] font-bold">
+      <Link
+        to="/authors/karl-kramer"
+        data-testid={`article-card-byline-${a.slug}`}
+        className="relative z-10 self-start mt-4 inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#595959] hover:text-black font-bold"
+      >
         <img src="/images/authors/karl-kramer.png" alt="Karl Kramer" width="20" height="20" loading="lazy" className="h-5 w-5 rounded-full object-cover" />
         <span>By Karl Kramer</span>
-      </div>
+      </Link>
       <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-black font-bold">
         Read
         <ArrowRight className="h-3.5 w-3.5 text-[#FFD300] group-hover:translate-x-1 transition-transform" />
       </span>
-    </Link>
+    </div>
   );
 }
 

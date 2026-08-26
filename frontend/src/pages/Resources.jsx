@@ -34,11 +34,10 @@ export default function Resources() {
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {RESOURCES.map((r) => (
-              <Link
+              <div
                 key={r.slug}
-                to={`/resources/${r.slug}`}
                 data-testid={`resource-${r.slug}`}
-                className="border border-[#E5E2D9] bg-white hover:bg-[#F5F2EA] transition-colors group flex flex-col"
+                className="relative border border-[#E5E2D9] bg-white hover:bg-[#F5F2EA] transition-colors group flex flex-col"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
@@ -46,20 +45,25 @@ export default function Resources() {
                 </div>
                 <div className="p-7 flex-1 flex flex-col">
                   <h3 className="font-display font-bold text-xl lg:text-2xl leading-[1.05] text-black group-hover:text-black">
-                    {r.title}
+                    <Link to={`/resources/${r.slug}`} className="after:content-[''] after:absolute after:inset-0" aria-label={r.title}>{r.title}</Link>
                   </h3>
                   <p className="mt-3 text-sm text-[#595959] leading-relaxed flex-1">{r.excerpt}</p>
                   <div className="mt-6 pt-4 border-t border-[#E5E2D9] flex items-center justify-between">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-black/50 font-bold flex items-center gap-1.5">
+                    <Link
+                      to="/authors/karl-kramer"
+                      data-testid={`resource-byline-${r.slug}`}
+                      className="relative z-10 text-[10px] font-mono uppercase tracking-widest text-black/50 hover:text-black font-bold flex items-center gap-1.5"
+                    >
                       <img src="/images/authors/karl-kramer.png" alt="Karl Kramer" width="18" height="18" loading="lazy" className="h-[18px] w-[18px] rounded-full object-cover" />
                       <span>By Karl Kramer</span>
-                      <span aria-hidden="true">&middot;</span>
+                    </Link>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-black/50 font-bold flex items-center gap-1.5">
                       <Clock className="h-3 w-3" />{`${r.minutes} min`}
+                      <ArrowUpRight className="h-4 w-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
-                    <ArrowUpRight className="h-4 w-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
