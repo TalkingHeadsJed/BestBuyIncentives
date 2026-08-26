@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/sybxwpmy/public_html/
+    - /bin/cp -Rf original-site/. "$DEPLOYPATH"
