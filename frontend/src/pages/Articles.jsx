@@ -40,7 +40,11 @@ function ArticleCard({ a }) {
       )}
       <h3 className="mt-3 font-display text-xl font-bold leading-snug text-[#0A0A0A] group-hover:text-black">{a.title}</h3>
       <p className="mt-3 text-sm text-[#595959] leading-relaxed flex-1">{a.excerpt}</p>
-      <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-black font-bold">
+      <div data-testid={`article-card-byline-${a.slug}`} className="mt-4 flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#595959] font-bold">
+        <img src="/images/authors/karl-kramer.png" alt="Karl Kramer" width="20" height="20" loading="lazy" className="h-5 w-5 rounded-full object-cover" />
+        <span>By Karl Kramer</span>
+      </div>
+      <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-widest text-black font-bold">
         Read
         <ArrowRight className="h-3.5 w-3.5 text-[#FFD300] group-hover:translate-x-1 transition-transform" />
       </span>

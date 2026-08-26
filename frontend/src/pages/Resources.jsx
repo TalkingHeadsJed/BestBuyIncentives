@@ -51,7 +51,10 @@ export default function Resources() {
                   <p className="mt-3 text-sm text-[#595959] leading-relaxed flex-1">{r.excerpt}</p>
                   <div className="mt-6 pt-4 border-t border-[#E5E2D9] flex items-center justify-between">
                     <div className="text-[10px] font-mono uppercase tracking-widest text-black/50 font-bold flex items-center gap-1.5">
-                      <Clock className="h-3 w-3" />{` ${r.minutes} min read`}
+                      <img src="/images/authors/karl-kramer.png" alt="Karl Kramer" width="18" height="18" loading="lazy" className="h-[18px] w-[18px] rounded-full object-cover" />
+                      <span>By Karl Kramer</span>
+                      <span aria-hidden="true">&middot;</span>
+                      <Clock className="h-3 w-3" />{`${r.minutes} min`}
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>

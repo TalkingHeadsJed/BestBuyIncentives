@@ -9,7 +9,7 @@ PRIMARY DEPLOYMENT SOURCE (use THIS):
   Archive: /app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
 
   SHA-256 (archive):
-  2ca9beafd1d5d996f27d434750d31098829ca268523177eda5e759adb630d876
+  5e5784bb010d4c00eb1b563c457685fe1c84cc6cf4955cbccd81c175c28940ac
 
   Verify before deploying:
     sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
@@ -50,7 +50,7 @@ BLUEHOST EXTRACTION INSTRUCTIONS (exact):
 3) VERIFY the checksum on the server (cPanel Terminal / SSH):
      sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
      # must equal:
-     # 2ca9beafd1d5d996f27d434750d31098829ca268523177eda5e759adb630d876
+     # 5e5784bb010d4c00eb1b563c457685fe1c84cc6cf4955cbccd81c175c28940ac
 
 4) EXTRACT. The archive contains a top-level "original-site/" folder, so its
    CONTENTS must land directly in public_html (not in a nested folder):
