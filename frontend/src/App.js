@@ -25,6 +25,7 @@ import Legal from "@/pages/Legal";
 import Article from "@/pages/Article";
 import Articles from "@/pages/Articles";
 import AuthorKarlKramer from "@/pages/AuthorKarlKramer";
+import CategoryPage from "@/pages/CategoryPage";
 import { Hub, CommercialPage, IndustryPage, CaseStudyPage } from "@/pages/SeoPages";
 import PlaybookLanding from "@/pages/PlaybookLanding";
 import GatedResourceLanding from "@/pages/GatedResourceLanding";
@@ -69,6 +70,11 @@ function App() {
               <Route path="/resources/:slug" element={<ResourceDetail />} />
               <Route path="/articles" element={<Articles />} />
               <Route path="/authors/karl-kramer" element={<AuthorKarlKramer />} />
+              <Route path="/vacation-certificates" element={<CategoryPage slug="vacation-certificates" />} />
+              <Route path="/travel-certificates" element={<CategoryPage slug="travel-certificates" />} />
+              <Route path="/vacation-incentives" element={<CategoryPage slug="vacation-incentives" />} />
+              <Route path="/travel-incentive-programs" element={<CategoryPage slug="travel-incentive-programs" />} />
+              <Route path="/sales-incentive-programs" element={<CategoryPage slug="sales-incentive-programs" />} />
               {SEO_PAGES.hubs.map((c) => (<Route key={c.path} path={c.path} element={<Hub cfg={c} />} />))}
               {SEO_PAGES.commercial.map((c) => (
                 c.path === "/high-ticket-closing-playbook"

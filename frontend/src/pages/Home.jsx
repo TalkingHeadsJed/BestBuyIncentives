@@ -1,5 +1,6 @@
 import Seo, { faqSchema } from "@/components/site/Seo";
 import { FAQS } from "@/data/content";
+import { GuidesAndTools } from "@/components/site/GuidesAndTools";
 import Hero from "@/components/home/Hero";
 import StatsTicker from "@/components/home/StatsTicker";
 import TrustBar from "@/components/home/TrustBar";
@@ -21,19 +22,27 @@ export default function Home() {
     <div data-testid="page-home">
       <Seo
         title="Stop Discounting. Start Closing."
-        description="Premium travel-incentive certificates that lift close rates 37% on average — without cutting price. Trusted by 1,200+ high-ticket sales teams since 1992."
+        description="Premium travel-incentive certificates that lift close rates 37% on average, without cutting price. Trusted by 1,200+ high-ticket sales teams since 1992."
         path="/"
         schema={faqSchema(FAQS)}
       />
       <Hero />
       <TrustBar />
       <StatsTicker />
+      <div data-testid="home-stats-methodology" className="bg-[#0A0A0A]">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pb-6">
+          <p className="text-[11px] font-mono leading-relaxed text-white/40 max-w-3xl">
+            [METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]
+          </p>
+        </div>
+      </div>
       <ProblemSection />
       <SolutionSection />
       <BusinessTestimonials />
       <ProgramsShowcase />
       <HowItWorks />
       <CaseStudiesPreview />
+      <GuidesAndTools />
       <IndustriesGrid />
       <ROICalculator />
       <ConsumerTestimonials />

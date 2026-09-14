@@ -5,11 +5,11 @@
 ================================================================================
 
 PRIMARY DEPLOYMENT SOURCE (use THIS):
-  Folder : /app/original-site/          (120 HTML pages, ~99 MB)
+  Folder : /app/original-site/          (125 HTML pages, ~99 MB)
   Archive: /app/_release/BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
 
   SHA-256 (archive):
-  bc63b56877b711c482da2e3efedfe94e74fefce6de84c88be3f8575d9c22f9e3
+  29566fda729005fb508202f6991d00db1821c0f93e21c43f35179422009a191a
 
   Verify before deploying:
     sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
@@ -28,10 +28,10 @@ WHAT'S INSIDE (all pre-rendered, crawlable, hydrate over markup):
   /contact  /privacy  /terms  /compliance
   + 72 sales-first article pages at root slugs (e.g. /cost-of-delay-in-sales)
   404.html (branded, noindex,follow)
-  .htaccess  robots.txt  llms.txt  sitemap.xml (120 URLs)
+  .htaccess  robots.txt  llms.txt  sitemap.xml (125 URLs)
   static/ (hashed JS+CSS)  images/  downloads/ (4 gated resources: playbook, voucher guide, revenue dashboard, training script)  api/ (first-party PHP consultation + playbook-lead endpoints)
   Audience Lab pixel present on every page (suppressed during prerender only).
-  All 120 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
+  All 125 routes hydrate cleanly (React 19, 0 hydration/#418 errors).
   Articles driven by ONE registry (frontend/src/data/articles.json) — see
   /app/ARTICLE_CONTENT_MANAGEMENT.md for the add/remove + validate workflow.
 --------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ BLUEHOST EXTRACTION INSTRUCTIONS (exact):
 3) VERIFY the checksum on the server (cPanel Terminal / SSH):
      sha256sum BestBuyIncentives-ORIGINAL-DESIGN-DELIVERABLE.tgz
      # must equal:
-     # bc63b56877b711c482da2e3efedfe94e74fefce6de84c88be3f8575d9c22f9e3
+     # 29566fda729005fb508202f6991d00db1821c0f93e21c43f35179422009a191a
 
 4) EXTRACT. The archive contains a top-level "original-site/" folder, so its
    CONTENTS must land directly in public_html (not in a nested folder):

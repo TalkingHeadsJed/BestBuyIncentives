@@ -22,6 +22,8 @@ const STATIC_ROUTES = [
   "/", "/about", "/programs", "/industries", "/case-studies",
   "/resources", "/articles", "/faq",
   "/authors/karl-kramer",
+  "/vacation-certificates", "/travel-certificates", "/vacation-incentives",
+  "/travel-incentive-programs", "/sales-incentive-programs",
   "/travel-incentives-vs-discounting", "/travel-incentives-vs-gift-cards", "/travel-incentives-vs-cash-rebates",
   "/contact", "/privacy", "/terms", "/compliance",
 ];

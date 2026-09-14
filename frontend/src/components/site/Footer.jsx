@@ -57,7 +57,7 @@ export default function Footer() {
             <span className="font-display font-bold text-xl">BestBuy<span className="text-[#FFD300]">Incentives</span></span>
           </Link>
           <p className="mt-5 text-sm text-white/70 max-w-md leading-relaxed">
-            Best Buy Incentives is a B2B sales-incentive provider for high-ticket sales teams. We sell sales growth — the mechanism happens to be a vacation. Used by 1,200+ sales teams across North America.
+            Best Buy Incentives is Karl Kramer &amp; Company, Inc., a B2B sales-incentive provider for high-ticket sales teams since 1992. Not affiliated with Best Buy Co., Inc.
           </p>
           <form onSubmit={subscribe} className="mt-6 flex max-w-md" data-testid="newsletter-form">
             <input
@@ -85,10 +85,12 @@ export default function Footer() {
         <div className="md:col-span-2">
           <div className="text-[11px] font-mono uppercase tracking-widest text-white/40 mb-4">Programs</div>
           <ul className="space-y-2.5 text-sm">
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Enjoy a Great Escape</Link></li>
-            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Travel &amp; Entertainment</Link></li>
-            <li><Link to="/case-studies" className="text-white/80 hover:text-[#FFD300]">Case Studies</Link></li>
-            <li><Link to="/contact" className="text-white/80 hover:text-[#FFD300]">Book a Call</Link></li>
+            <li><Link to="/programs" className="text-white/80 hover:text-[#FFD300]">Vacation Certificate Programs</Link></li>
+            <li><Link to="/vacation-certificates" className="text-white/80 hover:text-[#FFD300]">Vacation Certificates</Link></li>
+            <li><Link to="/travel-certificates" className="text-white/80 hover:text-[#FFD300]">Travel Certificates</Link></li>
+            <li><Link to="/vacation-incentives" className="text-white/80 hover:text-[#FFD300]">Vacation Incentives</Link></li>
+            <li><Link to="/travel-incentive-programs" className="text-white/80 hover:text-[#FFD300]">Travel Incentive Programs</Link></li>
+            <li><Link to="/sales-incentive-programs" className="text-white/80 hover:text-[#FFD300]">Sales Incentive Programs</Link></li>
           </ul>
         </div>
 

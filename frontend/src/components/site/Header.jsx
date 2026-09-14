@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS } from "@/data/content";
 import { COMPARE_LINKS } from "@/data/comparisons";
+import { PROGRAM_LINKS } from "@/data/guidesAndTools";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Header() {
   const onDarkHero = darkHeroPages.includes(pathname) || pathname.startsWith("/travel-incentives-vs-");
   const transparent = onDarkHero && !scrolled;
   const compareActive = pathname.startsWith("/travel-incentives-vs-");
+  const programsActive = pathname === "/programs" || PROGRAM_LINKS.some((p) => p.to === pathname);
 
   return (
     <header
@@ -56,6 +58,35 @@ export default function Header() {
               {l.label}
             </NavLink>
           ))}
+
+          {/* Programs dropdown */}
+          <div className="relative group" data-testid="nav-programs">
+            <button
+              type="button"
+              data-testid="nav-programs-trigger"
+              className={`text-sm font-bold transition-colors inline-flex items-center gap-1 ${
+                transparent
+                  ? programsActive ? "text-[#FFD300]" : "text-white/90 hover:text-[#FFD300]"
+                  : programsActive ? "text-black" : "text-[#595959] hover:text-black"
+              }`}
+            >
+              Programs <ChevronDown className="h-3.5 w-3.5" />
+            </button>
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover:block">
+              <div className="bg-white border border-[#E5E2D9] shadow-xl min-w-[280px] py-2">
+                {PROGRAM_LINKS.map((p) => (
+                  <NavLink
+                    key={p.to}
+                    to={p.to}
+                    data-testid={`nav-programs-${p.to.replace(/\//g, "")}`}
+                    className="block px-4 py-2.5 text-sm font-bold text-[#595959] hover:text-black hover:bg-[#F7F5EF]"
+                  >
+                    {p.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          </div>
 
           {/* Compare dropdown */}
           <div className="relative group" data-testid="nav-compare">
@@ -121,6 +152,20 @@ export default function Header() {
                 {l.label}
               </NavLink>
             ))}
+
+            <div className="py-2 border-b border-[#E5E2D9]" data-testid="nav-mobile-programs">
+              <div className="py-3 text-base font-bold text-[#595959]">Programs</div>
+              {PROGRAM_LINKS.map((p) => (
+                <NavLink
+                  key={p.to}
+                  to={p.to}
+                  data-testid={`nav-mobile-programs-${p.to.replace(/\//g, "")}`}
+                  className={({ isActive }) => `block py-2 pl-4 text-sm font-bold ${isActive ? "text-black" : "text-[#595959]"}`}
+                >
+                  {p.label}
+                </NavLink>
+              ))}
+            </div>
 
             <div className="py-2 border-b border-[#E5E2D9]" data-testid="nav-mobile-compare">
               <div className="py-3 text-base font-bold text-[#595959]">Compare</div>

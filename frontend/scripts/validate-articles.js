@@ -21,7 +21,7 @@ const sitemap = fs.readFileSync(path.join(BUILD, "sitemap.xml"), "utf-8");
 const sitemapHas = (r) => sitemap.includes(`<loc>https://bestbuyincentives.com${r === "/" ? "/" : r}</loc>`);
 
 const titles = new Map();
-const BANNED = ["free vacation", "vacation incentive", "vacation certificate"];
+const BANNED = ["free vacation", "free trip", "free cruise"];
 
 const targetExists = (href) => {
   const clean = href.split("#")[0].split("?")[0].replace(/\/$/, "") || "/";

@@ -35,6 +35,7 @@ const BASE_SCHEMA = [
   {
     "@context": "https://schema.org", "@type": "Organization", "@id": ORG_ID,
     name: "Best Buy Incentives",
+    alternateName: ["Karl Kramer & Company", "Karl Kramer & Company, Inc."],
     legalName: "Karl Kramer & Company, Inc.",
     url: `${SITE_URL}/`,
     logo: { "@type": "ImageObject", "@id": `${SITE_URL}/#logo`, url: LOGO, width: 512, height: 512 },
@@ -63,6 +64,7 @@ const BASE_SCHEMA = [
       "https://www.instagram.com/best_buy_incentives/",
     ],
     description: "Best Buy Incentives helps high-ticket sales teams use customer-facing discounted travel vouchers to create urgency, protect margin, and close more qualified sales.",
+    disambiguatingDescription: "B2B sales-incentive provider of discounted travel vouchers and vacation certificates for high-ticket sales teams. Not affiliated with Best Buy Co., Inc., the electronics retailer.",
   },
   {
     "@context": "https://schema.org", "@type": "WebSite", "@id": WEBSITE_ID,
@@ -73,16 +75,53 @@ const BASE_SCHEMA = [
 
 /**
  * Per-page SEO manager: <title>, meta, canonical, OG, Twitter, JSON-LD.
- *
- * Props:
- * - title           — page-specific title (will be suffixed with brand)
- * - description     — meta description (~150-160 chars)
- * - path            — current path, e.g. "/programs" (canonical + og:url)
- * - image           — absolute image URL for OG/Twitter (optional)
- * - type            — og:type (default "website")
- * - noIndex         — set true to add robots noindex,nofollow
- * - schema          — optional JSON-LD object (or array) added to <head>
  */
+// Core pages keep a brand suffix; all other routes drop it (base titles are <=60 chars).
+const CORE_PATHS = new Set([
+  "/", "/about", "/programs", "/industries", "/case-studies", "/resources",
+  "/articles", "/faq", "/contact",
+  "/travel-incentives-vs-discounting", "/travel-incentives-vs-gift-cards", "/travel-incentives-vs-cash-rebates",
+  "/authors/karl-kramer",
+]);
+const BRAND_SUFFIX = "Best Buy Incentives";
+// Centralized title/description rewrites (keeps titles <=60 and metas <=155).
+const PAGE_META_OVERRIDES = {
+  "/programs": {
+    title: "Vacation Certificate Programs",
+    description: "Vacation certificate programs for high-ticket sales teams. Enjoy a Great Escape and more. Book a call to see the destinations your customers can choose.",
+  },
+  "/industries": {
+    title: "Industries We Serve",
+    description: "Sales incentive programs for auto dealers, jewelers, furniture, home improvement, boat and RV, roofing, and wedding businesses. Close more without discounting.",
+  },
+  "/resources": { title: "The Closer's Library: Sales Playbooks" },
+  "/articles": {
+    title: "Sales Closing & Incentive Guides",
+    description: "Practical guides on closing high-ticket sales, handling price objections, and using discounted travel vouchers as customer incentives, organized by topic.",
+  },
+  "/faq": {
+    title: "Travel Incentive Program FAQ",
+    description: "Straight answers on how discounted travel voucher programs work, how customers redeem, how fast you launch, and what results sales teams report.",
+  },
+  "/contact": { title: "Plan a Sales Incentive Campaign" },
+  "/case-studies": { title: "Case Studies: Documented Sales Lift" },
+  "/travel-incentives-vs-discounting": {
+    title: "Travel Incentives vs. Discounting",
+    description: "Travel incentive certificates vs. discounting for high-ticket sales: margin impact, close rate, perceived value, and referrals compared head to head.",
+  },
+  "/travel-incentives-vs-gift-cards": {
+    title: "Travel Incentives vs. Gift Cards",
+    description: "Travel incentive certificates vs. gift cards as a sales reward: perceived value, emotional pull, margin impact, and why a vacation out-closes a gift card.",
+  },
+  "/travel-incentives-vs-cash-rebates": {
+    title: "Travel Incentives vs. Cash Rebates",
+    description: "Travel incentive certificates vs. cash rebates: margin impact, perceived value, buyer behavior, and why a vacation beats cash back at the close.",
+  },
+  "/incentive-revenue-dashboard": {
+    description: "A spreadsheet to model close rate, margin, discounting, and attributable revenue from an incentive campaign before you run it.",
+  },
+};
+
 export default function Seo({
   title,
   description,
@@ -92,7 +131,20 @@ export default function Seo({
   noIndex = false,
   schema,
 }) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Stop Discounting. Start Closing.`;
+  const ov = PAGE_META_OVERRIDES[path] || {};
+  const effTitle = ov.title !== undefined ? ov.title : title;
+  if (ov.description !== undefined) description = ov.description;
+  // Guarantee every meta description is <= 155 chars (trim the trailing clause at a word boundary).
+  if (description && description.length > 155) {
+    let cut = description.slice(0, 153);
+    const sp = cut.lastIndexOf(" ");
+    if (sp > 120) cut = cut.slice(0, sp);
+    description = cut.replace(/[\s,;:.]+$/, "") + ".";
+  }
+  let fullTitle;
+  if (path === "/") fullTitle = `${effTitle} | Best Buy Incentives by Karl Kramer & Co.`;
+  else if (CORE_PATHS.has(path)) fullTitle = effTitle ? `${effTitle} | ${BRAND_SUFFIX}` : BRAND_SUFFIX;
+  else fullTitle = effTitle || BRAND_SUFFIX;
   const canonical = `${SITE_URL}${path}`;
   const schemas = Array.isArray(schema) ? schema : schema ? [schema] : [];
   const allSchemas = [...BASE_SCHEMA, ...schemas];

@@ -27,6 +27,9 @@ export default function CaseStudies() {
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
             Three sales teams. Three verticals. Three programs. Here's what changed in their numbers.
           </p>
+          <p data-testid="case-studies-methodology" className="mt-6 text-[11px] font-mono leading-relaxed text-white/40 max-w-3xl">
+            [METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]
+          </p>
         </div>
       </section>
 

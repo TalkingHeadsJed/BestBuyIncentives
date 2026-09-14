@@ -1,5 +1,6 @@
 import Seo from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
+import { GuidesAndTools } from "@/components/site/GuidesAndTools";
 import { RESOURCES } from "@/data/content";
 import { IMG } from "@/data/images";
 import { Link } from "react-router-dom";
@@ -68,6 +69,7 @@ export default function Resources() {
           </div>
         </div>
       </section>
+      <GuidesAndTools />
     </div>
   );
 }

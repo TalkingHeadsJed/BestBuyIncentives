@@ -24,10 +24,10 @@ export default function Programs() {
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 lg:px-10 pt-40 pb-24 lg:pb-32">
           <SectionLabel dark>Sales Incentives</SectionLabel>
           <h1 className="font-display mt-6 text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.92]">
-            Pick the <span className="hl-yellow-full text-black">closing weapon.</span>
+            Vacation Certificate <span className="hl-yellow-full text-black">Programs</span>
           </h1>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
-            One proven certificate to put on your sales floor — sized to your ticket and priced for bulk deployment. Want more? Book a call for our full catalog of travel and entertainment incentives.
+            One proven certificate to put on your sales floor, sized to your ticket and priced for bulk deployment. Want more? Book a call for our full catalog of travel and entertainment incentives.
           </p>
         </div>
       </section>

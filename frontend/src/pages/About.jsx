@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div data-testid="page-about">
       <Seo
-        title="About Us — A Sales-Growth Company"
+        title="About Us: A Sales-Growth Company"
         description="BestBuyIncentives has engineered closing tools for high-ticket sales teams since 1992. 30+ years, 1,200+ sales teams, $184M in added pipeline closed."
         path="/about"
       />
@@ -24,6 +24,9 @@ export default function About() {
             Not a travel company.<br />
             <span className="hl-yellow-full text-black">A sales-growth company.</span>
           </h1>
+          <p data-testid="about-legal-subtitle" className="mt-4 text-sm font-mono uppercase tracking-widest text-[#FFD300] font-bold">
+            Karl Kramer &amp; Company, Inc.
+          </p>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
             We help high-ticket sales teams use discounted travel vouchers as customer-facing closing tools designed to add value and support profitable sales.
           </p>
@@ -52,10 +55,13 @@ export default function About() {
           </div>
           <div className="lg:col-span-5">
             <div className="grid grid-cols-1 gap-4">
-              <Stat icon={Target} value="30+" label="Years in business — since 1992" />
+              <Stat icon={Target} value="30+" label="Years in business, since 1992" />
               <Stat icon={Users} value="1,200+" label="Sales teams deployed" />
               <Stat icon={Award} value="$184M" label="Added pipeline closed" />
             </div>
+            <p data-testid="about-stats-methodology" className="mt-4 text-[11px] font-mono leading-relaxed text-[#8a8a8a]">
+              [METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]
+            </p>
           </div>
         </div>
       </section>
