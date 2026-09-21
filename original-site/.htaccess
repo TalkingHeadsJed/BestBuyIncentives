@@ -19,8 +19,55 @@ DirectoryIndex index.html index.php
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^(.*)$ https://bestbuyincentives.com/$1 [R=301,L]
 
-  # 301: retired close-rate page consolidated into the canonical winner.
+  # ============================================================
+  # 301 CONSOLIDATION REDIRECTS (merged pages -> stronger targets)
+  # Single hop each. Keep in sync with the merge tables in the SEO spec.
+  # ------------------------------------------------------------
+  # Pre-existing: retired close-rate page.
   RewriteRule ^how-to-calculate-sales-close-rate/?$ https://bestbuyincentives.com/close-rate-vs-conversion-rate/ [R=301,L]
+
+  # Part 1: vertical articles merged into industry/partner pages.
+  RewriteRule ^car-dealership-promotion-ideas/?$ https://bestbuyincentives.com/industries/automotive-dealerships/ [R=301,L]
+  RewriteRule ^sales-incentives-for-dealership-service-lane-customers/?$ https://bestbuyincentives.com/industries/automotive-dealerships/ [R=301,L]
+  RewriteRule ^car-sales-closing-questions-that-preserve-margin/?$ https://bestbuyincentives.com/industries/automotive-dealerships/ [R=301,L]
+  RewriteRule ^furniture-store-promotion-ideas-beyond-discounts/?$ https://bestbuyincentives.com/industries/furniture-retailers/ [R=301,L]
+  RewriteRule ^furniture-sales-closing-techniques-that-protect-margin/?$ https://bestbuyincentives.com/industries/furniture-retailers/ [R=301,L]
+  RewriteRule ^jewelry-store-promotion-ideas-high-value-purchases/?$ https://bestbuyincentives.com/industries/jewelry-stores/ [R=301,L]
+  RewriteRule ^jewelers-add-value-without-discounting/?$ https://bestbuyincentives.com/industries/jewelry-stores/ [R=301,L]
+  RewriteRule ^boat-rv-sales-promotion-ideas/?$ https://bestbuyincentives.com/industries/boat-rv-dealers/ [R=301,L]
+  RewriteRule ^hvac-sales-incentives-for-replacement-decisions/?$ https://bestbuyincentives.com/industries/home-improvement-hvac/ [R=301,L]
+  RewriteRule ^home-improvement-sales-incentives-that-preserve-margin/?$ https://bestbuyincentives.com/industries/home-improvement-hvac/ [R=301,L]
+  RewriteRule ^window-remodeling-sales-promotion-ideas/?$ https://bestbuyincentives.com/industries/home-improvement-hvac/ [R=301,L]
+  RewriteRule ^roofing-promotion-ideas-beyond-discounts/?$ https://bestbuyincentives.com/industries/roofing-contractors/ [R=301,L]
+  RewriteRule ^customer-incentives-wedding-event-businesses/?$ https://bestbuyincentives.com/industries/wedding-event-businesses/ [R=301,L]
+  RewriteRule ^marketing-agencies-add-incentives-to-client-campaigns/?$ https://bestbuyincentives.com/partners/marketing-agencies/ [R=301,L]
+
+  # Part 2: thin pages merged into category pages, pillars and FAQ.
+  RewriteRule ^sales-closing-incentives/?$ https://bestbuyincentives.com/sales-incentive-programs/ [R=301,L]
+  RewriteRule ^high-ticket-sales-incentives/?$ https://bestbuyincentives.com/sales-incentive-programs/ [R=301,L]
+  RewriteRule ^customer-incentive-programs/?$ https://bestbuyincentives.com/travel-incentive-programs/ [R=301,L]
+  RewriteRule ^discounted-travel-vouchers-for-sales/?$ https://bestbuyincentives.com/vacation-certificates/ [R=301,L]
+  RewriteRule ^discounted-travel-voucher-guide/?$ https://bestbuyincentives.com/vacation-certificates/ [R=301,L]
+  RewriteRule ^how-discounted-travel-vouchers-work/?$ https://bestbuyincentives.com/vacation-certificates/ [R=301,L]
+  RewriteRule ^customer-incentive-comparisons/?$ https://bestbuyincentives.com/travel-incentives-vs-discounting/ [R=301,L]
+  RewriteRule ^increase-sales-without-discounting/?$ https://bestbuyincentives.com/close-more-sales-without-lowering-price/ [R=301,L]
+  RewriteRule ^resources/stop-discounting-start-closing/?$ https://bestbuyincentives.com/close-more-sales-without-lowering-price/ [R=301,L]
+  RewriteRule ^resources/the-buyers-remorse-killer/?$ https://bestbuyincentives.com/close-more-sales-without-lowering-price/ [R=301,L]
+  RewriteRule ^resources/differentiating-on-experience-not-price/?$ https://bestbuyincentives.com/true-cost-of-discounting-high-ticket-sale/ [R=301,L]
+  RewriteRule ^resources/running-a-21-day-blitz-campaign/?$ https://bestbuyincentives.com/launch-customer-travel-voucher-promotion/ [R=301,L]
+  RewriteRule ^present-discounted-travel-voucher-in-home-sale/?$ https://bestbuyincentives.com/train-sales-team-to-present-travel-vouchers/ [R=301,L]
+  RewriteRule ^sales-team-training-script/?$ https://bestbuyincentives.com/train-sales-team-to-present-travel-vouchers/ [R=301,L]
+  RewriteRule ^travel-voucher-terms-businesses-should-review/?$ https://bestbuyincentives.com/faq/ [R=301,L]
+  RewriteRule ^travel-voucher-recipient-costs/?$ https://bestbuyincentives.com/faq/ [R=301,L]
+  RewriteRule ^shorten-in-home-sales-cycle/?$ https://bestbuyincentives.com/shorten-high-ticket-sales-cycle/ [R=301,L]
+  RewriteRule ^handle-price-objections-without-discounting/?$ https://bestbuyincentives.com/respond-when-a-prospect-asks-for-a-discount/ [R=301,L]
+  RewriteRule ^measure-travel-voucher-campaign/?$ https://bestbuyincentives.com/how-to-measure-incentive-roi/ [R=301,L]
+
+  # Part 3: pillars moved to new URLs (old URL 301s to new).
+  RewriteRule ^customer-closing-incentives-vs-sales-spiffs/?$ https://bestbuyincentives.com/sales-spiff/ [R=301,L]
+  RewriteRule ^resources/compensation-plans-that-actually-motivate/?$ https://bestbuyincentives.com/sales-spiff/ [R=301,L]
+  RewriteRule ^objection-handling-frameworks-for-sales-managers/?$ https://bestbuyincentives.com/objection-handling/ [R=301,L]
+  # ============================================================
 
   # Serve a real directory's index.html WITHOUT redirecting (keeps no-slash canonical).
   RewriteCond %{REQUEST_FILENAME} -d

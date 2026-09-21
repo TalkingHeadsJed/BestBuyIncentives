@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { subscribeNewsletter } from "@/lib/api";
+import { ARTICLE_SLUGS } from "@/data/articles";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
+  const { pathname } = useLocation();
+  const isArticle = ARTICLE_SLUGS.includes(pathname.replace(/^\//, "").replace(/\/$/, ""));
 
   const subscribe = async (e) => {
     e.preventDefault();
@@ -28,7 +31,8 @@ export default function Footer() {
 
   return (
     <footer data-testid="site-footer" className="bg-[#0A0A0A] text-white">
-      {/* CTA strip */}
+      {/* CTA strip (hidden on article pages so they don't read as sales pages) */}
+      {!isArticle && (
       <div className="border-b border-white/10">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-16 lg:py-20 grid lg:grid-cols-2 gap-12 items-center">
           <h2 className="font-display text-4xl lg:text-6xl font-bold leading-[0.95]">
@@ -49,6 +53,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      )}
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5">

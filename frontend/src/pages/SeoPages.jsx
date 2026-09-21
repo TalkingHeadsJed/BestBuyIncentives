@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight, CheckCircle2, Download, PlayCircle } from "lucide-react";
-import Seo, { breadcrumbSchema } from "@/components/site/Seo";
+import Seo, { breadcrumbSchema, faqSchema, personSchema, ORG_ID, PERSON_ID } from "@/components/site/Seo";
 import { ARTICLES } from "@/data/articles";
+import { getIndustryContent } from "@/data/industryContent";
+
+const fmtDay = (iso) => {
+  if (!iso) return "";
+  const d = new Date(iso + "T00:00:00Z");
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+};
 
 const SITE = "https://bestbuyincentives.com";
 
@@ -162,23 +169,134 @@ export function CommercialPage({ cfg }) {
 export function IndustryPage({ cfg }) {
   const isPartner = cfg.path.startsWith("/partners/");
   const parent = isPartner ? { name: "About", path: "/about" } : { name: "Industries", path: "/industries" };
-  const schema = [webPageSchema(cfg, [cfg.vertical, "Sales incentive"]), breadcrumbSchema([{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }])];
-  const proof = [...cfg.articleLinks, ...(cfg.caseLink ? [cfg.caseLink] : [])];
+  const c = getIndustryContent(cfg.path);
+
+  // Fallback to the legacy thin layout if no rich content is registered.
+  if (!c) {
+    const schema = [webPageSchema(cfg, [cfg.vertical, "Sales incentive"]), breadcrumbSchema([{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }])];
+    const proof = [...cfg.articleLinks, ...(cfg.caseLink ? [cfg.caseLink] : [])];
+    return (
+      <LandingShell cfg={cfg} testid={`page-industry-${cfg.path.split("/").pop()}`} eyebrow={cfg.vertical} schema={schema}
+        crumbTrail={[{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }]}>
+        <ul className="space-y-3">
+          {cfg.points.map((p) => (
+            <li key={p} className="flex items-start gap-3 text-[#404040]"><CheckCircle2 className="h-5 w-5 text-[#FFD300] shrink-0 mt-0.5" /><span>{p}</span></li>
+          ))}
+        </ul>
+        <ProofList items={proof} heading="Relevant guides & proof" />
+        <Accountability />
+        <div className="mt-12 bg-[#0A0A0A] text-white p-10">
+          <h2 className="font-display font-bold text-2xl lg:text-4xl leading-tight">{`See how this fits your ${cfg.vertical.toLowerCase()} sales.`}</h2>
+          <Cta testid="landing-footer-cta" />
+        </div>
+      </LandingShell>
+    );
+  }
+
+  const datePublished = c.datePublished || "2026-08-26";
+  const dateModified = c.dateModified || datePublished;
+  const articleLd = {
+    "@context": "https://schema.org", "@type": "Article",
+    "@id": `${SITE}${cfg.path}#article`,
+    headline: cfg.h1,
+    description: c.description,
+    image: { "@type": "ImageObject", url: `${SITE}/images/hero-seminar.png`, width: 1200, height: 630 },
+    inLanguage: "en-US",
+    datePublished, dateModified,
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORG_ID },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}${cfg.path}#webpage`, url: `${SITE}${cfg.path}` },
+    about: [cfg.vertical, "Sales incentive"].map((t) => ({ "@type": "Thing", name: t })),
+  };
+  const schema = [
+    articleLd,
+    personSchema,
+    faqSchema(c.faqs),
+    breadcrumbSchema([{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }]),
+  ];
+  const dateLine = `Published ${fmtDay(datePublished)}` + (dateModified !== datePublished ? ` \u00B7 Updated ${fmtDay(dateModified)}` : "");
+
   return (
-    <LandingShell cfg={cfg} testid={`page-industry-${cfg.path.split("/").pop()}`} eyebrow={cfg.vertical} schema={schema}
-      crumbTrail={[{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }]}>
-      <ul className="space-y-3">
-        {cfg.points.map((p) => (
-          <li key={p} className="flex items-start gap-3 text-[#404040]"><CheckCircle2 className="h-5 w-5 text-[#FFD300] shrink-0 mt-0.5" /><span>{p}</span></li>
-        ))}
-      </ul>
-      <ProofList items={proof} heading="Relevant guides & proof" />
-      <Accountability />
-      <div className="mt-12 bg-[#0A0A0A] text-white p-10">
-        <h2 className="font-display font-bold text-2xl lg:text-4xl leading-tight">{`See how this fits your ${cfg.vertical.toLowerCase()} sales.`}</h2>
-        <Cta testid="landing-footer-cta" />
-      </div>
-    </LandingShell>
+    <div data-testid={`page-industry-${cfg.path.split("/").pop()}`} className="bg-white">
+      <Seo title={c.title} description={c.description} path={cfg.path} type="article" schema={schema} />
+
+      {/* Hero */}
+      <section className="bg-[#0A0A0A] text-white pt-32 pb-16">
+        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          <Crumb trail={[{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }]} />
+          <div className="mt-6 inline-block stamp text-[10px]">{cfg.vertical}</div>
+          <h1 className="font-display mt-6 text-4xl lg:text-6xl font-bold leading-[0.98]">{cfg.h1}</h1>
+          <p className="mt-6 text-lg text-white/70 leading-relaxed">{c.answer}</p>
+          <div data-testid="industry-byline" className="mt-8 flex items-center gap-3">
+            <Link to="/authors/karl-kramer" aria-label="Karl Kramer">
+              <img src="/images/authors/karl-kramer.png" alt="Karl Kramer, CEO of Best Buy Incentives" width="44" height="44" loading="lazy" className="h-11 w-11 rounded-full object-cover border border-white/20" />
+            </Link>
+            <div className="text-[11px] font-mono uppercase tracking-widest font-bold leading-relaxed">
+              <div className="text-white/50">By <Link to="/authors/karl-kramer" className="text-white/80 hover:text-[#FFD300]">Karl Kramer</Link>, CEO of Best Buy Incentives</div>
+              <div className="mt-1 text-white/40">{dateLine}</div>
+            </div>
+          </div>
+          <Cta testid="landing-hero-cta" />
+        </div>
+      </section>
+
+      {/* Body */}
+      <section className="py-12 lg:py-16">
+        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          <article className="space-y-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:text-black [&_p]:mt-3 [&_p]:text-[#333] [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mt-3 [&_ol]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:text-[#333] [&_a]:text-black [&_a]:font-bold [&_a]:underline [&_a:hover]:text-[#595959]">
+            {c.sections.map((s) => (
+              <div key={s.h}>
+                <h2>{s.h}</h2>
+                <div dangerouslySetInnerHTML={{ __html: s.html }} />
+              </div>
+            ))}
+
+            {cfg.caseLink && (
+              <div>
+                <h2>Results in this industry</h2>
+                <p className="mt-3">
+                  See a documented example: <Link to={cfg.caseLink.to}>{cfg.caseLink.label}</Link>.
+                </p>
+              </div>
+            )}
+
+            <div data-testid="industry-faq">
+              <h2>Frequently asked questions</h2>
+              <div className="mt-4 space-y-6">
+                {c.faqs.map((f) => (
+                  <div key={f.q}>
+                    <h3 className="font-bold text-black">{f.q}</h3>
+                    <p className="mt-1 text-[#333] leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          {c.related && c.related.length > 0 && (
+            <div className="mt-12 pt-8 border-t border-[#E5E2D9]">
+              <div className="text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">Related reading</div>
+              <ul className="mt-4 space-y-2">
+                {c.related.map((r) => (
+                  <li key={r.to}>
+                    <Link to={r.to} className="inline-flex items-start gap-2 text-black font-bold hover:text-[#595959]">
+                      <ArrowRight className="h-3.5 w-3.5 text-[#FFD300] mt-1 shrink-0" /><span>{r.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <Accountability />
+
+          <div className="mt-12 bg-[#0A0A0A] text-white p-10">
+            <h2 className="font-display font-bold text-2xl lg:text-4xl leading-tight">{`See how this fits your ${cfg.vertical.toLowerCase()} sales.`}</h2>
+            <Cta testid="landing-footer-cta" />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 
@@ -208,6 +326,16 @@ export function CaseStudyPage({ cfg }) {
               <div key={r.k} className="bg-[#FFD300] p-5"><div className="text-[10px] font-mono uppercase tracking-widest text-black/70 font-bold">{r.k}</div><div className="mt-1 font-display font-bold text-black text-2xl lg:text-3xl">{r.v}</div></div>
             ))}
           </div>
+          {cfg.body && cfg.body.length > 0 && (
+            <article className="mt-12 space-y-8 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:text-black [&_p]:mt-3 [&_p]:text-[#333] [&_p]:leading-relaxed">
+              {cfg.body.map((s) => (
+                <div key={s.h}>
+                  <h2>{s.h}</h2>
+                  <div dangerouslySetInnerHTML={{ __html: s.html }} />
+                </div>
+              ))}
+            </article>
+          )}
           <ProofList items={cfg.related} heading="Related" />
           <div className="mt-12 bg-[#0A0A0A] text-white p-10">
             <h2 className="font-display font-bold text-2xl lg:text-4xl leading-tight">Want results like these?</h2>

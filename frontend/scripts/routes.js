@@ -10,12 +10,7 @@ const SEO_PATHS = [
 ].map((p) => p.path);
 
 const RESOURCE_SLUGS = [
-  "stop-discounting-start-closing",
-  "the-buyers-remorse-killer",
   "how-to-position-a-vacation-incentive-in-a-close",
-  "compensation-plans-that-actually-motivate",
-  "running-a-21-day-blitz-campaign",
-  "differentiating-on-experience-not-price",
 ];
 
 const STATIC_ROUTES = [

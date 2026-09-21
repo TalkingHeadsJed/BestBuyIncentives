@@ -28,7 +28,7 @@ export default function CaseStudies() {
             Three sales teams. Three verticals. Three programs. Here's what changed in their numbers.
           </p>
           <p data-testid="case-studies-methodology" className="mt-6 text-[11px] font-mono leading-relaxed text-white/40 max-w-3xl">
-            [METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]
+            Figures are company estimates based on Best Buy Incentives program experience since 1992. Individual results vary.
           </p>
         </div>
       </section>

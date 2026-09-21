@@ -259,6 +259,14 @@ export const FAQS = [
     q: "How quickly can we launch?",
     a: "Most clients are live in 5–10 business days. Certificates are issued on demand — and you can lock in even deeper discounts with a monthly subscription.",
   },
+  {
+    q: "How does a business review a travel voucher program before running it?",
+    a: "Review how the program works end to end: how certificates are issued, how your reps present them at the close, and how recipients redeem directly with the travel support team. A short consultation walks you through the mechanics and the program that fits your product and margin.",
+  },
+  {
+    q: "Who handles the travel logistics for the business?",
+    a: "A dedicated travel support team manages every booking, so your sales team never touches travel logistics. You issue the certificate at the close and stay focused on selling.",
+  },
 ];
 
 // Expanded FAQ for the /faq page — written in the natural-language phrasing
@@ -381,32 +389,6 @@ export const FAQ_PAGE = [
 
 export const RESOURCES = [
   {
-    slug: "stop-discounting-start-closing",
-    title: "Stop Discounting, Start Closing: Sales Playbook",
-    category: "Sales Strategy",
-    minutes: 6,
-    excerpt: "Why every 1% you discount costs you 3% of profit — and the alternative that beats discounting on every measurable dimension.",
-    image: "/images/vac-relaxing.jpg",
-    body: [
-      "Discounting trains your market to wait for the next discount. Worse, every dollar you give up in price comes straight off your gross margin — which means a 10% discount on a 30% margin product wipes out a third of your profit on that deal.",
-      "Discounted travel vouchers change the comparison from reducing price to adding customer value. Measure close rate, gross profit, cancellations, and referrals to determine the actual effect.",
-      "When you stop discounting and start exciting, three things happen: average ticket goes up, close rate goes up, and referral rate goes up. Margin stays intact.",
-    ],
-  },
-  {
-    slug: "the-buyers-remorse-killer",
-    title: "The Buyer's Remorse Killer",
-    category: "Closing Tactics",
-    minutes: 5,
-    excerpt: "Buyer's remorse kills referrals and torpedoes repeat business. Here's the one move that eliminates it on high-ticket sales.",
-    image: "/images/vac-island.jpg",
-    body: [
-      "Buyer's remorse peaks 24–72 hours after a high-ticket purchase. The amygdala panics. The buyer second-guesses. Calls come in to cancel.",
-      "A discounted travel voucher presented accurately at the moment of close can replace some post-purchase anxiety with anticipation. Measure cancellations and referrals rather than assuming the outcome.",
-      "Top auto dealers have cut buyer's remorse cancellations by more than 60% using this single move.",
-    ],
-  },
-  {
     slug: "how-to-position-a-vacation-incentive-in-a-close",
     title: "How to Position a Discounted Travel Voucher in a Close",
     category: "Sales Tactics",
@@ -417,43 +399,6 @@ export const RESOURCES = [
       "Never lead with the vacation. Lead with the value of the purchase. Introduce the incentive only after the buyer has emotionally committed to the product.",
       "Use it to break a stall: 'We can't hold this price beyond today, but we can include the getaway if we sign by close of business.' That single line moves 22% of stalled deals to close on the same day in field tests.",
       "Use it to reduce remorse: hand the certificate at delivery, not at signing. Customers remember the moment forever.",
-    ],
-  },
-  {
-    slug: "compensation-plans-that-actually-motivate",
-    title: "Sales Comp Plans That Actually Motivate",
-    category: "Sales Leadership",
-    minutes: 7,
-    excerpt: "Money motivates to a point. Memorable experiences create rep behavior changes money cannot.",
-    image: "/images/vac-sanfran.jpg",
-    body: [
-      "Customer closing incentives and salesperson compensation solve different problems. Use discounted travel vouchers for eligible customers, not as a substitute for a sales compensation plan.",
-      "Top sales orgs blend cash + experience-based incentives at a 70/30 ratio. The 30% delivers an outsized lift in rep effort and pipeline coverage.",
-    ],
-  },
-  {
-    slug: "running-a-21-day-blitz-campaign",
-    title: "The 21-Day Blitz Campaign Playbook",
-    category: "Campaign Playbook",
-    minutes: 9,
-    excerpt: "Exactly how a national furniture chain ran a 21-day campaign that posted a 5-year traffic high. Step by step.",
-    image: "/images/vac-palm.jpg",
-    body: [
-      "Day 1–3: Pre-launch teaser to existing CRM. Subject line discipline matters more than budget.",
-      "Day 4–21: Daily creative rotation with the certificate as the hook. Showroom traffic peaks day 7–10.",
-      "Day 22: Debrief and measure. Most clients see 4–6x ROI vs. their prior discount-led campaign.",
-    ],
-  },
-  {
-    slug: "differentiating-on-experience-not-price",
-    title: "Differentiating on Experience, Not Price",
-    category: "Sales Strategy",
-    minutes: 5,
-    excerpt: "Your competitor will match your price. They cannot match an experience your customer will remember for years.",
-    image: "/images/vac-beach.jpg",
-    body: [
-      "Price is the lazy lever. Experience is the leverage your competitor cannot copy overnight.",
-      "Build a customer experience around purchase — including a vacation moment — and you become impossible to compare on a spreadsheet.",
     ],
   },
 ];

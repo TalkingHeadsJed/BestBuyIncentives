@@ -77,3 +77,27 @@ Web3Forms: add live domain to "Allowed Domains" so forms send.
 - P1: Post-launch — verify live SEO audit passes on bestbuyincentives.com; submit sitemap to Google/Bing Search Console.
 - P1: Confirm real Calendly booking URL.
 - P2: Consider self-hosting Google Fonts to remove the one remaining external font request (not Emergent; kept to avoid visual change).
+
+---
+
+## SEO Consolidation Build — 2026-09-21 (implemented & verified)
+
+Executed `EMERGENT_PROMPT_BBI_seo_consolidate-v1.md` in 4 phases. Final site = **91 prerendered routes** (down from 125). `validate-articles` ALL PASS, `hydration-articles` ALL 91 CLEAN. `original-site/` re-synced (PHP `api/` + `.user.ini` preserved).
+
+**Urgent /programs fixes:** Caribbean Cruise (removed "all-inclusive"), Worldwide Luxury Resort (5→7 night), Elite Escape (removed "luxurious accommodations").
+
+**Phase 1 — CTA + methodology:** Removed the two repeated article CTA H2s ("See where a discounted travel voucher fits…" and, on articles only, the footer "Ready to put a closing tool…" strip); articles now end in a single small `div` CTA box (`article-cta`). Replaced every `[METHODOLOGY LINE …]` placeholder (Home, About, Case Studies, category pages) with: "Figures are company estimates based on Best Buy Incentives program experience since 1992. Individual results vary."
+
+**Phase 2 — Part 1 (industry pillars):** 8 industry/partner pages rewritten to pillar length (~1,500–2,000 words) with two-sentence answer, Karl byline+date, Article + BreadcrumbList + FAQPage schema, visible FAQ. Content lives in `src/data/industryContent.js`; rendered by rewritten `IndustryPage`. 14 vertical articles merged in and 301'd.
+
+**Phase 3 — Parts 2 & 3 (merges + pillars):** 19 thin pages merged into category pages / pillars / `/faq` (8 commercial + 7 articles + 4 resources deleted). 2 pillars moved to new URLs: `customer-closing-incentives-vs-sales-spiffs → /sales-spiff`, `objection-handling-frameworks-for-sales-managers → /objection-handling`; `/sales-closing-questions-examples` and `/trial-close-questions-examples` expanded in place. Articles now support an optional visible FAQ + FAQPage via `a.faqs` (Article.jsx). All internal links repointed (0 broken). Guides & Tools, RESOURCES, routes.js resource list cleaned.
+
+**Phase 4 — Part 5 (case studies):** `/case-studies/place-furniture-galleries` and `/case-studies/automotive-closing-incentives` expanded to 800+ words each (situation / tried before / did / result / copy). `[KARL:…]` facts kept as hidden `<!-- KARL: … -->` comments (per user: nothing visible).
+
+**Redirects:** 37 single-hop 301s wired in BOTH `original-site/.htaccess` and `frontend/public/.htaccess` (1 pre-existing + 14 Part1 + 19 Part2 + 3 Part3). Verified live on BlueHost after deploy (`curl -I`).
+
+**Video handling:** 4 merged pages had unique YouTube embeds. Re-homed 3 to their merge targets with VideoObject schema (how-vouchers-work → `/vacation-certificates`; voucher-terms + recipient-costs → `/faq`). The 4th (handle-price-objections) target `/respond-when-a-prospect-asks-for-a-discount` already carries a topical video in place; its unique clip (DDX_lh-XZZI) was retired — re-home on request.
+
+**Follow-ups / notes:**
+- `public/llms.txt` had no merged-URL references (no change needed). `public/llms-full.txt` is a stale full-content snapshot (no generator script in repo) — regenerate before next deploy if AI-crawl freshness matters.
+- Remind user to use **Save to GitHub** so `.cpanel.yml` + these changes deploy to BlueHost.

@@ -37,6 +37,13 @@ export default function CategoryPage({ slug: slugProp }) {
     mainEntityOfPage: `${SITE_URL}/${p.slug}`,
   };
 
+  const videoLd = p.video ? {
+    "@context": "https://schema.org", "@type": "VideoObject",
+    name: p.video.name, description: p.video.description, thumbnailUrl: [p.video.thumbnailUrl],
+    uploadDate: p.video.uploadDate, duration: p.video.duration, contentUrl: p.video.watchUrl,
+    embedUrl: p.video.embedUrl, publisher: { "@id": ORG_ID }, inLanguage: "en-US",
+  } : null;
+
   return (
     <div data-testid={`category-${p.slug}`} className="bg-white">
       <Seo
@@ -46,6 +53,7 @@ export default function CategoryPage({ slug: slugProp }) {
         type="article"
         schema={[
           articleLd,
+          ...(videoLd ? [videoLd] : []),
           personSchema,
           faqSchema(p.faqs),
           breadcrumbSchema([
@@ -86,6 +94,14 @@ export default function CategoryPage({ slug: slugProp }) {
       {/* Body */}
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          {p.video && (
+            <figure data-testid="category-video" className="mb-10">
+              <div className="relative w-full overflow-hidden border border-[#E5E2D9] bg-black" style={{ aspectRatio: "16 / 9" }}>
+                <iframe className="absolute inset-0 h-full w-full" src={`${p.video.embedUrl}?rel=0`} title={p.video.name} loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+              </div>
+              <figcaption className="mt-2 text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">{`Watch: ${p.video.name}`}</figcaption>
+            </figure>
+          )}
           <article className="category-prose space-y-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:text-black [&_p]:mt-3 [&_p]:text-[#333] [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-[#333] [&_a]:text-black [&_a]:font-bold [&_a]:underline [&_a:hover]:text-[#595959]">
             {p.sections.map((s) => (
               <div key={s.h}>

@@ -17,11 +17,11 @@ const INDUSTRIES_HTML = `
 
 const RESULTS_HTML = `
 <p>On <a href="/case-studies">our documented case studies</a>, teams report a stronger close rate, a higher average ticket, and more referrals once a compelling reward enters the conversation. Because the reward is added value rather than a price cut, the extra revenue lands with the margin intact.</p>
-<p class="text-sm text-[#8a8a8a]">[METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]</p>`;
+<p class="text-sm text-[#8a8a8a]">Figures are company estimates based on Best Buy Incentives program experience since 1992. Individual results vary.</p>`;
 
 const LAUNCH_HTML = `
 <p>Getting started is fast. A short call defines your goal, your qualifying purchase threshold, and the destinations that fit your buyers. Most teams are live within days, not months. Your representatives receive a simple script and a one-page overview, and a dedicated travel support team handles every booking so your people stay focused on selling.</p>
-<p>When you are ready, <a href="/contact">book a strategy call</a> and we will map a program to your sales floor. You can also read <a href="/how-it-works">how the program works</a> and review the <a href="/sales-team-training-script">sales-team training script</a> your reps will use.</p>`;
+<p>When you are ready, <a href="/contact">book a strategy call</a> and we will map a program to your sales floor. You can also read <a href="/how-it-works">how the program works</a> and review the <a href="/train-sales-team-to-present-travel-vouchers">sales-team training script</a> your reps will use.</p>`;
 
 export const CATEGORY_PAGES = [
   {
@@ -34,6 +34,7 @@ export const CATEGORY_PAGES = [
       "A vacation certificate is a value-added reward you hand a qualified buyer at the close. It gives your representative something exciting to talk about instead of another price cut, and it protects the margin you worked to build.",
     datePublished: "2026-08-26",
     dateModified: "2026-08-26",
+    video: { name: "How discounted travel vouchers work", description: "A short explainer of how a discounted travel voucher works as a closing tool for a business.", id: "DpBKtVlGhvY", duration: "PT1M6S", uploadDate: "2026-08-11", watchUrl: "https://www.youtube.com/watch?v=DpBKtVlGhvY", embedUrl: "https://www.youtube-nocookie.com/embed/DpBKtVlGhvY", thumbnailUrl: "https://i.ytimg.com/vi/DpBKtVlGhvY/hqdefault.jpg" },
     sections: [
       { h: "What a vacation certificate is", html:
         `<p>A vacation certificate is a discounted travel voucher your business gives a customer when they complete a qualifying purchase. It entitles the recipient to a resort stay, a cruise getaway, or a city escape from a curated set of destinations. For your sales team, it is a simple, tangible reward that makes the offer more memorable and gives the buyer a reason to say yes today.</p>
@@ -44,7 +45,9 @@ export const CATEGORY_PAGES = [
       { h: "The destinations your customers can choose", html:
         `<p>Programs such as <a href="/programs">Enjoy a Great Escape</a> and Enjoy a Paradise Escape let recipients pick from resort stays, cruise getaways, and popular city destinations. The variety is part of the appeal. A buyer who loves the beach and a buyer who wants a cruise both see something they want, which keeps the reward relevant across your whole customer base.</p>` },
       { h: "How a representative presents it at the close", html:
-        `<p>Timing is everything. Your representative confirms the product is a fit, handles any real objection, and only then introduces the certificate as the reason to move forward now. Presented after value is established, the certificate adds urgency and excitement rather than looking like a bribe. See <a href="/how-it-works">how the program works</a> and the exact <a href="/sales-team-training-script">training script</a> reps follow.</p>` },
+        `<p>Timing is everything. Your representative confirms the product is a fit, handles any real objection, and only then introduces the certificate as the reason to move forward now. Presented after value is established, the certificate adds urgency and excitement rather than looking like a bribe. See <a href="/how-it-works">how the program works</a> and the exact <a href="/train-sales-team-to-present-travel-vouchers">training script</a> reps follow.</p>` },
+      { h: "How discounted travel vouchers work", html:
+        `<p>The mechanics are simple. Your business issues a certificate to a customer who completes a qualifying purchase. The recipient redeems it directly with a dedicated travel support team, choosing from a curated set of resort stays, cruise getaways, and city destinations. Your team never touches travel logistics. Because the certificate carries a perceived value far above its fixed program cost, it moves decisions a same-cost discount never would, and you can hand a one-page overview to reps and customers so the offer is always presented accurately.</p>` },
       { h: "Which industries use vacation certificates", html: INDUSTRIES_HTML },
       { h: "Results sales teams report", html: RESULTS_HTML },
       { h: "How to launch a vacation certificate program", html: LAUNCH_HTML },
@@ -77,7 +80,7 @@ export const CATEGORY_PAGES = [
       { h: "The destinations on offer", html:
         `<p>Certificates draw from programs like <a href="/programs">Enjoy a Great Escape</a> and Enjoy a Paradise Escape, covering resort stays, cruise getaways, and city escapes. A curated range keeps the reward exciting for a wide mix of customers.</p>` },
       { h: "Presenting a travel certificate at the close", html:
-        `<p>Confirm fit first. Resolve the genuine objection. Then present the travel certificate as the value that makes acting now the better choice. This sequence keeps the certificate positive and persuasive. Reps use the <a href="/sales-team-training-script">training script</a>, and you can review <a href="/how-it-works">how the program works</a>.</p>` },
+        `<p>Confirm fit first. Resolve the genuine objection. Then present the travel certificate as the value that makes acting now the better choice. This sequence keeps the certificate positive and persuasive. Reps use the <a href="/train-sales-team-to-present-travel-vouchers">training script</a>, and you can review <a href="/how-it-works">how the program works</a>.</p>` },
       { h: "Which industries use travel certificates", html: INDUSTRIES_HTML },
       { h: "Results sales teams report", html: RESULTS_HTML },
       { h: "How to launch travel certificates", html: LAUNCH_HTML },
@@ -109,7 +112,7 @@ export const CATEGORY_PAGES = [
       { h: "The destinations buyers can choose", html:
         `<p>Vacation incentives run through programs such as <a href="/programs">Enjoy a Great Escape</a> and Enjoy a Paradise Escape, spanning resort stays, cruise getaways, and city escapes. Choice keeps the reward relevant across your customer base.</p>` },
       { h: "How reps use it at the close", html:
-        `<p>The rep establishes value, handles the real objection, then offers the vacation incentive as the reason to decide now. Introduced at the right moment, it turns hesitation into momentum. Reps follow the <a href="/sales-team-training-script">training script</a>, and <a href="/how-it-works">how the program works</a> covers the full flow.</p>` },
+        `<p>The rep establishes value, handles the real objection, then offers the vacation incentive as the reason to decide now. Introduced at the right moment, it turns hesitation into momentum. Reps follow the <a href="/train-sales-team-to-present-travel-vouchers">training script</a>, and <a href="/how-it-works">how the program works</a> covers the full flow.</p>` },
       { h: "Which industries use vacation incentives", html: INDUSTRIES_HTML },
       { h: "Results sales teams report", html: RESULTS_HTML },
       { h: "How to launch a vacation incentive program", html: LAUNCH_HTML },
@@ -137,11 +140,13 @@ export const CATEGORY_PAGES = [
       { h: "What a customer travel incentive program is", html:
         `<p>A customer travel incentive program gives qualifying buyers a discounted travel voucher, redeemable for a resort stay, cruise, or getaway. Unlike employee incentive travel, the reward is aimed at the customer, so it works directly on close rate, average ticket, and referrals.</p>` },
       { h: "Customer incentives versus employee incentives", html:
-        `<p>Employee travel motivates your team. Customer travel incentives move revenue, because the reward lands at the exact point a buyer decides. You can still recognize your people, but the program is engineered to close deals and protect margin. See related <a href="/customer-incentive-programs">customer incentive programs</a>.</p>` },
+        `<p>Employee travel motivates your team. Customer travel incentives move revenue, because the reward lands at the exact point a buyer decides. You can still recognize your people, but the program is engineered to close deals and protect margin. See related <a href="/travel-incentive-programs">customer incentive programs</a>.</p>` },
       { h: "The destinations customers can choose", html:
         `<p>Programs such as <a href="/programs">Enjoy a Great Escape</a> and Enjoy a Paradise Escape offer resort stays, cruise getaways, and city escapes. The variety keeps the program compelling for a broad customer base.</p>` },
       { h: "How reps present the program", html:
-        `<p>Representatives confirm fit, resolve objections, then present the travel incentive as the reason to buy now. This keeps the reward persuasive and on-brand. Reps use the <a href="/sales-team-training-script">training script</a>; <a href="/how-it-works">how the program works</a> explains the flow.</p>` },
+        `<p>Representatives confirm fit, resolve objections, then present the travel incentive as the reason to buy now. This keeps the reward persuasive and on-brand. Reps use the <a href="/train-sales-team-to-present-travel-vouchers">training script</a>; <a href="/how-it-works">how the program works</a> explains the flow.</p>` },
+      { h: "Customer incentive programs, not employee SPIFFs", html:
+        `<p>Most incentive programs reward staff. A customer incentive program rewards the buyer at the moment of decision, which is what makes it work directly on close rate, average ticket, and referrals. You choose a program, volume, and reward type that fit your vertical, set the qualifying purchase threshold you control, and start with a short consultation that matches the right program to your product and margin. It is distinct from employee travel and from broad loyalty platforms, because the goal is a confident buyer decision with the margin intact.</p>` },
       { h: "Which industries run travel incentive programs", html: INDUSTRIES_HTML },
       { h: "Results sales teams report", html: RESULTS_HTML },
       { h: "How to launch a travel incentive program", html: LAUNCH_HTML },
@@ -173,7 +178,9 @@ export const CATEGORY_PAGES = [
       { h: "The destinations customers can choose", html:
         `<p>Rewards run through programs such as <a href="/programs">Enjoy a Great Escape</a> and Enjoy a Paradise Escape, covering resort stays, cruise getaways, and city escapes, so the incentive stays relevant across your customer base.</p>` },
       { h: "How reps present the incentive", html:
-        `<p>Reps confirm fit, handle the real objection, then present the incentive as the reason to move forward now. This protects the offer's credibility and adds urgency. See the <a href="/sales-team-training-script">training script</a> and <a href="/how-it-works">how the program works</a>.</p>` },
+        `<p>Reps confirm fit, handle the real objection, then present the incentive as the reason to move forward now. This protects the offer's credibility and adds urgency. See the <a href="/train-sales-team-to-present-travel-vouchers">training script</a> and <a href="/how-it-works">how the program works</a>.</p>` },
+      { h: "A closing incentive for high-ticket sales", html:
+        `<p>On a five or six figure purchase, even a small discount is a large amount of margin, and it trains buyers to negotiate every future deal. A sales closing incentive works the other way: it gives your representative a value-added reason to ask for the decision without touching price. The higher the ticket, the wider the gap between a discount's cost and the incentive's perceived value, which is exactly why high-ticket teams see the strongest lift. Every program is built to be measured against your current discount promotion, so leadership can see the ROI in close rate, average ticket, and gross profit.</p>` },
       { h: "Which industries use sales incentive programs", html: INDUSTRIES_HTML },
       { h: "Results sales teams report", html: RESULTS_HTML },
       { h: "How to launch a sales incentive program", html: LAUNCH_HTML },

@@ -1,8 +1,23 @@
-import Seo, { faqSchema, breadcrumbSchema } from "@/components/site/Seo";
+import Seo, { faqSchema, breadcrumbSchema, ORG_ID } from "@/components/site/Seo";
 import SectionLabel from "@/components/site/SectionLabel";
 import { FAQ_PAGE } from "@/data/content";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+
+const SITE = "https://bestbuyincentives.com";
+
+// Explainer videos moved here from the merged voucher-terms and recipient-costs pages.
+const FAQ_VIDEOS = [
+  { name: "Travel voucher terms businesses should review", description: "What a business should review about a discounted travel voucher before running a program.", id: "5iYb--d66AU", duration: "PT1M15S", uploadDate: "2026-08-11", watchUrl: "https://www.youtube.com/watch?v=5iYb--d66AU", embedUrl: "https://www.youtube-nocookie.com/embed/5iYb--d66AU", thumbnailUrl: "https://i.ytimg.com/vi/5iYb--d66AU/hqdefault.jpg" },
+  { name: "How the recipient experience works", description: "How a customer redeems a discounted travel voucher and what the business handles.", id: "yywjxvTTcJE", duration: "PT56S", uploadDate: "2026-08-11", watchUrl: "https://www.youtube.com/watch?v=yywjxvTTcJE", embedUrl: "https://www.youtube-nocookie.com/embed/yywjxvTTcJE", thumbnailUrl: "https://i.ytimg.com/vi/yywjxvTTcJE/hqdefault.jpg" },
+];
+
+const videoObjectSchema = (v) => ({
+  "@context": "https://schema.org", "@type": "VideoObject",
+  name: v.name, description: v.description, thumbnailUrl: [v.thumbnailUrl],
+  uploadDate: v.uploadDate, duration: v.duration, contentUrl: v.watchUrl, embedUrl: v.embedUrl,
+  publisher: { "@id": ORG_ID }, inLanguage: "en-US",
+});
 
 export default function FAQ() {
   const categories = [...new Set(FAQ_PAGE.map((f) => f.category))];
@@ -15,6 +30,7 @@ export default function FAQ() {
         path="/faq"
         schema={[
           faqSchema(FAQ_PAGE),
+          ...FAQ_VIDEOS.map(videoObjectSchema),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "FAQ", path: "/faq" },
@@ -38,6 +54,20 @@ export default function FAQ() {
       {/* Q&A — grouped by category, answers fully visible so readers, search engines and AI can read them */}
       <section className="bg-white py-16 lg:py-24">
         <div className="mx-auto max-w-[900px] px-6 lg:px-10 space-y-16">
+          <div data-testid="faq-videos">
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-black">Watch: how the program works</h2>
+            <div className="mt-2 h-1 w-16 bg-[#FFD300]" />
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {FAQ_VIDEOS.map((v) => (
+                <figure key={v.id}>
+                  <div className="relative w-full overflow-hidden border border-[#E5E2D9] bg-black" style={{ aspectRatio: "16 / 9" }}>
+                    <iframe className="absolute inset-0 h-full w-full" src={`${v.embedUrl}?rel=0`} title={v.name} loading="lazy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+                  </div>
+                  <figcaption className="mt-2 text-[11px] font-mono uppercase tracking-widest text-[#595959] font-bold">{`Watch: ${v.name}`}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
           {categories.map((cat) => (
             <div key={cat} data-testid={`faq-category-${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
               <h2 className="font-display text-3xl lg:text-4xl font-bold text-black">

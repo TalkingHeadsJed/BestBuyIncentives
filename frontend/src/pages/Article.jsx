@@ -1,4 +1,4 @@
-import Seo, { breadcrumbSchema, personSchema, ORG_ID, WEBSITE_ID, PERSON_ID } from "@/components/site/Seo";
+import Seo, { breadcrumbSchema, faqSchema, personSchema, ORG_ID, WEBSITE_ID, PERSON_ID } from "@/components/site/Seo";
 import { Link } from "react-router-dom";
 import { ChevronRight, ArrowRight } from "lucide-react";
 import { getArticle, getRelated } from "@/data/articles";
@@ -78,6 +78,7 @@ export default function Article({ slug }) {
           articleLdSchema(a),
           personSchema,
           ...(a.video ? [videoObjectSchema(a)] : []),
+          ...(a.faqs && a.faqs.length ? [faqSchema(a.faqs)] : []),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Sales Resources", path: "/articles" },
@@ -143,6 +144,20 @@ export default function Article({ slug }) {
           )}
           <div className="article-body" data-testid="article-body" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: a.bodyHtml }} />
 
+          {a.faqs && a.faqs.length > 0 && (
+            <div data-testid="article-faq" className="mt-12 pt-8 border-t border-[#E5E2D9]">
+              <h2 className="font-display text-2xl lg:text-3xl font-bold text-black">Frequently asked questions</h2>
+              <div className="mt-6 space-y-6">
+                {a.faqs.map((f) => (
+                  <div key={f.q}>
+                    <h3 className="font-bold text-black">{f.q}</h3>
+                    <p className="mt-1 text-[#333] leading-relaxed">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div data-testid="article-author-box" className="mt-12 pt-8 border-t border-[#E5E2D9] flex flex-col sm:flex-row gap-5 items-start">
             <Link to="/authors/karl-kramer" className="shrink-0" aria-label="Karl Kramer">
               <img
@@ -180,11 +195,10 @@ export default function Article({ slug }) {
             </div>
           )}
 
-          <div className="mt-16 bg-[#0A0A0A] text-white p-10 lg:p-12">
-            <div className="text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">Put this to work</div>
-            <h2 className="mt-3 font-display font-bold text-3xl lg:text-4xl leading-tight">See where a discounted travel voucher fits your sales process.</h2>
-            <Link to="/contact" data-testid="article-cta" className="mt-6 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-3 uppercase tracking-wide">
-              Schedule a Campaign Consultation <ArrowRight className="h-3.5 w-3.5" />
+          <div data-testid="article-cta-box" className="mt-14 border border-[#E5E2D9] bg-[#F5F2EA] p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <p className="text-[#404040] leading-relaxed">See how this applies to your sales floor. Book a 30-minute call with Best Buy Incentives.</p>
+            <Link to="/contact" data-testid="article-cta" className="shrink-0 inline-flex items-center gap-2 bg-[#FFD300] hover:bg-[#FFEA66] text-black font-bold text-sm px-6 py-3 uppercase tracking-wide">
+              Book a Call <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>

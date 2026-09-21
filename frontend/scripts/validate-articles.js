@@ -113,7 +113,15 @@ for (const r of ROUTES) {
 // Task 6: NO FAQPage schema on NEW pages (articles + created SEO pages) — these
 // were authored without visible FAQs. Pre-existing pages (/faq, comparisons) that
 // legitimately render visible FAQs are permitted and are not modified.
-const newPages = new Set([...ARTICLE_SLUGS.map((s) => "/" + s), ...SEO_PATHS]);
+// FAQPage schema is permitted on industry/partner pages and on any article/page
+// that renders a visible FAQ block (data-testid="*-faq"). It remains disallowed on
+// pages authored without visible FAQs.
+const faqAllowed = (p) => p.startsWith("/industries/") || p.startsWith("/partners/");
+const newPages = new Set([...ARTICLE_SLUGS.map((s) => "/" + s), ...SEO_PATHS].filter((p) => !faqAllowed(p)));
+for (const r of [...newPages]) {
+  const html = readRoute(r);
+  if (html && /data-testid="[a-z-]*faq"/.test(html)) newPages.delete(r);
+}
 for (const r of newPages) {
   const html = readRoute(r);
   if (html && html.includes('"@type":"FAQPage"')) errors.push(`[${r}] FAQPage schema present without authorized visible FAQs`);

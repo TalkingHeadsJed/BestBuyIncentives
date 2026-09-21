@@ -60,7 +60,7 @@ export default function About() {
               <Stat icon={Award} value="$184M" label="Added pipeline closed" />
             </div>
             <p data-testid="about-stats-methodology" className="mt-4 text-[11px] font-mono leading-relaxed text-[#8a8a8a]">
-              [METHODOLOGY LINE: Jed and Karl to supply the exact wording. Placeholder: Figures are aggregated from client-reported results across Best Buy Incentives programs, 1992 to 2026, and are averages, not guarantees.]
+              Figures are company estimates based on Best Buy Incentives program experience since 1992. Individual results vary.
             </p>
           </div>
         </div>

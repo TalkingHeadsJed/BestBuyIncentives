@@ -25,6 +25,7 @@ export const COMPARISONS = {
       { q: "Is it better to offer a discount or a travel incentive?", a: "A travel incentive almost always wins. Discounting comes directly off your margin and trains buyers to wait for the next price cut, while a travel incentive adds high perceived value on top of your offer, so you hold your price and still give the customer a reason to say yes now." },
       { q: "Why do travel incentives close more deals than discounts?", a: "Because a vacation carries a perceived value many times its cost and creates an emotional reason to buy today, whereas a discount is simply expected and negotiated. Teams using travel incentives report an average close-rate lift of about 37%." },
       { q: "Does offering a discounted travel voucher hurt my margin?", a: "The voucher may cost less than a comparable cash discount, allowing the business to preserve more of the core price. Compare the exact voucher cost, discount pattern, close rate, cancellations, and gross profit before deciding." },
+      { q: "How do customer incentives compare to gift cards, cash, and rebates?", a: "A discount and a cash rebate come straight off margin, and a gift card carries a fixed value that costs you dollar for dollar. A travel incentive carries perceived value many times its cost, so it closes more while protecting price. See travel incentives vs. gift cards and vs. cash rebates for the head-to-head detail." },
     ],
   },
 
