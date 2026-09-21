@@ -3,6 +3,8 @@ import { ArrowRight, ChevronRight, CheckCircle2, Download, PlayCircle } from "lu
 import Seo, { breadcrumbSchema, faqSchema, personSchema, ORG_ID, PERSON_ID } from "@/components/site/Seo";
 import { ARTICLES } from "@/data/articles";
 import { getIndustryContent } from "@/data/industryContent";
+import { getIndustryExtra } from "@/data/industryExtra";
+import { getIndustryMore } from "@/data/industryExtra2";
 
 const fmtDay = (iso) => {
   if (!iso) return "";
@@ -170,6 +172,8 @@ export function IndustryPage({ cfg }) {
   const isPartner = cfg.path.startsWith("/partners/");
   const parent = isPartner ? { name: "About", path: "/about" } : { name: "Industries", path: "/industries" };
   const c = getIndustryContent(cfg.path);
+  const extra = getIndustryExtra(cfg.path);
+  const more = getIndustryMore(cfg.path);
 
   // Fallback to the legacy thin layout if no rich content is registered.
   if (!c) {
@@ -195,6 +199,8 @@ export function IndustryPage({ cfg }) {
 
   const datePublished = c.datePublished || "2026-08-26";
   const dateModified = c.dateModified || datePublished;
+  const allSections = [...c.sections, ...(extra && extra.sections ? extra.sections : []), ...(more && more.sections ? more.sections : [])];
+  const allFaqs = [...c.faqs, ...(extra && extra.faqs ? extra.faqs : []), ...(more && more.faqs ? more.faqs : [])];
   const articleLd = {
     "@context": "https://schema.org", "@type": "Article",
     "@id": `${SITE}${cfg.path}#article`,
@@ -211,7 +217,7 @@ export function IndustryPage({ cfg }) {
   const schema = [
     articleLd,
     personSchema,
-    faqSchema(c.faqs),
+    faqSchema(allFaqs),
     breadcrumbSchema([{ name: "Home", path: "/" }, parent, { name: cfg.h1, path: cfg.path }]),
   ];
   const dateLine = `Published ${fmtDay(datePublished)}` + (dateModified !== datePublished ? ` \u00B7 Updated ${fmtDay(dateModified)}` : "");
@@ -244,7 +250,7 @@ export function IndustryPage({ cfg }) {
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <article className="space-y-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:lg:text-3xl [&_h2]:font-bold [&_h2]:text-black [&_p]:mt-3 [&_p]:text-[#333] [&_p]:leading-relaxed [&_ul]:mt-3 [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:mt-3 [&_ol]:space-y-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:text-[#333] [&_a]:text-black [&_a]:font-bold [&_a]:underline [&_a:hover]:text-[#595959]">
-            {c.sections.map((s) => (
+            {allSections.map((s) => (
               <div key={s.h}>
                 <h2>{s.h}</h2>
                 <div dangerouslySetInnerHTML={{ __html: s.html }} />
@@ -263,7 +269,7 @@ export function IndustryPage({ cfg }) {
             <div data-testid="industry-faq">
               <h2>Frequently asked questions</h2>
               <div className="mt-4 space-y-6">
-                {c.faqs.map((f) => (
+                {allFaqs.map((f) => (
                   <div key={f.q}>
                     <h3 className="font-bold text-black">{f.q}</h3>
                     <p className="mt-1 text-[#333] leading-relaxed">{f.a}</p>

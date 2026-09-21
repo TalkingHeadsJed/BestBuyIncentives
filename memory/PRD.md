@@ -101,3 +101,12 @@ Executed `EMERGENT_PROMPT_BBI_seo_consolidate-v1.md` in 4 phases. Final site = *
 **Follow-ups / notes:**
 - `public/llms.txt` had no merged-URL references (no change needed). `public/llms-full.txt` is a stale full-content snapshot (no generator script in repo) — regenerate before next deploy if AI-crawl freshness matters.
 - Remind user to use **Save to GitHub** so `.cpanel.yml` + these changes deploy to BlueHost.
+
+## Page-Length Fix — 2026-09-21 (implemented & verified)
+
+Executed `EMERGENT_PROMPT_BBI_seo_length-fix-v1.md`. Expanded the 12 under-target pages with real new sections (no padding). All now meet word-count targets measured on the built page; `validate-articles` PASS, `hydration` ALL 91 CLEAN, `original-site/` re-synced.
+
+- **4 pillars → 2,000+:** `/objection-handling` (five-step framework with per-step example, word-for-word scripts for all 5 objections incl. bad timing, by-channel handling, prevention, checklist, +FAQs), `/sales-spiff` (examples by industry, how to set amount, how to measure, common mistakes, SPIFF-vs-incentive, 30-day plan), `/sales-closing-questions-examples` + `/trial-close-questions-examples` (more questions grouped by deal stage with "what to say after they answer", phone/virtual sections, mistakes).
+- **8 industry/partner pages → 1,500+:** each gained a step-by-step voucher-sale example, a seasonal promotion calendar, a measurement section, a getting-started section, and 2–4 extra FAQs. Content lives in `src/data/industryExtra.js` + `industryExtra2.js`, merged by `IndustryPage` (allSections/allFaqs).
+- Fixed a TDZ bug (allFaqs used before declaration) that had briefly blanked industry prerenders.
+- No URLs, titles, H1s, bylines, schema, redirects, or video embeds changed.
