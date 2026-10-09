@@ -110,3 +110,13 @@ Executed `EMERGENT_PROMPT_BBI_seo_length-fix-v1.md`. Expanded the 12 under-targe
 - **8 industry/partner pages → 1,500+:** each gained a step-by-step voucher-sale example, a seasonal promotion calendar, a measurement section, a getting-started section, and 2–4 extra FAQs. Content lives in `src/data/industryExtra.js` + `industryExtra2.js`, merged by `IndustryPage` (allSections/allFaqs).
 - Fixed a TDZ bug (allFaqs used before declaration) that had briefly blanked industry prerenders.
 - No URLs, titles, H1s, bylines, schema, redirects, or video embeds changed.
+
+## Amplify (near-miss queries) — 2026-10-08 (implemented & verified)
+
+Executed `amplify-2026-10-08.md`. Added query-answering sections to the 12 existing near-miss pages so they match the exact search query:
+- Articles (section + FAQ): close-rate-vs-conversion-rate ("what is close rate"), sales-closing-questions-examples, close-more-sales-without-lowering-price, sales-spiff (FAQ), what-is-a-customer-purchase-incentive, objection-handling ("price objection handling script"), sales-promotion-metrics-that-matter, customer-incentives-vs-rebates ("difference between rebate and incentive").
+- Category pages (new opening section): vacation-certificates ("which vacation certificate service offers the best value for promotions"), travel-certificates ("travel incentive certificates"), vacation-incentives ("vacation incentive programs").
+- /programs: added "What are vacation incentive programs?" section.
+- Furniture closing-techniques query already answered on the merge target /industries/furniture-retailers (source page was 301'd).
+- NOT ACTIONED: the 2 "engine-added" internal links were FROM /how-to-motivate-a-sales-team, which does not exist in this site — flagged to user.
+- Verified: validate PASS, hydration ALL 91 CLEAN, original-site re-synced (redirects 37, sitemap 91, PHP api intact).

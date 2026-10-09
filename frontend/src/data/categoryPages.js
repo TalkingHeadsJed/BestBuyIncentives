@@ -36,6 +36,8 @@ export const CATEGORY_PAGES = [
     dateModified: "2026-08-26",
     video: { name: "How discounted travel vouchers work", description: "A short explainer of how a discounted travel voucher works as a closing tool for a business.", id: "DpBKtVlGhvY", duration: "PT1M6S", uploadDate: "2026-08-11", watchUrl: "https://www.youtube.com/watch?v=DpBKtVlGhvY", embedUrl: "https://www.youtube-nocookie.com/embed/DpBKtVlGhvY", thumbnailUrl: "https://i.ytimg.com/vi/DpBKtVlGhvY/hqdefault.jpg" },
     sections: [
+      { h: "Which vacation certificate service offers the best value for promotions?", html:
+        `<p>The best value comes from a provider that pairs a high perceived-value reward with a low, fixed program cost and handles redemption for you. For promotions, look for three things: a curated range of destinations your customers actually want, certificates issued on demand so your team always has the tool at the close, and a dedicated travel support team that manages every booking so you carry no fulfillment overhead. Best Buy Incentives has run vacation certificate promotions since 1992, which is why high-ticket sales teams use it to drive close rate without discounting.</p>` },
       { h: "What a vacation certificate is", html:
         `<p>A vacation certificate is a discounted travel voucher your business gives a customer when they complete a qualifying purchase. It entitles the recipient to a resort stay, a cruise getaway, or a city escape from a curated set of destinations. For your sales team, it is a simple, tangible reward that makes the offer more memorable and gives the buyer a reason to say yes today.</p>
         <p>You are not selling a vacation. You are selling your product, and the certificate is the added value that tips a hesitant buyer into a decision.</p>` },
@@ -72,6 +74,8 @@ export const CATEGORY_PAGES = [
     datePublished: "2026-08-26",
     dateModified: "2026-08-26",
     sections: [
+      { h: "What are travel incentive certificates?", html:
+        `<p>Travel incentive certificates are vouchers a business awards to a customer after a qualifying purchase, redeemable for a discounted getaway such as a resort stay, cruise, or city escape. Unlike a discount or a gift card, the certificate carries a perceived value far above its fixed cost to you, so it rewards the buyer and drives the close while protecting your price. The recipient redeems directly with a dedicated travel support team, so your sales staff never touches logistics. Businesses use travel incentive certificates as a closing tool, a referral reward, and a buyer's-remorse reducer on high-ticket sales.</p>` },
       { h: "What travel certificates are, in plain terms", html:
         `<p>A travel certificate, also called a travel incentive certificate, is a discounted travel voucher a business provides to a customer who completes a qualifying purchase. It gives the recipient a resort stay, cruise, or getaway from a set list of destinations. For the business, it is a repeatable, budgetable way to reward buyers and differentiate the offer.</p>` },
       { h: "Why travel certificates beat a price cut", html:
@@ -105,6 +109,8 @@ export const CATEGORY_PAGES = [
     datePublished: "2026-08-26",
     dateModified: "2026-08-26",
     sections: [
+      { h: "What are vacation incentive programs?", html:
+        `<p>Vacation incentive programs give a business a supply of travel rewards to offer customers who complete a qualifying purchase, turning a getaway into a closing tool rather than a discount. A good program lets you pick the reward mix, volume, and qualifying threshold that fit your product and margin, issues certificates on demand so reps always have the tool, and handles every booking through a dedicated travel support team. Companies run vacation incentive programs to lift close rate, raise average ticket, reduce buyer's remorse, and drive referrals, all while holding price. Best Buy Incentives has operated these programs since 1992.</p>` },
       { h: "What a vacation incentive is", html:
         `<p>A vacation incentive, sometimes called a vacation voucher, is a discounted travel voucher offered to a customer who completes a qualifying purchase. It gives the buyer a resort stay, cruise, or getaway and gives your team a value-added way to close without cutting price.</p>` },
       { h: "Why a vacation out-closes a discount", html:

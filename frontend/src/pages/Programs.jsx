@@ -115,6 +115,19 @@ export default function Programs() {
         </div>
       </section>
 
+      <section className="bg-white py-16 lg:py-20" data-testid="programs-vacation-incentive-programs">
+        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-black">What are vacation incentive programs?</h2>
+          <div className="mt-3 h-1 w-16 bg-[#FFD300]" />
+          <p className="mt-6 text-[#333] leading-relaxed">
+            Vacation incentive programs give your business a supply of travel rewards to offer customers who complete a qualifying purchase, turning a getaway into a closing tool instead of a discount. You choose the reward mix, the volume, and the qualifying threshold that fit your product and margin. Certificates are issued on demand so your reps always have the tool at the close, and a dedicated travel support team handles every booking, so your team never touches logistics.
+          </p>
+          <p className="mt-4 text-[#333] leading-relaxed">
+            Companies run vacation incentive programs to lift close rate, raise average ticket, reduce buyer's remorse, and drive referrals, all while protecting price. Best Buy Incentives has operated customer-facing vacation incentive programs since 1992 across automotive, furniture, jewelry, home improvement, and more.
+          </p>
+        </div>
+      </section>
+
       <section className="bg-[#0A0A0A] text-white py-24">
         <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
           <div className="text-[11px] font-mono uppercase tracking-widest text-[#FFD300] font-bold">Custom Programs</div>
