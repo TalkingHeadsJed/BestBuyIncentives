@@ -134,6 +134,38 @@ export const PROGRAMS = [
     altImage: "/images/cert-escape-v2.jpg",
     badge: "Best for: high-ticket sales floors",
   },
+  {
+    slug: "luxury-all-inclusive-resort-collection",
+    name: "The Luxury All-Inclusive Resort Collection",
+    tagline: "Five-star all-inclusive, their choice",
+    description:
+      "A curated collection of five-star, all-inclusive resorts across Mexico, Jamaica, and the Caribbean, included with the sale. Your buyer picks their paradise, from Azul Beach in Negril to Villa del Palmar in Puerto Vallarta, while you close on experience and protect your margin.",
+    bullets: [
+      "Five hand-picked luxury all-inclusive resorts",
+      "Destinations in Mexico, Jamaica & the Dominican Republic",
+      "Issued on demand — no inventory to stock",
+      "Co-branded collateral + bulk pricing sized to your ticket",
+    ],
+    image: "/images/incentives/luxury-resort-collection.png",
+    altImage: "/images/incentives/luxury-resort-collection.png",
+    badge: "Best for: premium & luxury sales",
+  },
+  {
+    slug: "escape-to-paradise-for-two",
+    name: "Escape to Paradise for Two",
+    tagline: "All-inclusive romance that closes",
+    description:
+      "An all-inclusive 5-day, 4-night escape for two, with your buyer's choice of the Dominican Republic, Mexico, or Jamaica. A high perceived-value reward that turns a signature into a celebration, included with the sale and issued on demand. Terms and conditions apply.",
+    bullets: [
+      "5 days & 4 nights, all-inclusive for two",
+      "Choice of Dominican Republic, Mexico, or Jamaica",
+      "Issued on demand — no inventory to stock",
+      "Co-branded collateral + bulk pricing sized to your ticket",
+    ],
+    image: "/images/incentives/escape-to-paradise.png",
+    altImage: "/images/incentives/escape-to-paradise.png",
+    badge: "Best for: high-ticket & big-ticket closes",
+  },
 ];
 
 export const INDUSTRIES = [

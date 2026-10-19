@@ -27,7 +27,7 @@ export default function Programs() {
             Vacation Certificate <span className="hl-yellow-full text-black">Programs</span>
           </h1>
           <p className="mt-8 text-lg lg:text-2xl max-w-3xl leading-[1.4] text-white/85">
-            One proven certificate to put on your sales floor, sized to your ticket and priced for bulk deployment. Want more? Book a call for our full catalog of travel and entertainment incentives.
+            Proven travel-incentive certificates to put on your sales floor, sized to your ticket and priced for bulk deployment. Want more? Book a call for our full catalog of travel and entertainment incentives.
           </p>
         </div>
       </section>

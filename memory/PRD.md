@@ -120,3 +120,12 @@ Executed `amplify-2026-10-08.md`. Added query-answering sections to the 12 exist
 - Furniture closing-techniques query already answered on the merge target /industries/furniture-retailers (source page was 301'd).
 - NOT ACTIONED: the 2 "engine-added" internal links were FROM /how-to-motivate-a-sales-team, which does not exist in this site — flagged to user.
 - Verified: validate PASS, hydration ALL 91 CLEAN, original-site re-synced (redirects 37, sitemap 91, PHP api intact).
+
+## New Vacation Certificate Programs — 2026-10-19 (implemented & verified)
+
+Added 2 new flagship programs to /programs (content.js PROGRAMS), matching the "Enjoy a Great Escape" card style (badge + eyebrow + name + description + 4 bullets + Get Pricing):
+- **The Luxury All-Inclusive Resort Collection** (5 named resorts: Azul Beach Negril Jamaica, Sheraton Buganvilias Puerto Vallarta, Sports Illustrated Punta Cana, Marina Fiesta Los Cabos, Villa del Palmar PV). Image: /images/incentives/luxury-resort-collection.png.
+- **Escape to Paradise for Two** (all-inclusive 5-day/4-night for two; DR/Mexico/Jamaica). Image: /images/incentives/escape-to-paradise.png.
+Both posters are 1589x990 (16:10) so object-cover fits the card with no crop. Updated hero copy "One proven certificate" → "Proven travel-incentive certificates". Verified: images 200, cards in built/synced /programs, validate PASS, hydration ALL 91 CLEAN.
+
+NOTE: User asked for 3 programs but the uploads contained only 2 distinct posters (the Resort Collection file was duplicated). Awaiting the 3rd program's art/offer details.
