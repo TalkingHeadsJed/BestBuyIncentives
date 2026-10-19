@@ -166,6 +166,22 @@ export const PROGRAMS = [
     altImage: "/images/incentives/escape-to-paradise.png",
     badge: "Best for: high-ticket & big-ticket closes",
   },
+  {
+    slug: "ultimate-luxury-vacation-experience",
+    name: "The Ultimate Luxury Vacation Experience",
+    tagline: "Their choice of extraordinary escapes",
+    description:
+      "A hand-curated collection of extraordinary escapes, included with the sale. Your buyer chooses from sun-kissed beaches, vibrant culture, chef-inspired cuisine, and romantic sunsets over the water. The hardest decision is which destination to enjoy — you close on the experience while protecting your margin.",
+    bullets: [
+      "Curated worldwide collection of premium destinations",
+      "Buyer chooses their perfect getaway",
+      "Issued on demand — no inventory to stock",
+      "Co-branded collateral + bulk pricing sized to your ticket",
+    ],
+    image: "/images/incentives/ultimate-luxury-vacation.png",
+    altImage: "/images/incentives/ultimate-luxury-vacation.png",
+    badge: "Best for: premium & luxury sales",
+  },
 ];
 
 export const INDUSTRIES = [
